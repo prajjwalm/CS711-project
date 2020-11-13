@@ -95,7 +95,7 @@ class Person:
 
         if self.state == "healthy":
             # TODO: raghav
-            self.h = 1 - (np.random.beta(8,2,1) / self.incubation_period) * (1 - env.i/env.n)
+            self.h = 1 - (np.random.beta(2,8,1) / self.incubation_period) * (1 - env.i/env.n)
             if np.random.rand() < risk:
                 self.state = "infected"
                 self.infected_day = env.t
