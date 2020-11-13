@@ -54,6 +54,29 @@ class Environment:
     def r(self):
         return int(self._r)
 
+class Person:
+    healthy: float
+    _params: Dict[str, float] = {
+        "economic_status": 0.0,  # if can survive without working
+        "job_importance" : 0.0,  # like doctor
+        "danger" : 0.0,  # possible consequences upon getting infected
+        "job_risk": 0.0,  # risk of getting virus while working
+    }
+
+    def __init__(self, *args, **kwargs: Dict[str, float]):
+        self._params.update({x:kwargs.get(x) for x in self._params})
+        pass
+
+
+    @property
+    def work_utility(self) -> float:
+        pass
+
+    @property
+    def home_utility(self) -> float:
+        pass
+
+
 
 if __name__ == '__main__':
     env = Environment(10000, 10)
