@@ -91,11 +91,11 @@ class Person:
 
     def act(self, action: str):
         # handle all consequences here
-        risk = env.i / env.n + work_infection_risk(self.s / self.n) if action == "work" else 0
+        risk = env.i / env.n + self.work_infection_risk(self.s / self.n) if action == "work" else 0
 
         if self.state == "healthy":
             # TODO: raghav
-            self.h = 1 - (np.random.rand() / self.incubation_period) * (1 - env.i/env.n)
+            self.h = 1 - (np.random.beta(8,2,1) / self.incubation_period) * (1 - env.i/env.n)
             if np.random.rand() < risk:
                 self.state = "infected"
                 self.infected_day = env.t
@@ -110,7 +110,7 @@ class Person:
 
     def update(self, env):
         # TODO:
-        if(self.work_utility > self.home_utility):
+        if self.work_utility > self.home_utility:
             action = "work"
         else:
             action = "home"
