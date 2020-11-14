@@ -1,7 +1,7 @@
 import logging
 
 from enviornment import env, init as init_environment
-from players import Simpleton, init as init_players
+from players import TypeR, Simpleton, init as init_players
 
 
 def main():
@@ -41,7 +41,7 @@ if __name__ == '__main__':
     logger = logging.getLogger("Log")
 
     # change log level here; note: all modules use the same logger
-    logger.setLevel(logging.INFO)
+    logger.setLevel(logging.DEBUG)
 
     fh = logging.FileHandler("logs/proceeds.log", mode='w')
     fh.setFormatter(logging.Formatter(
