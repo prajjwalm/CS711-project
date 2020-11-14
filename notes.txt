@@ -1,0 +1,11 @@
+# abe idiots, who was the bright guy who did this?
+    def update(self, env):
+        if self.work_utility > self.home_utility:
+            action = "work"
+        else:
+            action = "home"
+        self.act(action)
+
+
+# may be needed later
+self.p_healthy = 1 - (np.random.beta(2, 8, 1) / self.env.t_incubation) * (1 - self.env.i / self.env.n)
