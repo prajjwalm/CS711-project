@@ -102,6 +102,12 @@ class _Person:
         return self.env.s / self.env.n * self._params["job_risk"] * self.c1
 
     @property
+    def home_infection_risk(self):
+        if self.state != "S":
+            return 0
+        return self.env.i / self.env.n
+
+    @property
     def u_economic(self) -> Dict[str, float]:
         # sick people have 0 economic utility
         return {
@@ -130,3 +136,4 @@ class _Person:
     @property
     def type(self) -> str:
         return self.__class__.__name__
+

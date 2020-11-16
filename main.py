@@ -6,9 +6,9 @@ from players import TypeR, typeShr, Simpleton, init as init_players
 
 def main():
     old_doc = typeShr(env, **{
-        "economic_status": 0.73,
-        "danger"         : 0.5,
-        "job_risk"       : 0.4,
+        "economic_status": 0.42,
+        "danger"         : 0.7,
+        "job_risk"       : 0.5,
         "job_importance" : 0.1,
     })
 
