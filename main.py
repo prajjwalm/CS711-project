@@ -1,11 +1,11 @@
 import logging
 
 from enviornment import env, init as init_environment
-from players import TypeR, typeShr, Simpleton, init as init_players
+from players import TypeR, TypeRi, Simpleton, init as init_players
 
 
 def main():
-    old_doc = typeShr(env, **{
+    old_doc = TypeRi(env, **{
         "economic_status": 0.73,
         "danger"         : 0.5,
         "job_risk"       : 0.4,
