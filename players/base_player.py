@@ -125,7 +125,7 @@ class _Person:
 
     @property
     def death_risk(self) -> float:
-        return self._params['danger'] ** 2  # TODO: may change
+        return 0.1 * self._params['danger'] ** 2  # TODO: may change
 
     @property
     def type(self) -> str:
