@@ -34,11 +34,17 @@ class _Person:
     net_utility: float  # obvious
     t_i: int            # day of infection
     t_r: int            # day of recovery
+    t_w: int            # first day of work
+    n_w: int            # number of days worked
 
     # misc. constants
-    c1: float = 0.07  # job risk multiplier
-    c2: float = 500  # utility loss on death
-    c3: float = 0.2  # home risk multiplier
+    c1: float = 0.07    # job risk multiplier
+    c2: float = 0.2     # home risk multiplier
+    c3: float = 500     # utility loss on death
+    c4: float = 1       # health inconvenience during virus
+    c5: float = 2       # job importance multiplier
+    c6: float = 3       # economic status multiplier
+
 
     # @formatter:on
 
@@ -49,6 +55,9 @@ class _Person:
         self.state = "S"
         self.belief_update()
         self.action_plan = []
+        self.t_w = None
+        self.t_i = None
+        self.n_w = 0
 
         logger.debug("{0} initialized with params: {1}".format(
                 self.type, self._params
@@ -64,6 +73,11 @@ class _Person:
         risk = self.home_infection_risk
         if action == "W":
             risk += self.work_infection_risk
+
+            if self.t_w is None:
+                self.t_w = self.env.t
+            elif self.t_i is None:
+                self.n_w += 1
 
         self.state_change(risk)
         self.belief_update()
@@ -106,7 +120,7 @@ class _Person:
     def home_infection_risk(self):
         if self.state != "S":
             return 0
-        return self.env.infected_today / self.env.n * self.c3
+        return self.env.infected_today / self.env.n * self.c2
 
     @property
     def u_economic(self) -> Dict[str, float]:
@@ -123,12 +137,12 @@ class _Person:
         if self.state != "I":
             return 0
         if self.env.t - self.t_i > self.env.t_incubation:
-            return - self._params["danger"]
+            return - self._params["danger"] * self.c4
         return 0
 
     @property
     def u_death(self):
-        return -self.c2
+        return -self.c3
 
     @property
     def death_risk(self) -> float:
