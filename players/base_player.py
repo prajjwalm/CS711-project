@@ -37,7 +37,8 @@ class _Person:
 
     # misc. constants
     c1: float = 0.07  # job risk multiplier
-    c2: float = 1000  # utility loss on death
+    c2: float = 500  # utility loss on death
+    c3: float = 0.2  # home risk multiplier
 
     # @formatter:on
 
@@ -60,7 +61,7 @@ class _Person:
         action = self.action_plan.pop()
         self.net_utility += self.u_economic[action] + self.u_virus
 
-        risk = self.env.i / self.env.n
+        risk = self.home_infection_risk
         if action == "W":
             risk += self.work_infection_risk
 
@@ -105,7 +106,7 @@ class _Person:
     def home_infection_risk(self):
         if self.state != "S":
             return 0
-        return self.env.i / self.env.n
+        return self.env.infected_today / self.env.n * self.c3
 
     @property
     def u_economic(self) -> Dict[str, float]:

@@ -28,9 +28,9 @@ class _EnvironmentSIR:
     TIMES: Dict[str, float] = {
         "infectious": 3,  # a person becomes capable of infecting others here
         "symptoms"  : 5,  # from this time a person starts showing symptoms
-        "removal"   : 20  # expected recovery time (for normal cases)
+        "removal"   : 21  # expected recovery time (for normal cases)
     }
-    R0: float = 2.5
+    R0: float = 1.5
 
     def __init__(self, n, i, *, beta=None, gamma=None, max_t=5 * 365):
         # THIS CONSTRUCTOR (AND ONLY THIS CONSTRUCTOR) CANNOT HAVE LOGGING
@@ -46,7 +46,7 @@ class _EnvironmentSIR:
 
     def next_day(self):
         if self.t > 0:
-            ds = - self.beta * self._i * self._s / self.n
+            ds = - self.infected_today
             dr = self.gamma * self._i
             di = - ds - dr
             self._s += ds
@@ -82,3 +82,7 @@ class _EnvironmentSIR:
     @property
     def t_recovery(self):
         return self.TIMES['removal']
+
+    @property
+    def infected_today(self):
+        return self.beta * self._i * self._s / self.n

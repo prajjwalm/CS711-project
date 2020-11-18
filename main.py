@@ -5,11 +5,11 @@ from players import TypeR, TypeRi, Simpleton, init as init_players
 
 
 def main():
-    old_doc = typeShr(env, **{
-        "economic_status": 0.42,
-        "danger"         : 0.7,
-        "job_risk"       : 0.5,
-        "job_importance" : 0.1,
+    old_doc = TypeRi(env, **{
+        "economic_status": 0.69,
+        "danger": 0.8,
+        "job_risk": 0.3,
+        "job_importance": 0.9,
     })
 
     try:
@@ -17,12 +17,14 @@ def main():
             old_doc.plan()
             old_doc.act()
             logger.info(
-                    "True state: {0}, believes himself to be {1:d}% healthy, "
-                    "and has a net utility of {2:.2f}".format(
-                            old_doc.state,
-                            int(old_doc.p_healthy * 100),
-                            old_doc.net_utility
-                    )
+                "True state: {0}, believes himself to be {1:d}% healthy, "
+                "and has a net utility of {2:.2f}, (percentage infected = "
+                "{3:.2f}%)".format(
+                    old_doc.state,
+                    int(old_doc.p_healthy * 100),
+                    old_doc.net_utility,
+                    env.i / env.n * 100
+                )
             )
     except NotImplementedError:
         logger.critical("Old doc dead")
@@ -45,8 +47,8 @@ if __name__ == '__main__':
 
     fh = logging.FileHandler("logs/proceeds.log", mode='w')
     fh.setFormatter(logging.Formatter(
-            "%(module)s(%(lineno)d): %(funcName)s [%(levelname)s] "
-            "(Day %(day)s): %(message)s"
+        "%(module)s(%(lineno)d): %(funcName)s [%(levelname)s] "
+        "(Day %(day)s): %(message)s"
     ))
     logger.addHandler(fh)
     logger.addFilter(ContextFilter())
