@@ -23,8 +23,7 @@ class TypeR(_Person):
         surplus_risk = self.work_infection_risk
         death_util = self.u_death
 
-        work = cash_work * (1 - surplus_risk) + surplus_risk * (
-                    virus_util + death_risk * death_util)
+        work = cash_work * (1 - surplus_risk) + surplus_risk * (virus_util + death_risk * death_util)
         home = cash_home
 
         if work > home:

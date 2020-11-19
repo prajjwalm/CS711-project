@@ -38,12 +38,12 @@ class _Person:
     n_w: int            # number of days worked
 
     # misc. constants
-    c1: float = 0.01    # job risk multiplier
-    c2: float = 0.1     # home risk multiplier
+    c1: float = 0.1     # job risk multiplier
+    c2: float = 0.01    # home risk multiplier
     c3: float = 500     # utility loss on death
     c4: float = 1       # health inconvenience during virus
-    c5: float = 2       # job importance multiplier
-    c6: float = 3       # economic status multiplier
+    c5: float = 1       # job importance multiplier
+    c6: float = 1       # economic status multiplier
 
 
     # @formatter:on
@@ -115,7 +115,7 @@ class _Person:
     def work_infection_risk(self):
         if self.state != "S":
             return 0
-        return self.env.s / self.env.n * self._params["job_risk"] * self.c1
+        return self.env.infected_today / self.env.n * self._params["job_risk"] * self.c1
 
     @property
     def home_infection_risk(self):

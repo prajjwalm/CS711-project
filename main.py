@@ -1,15 +1,15 @@
 import logging
 
 from enviornment import env, init as init_environment
-from players import Simpleton, TypeR, TypeRi, init as init_players, typeShr
+from players import Simpleton, TypeR, TypeRi, typeShr, init as init_players
 
 
 def main():
-    old_doc = TypeRi(env, **{
+    old_doc = TypeR(env, **{
         "economic_status": 0.4,
         "danger"         : 0.8,
         "job_risk"       : 0.5,
-        "job_importance" : 0,
+        "job_importance" : 0.1,
     })
 
     try:
