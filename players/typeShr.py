@@ -12,7 +12,7 @@ def _init():
     logger = logging.getLogger("Log")
 
 
-class typeShr(_Person):
+class TypeShr(_Person):
     last_week_actions: List[str]
 
     def __init__(self, env, *args, **kwargs):

@@ -38,8 +38,8 @@ class _Person:
     n_w: int            # number of days worked
 
     # misc. constants
-    c1: float = 0.1     # job risk multiplier
-    c2: float = 0.01    # home risk multiplier
+    c1: float = 1       # job risk multiplier
+    c2: float = 0.1     # home risk multiplier
     c3: float = 500     # utility loss on death
     c4: float = 1       # health inconvenience during virus
     c5: float = 1       # job importance multiplier
