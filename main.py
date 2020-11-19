@@ -1,15 +1,15 @@
 import logging
 
 from enviornment import env, init as init_environment
-from players import TypeR, TypeRi, Simpleton, typeShr, init as init_players
+from players import Simpleton, TypeR, TypeRi, init as init_players, typeShr
 
 
 def main():
-    old_doc = TypeR(env, **{
+    old_doc = TypeRi(env, **{
         "economic_status": 0.4,
-        "danger": 0.8,
-        "job_risk": 0.5,
-        "job_importance": 0,
+        "danger"         : 0.8,
+        "job_risk"       : 0.5,
+        "job_importance" : 0,
     })
 
     try:
@@ -31,6 +31,7 @@ def main():
 
     if old_doc.t_w is not None:
         print(old_doc.t_i,old_doc.t_w, old_doc.n_w)
+
 
 if __name__ == '__main__':
     # setup logging

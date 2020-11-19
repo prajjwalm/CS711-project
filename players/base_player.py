@@ -38,8 +38,8 @@ class _Person:
     n_w: int            # number of days worked
 
     # misc. constants
-    c1: float = 0.07    # job risk multiplier
-    c2: float = 0.2     # home risk multiplier
+    c1: float = 0.01    # job risk multiplier
+    c2: float = 0.1     # home risk multiplier
     c3: float = 500     # utility loss on death
     c4: float = 1       # health inconvenience during virus
     c5: float = 2       # job importance multiplier
@@ -68,7 +68,8 @@ class _Person:
 
     def act(self):
         action = self.action_plan.pop()
-        self.net_utility += self.u_economic[action] + self.u_virus
+        self.net_utility += \
+            self.u_economic_w if action == 'W' else 0 + self.u_virus
 
         risk = self.home_infection_risk
         if action == "W":
@@ -123,12 +124,10 @@ class _Person:
         return self.env.infected_today / self.env.n * self.c2
 
     @property
-    def u_economic(self) -> Dict[str, float]:
+    def u_economic_w(self) -> float:
         # sick people have 0 economic utility
-        return {
-            "W": (1 - self._params['economic_status']) * self.p_healthy,
-            "H": (-self._params['job_importance']) * self.p_healthy
-        }
+        return ((1 - self._params['economic_status']) * self.c5
+                + self._params['job_importance'] * self.c6) * self.p_healthy
 
     @property
     def u_virus(self) -> float:
@@ -151,4 +150,3 @@ class _Person:
     @property
     def type(self) -> str:
         return self.__class__.__name__
-
