@@ -3,6 +3,8 @@ from typing import Dict, List, Optional
 
 import numpy as np
 
+from enviornment import EnvSIR
+
 logger: logging.Logger
 
 
@@ -20,10 +22,11 @@ class _Person:
         "economic_status",  # Rich guys needn't work
         "danger",           # Danger posed by infection (age/health)
         "job_risk",         # infection risk while working (0 for wfh)
-        "job_importance",   # Penalty for not working (so doctors work)
+        "job_importance",   # Bonus for doctors etc. [mechanism designer]
     ]
 
     # reference to the global environment
+    env: EnvSIR
 
     # list of future actions [str: "W"/"H"]: All implementations fill this
     action_plan: List[str]
@@ -32,19 +35,17 @@ class _Person:
     state: str          # enum{S, I, R, X(dead)}
     p_healthy: float    # belief over own type [healthy vs infected]
     net_utility: float  # obvious
-    t_i: int            # day of infection
-    t_r: int            # day of recovery
-    t_w: int            # first day of work
-    n_w: int            # number of days worked
+    t_i: Optional[int]  # day of infection
+    t_r: Optional[int]  # day of recovery
+    n_w: int            # number of days worked prior to infection
 
     # misc. constants
     c1: float = 1       # job risk multiplier
-    c2: float = 0.1     # home risk multiplier
-    c3: float = 500     # utility loss on death
-    c4: float = 1       # health inconvenience during virus
+    c2: float = 0.03    # home risk multiplier
+    c3: float = 20000   # utility loss on death
+    c4: float = 0       # health inconvenience during virus
     c5: float = 1       # job importance multiplier
     c6: float = 1       # economic status multiplier
-
 
     # @formatter:on
 
@@ -55,8 +56,8 @@ class _Person:
         self.state = "S"
         self.belief_update()
         self.action_plan = []
-        self.t_w = None
         self.t_i = None
+        self.t_r = None
         self.n_w = 0
 
         logger.debug("{0} initialized with params: {1}".format(
@@ -71,14 +72,10 @@ class _Person:
         self.net_utility += \
             self.u_economic_w if action == 'W' else 0 + self.u_virus
 
-        risk = self.home_infection_risk
-        if action == "W":
-            risk += self.work_infection_risk
+        risk = self.work_infection_risk if action == "W" else self.home_infection_risk
 
-            if self.t_w is None:
-                self.t_w = self.env.t
-            elif self.t_i is None:
-                self.n_w += 1
+        if action == "W" and self.t_i is None:
+            self.n_w += 1
 
         self.state_change(risk)
         self.belief_update()
@@ -108,27 +105,40 @@ class _Person:
             self.p_healthy = 1
         elif self.state == "I":
             self.p_healthy = 1 - (self.env.t - self.t_i) / self.env.t_incubation
-        self.p_healthy += np.random.normal() / 10
+        self.p_healthy += np.random.normal() / 16
         self.p_healthy = min(1.0, max(0.0, self.p_healthy))
 
     @property
     def work_infection_risk(self):
-        if self.state != "S":
+        if self.state == "R":
             return 0
-        return self.env.infected_today / self.env.n * self._params[
-            "job_risk"] * self.c1
+        base_infection_prob = self.env.infected_today / self.env.s
+        extra_risk = base_infection_prob * self._params["job_risk"] * self.c1
+        risk = self.home_infection_risk + extra_risk
+        if self.state == "S":
+            return risk
+        else:
+            assert self.state == "I"
+            return risk * self.p_healthy
 
     @property
     def home_infection_risk(self):
-        if self.state != "S":
+        if self.state == "R":
             return 0
-        return self.env.infected_today / self.env.n * self.c2
+        base_infection_prob = self.env.infected_today / self.env.s
+        risk = base_infection_prob * self.c2
+        if self.state == "S":
+            return risk
+        else:
+            assert self.state == "I"
+            return risk * self.p_healthy
 
     @property
     def u_economic_w(self) -> float:
         # sick people have 0 economic utility
+        sick_reduction = self.p_healthy ** 2  # so that it falls off faster
         return ((1 - self._params['economic_status']) * self.c5
-                + self._params['job_importance'] * self.c6) * self.p_healthy
+                + self._params['job_importance'] * self.c6) * sick_reduction
 
     @property
     def u_virus(self) -> float:
@@ -146,7 +156,7 @@ class _Person:
 
     @property
     def death_risk(self) -> float:
-        return 0.1 * self._params['danger'] ** 2  # TODO: may change
+        return 0.1 * self._params['danger'] ** 2  # TODO: may change if c4 = 0
 
     @property
     def type(self) -> str:

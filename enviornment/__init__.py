@@ -1,8 +1,8 @@
-from .sir import _EnvironmentSIR, _init as _init_sir
+from .sir import _EnvironmentSIR as EnvSIR, _init as _init_sir
 
 
 def init():
     _init_sir()
 
 
-env = _EnvironmentSIR(10000, 10)
+env = EnvSIR(10000, 10)
