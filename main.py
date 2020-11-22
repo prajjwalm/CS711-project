@@ -1,7 +1,7 @@
 import logging
 
 from enviornment import env, init as init_environment
-from players import Simpleton, TypeR, TypeRi, TypeShr,TypePapa, init as init_players
+from players import TypePapa, init as init_players
 
 
 def main():

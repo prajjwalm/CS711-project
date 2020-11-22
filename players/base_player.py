@@ -115,7 +115,8 @@ class _Person:
     def work_infection_risk(self):
         if self.state != "S":
             return 0
-        return self.env.infected_today / self.env.n * self._params["job_risk"] * self.c1
+        return self.env.infected_today / self.env.n * self._params[
+            "job_risk"] * self.c1
 
     @property
     def home_infection_risk(self):
