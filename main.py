@@ -2,7 +2,7 @@ import logging
 
 from enviornment import Env, init as init_environment
 from games import OnePlayerGame, init as init_games
-from players import Simple, init as init_players
+from players import Planner, init as init_players
 
 if __name__ == '__main__':
     env = Env(10000, 10)
@@ -34,7 +34,7 @@ if __name__ == '__main__':
     init_players()
     init_games()
 
-    p = Simple(env, **{
+    p = Planner(env, **{
         "economic_status": 0.4,
         "danger"         : 0.8,
         "job_risk"       : 0.5,

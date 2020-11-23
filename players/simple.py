@@ -1,4 +1,5 @@
 import logging
+from typing import List
 
 from .base_player import BasePlayer
 
@@ -30,3 +31,6 @@ class Simple(BasePlayer):
         self.action_plan.append("W" if work > 0 else "H")
 
         logger.debug("Estimated work payoff: {0}".format(work))
+
+    def update(self, actions: List[str], self_idx: int):
+        pass

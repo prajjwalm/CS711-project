@@ -24,7 +24,22 @@ class OnePlayerGame:
         try:
             for day in self.env:
                 self.p.plan()
-                self.p.act()
+
+                # handle utilities
+                action = self.p.action_plan.pop()
+                self.p.net_utility += \
+                    self.p.u_economic_w if action == 'W' else 0 + self.p.u_virus
+
+                # handle risk
+                risk = \
+                    self.p.w_infection_risk if action == "W" else \
+                        self.p.h_infection_risk
+
+                self.p.state_change(risk)
+
+                if action == "W" and self.p.t_i is None:
+                    self.p.n_w += 1
+
                 logger.info(
                         "True state: {0}, believes himself to be {1:d}% "
                         "healthy, and has a net utility of {2:.2f}, "

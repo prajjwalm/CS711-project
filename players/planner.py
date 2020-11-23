@@ -61,3 +61,6 @@ class Planner(BasePlayer):
 
         self.action_plan.append(action)
         self.last_week_actions.append(action)
+
+    def update(self, actions: List[str], self_idx: int):
+        pass

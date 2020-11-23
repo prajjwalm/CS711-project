@@ -28,6 +28,8 @@ class BasePlayer:
     # reference to the global environment
     env: BaseEnvironment
 
+    # reference to the global game
+
     # list of future actions [str: "W"/"H"]: All implementations fill this
     action_plan: List[str]
 
@@ -54,7 +56,7 @@ class BasePlayer:
         self._params = {x: kwargs.get(x) for x in self._params_list}
         self.net_utility = 0
         self.state = "S"
-        self.belief_update()
+        self.p_healthy = 1
         self.action_plan = []
         self.t_i = None
         self.t_r = None
@@ -67,18 +69,9 @@ class BasePlayer:
     def plan(self):
         raise NotImplementedError
 
-    def act(self):
-        action = self.action_plan.pop()
-        self.net_utility += \
-            self.u_economic_w if action == 'W' else 0 + self.u_virus
-
-        risk = self.w_infection_risk if action == "W" else self.h_infection_risk
-
-        if action == "W" and self.t_i is None:
-            self.n_w += 1
-
-        self.state_change(risk)
-        self.belief_update()
+    def update(self, actions: List[str], self_idx: int):
+        # relevant only for group games
+        raise NotImplementedError
 
     def state_change(self, risk):
         if self.state == "S" and np.random.rand() < risk:
@@ -94,13 +87,9 @@ class BasePlayer:
                 self.net_utility += self.u_death
                 raise NotImplementedError
 
-    def belief_update(self):
-        """ results from a person's observation of their own symptoms """
         if self.state == "R":
             self.p_healthy = 1
             return
-
-        # TODO
         if self.state == "S":
             self.p_healthy = 1
         elif self.state == "I":
@@ -161,3 +150,11 @@ class BasePlayer:
     @property
     def type(self) -> str:
         return self.__class__.__name__
+
+    @property
+    def job_risk(self) -> float:
+        return self._params['job_risk']
+
+    @property
+    def job_importance(self) -> float:
+        return self._params['job_importance']

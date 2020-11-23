@@ -1,4 +1,5 @@
 import logging
+from typing import List
 
 from .base_player import BasePlayer
 
@@ -40,3 +41,6 @@ class Coward(BasePlayer):
         logger.debug("Health belief is {0:.2f}, so choosing {1}".format(
                 self.p_healthy, self.action_plan[-1]
         ))
+
+    def update(self, actions: List[str], self_idx: int):
+        pass
