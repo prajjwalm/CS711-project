@@ -48,7 +48,7 @@ class Planner(_Person):
         n_w = self.last_week_actions.count("W")
         u_pos = self.u_economic_w * self.utility_multiplier[n_w]
         u_neg = \
-            self.work_infection_risk * self.caution_multiplier[n_w] \
+            self.w_infection_risk * self.caution_multiplier[n_w] \
             * self.death_risk * self.u_death * self.p_healthy
 
         action = "W" if u_pos + u_neg > 0 else "H"

@@ -24,7 +24,7 @@ class Simple(_Person):
         virus_util = self.u_virus
         death_risk = self.death_risk
         death_util = self.u_death
-        surplus_risk = self.work_infection_risk - self.home_infection_risk
+        surplus_risk = self.w_infection_risk - self.h_infection_risk
 
         work = cash_work + surplus_risk * (virus_util + death_risk * death_util)
         self.action_plan.append("W" if work > 0 else "H")

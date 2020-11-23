@@ -1,6 +1,6 @@
 import logging
 
-from enviornment import env, init as init_environment
+from enviornment import Env, init as init_environment
 from players import Simple, init as init_players
 
 
@@ -11,7 +11,6 @@ def main():
         "job_risk"       : 0.5,
         "job_importance" : 0.1,
     })
-
     try:
         for day in env:
             p.plan()
@@ -25,8 +24,8 @@ def main():
                             int(p.p_healthy * 100),
                             p.net_utility,
                             env.i / env.n * 100,
-                            p.work_infection_risk * 100,
-                            p.home_infection_risk * 100
+                            p.w_infection_risk * 100,
+                            p.h_infection_risk * 100
                     )
             )
     except NotImplementedError:
@@ -40,6 +39,9 @@ def main():
 
 
 if __name__ == '__main__':
+    env = Env(10000, 10)
+
+
     # setup logging
     class ContextFilter(logging.Filter):
         """ Injects contextual information into the log. """

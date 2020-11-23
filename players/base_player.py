@@ -3,7 +3,7 @@ from typing import Dict, List, Optional
 
 import numpy as np
 
-from enviornment import EnvSIR
+from enviornment import BaseEnvironment
 
 logger: logging.Logger
 
@@ -26,7 +26,7 @@ class _Person:
     ]
 
     # reference to the global environment
-    env: EnvSIR
+    env: BaseEnvironment
 
     # list of future actions [str: "W"/"H"]: All implementations fill this
     action_plan: List[str]
@@ -72,7 +72,7 @@ class _Person:
         self.net_utility += \
             self.u_economic_w if action == 'W' else 0 + self.u_virus
 
-        risk = self.work_infection_risk if action == "W" else self.home_infection_risk
+        risk = self.w_infection_risk if action == "W" else self.h_infection_risk
 
         if action == "W" and self.t_i is None:
             self.n_w += 1
@@ -109,12 +109,12 @@ class _Person:
         self.p_healthy = min(1.0, max(0.0, self.p_healthy))
 
     @property
-    def work_infection_risk(self):
+    def w_infection_risk(self):
         if self.state == "R":
             return 0
         base_infection_prob = self.env.infected_today / self.env.s
         extra_risk = base_infection_prob * self._params["job_risk"] * self.c1
-        risk = self.home_infection_risk + extra_risk
+        risk = self.h_infection_risk + extra_risk
         if self.state == "S":
             return risk
         else:
@@ -122,7 +122,7 @@ class _Person:
             return risk * self.p_healthy
 
     @property
-    def home_infection_risk(self):
+    def h_infection_risk(self):
         if self.state == "R":
             return 0
         base_infection_prob = self.env.infected_today / self.env.s
