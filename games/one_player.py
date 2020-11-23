@@ -31,9 +31,7 @@ class OnePlayerGame:
                     self.p.u_economic_w if action == 'W' else 0 + self.p.u_virus
 
                 # handle risk
-                risk = \
-                    self.p.w_infection_risk if action == "W" else \
-                        self.p.h_infection_risk
+                risk = self.p.w_infection_risk if action == "W" else self.p.h_infection_risk
 
                 self.p.state_change(risk)
 

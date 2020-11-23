@@ -123,11 +123,15 @@ class BasePlayer:
             return risk * self.p_healthy
 
     @property
+    def u_economic_max(self) -> float:
+        return ((1 - self._params['economic_status']) * self.c5
+                + self._params['job_importance'] * self.c6)
+
+    @property
     def u_economic_w(self) -> float:
         # sick people have 0 economic utility
         sick_reduction = self.p_healthy ** 2  # so that it falls off faster
-        return ((1 - self._params['economic_status']) * self.c5
-                + self._params['job_importance'] * self.c6) * sick_reduction
+        return self.u_economic_max * sick_reduction
 
     @property
     def u_virus(self) -> float:

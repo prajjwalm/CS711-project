@@ -77,9 +77,23 @@ class CoWorkersGame(GroupGame):
             assert player.job_importance == group_job_importance
 
     def handle_utilities(self):
-        pass
+        n_work = self.actions.count("W")
+        max_utility = self.players[0].u_economic_max * len(self.players)
+        net_utility = 0
+        for i in range(len(self.players)):
+            if self.actions[i] == 'W':
+                net_utility += self.players[i].u_economic_w
+        u_per_person = net_utility * net_utility / (n_work * max_utility)
+        for i in range(len(self.players)):
+            if self.actions[i] == "W":
+                self.utilities[i] += u_per_person
 
     def handle_risk(self):
+        n_infected = 0
+        for player in self.players:
+            if player.state == "I":
+                pass
+        # risk = self.p.w_infection_risk if action == "W" else self.p.h_infection_risk
         pass
 
 
