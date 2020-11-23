@@ -1,6 +1,6 @@
 import logging
 
-from .base_player import _Person
+from .base_player import BasePlayer
 
 logger: logging.Logger
 
@@ -11,7 +11,7 @@ def _init():
     logger = logging.getLogger("Log")
 
 
-class Simple(_Person):
+class Simple(BasePlayer):
 
     def plan(self):
         """

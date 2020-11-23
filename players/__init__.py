@@ -1,4 +1,4 @@
-from .base_player import _init as _init_base
+from .base_player import BasePlayer, _init as _init_base
 from .coward import Coward, _init as _init_coward
 # from .type_ri import TypeRi, _init as _init_TypeRi
 from .planner import Planner, _init as _init_planner

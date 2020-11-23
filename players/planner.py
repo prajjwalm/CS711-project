@@ -3,7 +3,7 @@ from typing import List
 
 import numpy as np
 
-from .base_player import _Person
+from .base_player import BasePlayer
 
 logger: logging.Logger
 
@@ -14,7 +14,7 @@ def _init():
     logger = logging.getLogger("Log")
 
 
-class Planner(_Person):
+class Planner(BasePlayer):
     last_week_actions: List[str]
     target_days: int
 

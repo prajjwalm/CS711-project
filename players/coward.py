@@ -1,6 +1,6 @@
 import logging
 
-from .base_player import _Person
+from .base_player import BasePlayer
 
 logger: logging.Logger
 
@@ -11,7 +11,7 @@ def _init():
     logger = logging.getLogger("Log")
 
 
-class Coward(_Person):
+class Coward(BasePlayer):
     last_action: str  # Logs last action
 
     def __init__(self, env, *args, **kwargs):

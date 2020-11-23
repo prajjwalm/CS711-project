@@ -14,7 +14,7 @@ def _init():
     logger = logging.getLogger("Log")
 
 
-class _Person:
+class BasePlayer:
     # initialization constants
     # @formatter:off
     _params: Dict[str, Optional[float]]
