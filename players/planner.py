@@ -63,4 +63,17 @@ class Planner(BasePlayer):
         self.last_week_actions.append(action)
 
     def update(self, actions: List[str], self_idx: int):
-        pass
+        working_people = actions.count("W")
+        total_people = len(actions)
+
+        # If less people go to work, player feels inclined to go cause low risk
+        # but less people means less payoff
+        # there is some expected population that he thinks should be in office
+
+        p = working_people/total_people
+        expected_p = 0.6
+
+        # come up with better method to implement
+        self.caution_multiplier = np.power(2.0, np.arange(8) - self.target_days) * p / expected_p
+        self.utility_multiplier = np.power(2.0, self.target_days - np.arange(8)) * expected_p / p
+
