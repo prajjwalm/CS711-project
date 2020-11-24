@@ -56,9 +56,13 @@ class GroupGame:
                     self.players[i].update(self.actions, i)
 
                 # log
-                logger.info("\n Actions taken: {0}"
-                            "\n Utilities:     {1}"
-                            "\n Risks:         {2}".format(self.actions, self.utilities, self.risks))
+                logger.info(
+                    "\n States:        {3}\n Actions taken: {0}\n Utilities:     {1}\n Risks (%):     {2}".format(
+                        " ".join(["   {:4}".format(x) for x in self.actions]),
+                        " ".join(["{:7.2f}".format(x) for x in self.utilities]),
+                        " ".join(["{:7.3f}".format(x * 100) for x in self.risks]),
+                        " ".join(["   {:4}".format(x.state) for x in self.players])
+                    ))
 
                 if n_days is not None and day == n_days:
                     break
@@ -84,6 +88,8 @@ class CoWorkersGame(GroupGame):
 
     def handle_utilities(self):
         n_work = self.actions.count("W")
+        if n_work == 0:
+            return
         max_utility = self.players[0].u_economic_max * len(self.players)
         net_utility = 0
         for i in range(len(self.players)):
