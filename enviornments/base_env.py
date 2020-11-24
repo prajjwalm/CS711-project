@@ -11,7 +11,7 @@ def _init():
 
 
 class BaseEnvironment:
-    """ All models may borrow from this """
+    """ All models inherit from this """
 
     # consts
     TIMES: Dict[str, float] = {
@@ -58,14 +58,6 @@ class BaseEnvironment:
     @property
     def r(self) -> int:
         raise NotImplementedError
-
-    @property
-    def t_incubation(self):
-        return self.TIMES['symptoms']
-
-    @property
-    def t_recovery(self):
-        return self.TIMES['removal']
 
     @property
     def infected_today(self):

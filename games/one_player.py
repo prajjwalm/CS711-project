@@ -1,6 +1,6 @@
 import logging
 
-from enviornment import BaseEnvironment
+from enviornments import BaseEnvironment
 from players import BasePlayer
 
 logger: logging.Logger
@@ -25,13 +25,15 @@ class OnePlayerGame:
             for day in self.env:
                 self.p.plan()
 
-                # handle utilities
                 action = self.p.action_plan.pop()
-                self.p.net_utility += \
-                    self.p.u_economic_w if action == 'W' else 0 + self.p.u_virus
 
-                # handle risk
-                risk = self.p.w_infection_risk if action == "W" else self.p.h_infection_risk
+                # handle utilities and risk
+                if action == "W":
+                    self.p.net_utility += self.p.u_economic_w
+                    risk = self.p.w_infection_risk
+                else:
+                    risk = self.p.h_infection_risk
+                self.p.net_utility += self.p.u_virus
 
                 self.p.state_change(risk)
 
@@ -39,17 +41,15 @@ class OnePlayerGame:
                     self.p.n_w += 1
 
                 logger.info(
-                        "True state: {0}, believes himself to be {1:d}% "
-                        "healthy, and has a net utility of {2:.2f}, "
-                        "(percentage infected = {3:.2f}%, work risk = {4:.3f}%,"
-                        " home risk = {5:.3f}%)".format(
-                                self.p.state,
-                                int(self.p.p_healthy * 100),
-                                self.p.net_utility,
-                                self.env.i / self.env.n * 100,
-                                self.p.w_infection_risk * 100,
-                                self.p.h_infection_risk * 100
-                        )
+                    "True state: {0}, believes himself to be {1:d}% healthy, and has a net utility of {2:.2f}, "
+                    "(percentage infected = {3:.2f}%, work risk = {4:.3f}%, home risk = {5:.3f}%)".format(
+                        self.p.state,
+                        int(self.p.p_healthy * 100),
+                        self.p.net_utility,
+                        self.env.i / self.env.n * 100,
+                        self.p.w_infection_risk * 100,
+                        self.p.h_infection_risk * 100
+                    )
                 )
                 if n_days is not None and day == n_days:
                     break
@@ -57,8 +57,6 @@ class OnePlayerGame:
             logger.critical("Old doc dead")
 
         if self.p.t_i is not None:
-            print("Went to work {0:d} days before getting infected on the "
-                  "{1:d}th day".format(self.p.n_w, self.p.t_i))
+            print("Went to work {0:d} days before getting infected on the {1:d}th day".format(self.p.n_w, self.p.t_i))
         else:
-            print("Went to work {0:d} days, didn't get infected"
-                  "".format(self.p.n_w))
+            print("Went to work {0:d} days, didn't get infected".format(self.p.n_w))

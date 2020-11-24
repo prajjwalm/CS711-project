@@ -1,11 +1,14 @@
 import logging
 
-from enviornment import Env, init as init_environment
-from games import OnePlayerGame, init as init_games
-from players import Planner, init as init_players
+import numpy as np
+
+from enviornments import Env, init as init_environment
+from games import CoWorkersGame, init as init_games
+from players import Planner, Coward, Simple, init as init_players
 
 if __name__ == '__main__':
     env = Env(10000, 10)
+
 
     # setup logging
     class ContextFilter(logging.Filter):
@@ -19,12 +22,12 @@ if __name__ == '__main__':
     logger = logging.getLogger("Log")
 
     # change log level here; note: all modules use the same logger
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(logging.INFO)
 
     fh = logging.FileHandler("logs/proceeds.log", mode='w')
     fh.setFormatter(logging.Formatter(
-            "%(module)s(%(lineno)d): %(funcName)s [%(levelname)s] "
-            "(Day %(day)s): %(message)s"
+        "%(module)s(%(lineno)d): %(funcName)s [%(levelname)s] "
+        "(Day %(day)s): %(message)s"
     ))
     logger.addHandler(fh)
     logger.addFilter(ContextFilter())
@@ -34,12 +37,25 @@ if __name__ == '__main__':
     init_players()
     init_games()
 
-    p = Planner(env, **{
-        "economic_status": 0.4,
-        "danger"         : 0.8,
-        "job_risk"       : 0.5,
-        "job_importance" : 0.1,
-    })
+    players = []
+    common = {
+        "job_risk"      : 0.5,
+        "job_importance": 0.1
+    }
+    for i in range(4):
+        players.append(Coward(env, **common,
+                              economic_status=0.4 + 0.2 * np.random.rand(),
+                              danger=0.3 + 0.2 * np.random.rand()))
 
-    game = OnePlayerGame(p, env)
+    for i in range(4):
+        players.append(Simple(env, **common,
+                              economic_status=0.4 + 0.2 * np.random.rand(),
+                              danger=0.3 + 0.2 * np.random.rand()))
+
+    for i in range(4):
+        players.append(Planner(env, **common,
+                               economic_status=0.4 + 0.2 * np.random.rand(),
+                               danger=0.3 + 0.2 * np.random.rand()))
+
+    game = CoWorkersGame(players, env)
     game.play()

@@ -3,7 +3,7 @@ from typing import Dict, List, Optional
 
 import numpy as np
 
-from enviornment import BaseEnvironment
+from enviornments import BaseEnvironment
 
 logger: logging.Logger
 
@@ -51,9 +51,10 @@ class BasePlayer:
 
     # @formatter:on
 
-    def __init__(self, env, *args, **kwargs):
+    def __init__(self, env, *, economic_status, danger, job_risk, job_importance):
         self.env = env
-        self._params = {x: kwargs.get(x) for x in self._params_list}
+        l = locals()
+        self._params = {x: l.get(x) for x in self._params_list}
         self.net_utility = 0
         self.state = "S"
         self.p_healthy = 1
@@ -62,8 +63,8 @@ class BasePlayer:
         self.t_r = None
         self.n_w = 0
 
-        logger.debug("{0} initialized with params: {1}".format(
-                self.type, self._params
+        logger.info("{0} initialized with params: {1}".format(
+            self.type, self._params
         ))
 
     def plan(self):
@@ -77,7 +78,8 @@ class BasePlayer:
         if self.state == "S" and np.random.rand() < risk:
             self.state = "I"
             self.t_i = self.env.t
-        elif self.state == "I" and self.env.t - self.t_i >= self.env.t_recovery:
+        elif self.state == "I" \
+                and self.env.t - self.t_i >= self.env.TIMES['removal']:
             if np.random.rand() > self.death_risk:
                 self.state = "R"
                 self.t_r = self.env.t
@@ -93,7 +95,7 @@ class BasePlayer:
         if self.state == "S":
             self.p_healthy = 1
         elif self.state == "I":
-            self.p_healthy = 1 - (self.env.t - self.t_i) / self.env.t_incubation
+            self.p_healthy = 1 - (self.env.t - self.t_i) / self.env.TIMES['infectious']
         self.p_healthy += np.random.normal() / 16
         self.p_healthy = min(1.0, max(0.0, self.p_healthy))
 
@@ -139,7 +141,7 @@ class BasePlayer:
         # [unrelated to possibility of death]
         if self.state != "I":
             return 0
-        if self.env.t - self.t_i > self.env.t_incubation:
+        if self.env.t - self.t_i > self.env.TIMES['symptoms']:
             return - self._params["danger"] * self.c4
         return 0
 

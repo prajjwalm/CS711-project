@@ -1,7 +1,7 @@
 import logging
 from typing import List
 
-from enviornment import BaseEnvironment
+from enviornments import BaseEnvironment
 from players import BasePlayer
 
 logger: logging.Logger
@@ -16,6 +16,7 @@ def _init():
 class GroupGame:
     players: List[BasePlayer]
     utilities: List[float]
+    risks: List[float]
     actions: List[str]
 
     env: BaseEnvironment
@@ -24,6 +25,7 @@ class GroupGame:
         self.env = env
         self.players = players
         self.utilities = [0] * len(players)
+        self.risks = [0] * len(players)
         self.actions = ["W"] * len(players)
 
     def handle_utilities(self):
@@ -54,7 +56,9 @@ class GroupGame:
                     self.players[i].update(self.actions, i)
 
                 # log
-                # nothing
+                logger.info("\n Actions taken: {0}"
+                            "\n Utilities:     {1}"
+                            "\n Risks:         {2}".format(self.actions, self.utilities, self.risks))
 
                 if n_days is not None and day == n_days:
                     break
@@ -63,18 +67,20 @@ class GroupGame:
 
 
 class CoWorkersGame(GroupGame):
+    job_risk: float
+    job_importance: float
 
     def __init__(self, players: List[BasePlayer], env: BaseEnvironment):
         super().__init__(players, env)
 
         # all players share the same job
-        group_job_risk = players[0].job_risk
+        self.job_risk = players[0].job_risk
         for player in players[1:]:
-            assert player.job_risk == group_job_risk
+            assert player.job_risk == self.job_risk
 
-        group_job_importance = players[0].job_importance
+        self.job_importance = players[0].job_importance
         for player in players[1:]:
-            assert player.job_importance == group_job_importance
+            assert player.job_importance == self.job_importance
 
     def handle_utilities(self):
         n_work = self.actions.count("W")
@@ -89,12 +95,25 @@ class CoWorkersGame(GroupGame):
                 self.utilities[i] += u_per_person
 
     def handle_risk(self):
-        n_infected = 0
+        n_infectious = 0
+        infectious_cutoff = self.env.t - self.env.TIMES["infectious"]
         for player in self.players:
-            if player.state == "I":
-                pass
-        # risk = self.p.w_infection_risk if action == "W" else self.p.h_infection_risk
-        pass
+            if player.state == "I" and player.t_i < infectious_cutoff:
+                n_infectious += 1
+
+        for i in range(len(self.players)):
+            if self.actions[i] == "H":
+                risk = self.players[i].h_infection_risk
+            elif n_infectious == 0:
+                risk = self.players[i].w_infection_risk
+            else:
+                # probability of infection when one is sick
+                pr = self.env.R0 / (self.env.TIMES["removal"] - self.env.TIMES['infectious'])
+
+                # total probability of infection
+                risk = (1 - (1 - pr) ** n_infectious) * self.job_risk + self.players[i].w_infection_risk
+            self.players[i].state_change(risk)
+            self.risks[i] = risk
 
 
 class NeighboursGame(GroupGame):
