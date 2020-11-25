@@ -13,6 +13,11 @@ def _init():
 
 
 class Simple(BasePlayer):
+    caution_multiplier: float
+
+    def __init__(self, env, *args, **kwargs):
+        super().__init__(env, *args, **kwargs)
+        self.caution_multiplier = 1
 
     def plan(self):
         """
@@ -25,7 +30,7 @@ class Simple(BasePlayer):
         virus_util = self.u_virus
         death_risk = self.death_risk
         death_util = self.u_death
-        surplus_risk = self.w_infection_risk - self.h_infection_risk
+        surplus_risk = self.caution_multiplier * self.w_infection_risk - self.h_infection_risk
 
         work = cash_work + surplus_risk * (virus_util + death_risk * death_util)
         self.action_plan.append("W" if work > 0 else "H")
@@ -33,4 +38,8 @@ class Simple(BasePlayer):
         logger.debug("Estimated work payoff: {0}".format(work))
 
     def update(self, actions: List[str], self_idx: int):
-        pass
+        work_people = actions.count("W")
+        total_people = len(actions)
+        attendance = work_people / total_people
+        if attendance > 0.5:
+            self.caution_multiplier = 4 * attendance * attendance
