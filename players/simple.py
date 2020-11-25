@@ -14,10 +14,12 @@ def _init():
 
 class Simple(BasePlayer):
     caution_multiplier: float
+    alert: bool
 
     def __init__(self, env, *args, **kwargs):
         super().__init__(env, *args, **kwargs)
         self.caution_multiplier = 1
+        self.alert = False
 
     def plan(self):
         """
@@ -41,5 +43,12 @@ class Simple(BasePlayer):
         work_people = actions.count("W")
         total_people = len(actions)
         attendance = work_people / total_people
-        if attendance > 0.5:
-            self.caution_multiplier = 4 * attendance * attendance
+        extra_caution = 10 if self.alert else 1
+        if attendance > 0.75:
+            self.caution_multiplier = 2 * attendance * attendance * extra_caution
+        else:
+            self.caution_multiplier = 1 * extra_caution
+        self.alert = False
+
+    def on_alert(self):
+        self.alert = True
