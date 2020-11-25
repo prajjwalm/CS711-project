@@ -2,7 +2,7 @@ import logging
 from typing import List
 
 from enviornments import BaseEnvironment
-from players import BasePlayer
+from players import BasePlayer, DeathException
 
 logger: logging.Logger
 
@@ -55,7 +55,10 @@ class GroupGame:
                 self.handle_risk()
 
                 # if someone is symptomatic
-                self.alert()
+                try:
+                    self.alert()
+                except NotImplementedError:
+                    pass
 
                 # inform players of other's actions
                 for i in range(len(self.players)):
@@ -72,7 +75,7 @@ class GroupGame:
 
                 if n_days is not None and day == n_days:
                     break
-        except NotImplementedError:
+        except DeathException:
             logger.critical("Group member dead")
 
 
@@ -101,6 +104,7 @@ class CoWorkersGame(GroupGame):
                 alert = True
                 break
         if alert:
+            logger.info("GROUP ALERTED")
             for p in self.players:
                 p.on_alert()
 

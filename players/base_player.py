@@ -14,6 +14,11 @@ def _init():
     logger = logging.getLogger("Log")
 
 
+class DeathException(Exception):
+    def __init__(self, msg=None):
+        self.msg = msg
+
+
 class BasePlayer:
     # initialization constants
     # @formatter:off
@@ -91,7 +96,8 @@ class BasePlayer:
                 # TODO: handle game-over here
                 self.state = "X"
                 self.net_utility += self.u_death
-                raise NotImplementedError
+                logger.info("DEAD")
+                raise DeathException
 
         if self.state == "R":
             self.p_healthy = 1
@@ -100,7 +106,7 @@ class BasePlayer:
             self.p_healthy = 1
         elif self.state == "I":
             self.p_healthy = 1 - (self.env.t - self.t_i) / self.env.TIMES['infectious']
-        self.p_healthy += np.random.normal() / 16
+        self.p_healthy += np.random.rand() / 4 - 0.125
         self.p_healthy = min(1.0, max(0.0, self.p_healthy))
 
     @property

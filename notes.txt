@@ -1,3 +1,46 @@
+t = 0
+
+for all types: ratio(W)
+
+t = 1
+
+for all types: ratio(W) ??
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # info on data.json
     > danger is sqrt death_risk (adjust constant in base player)
 

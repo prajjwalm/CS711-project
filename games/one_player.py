@@ -1,7 +1,7 @@
 import logging
 
 from enviornments import BaseEnvironment
-from players import BasePlayer
+from players import BasePlayer, DeathException
 
 logger: logging.Logger
 
@@ -53,7 +53,7 @@ class OnePlayerGame:
                 )
                 if n_days is not None and day == n_days:
                     break
-        except NotImplementedError:
+        except DeathException:
             logger.critical("Old doc dead")
 
         if self.p.t_i is not None:

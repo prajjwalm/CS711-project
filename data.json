@@ -1,22 +1,22 @@
 {
   "jobs-param-order": ["job-risk", "job-importance", "economic-status"],
   "jobs": {
-    "Agri-and-allied-activities": [0.20, 0.40, 0.20],
-    "doctors/essential-services": [0.80, 1.00, 0.72],
-    "manufacturing-related": [0.5, 0.2, 0.5],
-    "white-collar/students": [0.00, 0.04, 0.80],
+    "primary": [0.20, 0.40, 0.20],
+    "secondary": [0.5, 0.2, 0.5],
+    "tertiary": [0.00, 0.04, 0.80],
+    "essential": [0.80, 1.00, 0.72],
     "retired": [1.00, 0.00, 1.00]
   },
+  "population-groups": ["Below 45", "45-60", "Above 60"],
   "population": {
-    "population-groups": ["Below 45", "45-60", "Above 60"],
     "young": {
       "danger": 0.2,
       "ratio": 0.78,
       "job-dist": {
-        "Agri-and-allied-activities": 0.3,
-        "doctors/essential-services": 0.12,
-        "manufacturing-related": 0.3,
-        "white-collar/students": 0.28,
+        "primary": 0.3,
+        "essential": 0.12,
+        "secondary": 0.3,
+        "tertiary": 0.28,
         "retired": 0.0
       }
     },
@@ -24,10 +24,10 @@
       "danger": 0.66,
       "ratio": 0.13,
       "job-dist": {
-        "Agri-and-allied-activities": 0.65,
-        "doctors/essential-services": 0.05,
-        "manufacturing-related": 0.15,
-        "white-collar/students": 0.05,
+        "primary": 0.65,
+        "essential": 0.05,
+        "secondary": 0.15,
+        "tertiary": 0.05,
         "retired": 0.1
       }
     },
@@ -35,12 +35,25 @@
       "danger": 0.92,
       "ratio": 0.09,
       "job-dist": {
-        "Agri-and-allied-activities": 0.4,
-        "doctors/essential-services": 0.02,
-        "manufacturing-related": 0.0,
-        "white-collar/students": 0.03,
+        "primary": 0.4,
+        "essential": 0.02,
+        "secondary": 0.0,
+        "tertiary": 0.03,
         "retired": 0.55
       }
+    }
+  },
+  "game-params": {
+    "R0": 2.4,
+    "t_infectious": 3,
+    "t_symptoms": 5,
+    "t_removal": 21,
+    "p-healthy-fluctuation": 0.25
+  },
+  "player-types": {
+    "coward": {
+      "w-threshold": 0.96,
+      "h-threshold": 0.90
     }
   }
 }
