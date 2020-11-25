@@ -54,6 +54,9 @@ class GroupGame:
                 # handle risk
                 self.handle_risk()
 
+                # if someone is symptomatic
+                self.alert()
+
                 # inform players of other's actions
                 for i in range(len(self.players)):
                     self.players[i].update(self.actions, i)
