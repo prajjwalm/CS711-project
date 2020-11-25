@@ -9,7 +9,6 @@ from players import Planner, Coward, Simple, init as init_players
 if __name__ == '__main__':
     env = Env(10000, 10)
 
-
     # setup logging
     class ContextFilter(logging.Filter):
         """ Injects contextual information into the log. """

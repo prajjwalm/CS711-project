@@ -19,7 +19,7 @@ class BaseEnvironment:
         "symptoms"  : 5,  # from this time a person starts showing symptoms
         "removal"   : 21  # expected recovery time (for normal cases)
     }
-    R0: float = 1.5
+    R0: float = 2.4
 
     def __init__(self, n, *, max_t=5 * 365):
         # THIS CONSTRUCTOR CANNOT HAVE LOGGING

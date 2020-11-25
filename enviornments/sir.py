@@ -24,7 +24,7 @@ class _EnvironmentSIR(BaseEnvironment):
     beta: float
     gamma: float
 
-    def __init__(self, n, i, *, beta=None, gamma=None, max_t=5 * 365):
+    def __init__(self, n, i, *, beta=0.134, gamma=0.055, max_t=5 * 365):
         # THIS CONSTRUCTOR CANNOT HAVE LOGGING
         super().__init__(n, max_t=max_t)
         self._s = n - i

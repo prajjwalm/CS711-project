@@ -34,6 +34,9 @@ class GroupGame:
     def handle_risk(self):
         raise NotImplementedError
 
+    def alert(self):
+        raise NotImplementedError
+
     def play(self, n_days=None):
         try:
             for day in self.env:
@@ -71,6 +74,7 @@ class GroupGame:
 
 
 class CoWorkersGame(GroupGame):
+
     job_risk: float
     job_importance: float
 
@@ -85,6 +89,17 @@ class CoWorkersGame(GroupGame):
         self.job_importance = players[0].job_importance
         for player in players[1:]:
             assert player.job_importance == self.job_importance
+
+    def alert(self):
+        symptoms_cutoff = self.env.t - self.env.TIMES['symptoms']
+        alert = False
+        for p in self.players:
+            if p.state == "I" and p.t_i < symptoms_cutoff:
+                alert = True
+                break
+        if alert:
+            for p in self.players:
+                p.on_alert()
 
     def handle_utilities(self):
         n_work = self.actions.count("W")

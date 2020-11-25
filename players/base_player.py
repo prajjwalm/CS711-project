@@ -70,8 +70,12 @@ class BasePlayer:
     def plan(self):
         raise NotImplementedError
 
+    # relevant only for group games
     def update(self, actions: List[str], self_idx: int):
-        # relevant only for group games
+        raise NotImplementedError
+
+    # relevant only for group games
+    def on_alert(self):
         raise NotImplementedError
 
     def state_change(self, risk):

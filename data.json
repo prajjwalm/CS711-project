@@ -1,0 +1,21 @@
+{
+  "_partition": "age",
+  "_groups": {
+    "young": {
+      "danger": 0.032,
+      "ratio": 0.53,
+      "_partition": "jobs?",
+      "_groups": {
+        "TODO": "..."
+      }
+    },
+    "middle": {
+      "danger": 0.100,
+      "ratio": 0.26
+    },
+    "old": {
+      "danger": 0.245,
+      "ratio": 0.53
+    }
+  }
+}
