@@ -1,21 +1,41 @@
 {
-  "_partition": "age",
-  "_groups": {
+  "jobs-param-order": ["job-risk", "job-importance", "economic-status"],
+  "jobs": {
+    "farmers": [0.20, 0.40, 0.30],
+    "doctors": [0.80, 1.00, 0.72],
+    "hedge-fund-employees": [0.00, 0.04, 0.80],
+    "retired": [1.00, 0.00, 1.00]
+  },
+  "population": {
     "young": {
       "danger": 0.032,
       "ratio": 0.53,
-      "_partition": "jobs?",
-      "_groups": {
-        "TODO": "..."
+      "job-dist": {
+        "farmers": 0.3,
+        "doctors": 0.02,
+        "hedge-fund-employees": 0.68,
+        "retired": 0.0
       }
     },
     "middle": {
       "danger": 0.100,
-      "ratio": 0.26
+      "ratio": 0.26,
+      "job-dist": {
+        "farmers": 0.4,
+        "doctors": 0.5,
+        "hedge-fund-employees": 0.08,
+        "retired": 0.02
+      }
     },
     "old": {
       "danger": 0.245,
-      "ratio": 0.53
+      "ratio": 0.53,
+      "job-dist": {
+        "farmers": 0.0,
+        "doctors": 0.0,
+        "hedge-fund-employees": 0.0,
+        "retired": 1.0
+      }
     }
   }
 }
