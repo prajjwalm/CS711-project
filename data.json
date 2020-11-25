@@ -1,8 +1,9 @@
 {
   "jobs-param-order": ["job-risk", "job-importance", "economic-status"],
   "jobs": {
-    "farmers": [0.20, 0.40, 0.30],
+    "Agri-and-allied-activities": [0.20, 0.40, 0.20],
     "doctors/essential-services": [0.80, 1.00, 0.72],
+    "manufacturing-related": [0.5, 0.2, 0.5],
     "white-collar/students": [0.00, 0.04, 0.80],
     "retired": [1.00, 0.00, 1.00]
   },
@@ -12,9 +13,10 @@
       "danger": 0.2,
       "ratio": 0.78,
       "job-dist": {
-        "farmers": 0.3,
+        "Agri-and-allied-activities": 0.3,
         "doctors/essential-services": 0.12,
-        "white-collar/students": 0.58,
+        "manufacturing-related": 0.3,
+        "white-collar/students": 0.28,
         "retired": 0.0
       }
     },
@@ -22,9 +24,10 @@
       "danger": 0.66,
       "ratio": 0.13,
       "job-dist": {
-        "farmers": 0.65,
+        "Agri-and-allied-activities": 0.65,
         "doctors/essential-services": 0.05,
-        "white-collar/students": 0.2,
+        "manufacturing-related": 0.15,
+        "white-collar/students": 0.05,
         "retired": 0.1
       }
     },
@@ -32,10 +35,11 @@
       "danger": 0.92,
       "ratio": 0.09,
       "job-dist": {
-        "farmers": 0.5,
+        "Agri-and-allied-activities": 0.4,
         "doctors/essential-services": 0.02,
+        "manufacturing-related": 0.0,
         "white-collar/students": 0.03,
-        "retired": 0.45
+        "retired": 0.55
       }
     }
   }
