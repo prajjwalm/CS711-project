@@ -40,7 +40,6 @@ class Population:
 
         self.coward_data = raw_data["player-types"]["coward"]
 
-
         for k1, v1 in raw_data["jobs"].items():
             for k2, v2 in raw_data["population"].items():
                 self.sections.append(k2 + " " + k1)
@@ -68,9 +67,30 @@ class Population:
         threshold_sw = self.coward_data['w-threshold']
         threshold_sh = self.coward_data['h-threshold']
 
-        ratio_over_threshold_w = (threshold_sw - (1 - fluctuation)) / (2 * fluctuation)
-        ratio_over_threshold_h = (threshold_sh - (1 - fluctuation)) / (2 * fluctuation)
+        total_days = self.env.TIMES["removal"]
+        unaware_days = self.env.TIMES["infectious"]
+
+        ratio_over_threshold_w = 1 - ((threshold_sw - (1 - self.fluctuation / 2)) / self.fluctuation)
+        ratio_over_threshold_h = 1 - ((threshold_sh - (1 - self.fluctuation / 2)) / self.fluctuation)
 
         w.append(last_w[0] * ratio_over_threshold_w + (1 - last_w[0]) * ratio_over_threshold_h)
+
+        for i in range(total_days):
+            if i < unaware_days:
+                ratio_over_threshold_w = 1 - (
+                        (threshold_sw - (1 - (i + 1) / unaware_days - self.fluctuation / 2)) / self.fluctuation)
+                ratio_over_threshold_w = min(1, max(ratio_over_threshold_w, 0))
+                ratio_over_threshold_h = 1 - (
+                        (threshold_sh - (1 - (i + 1) / unaware_days - self.fluctuation / 2)) / self.fluctuation)
+                ratio_over_threshold_h = min(1, max(ratio_over_threshold_h, 0))
+            else:
+                ratio_over_threshold_w = max((self.fluctuation / 2 - threshold_sw) / self.fluctuation, 0)
+                ratio_over_threshold_h = max((self.fluctuation / 2 - threshold_sh) / self.fluctuation, 0)
+            w.append(last_w[i] * ratio_over_threshold_w + (1 - last_w[i]) * ratio_over_threshold_h)
+
+        ratio_over_threshold_w = 1 - ((threshold_sw - (1 - self.fluctuation / 2)) / self.fluctuation)
+        ratio_over_threshold_h = 1 - ((threshold_sh - (1 - self.fluctuation / 2)) / self.fluctuation)
+
+        w.append(last_w[total_days] * ratio_over_threshold_w + (1 - last_w[total_days]) * ratio_over_threshold_h)
 
         return w
