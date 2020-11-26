@@ -45,9 +45,9 @@
   },
   "game-params": {
     "R0": 2.4,
-    "t_infectious": 3,
-    "t_symptoms": 5,
-    "t_removal": 21,
+    "t-infectious": 3,
+    "t-symptoms": 5,
+    "t-removal": 21,
     "p-healthy-fluctuation": 0.25
   },
   "player-types": {

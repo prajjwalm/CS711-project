@@ -14,7 +14,7 @@ class BaseEnvironment:
     """ All models inherit from this """
 
     # consts
-    TIMES: Dict[str, float] = {
+    TIMES: Dict[str, int] = {
         "infectious": 3,  # a person becomes capable of infecting others here
         "symptoms"  : 5,  # from this time a person starts showing symptoms
         "removal"   : 21  # expected recovery time (for normal cases)

@@ -105,7 +105,7 @@ class BasePlayer:
         if self.state == "S":
             self.p_healthy = 1
         elif self.state == "I":
-            self.p_healthy = 1 - (self.env.t - self.t_i) / self.env.TIMES['infectious']
+            self.p_healthy = 1 - (self.env.t - self.t_i) / self.env.TIMES['symptoms']
         fluctuation = 0.25
         self.p_healthy += (np.random.rand() - 0.5) * fluctuation
         self.p_healthy = min(1.0, max(0.0, self.p_healthy))

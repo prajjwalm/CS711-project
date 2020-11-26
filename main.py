@@ -4,9 +4,9 @@ from enviornments import Env, init as init_environment
 from games import Population, init as init_games
 from players import init as init_players
 
-if __name__ == '__main__':
-    env = Env(10000, 10)
 
+def main():
+    env = Env(10000, 10)
 
     # setup logging
     class ContextFilter(logging.Filter):
@@ -15,7 +15,6 @@ if __name__ == '__main__':
         def filter(self, record):
             record.day = env.t
             return True
-
 
     logger = logging.getLogger("Log")
 
@@ -35,7 +34,7 @@ if __name__ == '__main__':
     init_players()
     init_games()
 
-    pop = Population(env)
+    pop = Population()
 
     # players = []
     # common = {
@@ -59,3 +58,7 @@ if __name__ == '__main__':
     #
     # game = CoWorkersGame(players, env)
     # game.play()
+
+
+if __name__ == '__main__':
+    main()

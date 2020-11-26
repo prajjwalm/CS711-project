@@ -7,7 +7,8 @@ t = 1
 for all types: ratio(W) ??
 
 
-
+TODO BUGS:
+    1. sick people don't work in groups, so why raise the chance of infection?
 
 
 
