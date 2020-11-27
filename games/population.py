@@ -76,6 +76,15 @@ class Population:
 
     def execute_infection(self, eta_iw, eta_ih):
         """
+        Adjusts self.people and self.eta_w forward by one day wrt the pandemic.
+
+        While the adjustment of self.people is trivial, an example would help to understand how
+        self.eta_w is modified: say, get_action_cowards sets self.eta_w[1, 0, 3] = 0.7, (ie. we
+        compute 70% of young primary cowards at their 3rd day of infection choose work) then, this
+        function will set self.eta_w[1, 0, 4] = 0.7 (so that when get_action_cowards is called
+        again, they see that 70% of people currently in their 4th day of infection had chosen work
+        yesterday)
+
         :param eta_iw: ratio of people who got infected among those who worked yesterday
         :type eta_iw:  float
 
@@ -84,8 +93,8 @@ class Population:
         """
 
         # 1. find out the ratio of susceptible that are getting infected
-        eta_ws = self.eta_w[:, :, 0]  # ratio of people who worked (section x archetype)
-        eta_i = eta_ws * eta_iw + (1 - eta_ws) * eta_ih  # ratio of people who got infected (section x archetype)
+        eta_w = self.eta_w[:, :, 0]  # ratio of people who worked (section x archetype) among S
+        eta_i = eta_w * eta_iw + (1 - eta_w) * eta_ih  # ratio of people who got infected (section x archetype)
         assert eta_i.shape == (len(self.sections), self.N)
 
         # 2. find out the ratio of last day infected recovering
@@ -94,7 +103,7 @@ class Population:
         survival = 1 - np.asarray([0.1 * x[d_idx] ** 2 for x in self.params])
         assert survival.shape == (len(self.sections), self.N)
 
-        # 3. execute the transitions
+        # 3. execute the population transitions
         fresh_infected = eta_i * self.people[:, :, 0]
         fresh_recovered = survival * self.people[:, :, -2]
         fresh_deaths = self.people[:, :, -2] - fresh_recovered
@@ -105,16 +114,30 @@ class Population:
         self.people[:, :, 1] = fresh_infected
         self.deaths += fresh_deaths
 
+        # 4. execute the eta_w transitions (note: eta_w will be wrt the new population distribution)
+        eta_wi = eta_iw * eta_w / eta_i  # P[worked given they get infected]
+        eta_ws = (1 - eta_iw) * eta_w / (1 - eta_i)  # P[worked given they remain susceptible]
+        self.eta_w[:, :, 2:-1] = self.eta_w[:, :, 1:-2]
+        self.eta_w[:, :, -1] = 1 - fresh_recovered / self.people[:, :, -1]
+        self.eta_w[:, :, 1] = eta_wi
+        self.eta_w[:, :, 0] = eta_ws
+
     def execute_action_cowards(self):
         pass
 
     # TODO(@CC): do this directly using numpy (i.e. remove loops), handle all idx together
     # should also be able to handle all i_stages together, no loops needed
     def get_action_cowards(self):
-        """ forward eta_w[all_archetypes, C, all_stages] by one day """
+        """
+        Forwards eta_w[all_archetypes, C, all_stages] by one day. That is, using self parameters (in
+        particular self.eta_w, the ratio of people in each cell of (section x archetype x i_stage)
+        who had chosen to work yesterday (they might have been in a different cell per the last axis
+        then)) set self.eta_w to the ratio of people in each cell who will choose to work today.
+        """
         new_eta_wc = np.zeros((len(self.sections), 1, self.n_stages))
         for i in range(len(self.sections)):
-            new_eta_wc[i, 0, :] = np.asarray(self._get_action_cowards(i, self.eta_w[i, self.C, :]))
+            new_eta_wc[i, 0, :] = np.asarray(self._get_action_cowards(i, self.eta_w[i, self.C, :].tolist()))
+        self.eta_w[:, 0, :] = new_eta_wc
 
     def _get_action_cowards(self, idx, last_w):
         """
