@@ -143,7 +143,10 @@ class BasePlayer:
     @property
     def u_economic_w(self) -> float:
         # sick people have 0 economic utility
+
+        # TODO: replace with mean/step (?)
         sick_reduction = self.p_healthy ** 2  # so that it falls off faster
+
         return self.u_economic_max * sick_reduction
 
     @property

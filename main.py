@@ -6,6 +6,7 @@ from players import init as init_players
 
 
 def main():
+    # TODO:make this work for stage 3 too
     env = Env(10000, 10)
 
     # setup logging
@@ -35,6 +36,7 @@ def main():
     init_games()
 
     pop = Population()
+    pop.simulate()
 
     # players = []
     # common = {
