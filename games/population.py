@@ -32,6 +32,7 @@ class Population:
 
     # constants used in various archetypes
     coward_data:    Dict[str, float]
+    base_data:      Dict[str, float]
 
     # player division across ( section x archetype x i_stage )
     n_stages:       int         # number of stages
@@ -51,6 +52,9 @@ class Population:
     S:              int = 2     # archetype index for type simple
     n_arch:         int = 3     # number of archetypes
 
+    eta_iw:         float
+    eta_ih:         float
+    survival:       np.ndarray
     # @formatter:on
 
     class ForcedExit(Exception):
@@ -75,6 +79,10 @@ class Population:
         self.env_params = raw_data['game-params']
         self.fluctuation = self.env_params['p-healthy-fluctuation']
         self.coward_data = raw_data["player-types"]["coward"]
+        self.base_data = raw_data["player-types"]["base-player"]
+        self.eta_iw = 0
+        self.eta_ih = 0
+
 
         for k1, v1 in raw_data["jobs"].items():
             for k2, v2 in raw_data["population"].items():
@@ -83,7 +91,7 @@ class Population:
                 self.pops.append(v2['ratio'] * v2['job-dist'][k1])
 
         self.n_stages = self.env_params['t-removal'] + 1
-        self.people = np.zeros((len(self.sections), 3, self.n_stages))
+        self.people = np.zeros((len(self.sections), self.n_arch, self.n_stages))
         self.people[:, self.C, 0] = np.array(self.pops) * 0.99
         self.people[:, self.C, 1] = np.array(self.pops) - self.people[:, self.C, 0]
         self.net_utility = 0
@@ -98,6 +106,11 @@ class Population:
             np.asarray([x[1] for x in self.params]) * 1 + \
             (1 - np.asarray([x[2] for x in self.params])) * 1
         assert self.u_per_capita.shape == (len(self.sections),)
+
+        d_idx = 3
+        assert self.params_order[d_idx] == "danger"
+        self.survival = 1 - np.asarray([0.1 * x[d_idx] ** 2 for x in self.params])
+        assert self.survival.shape == (len(self.sections),)
 
         print(self.people)
 
@@ -127,28 +140,24 @@ class Population:
         coeff_i = 0.01
         coeff_wi = 0.1
 
-        eta_ih = total_infectious * coeff_i
-        eta_iw = 1 - (1 - total_infectious * coeff_i) * (1 - working_infectious * coeff_wi)
+        self.eta_ih = total_infectious * coeff_i
+        self.eta_iw = 1 - (1 - total_infectious * coeff_i) * (1 - working_infectious * coeff_wi)
 
-        logger.debug("eta_iw: {0:.2f}, eta_ih: {1:.2f}".format(eta_iw, eta_ih))
+        logger.debug("eta_iw: {0:.2f}, eta_ih: {1:.2f}".format(self.eta_iw, self.eta_ih))
 
         # 1. find out the ratio of susceptible that are getting infected
         eta_w = self.eta_w[:, :, 0]  # ratio of people who worked (section x archetype) among S
-        eta_i = eta_w * eta_iw + (1 - eta_w) * eta_ih  # ratio of people who got infected (section x archetype)
+        eta_i = eta_w * self.eta_iw + (1 - eta_w) * self.eta_ih  # ratio of people who got infected (section x archetype)
         assert eta_i.shape == (len(self.sections), self.n_arch)
 
         if total_infected == 0:
             raise self.ForcedExit("Infection Eradicated")
 
         # 2. find out the ratio of last day infected recovering
-        d_idx = 3
-        assert self.params_order[d_idx] == "danger"
-        survival = 1 - np.asarray([0.1 * x[d_idx] ** 2 for x in self.params])
-        assert survival.shape == (len(self.sections),)
 
         # 3. execute the population transitions
         fresh_infected = eta_i * self.people[:, :, 0]
-        fresh_recovered = self.people[:, :, -2] * np.expand_dims(survival, axis=1)
+        fresh_recovered = self.people[:, :, -2] * np.expand_dims(self.survival, axis=1)
         fresh_deaths = self.people[:, :, -2] - fresh_recovered
 
         self.people[:, :, 2:-1] = self.people[:, :, 1:-2]
@@ -158,8 +167,8 @@ class Population:
         self.deaths += fresh_deaths
 
         # 4. execute the eta_w transitions (note: eta_w will be wrt the new population distribution)
-        eta_wi = self.safe_divide(eta_iw * eta_w, eta_i)  # P[W given they get I]
-        eta_ws = self.safe_divide((1 - eta_iw) * eta_w, (1 - eta_i))  # P[W given they remain S]
+        eta_wi = self.safe_divide(self.eta_iw * eta_w, eta_i)  # P[W given they get I]
+        eta_ws = self.safe_divide((1 - self.eta_iw) * eta_w, (1 - eta_i))  # P[W given they remain S]
         self.eta_w[:, :, 2:-1] = self.eta_w[:, :, 1:-2]
         self.eta_w[:, :, -1] = 1 - self.safe_divide(fresh_recovered, self.people[:, :, -1])
         self.eta_w[:, :, 1] = eta_wi
@@ -185,7 +194,7 @@ class Population:
         new_eta_wc = np.zeros((len(self.sections), 1, self.n_stages))
         for i in range(len(self.sections)):
             new_eta_wc[i, 0, :] = np.asarray(self._get_action_cowards(i, self.eta_w[i, self.C, :].tolist()))
-        self.eta_w[:, [0], :] = new_eta_wc
+        self.eta_w[:, [self.C], :] = new_eta_wc
 
     def _get_action_cowards(self, idx, last_w):
         """
@@ -240,6 +249,30 @@ class Population:
         assert len(w) == self.n_stages
 
         return w
+
+    def action_simple(self):
+        # for i_stage = 0, c1 * U^2 - c2 > 0 implies person going to work
+        # where U is a uniform R.V.
+        # c1 = u_per_capita and c2 = (eta_iw - eta_ih) * ( 1 - survival) * death_util
+        # for i_stage = 21, Choose W
+        # for i_stage = {1,..,20} , c1 is same, c2 is same
+        # eta_w = u_max - sqrt(c2/c1) / u_max - u_min
+        # u_max, u_min = (1 - i/t-symptoms) +- fluctuation/2
+        c2 = (self.eta_iw - self.eta_ih) * (1 - self.survival) * self.base_data["u-death"]
+        assert c2.shape == (len(self.sections),)
+
+        c1 = self.u_per_capita
+        assert c1.shape == (len(self.sections),)
+
+        u_max = 1 - np.arange(self.n_stages)/self.env_params["t-symptoms"] + self.fluctuation/2
+        u_max[-1] = 1
+        assert u_max.shape == (self.n_stages,)
+
+        eta_w = (np.expand_dims(u_max, axis=0) - np.expand_dims(np.sqrt(c2/c1), axis=1))/self.fluctuation
+        assert eta_w.shape == (len(self.sections), self.n_stages)
+        eta_w = np.clip(eta_w, 0, 1)
+
+        self.eta_w[:, self.S, :] = eta_w
 
     def simulate(self):
         try:
