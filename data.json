@@ -5,7 +5,7 @@
     "secondary": [0.5, 0.2, 0.5],
     "tertiary": [0.00, 0.04, 0.80],
     "essential": [0.80, 1.00, 0.72],
-    "retired": [1.00, 0.00, 1.00]
+    "retired": [1.00, 0.00, 0.99]
   },
   "population-groups": ["Below 45", "45-60", "Above 60"],
   "population": {
@@ -45,8 +45,8 @@
   },
   "game-params": {
     "R0": 2.4,
-    "t-infectious": 3,
-    "t-symptoms": 5,
+    "t-infectious": 2,
+    "t-symptoms": 6,
     "t-removal": 21,
     "p-healthy-fluctuation": 0.25,
     "t-max": 100
