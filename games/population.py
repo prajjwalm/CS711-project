@@ -353,11 +353,33 @@ class Population:
 
         where p = f(x) in [0,1]
 
-        #
-        # isme problem is all prev. days track karna padega not just prev. 7. NO
-
         wt = 1 - n/7
+        # eta_w = N(1-h) - (1-2h)eta_w
         '''
+
+        c2 = (self.eta_iw - self.eta_ih) * (1 - self.survival) * self.base_data["u-death"]
+        assert c2.shape == (len(self.sections),)
+        # logger.debug("eta_iw - eta_ih: \n" + str(self.eta_iw - self.eta_ih))
+        # logger.debug("survival: \n" + str(self.survival))
+        # logger.debug("c2: \n" + str(c2))
+
+        c1 = self.u_per_capita
+        assert c1.shape == (len(self.sections),)
+        # logger.debug("u_per_capita: \n" + str(c1))
+
+        p_max = 1 - np.arange(self.n_stages)/self.env_params["t-symptoms"] + self.fluctuation/2
+        p_max[-1] = 1
+        assert p_max.shape == (self.n_stages,)
+        # logger.debug("health belief max: \n" + str(p_max))
+
+        eta_w = (np.expand_dims(p_max, axis=0) - np.expand_dims(np.sqrt(c2/c1), axis=1))/self.fluctuation
+        eta_w[:, -1] = 1
+        assert eta_w.shape == (len(self.sections), self.n_stages)
+        eta_w = np.clip(eta_w, 0, 1)
+        # logger.debug("eta_w: \n" + str(eta_w))
+
+        self.eta_w[:, self.S, :] = eta_w
+
 
 
 

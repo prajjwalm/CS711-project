@@ -17,6 +17,8 @@ def _init():
 class Planner(BasePlayer):
     last_week_actions: List[str]
     target_days: int
+    target_ratio: float
+    h: float = 0.5
 
     # f(no. of days worked last week)
     caution_multiplier: np.ndarray
@@ -26,8 +28,22 @@ class Planner(BasePlayer):
         super().__init__(env, *args, **kwargs)
         self.last_week_actions = []
         self.target_days = 4
-        self.caution_multiplier = np.power(2.0, np.arange(8) - self.target_days)
-        self.utility_multiplier = np.power(2.0, self.target_days - np.arange(8))
+#        self.caution_multiplier = np.power(2.0, np.arange(8) - self.target_days)
+#        self.utility_multiplier = np.power(2.0, self.target_days - np.arange(8))
+
+        """
+        instead of giving equal weightage of work to last 7 days
+        person gives geometrically reducing weightage to previous days
+        So 1 day ago has impact of 1, 2 days ago 1/h, 3 days ago 1/h^2
+        n days ago 1/h^(n-1)
+        """
+
+        self.target_ratio = 1.13
+        self.caution_multiplier = lambda x: np.power(2.0,target_ratio/x)
+        self.utility_multiplier = lambda x: np.power(2.0,x/target_ratio)
+
+        self.work_weightage = np.logspace(0,6,num=7,base = h)
+
 
         logger.debug("Caution multiplier: " + str(self.caution_multiplier))
         logger.debug("Utility multiplier: " + str(self.utility_multiplier))
@@ -60,10 +76,16 @@ class Planner(BasePlayer):
         # I got what you're saying
         # change kar sakte hai
         # but will it help in population.py? lets sequence
-        n_w = self.last_week_actions.count("W")
-        u_pos = self.u_economic_w * self.utility_multiplier[n_w]
+        
+        #n_w = self.last_week_actions.count("W")
+
+        work_last_week = (np.array(self.last_week_actions) == "W") * 1.0
+        r_w = np.sum(np.multiply(work_last_week,self.work_weightage))
+
+
+        u_pos = self.u_economic_w * self.utility_multiplier(r_w)
         u_neg = \
-            self.w_infection_risk * self.caution_multiplier[n_w] \
+            self.w_infection_risk * self.caution_multiplier(r_w) \
             * self.death_risk * self.u_death * self.p_healthy
 
         action = "W" if u_pos + u_neg > 0 else "H"
@@ -71,8 +93,8 @@ class Planner(BasePlayer):
                      "\n  Virus utility is {1:.2f}  [{4:.2f}x multiplier]"
                      "\n  Net = {2:.2f}, so {5}"
                      "".format(u_pos, u_neg, u_pos + u_neg,
-                               self.utility_multiplier[n_w],
-                               self.caution_multiplier[n_w], action))
+                               self.utility_multiplier(r_w),
+                               self.caution_multiplier(r_w), action))
 
         self.action_plan.append(action)
         self.last_week_actions.append(action)
@@ -89,8 +111,8 @@ class Planner(BasePlayer):
         expected_p = 0.6        #arbitrarily taken
 
         # come up with better method to implement
-        self.caution_multiplier = np.power(2.0, np.arange(8) - self.target_days) * p / expected_p
-        self.utility_multiplier = np.power(2.0, self.target_days - np.arange(8)) * expected_p / p
+        self.caution_multiplier = lambda x: np.power(2.0,target_ratio/x) * p / expected_p
+        self.utility_multiplier = lambda x: np.power(2.0,x/target_ratio) * expected_p / p
 
         self.caution_multiplier *= 10 if self.alert else 1
 
