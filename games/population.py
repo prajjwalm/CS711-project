@@ -288,6 +288,84 @@ class Population:
 
         self.eta_w[:, self.S, :] = eta_w
 
+    def get_action_planner(self):
+        '''
+        assuming self.eta_w stores previous day's working ratio
+        Since planner type tries to go to work for a number of target days in a week
+
+        some way to know avg people who went to work in susceptible population?
+
+        0: n0, 1: n1, ...
+        p0*n0 + p1*n1 + ... + p7*n7 (p4 = raghav) p0 > p1 > ... > p7
+                t     t+1
+        p0=1    n0 -> n0=0
+        p1=1    n1 -> n1=n0
+        p2=1    n2 -> n2=n1
+        p3=0.8  n3 -> n3=n2 + 0.2*n3
+        p4=0.2  n4 -> n4=n3
+        p5=0    n5 ->
+        p6=0    n6 ->
+        p7=0    n7 ->
+
+        p0..7, n0..7 -> n0..7
+
+        P[worked exactly 7 days ago] = x
+
+        n0 = n0*(1-p0) + n1*(1-p1)*x
+        n1 = n0*p0 + n1*(1-p1)*(1 - x) + n1*p1*x + n2*(1-p2)*x
+        n2 = n1*p1 + n2*(1-p2)*(1 - x) + n2*p2*x + n3*(1-p3)*x
+        ...
+        n6 = n5*p5 + n6*(1-p6)*(1 - x) + n6*p6*x + n7*(1-p7)*x
+        n7 = n6*p6 + n7*(1-p7)*(1 - x) + n7*p7*x
+        ________________________________________________________________
+
+        p = f(x)    -> x is a measure of 'work history'
+        x = [1 if worked yesterday] + [6/7 if worked day before] + ...
+        x(@t+1) = x - [1/7 * n_days worked last week] + [1 if worked yesterday]
+
+        x = [1 if worked yesterday] + [h if worked day before] + [h^2 ...] + ...
+
+
+        x = hx + [1 if worked yesterday] : for one person
+
+        W.W.H.H.W.W.H
+        x=? (p=0.5)
+        0|1|1.5|0.75|0.375|1.1875|1.59375|0.796875
+
+        1 / (1-h)
+
+        1, 2, ..., N=10^10
+        x1, x2, ..., xN
+
+        E[no. of people working | t=t] = \sum f(xi)
+        E[no. of people working | t=t+1] = \sum f(xi*h + [1 if i worked yesterday])
+                IF f is linear, f(x) = 1 - (1-h)*x
+                                         = \sum f(xi)*h + \sum f([1 if i worked yesterday])
+
+        eta_w = \sum f(xi)*h + \sum f([1 if i worked yesterday else 0])
+        eta_w = eta_w*h + eta_w*f(1) + (1-eta_w)*f(0)
+              = eta_w*h + eta_w*h + (1-eta_w)
+              = 1 - eta_w*(1 - 2h)
+              this works if h < 1/2
+              otherwise eta_w > 1
+
+              f(x) ki choice ki wajah se
+
+        where p = f(x) in [0,1]
+
+        #
+        # isme problem is all prev. days track karna padega not just prev. 7. NO
+
+        wt = 1 - n/7
+        '''
+
+
+
+
+
+
+
+
     def simulate(self):
         try:
             for t in range(self.env_params['t-max']):

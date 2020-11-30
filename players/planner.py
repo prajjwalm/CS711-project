@@ -32,12 +32,24 @@ class Planner(BasePlayer):
         logger.debug("Caution multiplier: " + str(self.caution_multiplier))
         logger.debug("Utility multiplier: " + str(self.utility_multiplier))
 
+        self.alert = False
+
+
     def plan(self):
         """
         Strategy:
         Sets a target working days per week, as the number of working days in
         the last 7 days falls below the target increases perceived work utility,
         the more it rises above the target, increases caution
+
+
+        work measure = \sum_i=t to 0 [w_i if worked at i else 0] (@t+1)
+        previously,
+            w_i = 1 if i in last 7 days else 0
+
+        if last_week_actions = [WWHHWWH] # something random
+        now,
+            w_i = 1 - (t - i)/7
         """
 
         assert len(self.action_plan) == 0
@@ -45,6 +57,9 @@ class Planner(BasePlayer):
         if len(self.last_week_actions) >= 7:
             self.last_week_actions.pop(0)
 
+        # I got what you're saying
+        # change kar sakte hai
+        # but will it help in population.py? lets sequence
         n_w = self.last_week_actions.count("W")
         u_pos = self.u_economic_w * self.utility_multiplier[n_w]
         u_neg = \
@@ -71,9 +86,15 @@ class Planner(BasePlayer):
         # there is some expected population that he thinks should be in office
 
         p = working_people/total_people
-        expected_p = 0.6
+        expected_p = 0.6        #arbitrarily taken
 
         # come up with better method to implement
         self.caution_multiplier = np.power(2.0, np.arange(8) - self.target_days) * p / expected_p
         self.utility_multiplier = np.power(2.0, self.target_days - np.arange(8)) * expected_p / p
 
+        self.caution_multiplier *= 10 if self.alert else 1
+
+        self.alert = False
+
+    def on_alert(self):
+        self.alert = True
