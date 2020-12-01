@@ -27,7 +27,7 @@ class Planner(BasePlayer):
     def __init__(self, env, *args, **kwargs):
         super().__init__(env, *args, **kwargs)
         self.last_week_actions = []
-        self.target_days = 4
+        # self.target_days = 4
         # self.caution_multiplier = np.power(2.0, np.arange(8) - self.target_days)
         # self.utility_multiplier = np.power(2.0, self.target_days - np.arange(8))
 
