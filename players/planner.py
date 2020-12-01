@@ -28,8 +28,8 @@ class Planner(BasePlayer):
         super().__init__(env, *args, **kwargs)
         self.last_week_actions = []
         self.target_days = 4
-#        self.caution_multiplier = np.power(2.0, np.arange(8) - self.target_days)
-#        self.utility_multiplier = np.power(2.0, self.target_days - np.arange(8))
+        # self.caution_multiplier = np.power(2.0, np.arange(8) - self.target_days)
+        # self.utility_multiplier = np.power(2.0, self.target_days - np.arange(8))
 
         """
         instead of giving equal weightage of work to last 7 days
@@ -39,17 +39,15 @@ class Planner(BasePlayer):
         """
 
         self.target_ratio = 1.13
-        self.caution_multiplier = lambda x: np.power(2.0,target_ratio/x)
-        self.utility_multiplier = lambda x: np.power(2.0,x/target_ratio)
+        self.caution_multiplier = lambda x: np.power(2.0, self.target_ratio / x)
+        self.utility_multiplier = lambda x: np.power(2.0, x / self.target_ratio)
 
-        self.work_weightage = np.logspace(0,6,num=7,base = h)
-
+        self.work_weightage = np.logspace(0, 6, num=7, base=self.h)
 
         logger.debug("Caution multiplier: " + str(self.caution_multiplier))
         logger.debug("Utility multiplier: " + str(self.utility_multiplier))
 
         self.alert = False
-
 
     def plan(self):
         """
@@ -76,12 +74,11 @@ class Planner(BasePlayer):
         # I got what you're saying
         # change kar sakte hai
         # but will it help in population.py? lets sequence
-        
-        #n_w = self.last_week_actions.count("W")
+
+        # n_w = self.last_week_actions.count("W")
 
         work_last_week = (np.array(self.last_week_actions) == "W") * 1.0
-        r_w = np.sum(np.multiply(work_last_week,self.work_weightage))
-
+        r_w = np.sum(np.multiply(work_last_week, self.work_weightage))
 
         u_pos = self.u_economic_w * self.utility_multiplier(r_w)
         u_neg = \
@@ -107,12 +104,12 @@ class Planner(BasePlayer):
         # but less people means less payoff
         # there is some expected population that he thinks should be in office
 
-        p = working_people/total_people
-        expected_p = 0.6        #arbitrarily taken
+        p = working_people / total_people
+        expected_p = 0.6  # arbitrarily taken
 
         # come up with better method to implement
-        self.caution_multiplier = lambda x: np.power(2.0,target_ratio/x) * p / expected_p
-        self.utility_multiplier = lambda x: np.power(2.0,x/target_ratio) * expected_p / p
+        self.caution_multiplier = lambda x: np.power(2.0, self.target_ratio / x) * p / expected_p
+        self.utility_multiplier = lambda x: np.power(2.0, x / self.target_ratio) * expected_p / p
 
         self.caution_multiplier *= 10 if self.alert else 1
 
