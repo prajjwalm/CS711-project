@@ -18,11 +18,13 @@ class Planner(BasePlayer):
     last_week_actions: List[str]
     target_days: int
     target_ratio: float
-    h: float = 0.5
+    h: float
+    p: float
 
     # f(no. of days worked last week)
     caution_multiplier: np.ndarray
     utility_multiplier: np.ndarray
+    work_weightage: np.ndarray
 
     def __init__(self, env, *args, **kwargs):
         super().__init__(env, *args, **kwargs)
@@ -56,7 +58,6 @@ class Planner(BasePlayer):
         the last 7 days falls below the target increases perceived work utility,
         the more it rises above the target, increases caution
 
-
         work measure = \sum_i=t to 0 [w_i if worked at i else 0] (@t+1)
         previously,
             w_i = 1 if i in last 7 days else 0
@@ -71,27 +72,34 @@ class Planner(BasePlayer):
         if len(self.last_week_actions) >= 7:
             self.last_week_actions.pop(0)
 
-        # I got what you're saying
-        # change kar sakte hai
-        # but will it help in population.py? lets sequence
+        # Death prob is same as death risk right?
+        coeff_i = 0.05
+        coeff_wi = 1 * self.job_risk
+        p_h_max = 23/24
 
-        # n_w = self.last_week_actions.count("W")
+        # how to get total_infectious and working_infectious from the sir environment?
+        # or should get from data.json file? 
+        eta_ih = total_infectious * coeff_i
+        eta_iw = np.clip(1 - (1 - total_infectious * coeff_i) * (1 - working_infectious * coeff_wi), eta_ih, 1)
+
+        self.h = 1 - 1/(2*((p_h_max - np.sqrt(self.u_death * self.death_risk * (eta_iw - eta_ih) / self.u_economic_w)) / 0.25))
 
         work_last_week = (np.array(self.last_week_actions) == "W") * 1.0
-        r_w = np.sum(np.multiply(work_last_week, self.work_weightage))
+        work_measure = np.sum(np.multiply(work_last_week, self.work_weightage))
 
-        u_pos = self.u_economic_w * self.utility_multiplier(r_w)
-        u_neg = \
-            self.w_infection_risk * self.caution_multiplier(r_w) \
-            * self.death_risk * self.u_death * self.p_healthy
+        self.p = 1 - (1-h)*work_measure
+#        u_pos = self.u_economic_w * self.utility_multiplier(r_w)
+#        u_neg = \
+#            self.w_infection_risk * self.caution_multiplier(r_w) \
+#            * self.death_risk * self.u_death * self.p_healthy
 
-        action = "W" if u_pos + u_neg > 0 else "H"
-        logger.debug("\n  Economic utility is: {0:.2f} [{3:.2f}x multiplier]"
-                     "\n  Virus utility is {1:.2f}  [{4:.2f}x multiplier]"
-                     "\n  Net = {2:.2f}, so {5}"
-                     "".format(u_pos, u_neg, u_pos + u_neg,
-                               self.utility_multiplier(r_w),
-                               self.caution_multiplier(r_w), action))
+        action = "W" if np.random.rand() < self.p else "H"
+#        logger.debug("\n  Economic utility is: {0:.2f} [{3:.2f}x multiplier]"
+#                     "\n  Virus utility is {1:.2f}  [{4:.2f}x multiplier]"
+#                     "\n  Net = {2:.2f}, so {5}"
+#                     "".format(u_pos, u_neg, u_pos + u_neg,
+#                               self.utility_multiplier(r_w),
+#                               self.caution_multiplier(r_w), action))
 
         self.action_plan.append(action)
         self.last_week_actions.append(action)

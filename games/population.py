@@ -88,6 +88,7 @@ class Population:
                 self.params.append(v1 + [v2['danger']])
                 self.pops.append(v2['ratio'] * v2['job-dist'][k1])
 
+        logger.info("Sections: " + str(self.sections))
         self.n_stages = self.env_params['t-removal'] + 1
         self.people = np.zeros((len(self.sections), self.n_arch, self.n_stages))
         logger.debug("population ratios: \n" + str(self.pops))
@@ -265,26 +266,29 @@ class Population:
         # for i_stage = {1,..,20} , c1 is same, c2 is same
         # eta_w = u_max - sqrt(c2/c1) / u_max - u_min
         # u_max, u_min = (1 - i/t-symptoms) +- fluctuation/2
+
         c2 = (self.eta_iw - self.eta_ih) * (1 - self.survival) * self.base_data["u-death"]
         assert c2.shape == (len(self.sections),)
-        # logger.debug("eta_iw - eta_ih: \n" + str(self.eta_iw - self.eta_ih))
-        # logger.debug("survival: \n" + str(self.survival))
-        # logger.debug("c2: \n" + str(c2))
+        logger.debug("eta_iw - eta_ih: \n" + str(self.eta_iw - self.eta_ih))
+        logger.debug("survival: \n" + str(self.survival))
+        logger.debug("c2: \n" + str(c2))
 
         c1 = self.u_per_capita
         assert c1.shape == (len(self.sections),)
-        # logger.debug("u_per_capita: \n" + str(c1))
+        logger.debug("u_per_capita: \n" + str(c1))
 
         p_max = 1 - np.arange(self.n_stages)/self.env_params["t-symptoms"] + self.fluctuation/2
         p_max[-1] = 1
         assert p_max.shape == (self.n_stages,)
-        # logger.debug("health belief max: \n" + str(p_max))
+        logger.debug("health belief max: \n" + str(p_max))
 
         eta_w = (np.expand_dims(p_max, axis=0) - np.expand_dims(np.sqrt(c2/c1), axis=1))/self.fluctuation
+        eta_w = np.where(np.expand_dims(np.sqrt(c2/c1), axis=1) > 1, 0, eta_w)
+
         eta_w[:, -1] = 1
         assert eta_w.shape == (len(self.sections), self.n_stages)
         eta_w = np.clip(eta_w, 0, 1)
-        # logger.debug("eta_w: \n" + str(eta_w))
+        logger.debug("eta_w: \n" + str(eta_w))
 
         self.eta_w[:, self.S, :] = eta_w
 

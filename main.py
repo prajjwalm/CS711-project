@@ -20,7 +20,7 @@ def main():
     logger = logging.getLogger("Log")
 
     # change log level here; note: all modules use the same logger
-    logger.setLevel(logging.INFO)
+    logger.setLevel(logging.DEBUG)
 
     fh = logging.FileHandler("logs/proceeds.log", mode='w')
     fh.setFormatter(logging.Formatter(
