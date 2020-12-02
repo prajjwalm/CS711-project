@@ -33,7 +33,6 @@ class OnePlayerGame:
                     risk = self.p.w_infection_risk
                 else:
                     risk = self.p.h_infection_risk
-                self.p.net_utility += self.p.u_virus
 
                 self.p.state_change(risk)
 

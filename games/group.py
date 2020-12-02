@@ -80,9 +80,8 @@ class GroupGame:
 
 
 class CoWorkersGame(GroupGame):
-
     job_risk: float
-    job_importance: float
+    max_utility: float
 
     def __init__(self, players: List[BasePlayer], env: BaseEnvironment):
         super().__init__(players, env)
@@ -92,21 +91,9 @@ class CoWorkersGame(GroupGame):
         for player in players[1:]:
             assert player.job_risk == self.job_risk
 
-        self.job_importance = players[0].job_importance
+        self.max_utility = players[0].u_economic_max
         for player in players[1:]:
-            assert player.job_importance == self.job_importance
-
-    def alert(self):
-        symptoms_cutoff = self.env.t - self.env.TIMES['symptoms']
-        alert = False
-        for p in self.players:
-            if p.state == "I" and p.t_i < symptoms_cutoff:
-                alert = True
-                break
-        if alert:
-            logger.info("GROUP ALERTED")
-            for p in self.players:
-                p.on_alert()
+            assert player.u_economic_max == self.max_utility
 
     def handle_utilities(self):
         n_work = self.actions.count("W")
@@ -143,9 +130,20 @@ class CoWorkersGame(GroupGame):
             self.players[i].state_change(risk)
             self.risks[i] = risk
 
+    def alert(self):
+        symptoms_cutoff = self.env.t - self.env.TIMES['symptoms']
+        alert = False
+        for p in self.players:
+            if p.state == "I" and p.t_i < symptoms_cutoff:
+                alert = True
+                break
+        if alert:
+            logger.info("GROUP ALERTED")
+            for p in self.players:
+                p.on_alert()
+
 
 class NeighboursGame(GroupGame):
-
     def __init__(self, players: List[BasePlayer], env: BaseEnvironment):
         super().__init__(players, env)
 
@@ -153,4 +151,7 @@ class NeighboursGame(GroupGame):
         pass
 
     def handle_risk(self):
+        pass
+
+    def alert(self):
         pass

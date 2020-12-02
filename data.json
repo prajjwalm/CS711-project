@@ -48,18 +48,17 @@
     "t-infectious": 2,
     "t-symptoms": 6,
     "t-removal": 21,
-    "p-healthy-fluctuation": 0.25,
     "t-max": 100
   },
+  "base-player": {
+    "x-work-risk": 1,
+    "x-home-risk": 0.03,
+    "u-death": 20000,
+    "x-job-importance": 1,
+    "x-economic-status": 1,
+    "p-healthy-fluctuation": 0.25
+  },
   "player-types": {
-    "base-player": {
-      "x-job-risk": 1,
-      "x-home-risk": 0.03,
-      "u-death": 20000,
-      "health-inconvenience" : 0,
-      "x-job-imp": 1,
-      "x-econ-status": 1
-    },
     "coward": {
       "w-threshold": 0.96,
       "h-threshold": 0.90

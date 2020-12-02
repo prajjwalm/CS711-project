@@ -38,29 +38,5 @@ def main():
     pop = Population()
     pop.simulate()
 
-    # players = []
-    # common = {
-    #     "job_risk"      : 0.5,
-    #     "job_importance": 0.1
-    # }
-    # for i in range(4):
-    #     players.append(Coward(env, **common,
-    #                           economic_status=0.4 + 0.2 * np.random.rand(),
-    #                           danger=0.3 + 0.2 * np.random.rand()))
-    #
-    # for i in range(4):
-    #     players.append(Simple(env, **common,
-    #                           economic_status=0.4 + 0.2 * np.random.rand(),
-    #                           danger=0.3 + 0.2 * np.random.rand()))
-    #
-    # for i in range(4):
-    #     players.append(Planner(env, **common,
-    #                            economic_status=0.4 + 0.2 * np.random.rand(),
-    #                            danger=0.3 + 0.2 * np.random.rand()))
-    #
-    # game = CoWorkersGame(players, env)
-    # game.play()
-
-
 if __name__ == '__main__':
     main()

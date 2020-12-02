@@ -1,8 +1,9 @@
 import logging
-from typing import Dict, List, Optional
+from typing import List, Optional
 
 import numpy as np
 
+from constants import sections, max_utility, job_risk, survival, player_data
 from enviornments import BaseEnvironment
 
 logger: logging.Logger
@@ -22,18 +23,12 @@ class DeathException(Exception):
 class BasePlayer:
     # initialization constants
     # @formatter:off
-    _params: Dict[str, Optional[float]]
-    _params_list: List[str] = [
-        "economic_status",  # Rich guys needn't work
-        "danger",           # Danger posed by infection (age/health)
-        "job_risk",         # infection risk while working (0 for wfh)
-        "job_importance",   # Bonus for doctors etc. [mechanism designer]
-    ]
+
+    # key to all parametric information
+    section_idx: int
 
     # reference to the global environment
     env: BaseEnvironment
-
-    # reference to the global game
 
     # list of future actions [str: "W"/"H"]: All implementations fill this
     action_plan: List[str]
@@ -46,20 +41,15 @@ class BasePlayer:
     t_r: Optional[int]  # day of recovery
     n_w: int            # number of days worked prior to infection
 
-    # misc. constants
-    c1: float = 1       # job risk multiplier
-    c2: float = 0.03    # home risk multiplier
-    c3: float = 20000   # utility loss on death
-    c4: float = 0       # health inconvenience during virus
-    c5: float = 1       # job importance multiplier
-    c6: float = 1       # economic status multiplier
-
     # @formatter:on
 
-    def __init__(self, env, *, economic_status, danger, job_risk, job_importance):
+    def __init__(self, env, section_idx: int):
         self.env = env
-        l = locals()
-        self._params = {x: l.get(x) for x in self._params_list}
+
+        loc = locals()
+        self.section_idx = section_idx
+        assert 0 <= self.section_idx < len(sections)
+
         self.net_utility = 0
         self.state = "S"
         self.p_healthy = 1
@@ -68,9 +58,7 @@ class BasePlayer:
         self.t_r = None
         self.n_w = 0
 
-        logger.info("{0} initialized with params: {1}".format(
-            self.type, self._params
-        ))
+        logger.info("{0} {1} initialized with params".format(sections[self.section_idx], self.type))
 
     def plan(self):
         raise NotImplementedError
@@ -115,7 +103,7 @@ class BasePlayer:
         if self.state == "R":
             return 0
         base_infection_prob = self.env.infected_today / self.env.s
-        extra_risk = base_infection_prob * self._params["job_risk"] * self.c1
+        extra_risk = base_infection_prob * job_risk[self.section_idx] * player_data['x-work-risk']
         risk = self.h_infection_risk + extra_risk
         if self.state == "S":
             return risk
@@ -128,7 +116,7 @@ class BasePlayer:
         if self.state == "R":
             return 0
         base_infection_prob = self.env.infected_today / self.env.s
-        risk = base_infection_prob * self.c2
+        risk = base_infection_prob * player_data['x-home-risk']
         if self.state == "S":
             return risk
         else:
@@ -137,35 +125,19 @@ class BasePlayer:
 
     @property
     def u_economic_max(self) -> float:
-        return ((1 - self._params['economic_status']) * self.c5
-                + self._params['job_importance'] * self.c6)
+        return max_utility[self.section_idx]
 
     @property
     def u_economic_w(self) -> float:
-        # sick people have 0 economic utility
-
-        # TODO: replace with mean/step (?)
-        sick_reduction = self.p_healthy ** 2  # so that it falls off faster
-
-        return self.u_economic_max * sick_reduction
-
-    @property
-    def u_virus(self) -> float:
-        # inconvenience caused by virus (eg. ventilator/trauma/lung damage)
-        # [unrelated to possibility of death]
-        if self.state != "I":
-            return 0
-        if self.env.t - self.t_i > self.env.TIMES['symptoms']:
-            return - self._params["danger"] * self.c4
-        return 0
+        return self.u_economic_max * self.p_healthy ** 2
 
     @property
     def u_death(self):
-        return -self.c3
+        return -player_data['u-death']
 
     @property
     def death_risk(self) -> float:
-        return 0.1 * self._params['danger'] ** 2  # TODO: may change if c4 = 0
+        return 1 - survival[self.section_idx]
 
     @property
     def type(self) -> str:
@@ -173,8 +145,4 @@ class BasePlayer:
 
     @property
     def job_risk(self) -> float:
-        return self._params['job_risk']
-
-    @property
-    def job_importance(self) -> float:
-        return self._params['job_importance']
+        return job_risk[self.section_idx]

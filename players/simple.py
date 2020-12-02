@@ -28,16 +28,11 @@ class Simple(BasePlayer):
         """
         assert len(self.action_plan) == 0
 
-        cash_work = self.u_economic_w
-        virus_util = self.u_virus
-        death_risk = self.death_risk
-        death_util = self.u_death
         surplus_risk = self.caution_multiplier * self.w_infection_risk - self.h_infection_risk
-
-        work = cash_work + surplus_risk * (virus_util + death_risk * death_util)
+        work = self.u_economic_w + surplus_risk * (self.death_risk * self.u_death)
         self.action_plan.append("W" if work > 0 else "H")
 
-        logger.debug("Estimated work payoff: {0}".format(work))
+        logger.debug("Estimated (self) work payoff: {0}".format(work))
 
     def update(self, actions: List[str], self_idx: int):
         work_people = actions.count("W")
