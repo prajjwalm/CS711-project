@@ -184,31 +184,41 @@ class Population:
 
         total_days = env_params['t-removal']
         unaware_days = env_params["t-symptoms"]
+##################################################################################################################
 
-        ratio_over_threshold_w = 1 - ((threshold_sw - (1 - self.fluctuation / 2)) / self.fluctuation)
-        ratio_over_threshold_h = 1 - ((threshold_sh - (1 - self.fluctuation / 2)) / self.fluctuation)
+        ratio_over_threshold_w = 1 - ((threshold_sw - (1 - np.arange(unaware_days-1) / unaware_days - self.fluctuation / 2)) / self.fluctuation)
+        ratio_over_threshold_h = 1 - ((threshold_sh - (1 - np.arange(unaware_days-1) / unaware_days - self.fluctuation / 2)) / self.fluctuation)
+        w.append(last_w[:unaware_days-1] * ratio_over_threshold_w + (1 - last_w[:unaware_days-1]) * ratio_over_threshold_h)
 
-        w.append(last_w[0] * ratio_over_threshold_w + (1 - last_w[0]) * ratio_over_threshold_h)
+        w.append(last_w[unaware_days:] * max((self.fluctuation / 2 - threshold_sw) / self.fluctuation, 0) \
+            + (1 - last_w[unaware_days]:) * max((self.fluctuation / 2 - threshold_sh) / self.fluctuation, 0))
 
-        for i in range(total_days - 1):
-            if i < unaware_days:
-                ratio_over_threshold_w = 1 - (
-                        (threshold_sw - (1 - (i + 1) / unaware_days - self.fluctuation / 2)) / self.fluctuation)
-                ratio_over_threshold_w = min(1.0, max(ratio_over_threshold_w, 0))
-                ratio_over_threshold_h = 1 - (
-                        (threshold_sh - (1 - (i + 1) / unaware_days - self.fluctuation / 2)) / self.fluctuation)
-                ratio_over_threshold_h = min(1.0, max(ratio_over_threshold_h, 0))
-            else:
-                ratio_over_threshold_w = max((self.fluctuation / 2 - threshold_sw) / self.fluctuation, 0)
-                ratio_over_threshold_h = max((self.fluctuation / 2 - threshold_sh) / self.fluctuation, 0)
-            w.append(last_w[i] * ratio_over_threshold_w + (1 - last_w[i]) * ratio_over_threshold_h)
+##################################################################################################################
+        #
+        # ratio_over_threshold_w = 1 - ((threshold_sw - (1 -(0)*num / unaware_days -  self.fluctuation / 2)) / self.fluctuation)
+        # ratio_over_threshold_h = 1 - ((threshold_sh - (1 - self.fluctuation / 2)) / self.fluctuation)
+        #
+        # w.append(last_w[0] * ratio_over_threshold_w + (1 - last_w[0]) * ratio_over_threshold_h)
+        #
+        #
+        # for i in range(total_days - 1):
+        #     if i < unaware_days:
+        #         ratio_over_threshold_w = 1 - ((threshold_sw - (1 - (i + 1) / unaware_days - self.fluctuation / 2)) / self.fluctuation)
+        #         ratio_over_threshold_w = min(1.0, max(ratio_over_threshold_w, 0))
+        #         ratio_over_threshold_h = 1 - (
+        #                 (threshold_sh - (1 - (i + 1) / unaware_days - self.fluctuation / 2)) / self.fluctuation)
+        #         ratio_over_threshold_h = min(1.0, max(ratio_over_threshold_h, 0))
+        #     else:
+        #         ratio_over_threshold_w = max((self.fluctuation / 2 - threshold_sw) / self.fluctuation, 0)
+        #         ratio_over_threshold_h = max((self.fluctuation / 2 - threshold_sh) / self.fluctuation, 0)
+        #     w.append(last_w[i] * ratio_over_threshold_w + (1 - last_w[i]) * ratio_over_threshold_h)
 
         # ratio_over_threshold_w = 1 - ((threshold_sw - (1 - self.fluctuation / 2)) / self.fluctuation)
         # ratio_over_threshold_h = 1 - ((threshold_sh - (1 - self.fluctuation / 2)) / self.fluctuation)
 
         # oye @CC ye direct 1 nhi hai??
         # w.append(last_w[total_days] * ratio_over_threshold_w + (1 - last_w[total_days]) * ratio_over_threshold_h)
-        w.append(1)
+        # w.append(1)
 
         assert len(w) == self.n_stages
 
