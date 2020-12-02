@@ -104,6 +104,7 @@ class BasePlayer:
             return 0
         base_infection_prob = self.env.infected_today / self.env.s
         extra_risk = base_infection_prob * job_risk[self.section_idx] * player_data['x-work-risk']
+        #TODO p healthy is multiplied twice in w infection risk.
         risk = self.h_infection_risk + extra_risk
         if self.state == "S":
             return risk

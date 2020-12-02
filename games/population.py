@@ -191,7 +191,7 @@ class Population:
         w.append(last_w[:unaware_days-1] * ratio_over_threshold_w + (1 - last_w[:unaware_days-1]) * ratio_over_threshold_h)
 
         w.append(last_w[unaware_days:] * max((self.fluctuation / 2 - threshold_sw) / self.fluctuation, 0) \
-            + (1 - last_w[unaware_days]:) * max((self.fluctuation / 2 - threshold_sh) / self.fluctuation, 0))
+            + (1 - last_w[unaware_days:]) * max((self.fluctuation / 2 - threshold_sh) / self.fluctuation, 0))
 
 ##################################################################################################################
         #
