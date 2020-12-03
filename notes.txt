@@ -1,5 +1,9 @@
 Notes on Planner:
 
+    Last_week.count("W")
+
+    28, 20-27
+
     1.  There are two important concepts for any person of the Planner population:
         a. how is the work history (X) calculated
         b. what is the distribution of P[work|X]
@@ -46,6 +50,28 @@ Notes on Planner:
 
 
     *.  An important implementation detail is how should X vary in execute_infection()?
+        X is U[0 , 1/1-h] -> P is U[a, b] (0 => b, 1/1-h => a)
+        X_mean  =  y
+        if a < 1/2(1-h), then assume U[0, 2 * a] else assume U[ 2 * a - 1/(1-h), 1/1-h]
+        c = (p3/p1)*a      b = (1 + p3/p1)*a
+
+        <X>_S,t-1 known = a     P_S,t-1 = p1
+        <X>_S, t = ? (b)        P_S, t  = p2
+        <X>_I, t = ? (c)        P_I, t  = p3
+
+        <X>_W , <X>_H
+        eta_iw , eta_ih
+
+        <X>_I = eta_iw * <X>_W + eta_ih * <X>_H
+
+        <X>_S = 1-eta_iw * <X>_W + 1-eta_ih * <X>_H
+
+
+        p1 = p2 + p3, all three are known
+
+        a*p1 = b*p2 + c*p3
+
+
 
 
 

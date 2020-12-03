@@ -38,7 +38,7 @@ class Population:
     influence_cap:  float = player_types['planner']['cap']  # max influence on P[W/H] due to X
 
     # utility measures
-    net_utility:    float
+    net_utility:    np.ndarray
         # TODO: calibrate the above (consts and formulae) with base_player
 
     # prototype enum
@@ -69,14 +69,15 @@ class Population:
 
         self.people = np.zeros((self.n_sections, self.n_types, self.n_stages))
 
-        self.people[:, self.C, 0] = np.array(s_pops) * 0.99
-        self.people[:, self.C, 1] = np.array(s_pops) - self.people[:, self.C, 0]
+        section_type_pops = np.expand_dims(np.array(s_pops), axis=1) * np.expand_dims(np.asarray([0.33, 0.33, 0.34]), axis=0)
+        self.people[:, :, 0] = section_type_pops * 0.99
+        self.people[:, :, 1] = section_type_pops - self.people[:, :, 0]
 
         self.eta_w = np.zeros((self.n_sections, 3, self.n_stages))
-        self.eta_w[:, self.C, 0] = 1
-        self.eta_w[:, self.C, -1] = 1
+        self.eta_w[:, :, 0] = 1
+        self.eta_w[:, :, -1] = 1
 
-        self.net_utility = 0
+        self.net_utility = np.zeros(self.n_types)
         self.deaths = np.zeros((self.n_sections, self.n_types))
 
         self.eta_iw = np.zeros(self.n_sections)
@@ -106,7 +107,6 @@ class Population:
         coeff_i = 0.05
         coeff_wi = 1 * job_risk
 
-        logger.debug("job_risk: " + str(job_risk))
         self.eta_ih = total_infectious * coeff_i
         self.eta_iw = np.clip(1 - (1 - total_infectious * coeff_i) * (1 - working_infectious * coeff_wi), self.eta_ih,
                               1)
@@ -135,6 +135,9 @@ class Population:
         self.people[:, :, 1] = fresh_infected
         self.deaths += fresh_deaths
 
+        logger.debug("Fresh Deaths: " + str(np.sum(fresh_deaths, axis=0)))
+        logger.debug("Total Deaths: " + str(np.sum(self.deaths, axis=0)))
+
         # 4. execute the eta_w transitions (note: eta_w will be wrt the new population distribution)
         eta_wi = self.safe_divide(eta_iw * eta_w, eta_i)  # P[W given they get I]
         eta_ws = self.safe_divide((1 - eta_iw) * eta_w, (1 - eta_i))  # P[W given they remain S]
@@ -149,8 +152,7 @@ class Population:
             self.people[:, self.P, -1]
         )
         self.X[:, 2:-1] = self.X[:, 1:-2]
-        # self.X[:, 1] = ?
-        # self.X[:, 0] = ?
+        self.X[:, 1] = self.X[:, 0]
 
     def update_utility(self):
         """ Takes the actions supplied, increments the utility and returns the risks of infection """
@@ -158,7 +160,9 @@ class Population:
         i_loss[-1] = 1
         i_loss = i_loss ** 2
         s_utility = np.einsum("ijk,ijk,i,k -> j", self.people, self.eta_w, max_utility, i_loss)
-        self.net_utility += np.sum(s_utility)
+        logger.debug("Fresh utility: " + str(s_utility))
+        self.net_utility += s_utility
+        logger.debug("Total utility: " + str(self.net_utility))
 
     def get_action_cowards(self):
         """
@@ -167,45 +171,24 @@ class Population:
         who had chosen to work yesterday (they might have been in a different cell per the last axis
         then)) set self.eta_w to the ratio of people in each cell who will choose to work today.
         """
-        new_eta_wc = np.zeros((self.n_sections, 1, self.n_stages))
-
-        # TODO: @srajit, @ravi remove this loop too
-        for i in range(self.n_sections):
-            new_eta_wc[i][0, :] = np.asarray(self._get_action_cowards(self.eta_w[i][self.C, :]))
-
-        # new_eta_wc[:, 0, :] = np.asarray(self._get_action_cowards(self.eta_w[:, self.C, :]))
-    #    [i,j,k] [i][j][k]
-
-        self.eta_w[:, [self.C], :] = new_eta_wc
-
-    def _get_action_cowards(self, last_w: np.ndarray):
-        """
-        :param last_w:   The ratio of people (of this type) who went to work yesterday for each day
-                         of infection
-
-        :return: ratio of people who will choose to work (indexed by i_stage)
-        :rtype:  List[float]
-        """
-        w = np.zeros((self.n_stages,))
+        w = np.zeros((self.n_sections, self.n_stages,))
         threshold_sw = self.coward_data['w-threshold']
         threshold_sh = self.coward_data['h-threshold']
 
         ts = env_params["t-symptoms"]
+        last_w = self.eta_w[:, self.C, :]
 
         ratio_over_threshold_w = 1 - ((threshold_sw - (1 - np.arange(ts) / ts - self.p_h_delta / 2)) / self.p_h_delta)
         ratio_over_threshold_h = 1 - ((threshold_sh - (1 - np.arange(ts) / ts - self.p_h_delta / 2)) / self.p_h_delta)
         ratio_over_threshold_w = np.clip(ratio_over_threshold_w, 0, 1)
         ratio_over_threshold_h = np.clip(ratio_over_threshold_h, 0, 1)
-        # TODO: @srajit, @ravi, you'll probably get a list of two numpy arrays, this is not what you intended, to make
-        #  this work, set w to be a numpy array and adjust accordingly
-        w[:ts] = last_w[:ts] * ratio_over_threshold_w + (1 - last_w[:ts]) * ratio_over_threshold_h
+        w[:, :ts] = last_w[:, :ts] * ratio_over_threshold_w + (1 - last_w[:, :ts]) * ratio_over_threshold_h
 
-        w[ts:-1] = last_w[ts:-1] * max((self.p_h_delta / 2 - threshold_sw) / self.p_h_delta, 0) \
-                 + (1 - last_w[ts:-1]) * max((self.p_h_delta / 2 - threshold_sh) / self.p_h_delta, 0)
-        # TODO: @srajit, @ravi are you sure this works for last column (for recovered)
-        w[-1] = 1
+        w[:, ts:-1] = last_w[:, ts:-1] * max((self.p_h_delta / 2 - threshold_sw) / self.p_h_delta, 0) \
+                + (1 - last_w[:, ts:-1]) * max((self.p_h_delta / 2 - threshold_sh) / self.p_h_delta, 0)
+        w[:, -1] = 1
 
-        return w
+        self.eta_w[:, self.C, :] = np.asarray(w)
 
     def get_action_simple(self):
         self.eta_w[:, self.S, :] = self._get_action_simple()
@@ -222,7 +205,7 @@ class Population:
         self.X = self.eta_w[:, self.P, :] + self.h * self.X
 
         eta_w_s = self._get_action_simple()
-        eta_w_del = np.min(1 - eta_w_s, eta_w_s) * 0.4
+        eta_w_del = np.minimum(1 - eta_w_s, eta_w_s) * 0.4
         eta_w_min = eta_w_s - eta_w_del
         eta_w_max = eta_w_s + eta_w_del
 
@@ -232,11 +215,13 @@ class Population:
         try:
             for t in range(env_params['t-max']):
                 self.get_action_cowards()
+                self.get_action_simple()
+                self.get_action_planner()
                 self.update_utility()
                 self.execute_infection()
                 logger.info("Population sections:\n" + str(self.people))
                 logger.info("Percentage working:\n" + str(self.eta_w))
-                logger.info("net_utility: {:.2f}".format(self.net_utility))
+                logger.info("Final Utility: {}".format(self.net_utility + self.deaths * player_data['u-death']))
         except self.ForcedExit as e:
             logger.info(e)
             print(e)
