@@ -4,7 +4,6 @@ from typing import List, Dict
 import numpy as np
 
 from constants import sections, s_pops, max_utility, job_risk, survival, env_params, player_data, player_types
-from players import Planner
 
 logger: logging.Logger
 
@@ -168,12 +167,11 @@ class Population:
 
         # TODO: @srajit, @ravi remove this loop too
         for i in range(self.n_sections):
-            new_eta_wc[i, 0, :] = np.asarray(self._get_action_cowards(i, self.eta_w[i, self.C, :]))
+            new_eta_wc[i, 0, :] = np.asarray(self._get_action_cowards(self.eta_w[i, self.C, :]))
         self.eta_w[:, [self.C], :] = new_eta_wc
 
-    def _get_action_cowards(self, idx: int, last_w: np.ndarray):
+    def _get_action_cowards(self, last_w: np.ndarray):
         """
-        :param idx:      The index of the section for which this function is called {0, ..., 15}
         :param last_w:   The ratio of people (of this type) who went to work yesterday for each day
                          of infection
 
@@ -188,15 +186,15 @@ class Population:
         ##########################################################################################################
 
         ratio_over_threshold_w = 1 - (
-                    (threshold_sw - (1 - np.arange(ts - 1) / ts - self.p_h_delta / 2)) / self.p_h_delta)
+                (threshold_sw - (1 - np.arange(ts - 1) / ts - self.p_h_delta / 2)) / self.p_h_delta)
         ratio_over_threshold_h = 1 - (
-                    (threshold_sh - (1 - np.arange(ts - 1) / ts - self.p_h_delta / 2)) / self.p_h_delta)
+                (threshold_sh - (1 - np.arange(ts - 1) / ts - self.p_h_delta / 2)) / self.p_h_delta)
 
         # TODO: @srajit, @ravi, you'll probably get a list of two numpy arrays, this is not what you intended, to make
         #  this work, set w to be a numpy array and adjust accordingly
         w.append(last_w[:ts - 1] * ratio_over_threshold_w + (1 - last_w[:ts - 1]) * ratio_over_threshold_h)
 
-        w.append(last_w[ts:] * max((self.p_h_delta / 2 - threshold_sw) / self.p_h_delta, 0) \
+        w.append(last_w[ts:] * max((self.p_h_delta / 2 - threshold_sw) / self.p_h_delta, 0)
                  + (1 - last_w[ts:]) * max((self.p_h_delta / 2 - threshold_sh) / self.p_h_delta, 0))
         # TODO: @srajit, @ravi are you sure this works for last column (for recovered)
 
@@ -205,68 +203,25 @@ class Population:
         return w
 
     def get_action_simple(self):
-        # for i_stage = 0, c1 * U^2 - c2 > 0 implies person going to work
-        # where U is a uniform R.V.
-        # c1 = u_per_capita and c2 = (eta_iw - eta_ih) * ( 1 - survival) * death_util
-        # for i_stage = 21, Choose W
-        # for i_stage = {1,..,20} , c1 is same, c2 is same
-        # eta_w = u_max - sqrt(c2/c1) / u_max - u_min
-        # u_max, u_min = (1 - i/t-symptoms) +- fluctuation/2
+        self.eta_w[:, self.S, :] = self._get_action_simple()
 
-        c2 = (self.eta_iw - self.eta_ih) * (1 - survival) * self.player_data["u-death"]
-        assert c2.shape == (self.n_sections,)
-        logger.debug("eta_iw - eta_ih: \n" + str(self.eta_iw - self.eta_ih))
-        logger.debug("survival: \n" + str(survival))
-        logger.debug("c2: \n" + str(c2))
-
-        c1 = max_utility
-        assert c1.shape == (self.n_sections,)
-        logger.debug("u_per_capita: \n" + str(c1))
-
-        p_max = 1 - np.arange(self.n_stages) / env_params["t-symptoms"] + self.p_h_delta / 2
-        p_max[-1] = 1
-        assert p_max.shape == (self.n_stages,)
-        logger.debug("health belief max: \n" + str(p_max))
-
-        eta_w = (np.expand_dims(p_max, axis=0) - np.expand_dims(np.sqrt(c2 / c1), axis=1)) / self.p_h_delta
-        eta_w = np.where(np.expand_dims(np.sqrt(c2 / c1), axis=1) > 1, 0, eta_w)
-
+    def _get_action_simple(self):
+        u_iw = (self.eta_iw - self.eta_ih) * (1 - survival) * self.player_data["u-death"]
+        p_max = 1 + self.p_h_delta / 2 - np.arange(self.n_stages) / env_params["t-symptoms"]
+        cutoff = np.expand_dims(np.sqrt(u_iw / max_utility), axis=1)
+        eta_w = np.where(cutoff > 1, 0, (np.expand_dims(p_max, axis=0) - cutoff) / self.p_h_delta)
         eta_w[:, -1] = 1
-        assert eta_w.shape == (self.n_sections, self.n_stages)
-        eta_w = np.clip(eta_w, 0, 1)
-        logger.debug("eta_w: \n" + str(eta_w))
-
-        self.eta_w[:, self.S, :] = eta_w
+        return np.clip(eta_w, 0, 1)
 
     def get_action_planner(self):
-        #
-        # P[W_it = 1] = m(i-stage_i, delta-i_t).X_it + c(i-stage_i, delta-i_t)
-        # n(W_t) = m(i-stage_i, delta-i_t).X_t + c(i-stage_i, delta-i_t)        , for each cell
-        # and, X_t = n(W_{t-1}) + h(params)X_{t-1}
-        #
-        # so we track X_t and n(W_t) for all t
-        #
+        self.X = self.eta_w[:, self.P, :] + self.h * self.X
 
-        # step 0: find h, delta_i
-        delta_i = self.eta_iw - self.eta_ih
+        eta_w_s = self._get_action_simple()
+        eta_w_del = np.min(1 - eta_w_s, eta_w_s) * 0.2
+        eta_w_min = eta_w_s - eta_w_del
+        eta_w_max = eta_w_s + eta_w_del
 
-        assert self.h.shape == delta_i.shape == (self.n_sections,)
-
-        p_max = Planner.max_eta_w(self.h, delta_i)
-        p_min = Planner.min_eta_w(self.h, delta_i)
-
-        assert p_max.shape == p_min.shape == (self.n_sections, self.n_stages)
-
-        eta_w = self.eta_w[:, self.P, :]
-
-        # TODO: adjust self.X with population shifts in execute_infection
-        self.X = eta_w + self.h * self.X
-
-        # p_max corresponds to self.X = 0       [15,22]
-        # p_min     '       '  self.X = /(1-h) [15,22]
-
-        eta_w = (p_min - p_max) * (1 - self.h) * self.X + p_max
-        self.eta_w[:, self.P, :] = eta_w
+        self.eta_w[:, self.P, :] = (eta_w_min - eta_w_max) * (1 - self.h) * self.X + eta_w_max
 
     def simulate(self):
         try:
