@@ -89,14 +89,7 @@ class Population:
 
     def execute_infection(self):
         """
-        Adjusts self.people and self.eta_w forward by one day wrt the pandemic.
-
-        While the adjustment of self.people is trivial, an example would help to understand how
-        self.eta_w is modified: say, get_action_cowards sets self.eta_w[1, 0, 3] = 0.7, (ie. we
-        compute 70% of young primary cowards at their 3rd day of infection choose work) then, this
-        function will set self.eta_w[1, 0, 4] = 0.7 (so that when get_action_cowards is called
-        again, they see that 70% of people currently in their 4th day of infection had chosen work
-        yesterday)
+        Adjusts self.people, self.eta_w and self.X forward by one day wrt the pandemic.
         """
 
         # 1. Find the probability of infection for S work and S home, ie. eta_iw, eta_ih respectively
@@ -133,6 +126,7 @@ class Population:
         fresh_infected = eta_i * self.people[:, :, 0]
         fresh_recovered = self.people[:, :, -2] * np.expand_dims(survival, axis=1)
         fresh_deaths = self.people[:, :, -2] - fresh_recovered
+        old_recovered = self.people[:, :, -1]
 
         self.people[:, :, 2:-1] = self.people[:, :, 1:-2]
         self.people[:, :, -1] += fresh_recovered
@@ -143,10 +137,19 @@ class Population:
         # 4. execute the eta_w transitions (note: eta_w will be wrt the new population distribution)
         eta_wi = self.safe_divide(eta_iw * eta_w, eta_i)  # P[W given they get I]
         eta_ws = self.safe_divide((1 - eta_iw) * eta_w, (1 - eta_i))  # P[W given they remain S]
-        self.eta_w[:, :, 2:-1] = self.eta_w[:, :, 1:-2]
         self.eta_w[:, :, -1] = 1 - self.safe_divide(fresh_recovered, self.people[:, :, -1])
+        self.eta_w[:, :, 2:-1] = self.eta_w[:, :, 1:-2]
         self.eta_w[:, :, 1] = eta_wi
         self.eta_w[:, :, 0] = eta_ws
+
+        # 5. execute X transitions (note: this is only for planner archetype)
+        self.X[:, -1] = self.safe_divide(
+            self.X[:, -1] * old_recovered[:, self.P] + self.X[:, -2] * fresh_recovered[:, self.P],
+            self.people[:, self.P, -1]
+        )
+        self.X[:, 2:-1] = self.X[:, 1:-2]
+        # self.X[:, 1] = ?
+        # self.X[:, 0] = ?
 
     def update_utility(self):
         """ Takes the actions supplied, increments the utility and returns the risks of infection """
