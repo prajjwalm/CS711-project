@@ -152,7 +152,9 @@ class Population:
             self.people[:, self.P, -1]
         )
         self.X[:, 2:-1] = self.X[:, 1:-2]
-        self.X[:, 1] = self.X[:, 0]
+        pop_infected_today = self.eta_w[:, self.P, 1] / self.eta_w[:, self.P, 0]
+        self.X[:, 1] = pop_infected_today * self.X[:, 0]
+        self.X[:, 0] = (1 + pop_infected_today) * self.X[:, 0]
 
     def update_utility(self):
         """ Takes the actions supplied, increments the utility and returns the risks of infection """
