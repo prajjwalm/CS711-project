@@ -19,7 +19,7 @@ class Population:
     # @formatter:off
 
     # size range over which a persons belief of his own health (type) varies
-    fluctuation:    float
+    p_h_delta:    float
 
     # constants used in various archetypes
     coward_data:    Dict[str, float]
@@ -63,7 +63,7 @@ class Population:
     def __init__(self):
         self.coward_data = player_types["coward"]
         self.player_data = player_data
-        self.fluctuation = self.player_data['p-healthy-fluctuation']
+        self.p_h_delta = self.player_data['p-healthy-fluctuation']
 
         self.n_sections = len(sections)
         self.n_stages = env_params['t-removal'] + 1
@@ -157,8 +157,6 @@ class Population:
         s_utility = np.einsum("ijk,ijk,i,k -> j", self.people, self.eta_w, max_utility, i_loss)
         self.net_utility += np.sum(s_utility)
 
-    # TODO(@CC): do this directly using numpy (i.e. remove loops), handle all idx together
-    # should also be able to handle all i_stages together, no loops needed
     def get_action_cowards(self):
         """
         Forwards eta_w[all_archetypes, C, all_stages] by one day. That is, using self parameters (in
@@ -167,24 +165,17 @@ class Population:
         then)) set self.eta_w to the ratio of people in each cell who will choose to work today.
         """
         new_eta_wc = np.zeros((self.n_sections, 1, self.n_stages))
+
+        # TODO: @srajit, @ravi remove this loop too
         for i in range(self.n_sections):
-            new_eta_wc[i, 0, :] = np.asarray(self._get_action_cowards(i, self.eta_w[i, self.C, :].tolist()))
+            new_eta_wc[i, 0, :] = np.asarray(self._get_action_cowards(i, self.eta_w[i, self.C, :]))
         self.eta_w[:, [self.C], :] = new_eta_wc
 
-    def _get_action_cowards(self, idx, last_w):
+    def _get_action_cowards(self, idx: int, last_w: np.ndarray):
         """
         :param idx:      The index of the section for which this function is called {0, ..., 15}
-        :type idx:       int
-
         :param last_w:   The ratio of people (of this type) who went to work yesterday for each day
                          of infection
-                         e.g. idx = 0, is the ratio (young primary coward sus W(t-1) / young primary cowards sus)
-        :type last_w:    List[float]
-
-        Params not needed here
-        :i_stage:  Ratios for the day of infection this is (0 -> S, t_recovery -> R)
-                    e.g. idx = 0, is the ratio (young primary coward sus / young primary cowards)
-        :i_stage:   List[float]
 
         :return: ratio of people who will choose to work (indexed by i_stage)
         :rtype:  List[float]
@@ -193,43 +184,21 @@ class Population:
         threshold_sw = self.coward_data['w-threshold']
         threshold_sh = self.coward_data['h-threshold']
 
-        total_days = env_params['t-removal']
-        unaware_days = env_params["t-symptoms"]
-##################################################################################################################
+        ts = env_params["t-symptoms"]
+        ##########################################################################################################
 
-        ratio_over_threshold_w = 1 - ((threshold_sw - (1 - np.arange(unaware_days-1) / unaware_days - self.fluctuation / 2)) / self.fluctuation)
-        ratio_over_threshold_h = 1 - ((threshold_sh - (1 - np.arange(unaware_days-1) / unaware_days - self.fluctuation / 2)) / self.fluctuation)
-        w.append(last_w[:unaware_days-1] * ratio_over_threshold_w + (1 - last_w[:unaware_days-1]) * ratio_over_threshold_h)
+        ratio_over_threshold_w = 1 - (
+                    (threshold_sw - (1 - np.arange(ts - 1) / ts - self.p_h_delta / 2)) / self.p_h_delta)
+        ratio_over_threshold_h = 1 - (
+                    (threshold_sh - (1 - np.arange(ts - 1) / ts - self.p_h_delta / 2)) / self.p_h_delta)
 
-        w.append(last_w[unaware_days:] * max((self.fluctuation / 2 - threshold_sw) / self.fluctuation, 0) \
-            + (1 - last_w[unaware_days:]) * max((self.fluctuation / 2 - threshold_sh) / self.fluctuation, 0))
+        # TODO: @srajit, @ravi, you'll probably get a list of two numpy arrays, this is not what you intended, to make
+        #  this work, set w to be a numpy array and adjust accordingly
+        w.append(last_w[:ts - 1] * ratio_over_threshold_w + (1 - last_w[:ts - 1]) * ratio_over_threshold_h)
 
-##################################################################################################################
-        #
-        # ratio_over_threshold_w = 1 - ((threshold_sw - (1 -(0)*num / unaware_days -  self.fluctuation / 2)) / self.fluctuation)
-        # ratio_over_threshold_h = 1 - ((threshold_sh - (1 - self.fluctuation / 2)) / self.fluctuation)
-        #
-        # w.append(last_w[0] * ratio_over_threshold_w + (1 - last_w[0]) * ratio_over_threshold_h)
-        #
-        #
-        # for i in range(total_days - 1):
-        #     if i < unaware_days:
-        #         ratio_over_threshold_w = 1 - ((threshold_sw - (1 - (i + 1) / unaware_days - self.fluctuation / 2)) / self.fluctuation)
-        #         ratio_over_threshold_w = min(1.0, max(ratio_over_threshold_w, 0))
-        #         ratio_over_threshold_h = 1 - (
-        #                 (threshold_sh - (1 - (i + 1) / unaware_days - self.fluctuation / 2)) / self.fluctuation)
-        #         ratio_over_threshold_h = min(1.0, max(ratio_over_threshold_h, 0))
-        #     else:
-        #         ratio_over_threshold_w = max((self.fluctuation / 2 - threshold_sw) / self.fluctuation, 0)
-        #         ratio_over_threshold_h = max((self.fluctuation / 2 - threshold_sh) / self.fluctuation, 0)
-        #     w.append(last_w[i] * ratio_over_threshold_w + (1 - last_w[i]) * ratio_over_threshold_h)
-
-        # ratio_over_threshold_w = 1 - ((threshold_sw - (1 - self.fluctuation / 2)) / self.fluctuation)
-        # ratio_over_threshold_h = 1 - ((threshold_sh - (1 - self.fluctuation / 2)) / self.fluctuation)
-
-        # oye @CC ye direct 1 nhi hai??
-        # w.append(last_w[total_days] * ratio_over_threshold_w + (1 - last_w[total_days]) * ratio_over_threshold_h)
-        # w.append(1)
+        w.append(last_w[ts:] * max((self.p_h_delta / 2 - threshold_sw) / self.p_h_delta, 0) \
+                 + (1 - last_w[ts:]) * max((self.p_h_delta / 2 - threshold_sh) / self.p_h_delta, 0))
+        # TODO: @srajit, @ravi are you sure this works for last column (for recovered)
 
         assert len(w) == self.n_stages
 
@@ -254,12 +223,12 @@ class Population:
         assert c1.shape == (self.n_sections,)
         logger.debug("u_per_capita: \n" + str(c1))
 
-        p_max = 1 - np.arange(self.n_stages) / env_params["t-symptoms"] + self.fluctuation / 2
+        p_max = 1 - np.arange(self.n_stages) / env_params["t-symptoms"] + self.p_h_delta / 2
         p_max[-1] = 1
         assert p_max.shape == (self.n_stages,)
         logger.debug("health belief max: \n" + str(p_max))
 
-        eta_w = (np.expand_dims(p_max, axis=0) - np.expand_dims(np.sqrt(c2 / c1), axis=1)) / self.fluctuation
+        eta_w = (np.expand_dims(p_max, axis=0) - np.expand_dims(np.sqrt(c2 / c1), axis=1)) / self.p_h_delta
         eta_w = np.where(np.expand_dims(np.sqrt(c2 / c1), axis=1) > 1, 0, eta_w)
 
         eta_w[:, -1] = 1
