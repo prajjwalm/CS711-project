@@ -152,9 +152,10 @@ class Population:
             self.people[:, self.P, -1]
         )
         self.X[:, 2:-1] = self.X[:, 1:-2]
-        pop_infected_today = self.eta_w[:, self.P, 1] / self.eta_w[:, self.P, 0]
+        pop_infected_today = self.safe_divide(self.eta_w[:, self.P, 1], self.eta_w[:, self.P, 0])
         self.X[:, 1] = pop_infected_today * self.X[:, 0]
         self.X[:, 0] = (1 + pop_infected_today) * self.X[:, 0]
+        self.X = np.clip(self.X, 0, 1/1-self.h)
 
     def update_utility(self):
         """ Takes the actions supplied, increments the utility and returns the risks of infection """
