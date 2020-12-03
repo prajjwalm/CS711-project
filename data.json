@@ -62,6 +62,10 @@
     "coward": {
       "w-threshold": 0.96,
       "h-threshold": 0.90
+    },
+    "planner": {
+      "h": 0.5,
+      "cap": 0.2
     }
   }
 }

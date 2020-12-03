@@ -1,3 +1,55 @@
+Notes on Planner:
+
+    1.  There are two important concepts for any person of the Planner population:
+        a. how is the work history (X) calculated
+        b. what is the distribution of P[work|X]
+
+    2.  For work history calculations to be reasonable, we have to attach exponentially decreasing
+        weights to past days. (with a const exp factor: h)
+            => X_it = W_i{t-1} + h.X_i{t-1}     for one person
+            => X_t = eta_w_{t-1} + h.X_{t-1}    for a population
+
+    3.  To get the macro results (eta_w_t in terms of some aggregate(s) of X_it), compatible with
+        micro analysis (P[work]_it for each X_it), we need a very specific distribution of P[work|X]
+
+    4.  If we plan to use X = avg(X_i) as our aggregate, P[work|X] must be linear in X (in [0, 1/1-h))
+
+    5.  Fixing the upper and lower bounds of P[work|X] as 0, 1 doesn't work. This is because of -
+        a.  with fixed bounds, all information must come from h, which makes it time-variant. With
+            a time-variant h, the formula of 2 doesn't hold. (Imagine h was 0.9 upto t-1, and guy
+            keeping track of X in a time variant h requires computing h from the entire history,
+            removing any benefits of aggregation, and becoming impossible for part 3)
+
+        b.  with fixed bounds of 0, 1: we have P[work] = 1 - (1 - h)X, we know for symptomatic guys
+            P[work] = 0 for all X, but no h can capture this.
+
+    6.  Thus we must have: eta_w = mX + c where m and c are time variant, m <= 0, and the bounds of
+        eta_w, ie. [c + m/1-h, c] must be a subset of [0, 1]. Instead of working with m, c, we work
+        with the (time variant) bounds themselves, eta_w_min, eta_w_max, with
+            eta_w_t = (eta_w_min - eta_w_max) * (1 - h) * X_t + eta_w_max
+                where, eta_w_min/max are a function of params and current environment
+            also, X_t = eta_w_{t-1} + h.X_{t-1}
+        Tracking these two (X and eta_w)_t gives the entire solution.
+
+    7.  Since we are storing the information in the bounds, adding parametric information to h is,
+        at best redundant and at worst incorrect. Much better to keep it a constant at data.json.
+
+    8.  The last question that remains is what should the bounds be? The probability that simple
+        takes must lie between the bounds. The following seems reasonable -
+
+        Simple   Planner(Max)   Planner(Min)
+          95%       97%             93%
+          90%       94%             86%
+          50%       70%             30%
+          10%       14%              6%
+           5%        7%              3%
+
+
+    *.  An important implementation detail is how should X vary in execute_infection()?
+
+
+
+
 
         # assuming self.eta_w stores previous day's working ratio
         # Since planner type tries to go to work for a number of target days in a week

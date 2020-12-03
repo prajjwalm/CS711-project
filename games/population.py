@@ -4,6 +4,7 @@ from typing import List, Dict
 import numpy as np
 
 from constants import sections, s_pops, max_utility, job_risk, survival, env_params, player_data, player_types
+from players import Planner
 
 logger: logging.Logger
 
@@ -31,6 +32,11 @@ class Population:
     people:         np.ndarray  # ratio of population for each cell
     deaths:         np.ndarray  # ( section x archetype )
     eta_w:          np.ndarray  # ratio of people who worked / will work in that cell
+
+    # for planner
+    X:              np.ndarray                              # work measure, (section x i_stage)
+    h:              float = player_types['planner']['h']    # memory over past days
+    influence_cap:  float = player_types['planner']['cap']  # max influence on P[W/H] due to X
 
     # utility measures
     net_utility:    float
@@ -76,6 +82,11 @@ class Population:
 
         self.eta_iw = np.zeros(self.n_sections)
         self.eta_ih = 0
+
+        self.X = np.zeros((self.n_sections, self.n_stages))
+        h = max_utility / (max_utility + (1 - survival) * self.player_data["u-death"])
+
+        self.X[:, 0] = 1 / (1 - h)
 
     def execute_infection(self):
         """
@@ -190,6 +201,8 @@ class Population:
 
         w.append(last_w[0] * ratio_over_threshold_w + (1 - last_w[0]) * ratio_over_threshold_h)
 
+        # i -> np.arange(), np.where()
+        # 1 - (np.arange(total_days - 1) + 1) / unaware_days
         for i in range(total_days - 1):
             if i < unaware_days:
                 ratio_over_threshold_w = 1 - (
@@ -256,7 +269,27 @@ class Population:
         #
         # so we track X_t and n(W_t) for all t
         #
-        pass
+
+        # step 0: find h, delta_i
+        delta_i = self.eta_iw - self.eta_ih
+
+        assert self.h.shape == delta_i.shape == (self.n_sections,)
+
+        p_max = Planner.max_eta_w(self.h, delta_i)
+        p_min = Planner.min_eta_w(self.h, delta_i)
+
+        assert p_max.shape == p_min.shape == (self.n_sections, self.n_stages)
+
+        eta_w = self.eta_w[:, self.P, :]
+
+        # TODO: adjust self.X with population shifts in execute_infection
+        self.X = eta_w + self.h * self.X
+
+        # p_max corresponds to self.X = 0       [15,22]
+        # p_min     '       '  self.X = /(1-h) [15,22]
+
+        eta_w = (p_min - p_max) * (1 - self.h) * self.X + p_max
+        self.eta_w[:, self.P, :] = eta_w
 
     def simulate(self):
         try:

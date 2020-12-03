@@ -3,7 +3,7 @@ from typing import List
 
 import numpy as np
 
-from constants import env_params
+from constants import env_params, player_data
 from .base_player import BasePlayer
 
 logger: logging.Logger
@@ -34,15 +34,73 @@ class Planner(BasePlayer):
     # and preferably, @X_t = 1 / 2(1-h), P[W_t = 1] = P_Simple
     #
 
-    @staticmethod
-    def m(i_stage: float, delta_i: float, c: float):
-        tr = env_params['t-removal']
-        ts = env_params['t-symptoms']
-        return -(delta_i * np.where(i_stage != tr, np.clip(1 - i_stage / ts, 0, 1), 0)) * c
+    # ratio_i = eta_ih / eta_iw
+    # i_stage = 3rd axis
+
+    # when ratio_i = 1; then mX + c = 1 for all X; => min = 1, max = 1
+    # ratio_i = 0,
+    # when i_stage = 22; same as above
+    # when i_stage in [6, 21]; then mX + c = 0 for all X => m = 0, c = 0
+    # m should be maximum at sus.
+    # c1, c2
+    # h = function(u_max, u_death)
+
+    # h = c1/(c1+P[death|virus]*U[death]) where c1 = f(u_max), c2 = f(u_death)
+    # simple goes to work if p_h > sqrt(1/h - 1)
+
+    # [0. P = mX + c <- min_eta_w, max_eta_w, P(X=1/1-h) = min_eta_w, P(X=0) = max_eta_w]
+    # 1. h should be constant
+    # 2. 0 <= min_eta_w <= max_eta_w <= 1
 
     @staticmethod
-    def c(i_stage: float, delta_i: float):
-        return 1 - delta_i
+    def min_eta_w(h, delta_i):
+        # if the guy has a work history of WWW...W. P = ?
+        # simple. P = ?
+        ts = env_params['t-symptoms']
+        tr = env_params['t-removal']
+        p_h_del = player_data['p-healthy-fluctuation']
+        p_h_max = np.clip(1 - np.arange(tr + 1) / ts, 0, 1) + p_h_del / 2
+        p_h_max[:, -1] = 1
+
+        cutoff = np.sqrt((1 / h - 1) * delta_i)
+        cutoff = np.expand_dims(cutoff, axis=1)
+        p_h_max = np.expand_dims(p_h_max, axis=0)
+        out = np.where(cutoff > 1, 0, np.clip(0.8 * (p_h_max - cutoff) / p_h_del, 0, 1))
+        out[:, -1] = 1
+        return out
+
+    @staticmethod
+    def simple_eta_w(h, delta_i):
+        # simple. P = ?
+        ts = env_params['t-symptoms']
+        tr = env_params['t-removal']
+        p_h_del = player_data['p-healthy-fluctuation']
+        p_h_max = np.clip(1 - np.arange(tr + 1) / ts, 0, 1) + p_h_del / 2
+        p_h_max[:, -1] = 1
+
+        cutoff = np.sqrt((1 / h - 1) * delta_i)
+        cutoff = np.expand_dims(cutoff, axis=1)
+        p_h_max = np.expand_dims(p_h_max, axis=0)
+        out = np.where(cutoff > 1, 0, np.clip((p_h_max - cutoff) / p_h_del, 0, 1))
+        out[:, -1] = 1
+        return out
+
+    @staticmethod
+    def max_eta_w(h, delta_i):
+        # if the guy has a work history of HHH...H. P = ?
+        # simple. P = ?
+        ts = env_params['t-symptoms']
+        tr = env_params['t-removal']
+        p_h_del = player_data['p-healthy-fluctuation']
+        p_h_max = np.clip(1 - np.arange(tr + 1) / ts, 0, 1) + p_h_del / 2
+        p_h_max[:, -1] = 1
+
+        cutoff = np.sqrt((1 / h - 1) * delta_i)
+        cutoff = np.expand_dims(cutoff, axis=1)
+        p_h_max = np.expand_dims(p_h_max, axis=0)
+        out = np.where(cutoff > 1, 0, np.clip(1.2 * (p_h_max - cutoff) / p_h_del, 0, 1))
+        out[:, -1] = 1
+        return out
 
     # BUGGY CODE
     def __init__(self, env, *args, **kwargs):
