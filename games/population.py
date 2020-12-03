@@ -69,12 +69,12 @@ class Population:
 
         self.people = np.zeros((self.n_sections, self.n_types, self.n_stages))
 
-        self.people[:, self.S, 0] = np.array(s_pops) * 0.99
-        self.people[:, self.S, 1] = np.array(s_pops) - self.people[:, self.S, 0]
+        self.people[:, self.C, 0] = np.array(s_pops) * 0.99
+        self.people[:, self.C, 1] = np.array(s_pops) - self.people[:, self.C, 0]
 
         self.eta_w = np.zeros((self.n_sections, 3, self.n_stages))
-        self.eta_w[:, self.S, 0] = 1
-        self.eta_w[:, self.S, -1] = 1
+        self.eta_w[:, self.C, 0] = 1
+        self.eta_w[:, self.C, -1] = 1
 
         self.net_utility = 0
         self.deaths = np.zeros((self.n_sections, self.n_types))
@@ -113,6 +113,7 @@ class Population:
         coeff_i = 0.05
         coeff_wi = 1 * job_risk
 
+        logger.debug("job_risk: " + str(job_risk))
         self.eta_ih = total_infectious * coeff_i
         self.eta_iw = np.clip(1 - (1 - total_infectious * coeff_i) * (1 - working_infectious * coeff_wi), self.eta_ih,
                               1)
@@ -167,7 +168,11 @@ class Population:
 
         # TODO: @srajit, @ravi remove this loop too
         for i in range(self.n_sections):
-            new_eta_wc[i, 0, :] = np.asarray(self._get_action_cowards(self.eta_w[i, self.C, :]))
+            new_eta_wc[i][0, :] = np.asarray(self._get_action_cowards(self.eta_w[i][self.C, :]))
+
+        # new_eta_wc[:, 0, :] = np.asarray(self._get_action_cowards(self.eta_w[:, self.C, :]))
+    #    [i,j,k] [i][j][k]
+
         self.eta_w[:, [self.C], :] = new_eta_wc
 
     def _get_action_cowards(self, last_w: np.ndarray):
@@ -178,27 +183,24 @@ class Population:
         :return: ratio of people who will choose to work (indexed by i_stage)
         :rtype:  List[float]
         """
-        w = []
+        w = np.zeros((self.n_stages,))
         threshold_sw = self.coward_data['w-threshold']
         threshold_sh = self.coward_data['h-threshold']
 
         ts = env_params["t-symptoms"]
-        ##########################################################################################################
 
-        ratio_over_threshold_w = 1 - (
-                (threshold_sw - (1 - np.arange(ts - 1) / ts - self.p_h_delta / 2)) / self.p_h_delta)
-        ratio_over_threshold_h = 1 - (
-                (threshold_sh - (1 - np.arange(ts - 1) / ts - self.p_h_delta / 2)) / self.p_h_delta)
-
+        ratio_over_threshold_w = 1 - ((threshold_sw - (1 - np.arange(ts) / ts - self.p_h_delta / 2)) / self.p_h_delta)
+        ratio_over_threshold_h = 1 - ((threshold_sh - (1 - np.arange(ts) / ts - self.p_h_delta / 2)) / self.p_h_delta)
+        ratio_over_threshold_w = np.clip(ratio_over_threshold_w, 0, 1)
+        ratio_over_threshold_h = np.clip(ratio_over_threshold_h, 0, 1)
         # TODO: @srajit, @ravi, you'll probably get a list of two numpy arrays, this is not what you intended, to make
         #  this work, set w to be a numpy array and adjust accordingly
-        w.append(last_w[:ts - 1] * ratio_over_threshold_w + (1 - last_w[:ts - 1]) * ratio_over_threshold_h)
+        w[:ts] = last_w[:ts] * ratio_over_threshold_w + (1 - last_w[:ts]) * ratio_over_threshold_h
 
-        w.append(last_w[ts:] * max((self.p_h_delta / 2 - threshold_sw) / self.p_h_delta, 0)
-                 + (1 - last_w[ts:]) * max((self.p_h_delta / 2 - threshold_sh) / self.p_h_delta, 0))
+        w[ts:-1] = last_w[ts:-1] * max((self.p_h_delta / 2 - threshold_sw) / self.p_h_delta, 0) \
+                 + (1 - last_w[ts:-1]) * max((self.p_h_delta / 2 - threshold_sh) / self.p_h_delta, 0)
         # TODO: @srajit, @ravi are you sure this works for last column (for recovered)
-
-        assert len(w) == self.n_stages
+        w[-1] = 1
 
         return w
 
@@ -217,7 +219,7 @@ class Population:
         self.X = self.eta_w[:, self.P, :] + self.h * self.X
 
         eta_w_s = self._get_action_simple()
-        eta_w_del = np.min(1 - eta_w_s, eta_w_s) * 0.2
+        eta_w_del = np.min(1 - eta_w_s, eta_w_s) * 0.4
         eta_w_min = eta_w_s - eta_w_del
         eta_w_max = eta_w_s + eta_w_del
 
@@ -226,7 +228,7 @@ class Population:
     def simulate(self):
         try:
             for t in range(env_params['t-max']):
-                self.get_action_simple()
+                self.get_action_cowards()
                 self.update_utility()
                 self.execute_infection()
                 logger.info("Population sections:\n" + str(self.people))
