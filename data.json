@@ -60,8 +60,11 @@
   },
   "player-types": {
     "coward": {
+      "job-risk-threshold": 0.01,
       "w-threshold": 0.96,
-      "h-threshold": 0.90
+      "h-threshold": 0.90,
+      "low-risk-w-threshold" : 0.420,
+      "low-risk-h-threshold" : 0.69
     },
     "planner": {
       "h": 0.5,

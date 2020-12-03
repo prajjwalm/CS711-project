@@ -172,20 +172,25 @@ class Population:
         then)) set self.eta_w to the ratio of people in each cell who will choose to work today.
         """
         w = np.zeros((self.n_sections, self.n_stages,))
-        threshold_sw = self.coward_data['w-threshold']
-        threshold_sh = self.coward_data['h-threshold']
+        threshold_sw = np.zeros((self.n_sections,))
+        threshold_sh = np.zeros((self.n_sections,))
+        job_risk_threshold = self.coward_data['job-risk-threshold']
+
+        threshold_sw = np.where(self.eta_iw < job_risk_threshold, self.coward_data['low-risk-w-threshold'], self.coward_data['w-threshold'])
+        threshold_sh = np.where(self.eta_iw < job_risk_threshold, self.coward_data['low-risk-h-threshold'], self.coward_data['h-threshold'])
 
         ts = env_params["t-symptoms"]
         last_w = self.eta_w[:, self.C, :]
 
-        ratio_over_threshold_w = 1 - ((threshold_sw - (1 - np.arange(ts) / ts - self.p_h_delta / 2)) / self.p_h_delta)
-        ratio_over_threshold_h = 1 - ((threshold_sh - (1 - np.arange(ts) / ts - self.p_h_delta / 2)) / self.p_h_delta)
+        ratio_over_threshold_w = 1 - ((np.expand_dims(threshold_sw, axis = 1) - (1 - np.expand_dims(np.arange(ts),axis = 0) / ts - self.p_h_delta / 2)) / self.p_h_delta)
+        ratio_over_threshold_h = 1 - ((np.expand_dims(threshold_sh, axis = 1) - (1 - np.expand_dims(np.arange(ts),axis = 0) / ts - self.p_h_delta / 2)) / self.p_h_delta)
+        # ratio_over_threshold_h = 1 - ((threshold_sh - (1 - np.arange(ts) / ts - self.p_h_delta / 2)) / self.p_h_delta)
         ratio_over_threshold_w = np.clip(ratio_over_threshold_w, 0, 1)
         ratio_over_threshold_h = np.clip(ratio_over_threshold_h, 0, 1)
         w[:, :ts] = last_w[:, :ts] * ratio_over_threshold_w + (1 - last_w[:, :ts]) * ratio_over_threshold_h
 
-        w[:, ts:-1] = last_w[:, ts:-1] * max((self.p_h_delta / 2 - threshold_sw) / self.p_h_delta, 0) \
-                + (1 - last_w[:, ts:-1]) * max((self.p_h_delta / 2 - threshold_sh) / self.p_h_delta, 0)
+        w[:, ts:-1] = last_w[:, ts:-1] * np.maximum((self.p_h_delta / 2 - threshold_sw) / self.p_h_delta, 0) \
+                + (1 - last_w[:, ts:-1]) * np.maximum((self.p_h_delta / 2 - threshold_sh) / self.p_h_delta, 0)
         w[:, -1] = 1
 
         self.eta_w[:, self.C, :] = np.asarray(w)
