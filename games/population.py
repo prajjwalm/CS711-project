@@ -48,7 +48,8 @@ class Population:
     people: np.ndarray  # ratio of population for each cell
     deaths: np.ndarray  # ( section x archetype )
     eta_w: np.ndarray  # ratio of people who worked / will work in that cell
-
+    n_age_groups: int
+    n_job_types: int
     # for planner
     X: np.ndarray  # work measure, (section x i_stage)
     h: float = player_types['planner']['h']  # memory over past days
@@ -73,12 +74,14 @@ class Population:
     t_deaths_ot_s: List[float]  # total deaths over time for each section
     t_utility_ot: List[float]  # total utility over
     d_utility_ot: List[float]  # daily utility over
-
+    t_deaths_ot_a: List[float]  # total deaths over time for each age group
     eta_w_ot: List[float]  # Population going to work
 
     timeline: np.ndarray  # time scale
     infection_rate: List[float]  # infection rate over time
-    archtype_dict: Dict[int, str]  # Contains Labels for n_types
+    archetype_dict: Dict[int, str]  # Contains Labels for n_types
+    age_group_dict: Dict[int, str]  # Contains Labels for n_age_group
+    sections_dict: Dict[int, str]  # Contains Labels for n_job_types
 
     # @formatter:on
 
@@ -97,7 +100,8 @@ class Population:
 
         self.n_sections = len(sections)
         self.n_stages = env_params['t-removal'] + 1
-
+        self.n_age_groups = 3
+        self.n_job_types = 5
         self.people = np.zeros((self.n_sections, self.n_types, self.n_stages))
 
         s_type_pops = np.expand_dims(np.array(s_pops), axis=1) * np.expand_dims(type_pops, axis=0)
@@ -125,7 +129,7 @@ class Population:
         self.t_deaths_ot = []
         self.f_deaths_ot = []
         self.t_deaths_ot_s = []
-
+        self.t_deaths_ot_a = []
         self.t_utility_ot = []
         self.d_utility_ot = []
 
@@ -133,9 +137,9 @@ class Population:
 
         self.timeline = np.arange(self.T_max)
         self.infection_rate = []
-        self.archtype_dict = {0: 'Coward', 1: 'Planner', 2: 'Simple'}
+        self.archetype_dict = {0: 'Coward', 1: 'Planner', 2: 'Simple'}
         self.sections_dict = {0: 'Primary', 1: 'Secondary', 2: 'Tertiary', 3: 'Essential', 4: 'Retired'}
-
+        self.age_group_dict = {0: 'Young', 1: 'Middle', 2: 'Old'}
         # TODO: set linear instead of step
         self.threshold_sw = np.where(job_risk < self.coward_data['job-risk-threshold'],
                                      self.coward_data['low-risk-w-threshold'],
@@ -191,7 +195,17 @@ class Population:
         self.people[:, :, 1] = fresh_infected
         self.deaths += fresh_deaths
 
-        self.t_deaths_ot_s.append(self.deaths)
+        # @Prajjwal - I think temp need not be multiplied in line 200, but just in case
+        temp = np.asarray(s_pops).reshape(self.n_job_types, self.n_age_groups)
+        age_group_deaths_s = np.sum(
+            np.asarray(fresh_deaths[:, self.S]).reshape(self.n_job_types, self.n_age_groups), axis=0)
+        if len(self.t_deaths_ot_s) != 0:
+            self.t_deaths_ot_s.append(self.t_deaths_ot_s[-1] + fresh_deaths[:, self.S])
+            self.t_deaths_ot_a.append(self.t_deaths_ot_a[-1] + age_group_deaths_s)
+        else:
+            self.t_deaths_ot_s.append(fresh_deaths[:, self.S])
+            self.t_deaths_ot_a.append(age_group_deaths_s)
+        self.eta_w_ot.append(np.sum(np.asarray(eta_w) * np.expand_dims(np.asarray(s_pops), axis=1), axis=0))
         self.t_deaths_ot.append(np.sum(self.deaths, axis=0))
         self.f_deaths_ot.append(np.sum(fresh_deaths, axis=0))
 
@@ -274,7 +288,7 @@ class Population:
         self.X = self.eta_w[:, self.P, :] + self.h * self.X
 
         eta_w_s = self.eta_w[:, self.S, :]
-        eta_w_del = np.minimum(1 - eta_w_s, eta_w_s) * 0.4
+        eta_w_del = np.minimum(1 - eta_w_s, eta_w_s)*0.4
         eta_w_min = eta_w_s - eta_w_del
         eta_w_max = eta_w_s + eta_w_del
 
@@ -285,7 +299,8 @@ class Population:
             for T[0] in range(self.T_max):
                 logger.info("Population sections:\n" + str(self.people))
                 logger.info("Percentage working:\n" + str(self.eta_w))
-                logger.info("Final Utility: {}".format(self.net_utility + np.sum(self.deaths, axis=0) * player_data['u-death']))
+                logger.info(
+                    "Final Utility: {}".format(self.net_utility + np.sum(self.deaths, axis=0) * player_data['u-death']))
 
                 self._get_action_coward()
                 self._get_action_simple()
@@ -309,7 +324,7 @@ class Population:
 
         ax2 = ax1.twinx()
         for i in range(self.n_types):
-            ax2.plot(self.timeline, np.asarray(self.t_deaths_ot)[:, i], label=self.archtype_dict[i])
+            ax2.plot(self.timeline, np.asarray(self.t_deaths_ot)[:, i], label=self.archetype_dict[i])
 
         ax2.set_xlabel("Time(days)")
         ax2.set_ylabel("Death percentage")
@@ -317,6 +332,7 @@ class Population:
         ax1.legend(loc="center right")
         ax2.legend()
         fig.tight_layout()
+        plt.title("Total Death Percentage for 3 archetypes")
         plt.savefig("graphs/total_deaths.jpg")
 
     #        plt.show()
@@ -329,7 +345,7 @@ class Population:
 
         ax2 = ax1.twinx()
         for i in range(self.n_types):
-            ax2.plot(self.timeline, np.asarray(self.f_deaths_ot)[:, i], label=self.archtype_dict[i])
+            ax2.plot(self.timeline, np.asarray(self.f_deaths_ot)[:, i], label=self.archetype_dict[i])
 
         ax2.set_xlabel("Time(days)")
         ax2.set_ylabel("Death percentage")
@@ -337,65 +353,101 @@ class Population:
         ax1.legend(loc="upper left")
         ax2.legend()
         fig.tight_layout()
+        plt.title("Daily Death Percentage for 3 archetypes")
         plt.savefig("graphs/fresh_deaths.jpg")
 
-        # for i in range(self.n_types):
-        #     plt.plot(self.timeline, np.asarray(self.f_deaths_ot)[:, i], label=self.archtype_dict[i])
-        #
-        # plt.xlabel("Time")
-        # plt.ylabel("Daily Death percentage")
-        # plt.grid()
-        # plt.legend()
-        # plt.savefig("graphs/fresh_deaths.jpg")
-
-    #        plt.show()
-
     def total_utility_plot(self):
-        self.t_utility_ot = np.asarray(self.t_utility_ot)
+        fig, ax1 = plt.subplots()
+        color = 'tab:red'
+        ax1.plot(self.timeline, self.infection_rate, color=color, label="Infection")
+        ax1.set_ylabel("Infected Population")
 
+        ax2 = ax1.twinx()
         for i in range(self.n_types):
-            plt.plot(self.timeline, self.t_utility_ot[:, i], label=self.archtype_dict[i])
+            ax2.plot(self.timeline, np.asarray(self.t_utility_ot)[:, i], label=self.archetype_dict[i])
 
-        plt.xlabel("Time")
-        plt.ylabel("Total Utility")
+        ax2.set_xlabel("Time(days)")
+        ax2.set_ylabel(" Total Utility")
         plt.grid()
-        plt.legend()
+        ax1.legend(loc="upper right")
+        ax2.legend()
+        fig.tight_layout()
+        plt.title("Total Utility for 3 archetypes")
         plt.savefig("graphs/total_utility.jpg")
 
-    #        plt.show()
-
     def daily_utility_plot(self):
-        self.d_utility_ot = np.asarray(self.d_utility_ot)
+        fig, ax1 = plt.subplots()
+        color = 'tab:red'
+        ax1.plot(self.timeline, self.infection_rate, color=color, label="Infection")
+        ax1.set_ylabel("Infected Population")
 
+        ax2 = ax1.twinx()
         for i in range(self.n_types):
-            plt.plot(self.timeline, self.d_utility_ot[:, i], label=self.archtype_dict[i])
+            ax2.plot(self.timeline, np.asarray(self.d_utility_ot)[:, i], label=self.archetype_dict[i])
 
-        plt.xlabel("Time")
-        plt.ylabel("Total Utility")
+        ax2.set_xlabel("Time(days)")
+        ax2.set_ylabel("Daily Utility")
         plt.grid()
-        plt.legend()
+        ax1.legend(loc="upper right")
+        ax2.legend()
+        fig.tight_layout()
+        plt.title("Daily Utility for 3 archetypes")
         plt.savefig("graphs/daily_utility.jpg")
 
-    #        plt.show()
+    def total_death_plot_sections_simple(self):
+        fig, ax1 = plt.subplots()
+        # print(self.t_deaths_ot_s[-2])
+        # print(sections)
+        for j in range(self.n_sections):
+            ax1.plot(self.timeline, np.asarray(self.t_deaths_ot_s)[:, j], label=sections[j])
 
-    def total_death_plot_sections(self):
-        self.t_deaths_ot_s = np.asarray(self.t_deaths_ot_s)
-        print(self.t_deaths_ot_s[-1])
-        for i in range(self.n_types):
-            for j in range(self.n_sections):
-                plt.plot(self.timeline, self.t_deaths_ot_s[:, j, i], label=str(i) + "+" + str(j))
-
-        plt.xlabel("Time")
-        plt.ylabel("Death percentage")
+        ax1.set_xlabel("Time(days)")
+        ax1.set_ylabel("Death percentage")
         plt.grid()
-        plt.legend()
+        ax1.legend()
+        plt.title("Death Percentage for all Sections for Archetype Simple")
         plt.savefig("graphs/total_deaths_per_section.jpg")
 
     #        plt.show()
+    def total_death_plot_age_group_simple(self):
+        fig, ax1 = plt.subplots()
+        # print(self.t_deaths_ot_s[-2])
+
+        for j in range(self.n_age_groups):
+            ax1.plot(self.timeline, np.asarray(self.t_deaths_ot_a)[:, j], label=self.age_group_dict[j])
+
+        ax1.set_xlabel("Time(days)")
+        ax1.set_ylabel("Death percentage")
+        plt.grid()
+        ax1.legend()
+        plt.title("Death Percentage for all Sections for Archetype Simple")
+        plt.savefig("graphs/total_deaths_per_age_group.jpg")
+
+    def susceptible_etaw(self):
+        fig, ax1 = plt.subplots()
+        color = 'tab:red'
+        ax1.plot(self.timeline, self.infection_rate, color=color, label="Infection")
+        ax1.set_ylabel("Infected Population")
+        # TODO : Planner and Simple are literally following each other, tried altering planner ( took 0.8 instead of
+        #  0.4, not working), so have only drawn this graph for one type
+        ax2 = ax1.twinx()
+        # for i in range(self.n_types):
+        ax2.plot(self.timeline, np.asarray(self.eta_w_ot)[:, self.P], label=self.archetype_dict[self.P])
+
+        ax2.set_xlabel("Time(days)")
+        ax2.set_ylabel("Daily Working Population")
+        plt.grid()
+        ax1.legend(loc="center right")
+        ax2.legend()
+        fig.tight_layout()
+        plt.title("Daily Working Population for Archetype Planner")
+        plt.savefig("graphs/daily_working.jpg")
 
     def plot_graphs(self):
-        self.total_death_plot()
-        self.fresh_death_plot()
+        # self.total_death_plot()
+        # self.fresh_death_plot()
         # self.total_utility_plot()
         # self.daily_utility_plot()
-        # self.total_death_plot_sections()
+        # self.total_death_plot_sections_simple()
+        # self.total_death_plot_age_group_simple()
+        self.susceptible_etaw()
