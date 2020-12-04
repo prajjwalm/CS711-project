@@ -333,7 +333,7 @@ class Population:
         ax2.legend()
         fig.tight_layout()
         plt.title("Total Death Percentage for 3 archetypes")
-        plt.savefig("graphs/total_deaths.jpg")
+        plt.savefig("graphs/total_deaths.jpg", bbox_inches='tight')
 
     #        plt.show()
 
@@ -354,7 +354,7 @@ class Population:
         ax2.legend()
         fig.tight_layout()
         plt.title("Daily Death Percentage for 3 archetypes")
-        plt.savefig("graphs/fresh_deaths.jpg")
+        plt.savefig("graphs/fresh_deaths.jpg", bbox_inches='tight')
 
     def total_utility_plot(self):
         fig, ax1 = plt.subplots()
@@ -373,7 +373,7 @@ class Population:
         ax2.legend()
         fig.tight_layout()
         plt.title("Total Utility for 3 archetypes")
-        plt.savefig("graphs/total_utility.jpg")
+        plt.savefig("graphs/total_utility.jpg", bbox_inches='tight')
 
     def daily_utility_plot(self):
         fig, ax1 = plt.subplots()
@@ -392,7 +392,7 @@ class Population:
         ax2.legend()
         fig.tight_layout()
         plt.title("Daily Utility for 3 archetypes")
-        plt.savefig("graphs/daily_utility.jpg")
+        plt.savefig("graphs/daily_utility.jpg", bbox_inches='tight')
 
     def total_death_plot_sections_simple(self):
         fig, ax1 = plt.subplots()
@@ -400,13 +400,13 @@ class Population:
         # print(sections)
         for j in range(self.n_sections):
             ax1.plot(self.timeline, np.asarray(self.t_deaths_ot_s)[:, j], label=sections[j])
-
+        plt.tight_layout()
         ax1.set_xlabel("Time(days)")
         ax1.set_ylabel("Death percentage")
         plt.grid()
         ax1.legend()
         plt.title("Death Percentage for all Sections for Archetype Simple")
-        plt.savefig("graphs/total_deaths_per_section.jpg")
+        plt.savefig("graphs/total_deaths_per_section.jpg", bbox_inches='tight')
 
     #        plt.show()
     def total_death_plot_age_group_simple(self):
@@ -420,8 +420,9 @@ class Population:
         ax1.set_ylabel("Death percentage")
         plt.grid()
         ax1.legend()
+        plt.tight_layout()
         plt.title("Death Percentage for all Sections for Archetype Simple")
-        plt.savefig("graphs/total_deaths_per_age_group.jpg")
+        plt.savefig("graphs/total_deaths_per_age_group.jpg", bbox_inches='tight')
 
     def susceptible_etaw(self):
         fig, ax1 = plt.subplots()
@@ -439,15 +440,16 @@ class Population:
         plt.grid()
         ax1.legend(loc="center right")
         ax2.legend()
-        fig.tight_layout()
+        plt.tight_layout()
+        # plt.gcf().subplots_adjust(bottom=0.15)
         plt.title("Daily Working Population for Archetype Planner")
-        plt.savefig("graphs/daily_working.jpg")
+        plt.savefig("graphs/daily_working.jpg", bbox_inches='tight')
 
     def plot_graphs(self):
-        # self.total_death_plot()
-        # self.fresh_death_plot()
-        # self.total_utility_plot()
-        # self.daily_utility_plot()
-        # self.total_death_plot_sections_simple()
-        # self.total_death_plot_age_group_simple()
+        self.total_death_plot()
+        self.fresh_death_plot()
+        self.total_utility_plot()
+        self.daily_utility_plot()
+        self.total_death_plot_sections_simple()
+        self.total_death_plot_age_group_simple()
         self.susceptible_etaw()
