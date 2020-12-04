@@ -17,13 +17,15 @@ def add_args(parser: argparse.ArgumentParser):
                              "and utilities on the entire population using densities")
 
     parser.add_argument("--plot", help="Plot graphs", action="store_true")
+    parser.add_argument("--debug", help="proceeds.log runs with DEBUG mode", action="store_true")
     add_game_args(parser)
 
 
 def parse_args(args: argparse.Namespace):
     game = parse_game_args(args)
     plot = args.plot
-    return game, plot
+    debug = args.debug
+    return game, plot, debug
 
 
 def main():
@@ -37,16 +39,6 @@ def main():
 
     logger = logging.getLogger("Log")
 
-    # change log level here; note: all modules use the same logger
-    logger.setLevel(logging.INFO)
-
-    fh = logging.FileHandler("logs/proceeds.log", mode='w')
-    fh.setFormatter(logging.Formatter(
-        "%(module)s(%(lineno)d): %(funcName)s [%(levelname)s] "
-        "(Day %(day)s): %(message)s"
-    ))
-    logger.addHandler(fh)
-    logger.addFilter(ContextFilter())
 
     # setup logging for imported modules
     init_env()
@@ -56,7 +48,23 @@ def main():
     # noinspection PyTypeChecker
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     add_args(parser)
-    game, plot = parse_args(parser.parse_args())
+    game, plot, debug = parse_args(parser.parse_args())
+    
+    # change log level here; note: all modules use the same logger
+    if debug:
+        # print("Running in debug")
+        logger.setLevel(logging.DEBUG)
+    else:        
+        # print("Running in info")
+        logger.setLevel(logging.INFO)
+
+    fh = logging.FileHandler("logs/proceeds.log", mode='w')
+    fh.setFormatter(logging.Formatter(
+        "%(module)s(%(lineno)d): %(funcName)s [%(levelname)s] "
+        "(Day %(day)s): %(message)s"
+    ))
+    logger.addHandler(fh)
+    logger.addFilter(ContextFilter())
 
     np.set_printoptions(precision=2, linewidth=240)
 
