@@ -35,50 +35,50 @@ class Population:
     # @formatter:off
 
     # size range over which a persons belief of his own health (type) varies
-    p_h_delta:    float
+    p_h_delta: float
 
     # constants used in various archetypes
-    coward_data:    Dict[str, float]
-    player_data:    Dict[str, float]
+    coward_data: Dict[str, float]
+    player_data: Dict[str, float]
 
     # player division across ( section x archetype x i_stage )
-    n_sections:     int
-    n_stages:       int         # number of stages
-    n_types:        int = 3     # number of archetypes
-    people:         np.ndarray  # ratio of population for each cell
-    deaths:         np.ndarray  # ( section x archetype )
-    eta_w:          np.ndarray  # ratio of people who worked / will work in that cell
+    n_sections: int
+    n_stages: int  # number of stages
+    n_types: int = 3  # number of archetypes
+    people: np.ndarray  # ratio of population for each cell
+    deaths: np.ndarray  # ( section x archetype )
+    eta_w: np.ndarray  # ratio of people who worked / will work in that cell
 
     # for planner
-    X:              np.ndarray                              # work measure, (section x i_stage)
-    h:              float = player_types['planner']['h']    # memory over past days
-    influence_cap:  float = player_types['planner']['cap']  # max influence on P[W/H] due to X
+    X: np.ndarray  # work measure, (section x i_stage)
+    h: float = player_types['planner']['h']  # memory over past days
+    influence_cap: float = player_types['planner']['cap']  # max influence on P[W/H] due to X
 
     # utility measures
-    net_utility:    np.ndarray
+    net_utility: np.ndarray
 
     # prototype enum
-    C:              int = 0     # archetype index for type coward
-    P:              int = 1     # archetype index for type planner
-    S:              int = 2     # archetype index for type simple
+    C: int = 0  # archetype index for type coward
+    P: int = 1  # archetype index for type planner
+    S: int = 2  # archetype index for type simple
 
-    eta_iw:         np.ndarray
-    eta_ih:         float
+    eta_iw: np.ndarray
+    eta_ih: float
 
-    T_max:          int
+    T_max: int
 
     # For graphs
-    t_deaths_ot:    List[float]  # total deaths over time
-    f_deaths_ot:    List[float]  # fresh deaths over time
-    t_deaths_ot_s:  List[float]  # total deaths over time for each section
-    t_utility_ot:   List[float]  # total utility over
-    d_utility_ot:   List[float]  # daily utility over
+    t_deaths_ot: List[float]  # total deaths over time
+    f_deaths_ot: List[float]  # fresh deaths over time
+    t_deaths_ot_s: List[float]  # total deaths over time for each section
+    t_utility_ot: List[float]  # total utility over
+    d_utility_ot: List[float]  # daily utility over
 
-    eta_w_ot:       List[float]  # Population going to work
+    eta_w_ot: List[float]  # Population going to work
 
-    timeline:       np.ndarray  # time scale
+    timeline: np.ndarray  # time scale
 
-    archtype_dict: Dict[int, str]      #Contains Labels for n_types
+    archtype_dict: Dict[int, str]  # Contains Labels for n_types
 
     # @formatter:on
 
@@ -227,12 +227,11 @@ class Population:
         logger.debug("Total utility: " + str(self.net_utility))
 
         if self.t_utility_ot:
-            self.t_utility_ot.append(s_utility+self.t_utility_ot[-1])
+            self.t_utility_ot.append(s_utility + self.t_utility_ot[-1])
         else:
             self.t_utility_ot.append(s_utility)
 
         self.d_utility_ot.append(s_utility)
-
 
     def _get_action_coward(self):
         """
@@ -285,7 +284,7 @@ class Population:
             for T[0] in range(self.T_max):
                 logger.info("Population sections:\n" + str(self.people))
                 logger.info("Percentage working:\n" + str(self.eta_w))
-                logger.info("Final Utility: {}".format(self.net_utility + self.deaths * player_data['u-death']))
+                logger.info("Final Utility: {}".format(self.net_utility + np.sum(self.deaths, axis=0) * player_data['u-death']))
 
                 self._get_action_coward()
                 self._get_action_simple()
@@ -299,80 +298,78 @@ class Population:
 
         logger.info("Population sections:\n" + str(self.people))
         logger.info("Percentage working:\n" + str(self.eta_w))
-        logger.info("Final Utility: {}".format(self.net_utility + self.deaths * player_data['u-death']))
+        logger.info("Final Utility: {}".format(self.net_utility + np.sum(self.deaths, axis=0) * player_data['u-death']))
 
     def total_death_plot(self):
         self.t_deaths_ot = np.asarray(self.t_deaths_ot)
 
         for i in range(self.n_types):
-            plt.plot(self.timeline, self.t_deaths_ot[:,i], label=self.archtype_dict[i])
+            plt.plot(self.timeline, self.t_deaths_ot[:, i], label=self.archtype_dict[i])
 
         plt.xlabel("Time")
         plt.ylabel("Death percentage")
         plt.grid()
         plt.legend()
 
-        plt.savefig("graphs/total_deths.jpg")
-#        plt.show()
+        plt.savefig("graphs/total_deaths.jpg")
+
+    #        plt.show()
 
     def fresh_death_plot(self):
-        self.f_deaths_ot = np.asarray(self.f_deaths_ot)
 
         for i in range(self.n_types):
-            plt.plot(self.timeline, self.f_deaths_ot[:,i], label=self.archtype_dict[i])
-
+            plt.plot(self.timeline, np.asarray(self.f_deaths_ot)[:, i], label=self.archtype_dict[i])
 
         plt.xlabel("Time")
         plt.ylabel("Daily Death percentage")
         plt.grid()
         plt.legend()
         plt.savefig("graphs/fresh_deaths.jpg")
-#        plt.show()
+
+    #        plt.show()
 
     def total_utility_plot(self):
         self.t_utility_ot = np.asarray(self.t_utility_ot)
 
-
         for i in range(self.n_types):
-            plt.plot(self.timeline, self.t_utility_ot[:,i], label=self.archtype_dict[i])
-
+            plt.plot(self.timeline, self.t_utility_ot[:, i], label=self.archtype_dict[i])
 
         plt.xlabel("Time")
         plt.ylabel("Total Utility")
         plt.grid()
         plt.legend()
         plt.savefig("graphs/total_utility.jpg")
-#        plt.show()
+
+    #        plt.show()
 
     def daily_utility_plot(self):
         self.d_utility_ot = np.asarray(self.d_utility_ot)
 
-
         for i in range(self.n_types):
-            plt.plot(self.timeline, self.d_utility_ot[:,i], label=self.archtype_dict[i])
-
+            plt.plot(self.timeline, self.d_utility_ot[:, i], label=self.archtype_dict[i])
 
         plt.xlabel("Time")
         plt.ylabel("Total Utility")
         plt.grid()
         plt.legend()
         plt.savefig("graphs/daily_utility.jpg")
-#        plt.show()
+
+    #        plt.show()
 
     def total_death_plot_sections(self):
         self.t_deaths_ot_s = np.asarray(self.t_deaths_ot_s)
         print(self.t_deaths_ot_s[-1])
         for i in range(self.n_types):
             for j in range(self.n_sections):
-                plt.plot(self.timeline, self.t_deaths_ot_s[:,j,i], label=str(i)+"+"+str(j))
-
+                plt.plot(self.timeline, self.t_deaths_ot_s[:, j, i], label=str(i) + "+" + str(j))
 
         plt.xlabel("Time")
         plt.ylabel("Death percentage")
         plt.grid()
         plt.legend()
         plt.savefig("graphs/total_deaths_per_section.jpg")
-#        plt.show()
+
+    #        plt.show()
 
     def plot_graphs(self):
         self.total_death_plot()
