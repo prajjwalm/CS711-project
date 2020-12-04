@@ -70,7 +70,7 @@ class Population:
     # For graphs
     t_deaths_ot:    []  # total deaths over time
     f_deaths_ot:    []  # fresh deaths over time
-
+    t_deaths_ot_s:  []  # total deaths over time for each section
     t_utility_ot:   []  # total utility over
     d_utility_ot:   []  # daily utility over
 
@@ -101,6 +101,7 @@ class Population:
         self.people = np.zeros((self.n_sections, self.n_types, self.n_stages))
 
         s_type_pops = np.expand_dims(np.array(s_pops), axis=1) * np.expand_dims(type_pops, axis=0)
+
         self.people[:, :, 1] = s_type_pops * i_ratio
         self.people[:, :, 0] = s_type_pops - self.people[:, :, 1]
 
@@ -123,9 +124,12 @@ class Population:
 
         self.t_deaths_ot = []
         self.f_deaths_ot = []
-    
+        self.t_deaths_ot_s = []
+
         self.t_utility_ot = []
         self.d_utility_ot = []
+
+        self.eta_w_ot = []
 
         self.timeline = np.arange(self.T_max)
 
@@ -178,6 +182,7 @@ class Population:
         self.people[:, :, 1] = fresh_infected
         self.deaths += fresh_deaths
 
+        self.t_deaths_ot_s.append(self.deaths)
         self.t_deaths_ot.append(np.sum(self.deaths, axis=0))
         self.f_deaths_ot.append(np.sum(fresh_deaths, axis=0))
 
@@ -217,7 +222,7 @@ class Population:
         if self.t_utility_ot:
             self.t_utility_ot.append(s_utility+self.t_utility_ot[-1])
         else:
-            self.t_utility_ot.append(s_utility)       
+            self.t_utility_ot.append(s_utility)
 
         self.d_utility_ot.append(s_utility)
 
@@ -300,16 +305,17 @@ class Population:
 
     def total_death_plot(self):
         self.t_deaths_ot = np.asarray(self.t_deaths_ot)
-        
+
         for i in range(self.n_types):
             plt.plot(self.timeline, self.t_deaths_ot[:,i], label=self.archtype_dict[i])
-
 
         plt.xlabel("Time")
         plt.ylabel("Death percentage")
         plt.grid()
         plt.legend()
-        plt.show()
+
+        plt.savefig("graphs/total_deths.jpg")
+#        plt.show()
 
     def fresh_death_plot(self):
         self.f_deaths_ot = np.asarray(self.f_deaths_ot)
@@ -322,12 +328,13 @@ class Population:
         plt.ylabel("Daily Death percentage")
         plt.grid()
         plt.legend()
-        plt.show()
+        plt.savefig("graphs/fresh_deaths.jpg")
+#        plt.show()
 
     def total_utility_plot(self):
         self.t_utility_ot = np.asarray(self.t_utility_ot)
 
-        
+
         for i in range(self.n_types):
             plt.plot(self.timeline, self.t_utility_ot[:,i], label=self.archtype_dict[i])
 
@@ -336,12 +343,13 @@ class Population:
         plt.ylabel("Total Utility")
         plt.grid()
         plt.legend()
-        plt.show()
+        plt.savefig("graphs/total_utility.jpg")
+#        plt.show()
 
     def daily_utility_plot(self):
         self.d_utility_ot = np.asarray(self.d_utility_ot)
 
-        
+
         for i in range(self.n_types):
             plt.plot(self.timeline, self.d_utility_ot[:,i], label=self.archtype_dict[i])
 
@@ -350,34 +358,27 @@ class Population:
         plt.ylabel("Total Utility")
         plt.grid()
         plt.legend()
-        plt.show()
-##
-    def daily_utility_plot(self):
-        self.d_utility_ot = np.asarray(self.d_utility_ot)
+        plt.savefig("graphs/daily_utility.jpg")
+#        plt.show()
 
-        
+    def total_death_plot_sections(self):
+        self.t_deaths_ot_s = np.asarray(self.t_deaths_ot_s)
+        print(self.t_deaths_ot_s[-1])
         for i in range(self.n_types):
-            plt.plot(self.timeline, self.d_utility_ot[:,i], label=self.archtype_dict[i])
+            for j in range(self.n_sections):
+                plt.plot(self.timeline, self.t_deaths_ot_s[:,j,i], label=str(i)+"+"+str(j))
 
 
         plt.xlabel("Time")
-        plt.ylabel("Total Utility")
+        plt.ylabel("Death percentage")
         plt.grid()
         plt.legend()
-        plt.show()
+        plt.savefig("graphs/total_deaths_per_section.jpg")
+#        plt.show()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def plot_graphs(self):
+        self.total_death_plot()
+        self.fresh_death_plot()
+        self.total_utility_plot()
+        self.daily_utility_plot()
+        self.total_death_plot_sections()
