@@ -3,6 +3,7 @@ import logging
 from typing import Dict
 
 import numpy as np
+import matplotlib.pyplot as plt
 
 from constants import sections, s_pops, max_utility, job_risk, survival, env_params, player_data, player_types, T
 
@@ -66,6 +67,19 @@ class Population:
 
     T_max:          int
 
+    # For graphs
+    t_deaths_ot:    []  # total deaths over time
+    f_deaths_ot:    []  # fresh deaths over time
+
+    t_utility_ot:   []  # total utility over
+    d_utility_ot:   []  # daily utility over
+
+    eta_w_ot:       []  # Population going to work
+
+    timeline:       np.ndarray  # time scale
+
+    archtype_dict: Dict[int, str]      #Contains Labels for n_types
+
     # @formatter:on
 
     class ForcedExit(Exception):
@@ -106,6 +120,16 @@ class Population:
         self.X[:, 0] = 1 / (1 - h)
 
         self.T_max = t_max
+
+        self.t_deaths_ot = []
+        self.f_deaths_ot = []
+    
+        self.t_utility_ot = []
+        self.d_utility_ot = []
+
+        self.timeline = np.arange(self.T_max)
+
+        self.archtype_dict = {0 : 'Coward', 1 : 'Planner', 2 : 'Simple'}
 
     def _execute_infection(self):
         """
@@ -154,6 +178,9 @@ class Population:
         self.people[:, :, 1] = fresh_infected
         self.deaths += fresh_deaths
 
+        self.t_deaths_ot.append(np.sum(self.deaths, axis=0))
+        self.f_deaths_ot.append(np.sum(fresh_deaths, axis=0))
+
         logger.debug("Fresh Deaths: " + str(np.sum(fresh_deaths, axis=0)))
         logger.debug("Total Deaths: " + str(np.sum(self.deaths, axis=0)))
 
@@ -185,6 +212,17 @@ class Population:
         logger.debug("Fresh utility: " + str(s_utility))
         self.net_utility += s_utility
         logger.debug("Total utility: " + str(self.net_utility))
+
+#        print(self.net_utility)
+        if self.t_utility_ot:
+            self.t_utility_ot.append(s_utility+self.t_utility_ot[-1])
+        else:
+            self.t_utility_ot.append(s_utility)       
+
+        self.d_utility_ot.append(s_utility)
+
+#        print(self.t_utility_ot)
+
 
     def _get_action_coward(self):
         """
@@ -259,3 +297,87 @@ class Population:
         logger.info("Population sections:\n" + str(self.people))
         logger.info("Percentage working:\n" + str(self.eta_w))
         logger.info("Final Utility: {}".format(self.net_utility + self.deaths * player_data['u-death']))
+
+    def total_death_plot(self):
+        self.t_deaths_ot = np.asarray(self.t_deaths_ot)
+        
+        for i in range(self.n_types):
+            plt.plot(self.timeline, self.t_deaths_ot[:,i], label=self.archtype_dict[i])
+
+
+        plt.xlabel("Time")
+        plt.ylabel("Death percentage")
+        plt.grid()
+        plt.legend()
+        plt.show()
+
+    def fresh_death_plot(self):
+        self.f_deaths_ot = np.asarray(self.f_deaths_ot)
+
+        for i in range(self.n_types):
+            plt.plot(self.timeline, self.f_deaths_ot[:,i], label=self.archtype_dict[i])
+
+
+        plt.xlabel("Time")
+        plt.ylabel("Daily Death percentage")
+        plt.grid()
+        plt.legend()
+        plt.show()
+
+    def total_utility_plot(self):
+        self.t_utility_ot = np.asarray(self.t_utility_ot)
+
+        
+        for i in range(self.n_types):
+            plt.plot(self.timeline, self.t_utility_ot[:,i], label=self.archtype_dict[i])
+
+
+        plt.xlabel("Time")
+        plt.ylabel("Total Utility")
+        plt.grid()
+        plt.legend()
+        plt.show()
+
+    def daily_utility_plot(self):
+        self.d_utility_ot = np.asarray(self.d_utility_ot)
+
+        
+        for i in range(self.n_types):
+            plt.plot(self.timeline, self.d_utility_ot[:,i], label=self.archtype_dict[i])
+
+
+        plt.xlabel("Time")
+        plt.ylabel("Total Utility")
+        plt.grid()
+        plt.legend()
+        plt.show()
+##
+    def daily_utility_plot(self):
+        self.d_utility_ot = np.asarray(self.d_utility_ot)
+
+        
+        for i in range(self.n_types):
+            plt.plot(self.timeline, self.d_utility_ot[:,i], label=self.archtype_dict[i])
+
+
+        plt.xlabel("Time")
+        plt.ylabel("Total Utility")
+        plt.grid()
+        plt.legend()
+        plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

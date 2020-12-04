@@ -58,7 +58,7 @@ def main():
     np.set_printoptions(precision=2, linewidth=240)
 
     game.simulate()
-
+    game.daily_utility_plot()
 
 if __name__ == '__main__':
     main()
