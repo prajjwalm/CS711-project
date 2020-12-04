@@ -2,14 +2,12 @@ from json import load
 
 import numpy as np
 
-# TODO: setup logging here
-print("CONSTANTS CODE RUN")
-
 with open("data.json") as f:
     _raw_data = load(f)
 
 # Environment parameters
 env_params = _raw_data['game-params']
+env_types = _raw_data['env-types']
 n_stages = env_params['t-removal'] + 1
 
 # Player and archetype parameters
@@ -40,3 +38,6 @@ assert _params_order[3] == "danger"
 survival = 1 - np.asarray([0.1 * x[3] ** 2 for x in _s_params])
 
 assert max_utility.shape == survival.shape == job_risk.shape == (len(sections),)
+
+# not quite a constant, but this global needs to be everywhere
+T = [0]

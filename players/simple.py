@@ -16,8 +16,8 @@ class Simple(BasePlayer):
     caution_multiplier: float
     alert: bool
 
-    def __init__(self, env, *args, **kwargs):
-        super().__init__(env, *args, **kwargs)
+    def __init__(self, env):
+        super().__init__(env)
         self.caution_multiplier = 1
         self.alert = False
 

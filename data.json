@@ -47,8 +47,13 @@
     "R0": 2.4,
     "t-infectious": 2,
     "t-symptoms": 6,
-    "t-removal": 21,
-    "t-max": 100
+    "t-removal": 21
+  },
+  "env-types": {
+    "sir": {
+      "beta": 0.134,
+      "gamma": 0.055
+    }
   },
   "base-player": {
     "x-work-risk": 1,

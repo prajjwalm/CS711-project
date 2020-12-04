@@ -1,6 +1,6 @@
 import logging
 from typing import List
-import numpy as np
+
 from .base_player import BasePlayer
 
 logger: logging.Logger
@@ -16,8 +16,8 @@ class Coward(BasePlayer):
     last_action: str  # Logs last action
     caution_multiplier: float
 
-    def __init__(self, env, *args, **kwargs):
-        super().__init__(env, *args, **kwargs)
+    def __init__(self, env):
+        super().__init__(env)
         self.last_action = "W"
         self.caution_multiplier = 1.0
 
@@ -72,18 +72,7 @@ class Coward(BasePlayer):
         logger.debug("Health belief is {0:.2f}, so choosing {1}".format(
                 self.p_healthy, self.action_plan[-1]
         ))
-    """
-    Everything should be made as simple as possible, but no simpler
-                                                - Albert Einstein
-    Everything should be made as simple as possible
-                                                - Srajit Kumar
-    Everything should be made as difficult as possible
-                                                - Prajjwal Mishra
-    Everything should just be (Ye raaz bhi usi ke saath chala gya)
-                                                - Shreyash Ravi
-    Everything
-                                                -Raghav Maheshwari
-    """
+
     def update(self, actions: List[str], self_idx: int):
         work_people = actions.count("W")
         total_people = len(actions)

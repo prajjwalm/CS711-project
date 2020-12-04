@@ -1,8 +1,20 @@
+import argparse
 import logging
 
+from constants import env_types, T
 from .base_env import BaseEnvironment
 
 logger: logging.Logger
+
+
+def _add_args(parser: argparse.ArgumentParser):
+    parser.add_argument("--n-start", type=int, metavar="n", default=100000, help="#Initial total population")
+    parser.add_argument("--i-start", type=int, metavar="i", default=10, help="#Initial infected population")
+
+
+def _parse_args(args: argparse.Namespace):
+    # t_max added by base env
+    return _EnvironmentSIR(args.n_start, args.i_start, max_t=args.t_max)
 
 
 def _init():
@@ -24,8 +36,7 @@ class _EnvironmentSIR(BaseEnvironment):
     beta: float
     gamma: float
 
-    def __init__(self, n, i, *, beta=0.134, gamma=0.055, max_t=5 * 365):
-        # THIS CONSTRUCTOR CANNOT HAVE LOGGING
+    def __init__(self, n, i, max_t, beta=env_types['sir']['beta'], gamma=env_types['sir']['gamma']):
         super().__init__(n, max_t=max_t)
         self._s = n - i
         self._i = i
@@ -35,14 +46,14 @@ class _EnvironmentSIR(BaseEnvironment):
         self.gamma = 1 / self.TIMES["removal"] if gamma is None else gamma
 
     def next_day(self):
-        if self.t > 0:
+        if T[0] > 0:
             ds = - self.infected_today
             dr = self.gamma * self._i
             di = - ds - dr
             self._s += ds
             self._i += di
             self._r += dr
-        self.t += 1
+        T[0] += 1
 
     @property
     def s(self) -> int:

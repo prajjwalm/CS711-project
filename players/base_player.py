@@ -1,3 +1,4 @@
+import argparse
 import logging
 from typing import List, Optional
 
@@ -7,6 +8,9 @@ from constants import sections, max_utility, job_risk, survival, player_data
 from enviornments import BaseEnvironment
 
 logger: logging.Logger
+section_idx: int = 0
+ages = ["y", "m", "o"]
+professions = ["p", "s", "t", "e", "r"]
 
 
 def _init():
@@ -15,14 +19,33 @@ def _init():
     logger = logging.getLogger("Log")
 
 
-class DeathException(Exception):
-    def __init__(self, msg=None):
-        self.msg = msg
+# noinspection SpellCheckingInspection
+def _add_args(parser):
+    parser.add_argument("--age-group", choices=ages, default="y",
+                        help="Age bracket of the person/group members ([y]oung: < 45 yrs old, "
+                             "[m]iddle: 45 to 60 yrs old, [o]ld: > 60 yrs old)")
+    parser.add_argument("--job-type", choices=professions, default="p",
+                        help="The nature of the profession of the individual/group members. "
+                             "[p]rimary/[s]econdary/[t]ertiary are the three sectors; [e]ssential "
+                             "denotes jobs like doctors/police that are important in emergencies "
+                             "like pandemics and [r]etired denotes people that no longer need work")
+
+
+def _parse_args(args: argparse.Namespace):
+    global section_idx
+    try:
+        section_idx = (1 + ages.index(args.age_group)) * (1 + professions.index(args.job_type)) - 1
+    except ValueError:
+        logger.warning("Invalid age/profession provided, going with default (young/primary)")
 
 
 class BasePlayer:
     # initialization constants
     # @formatter:off
+
+    class DeathException(Exception):
+        def __init__(self, msg=None):
+            self.msg = msg
 
     # key to all parametric information
     section_idx: int
@@ -43,7 +66,7 @@ class BasePlayer:
 
     # @formatter:on
 
-    def __init__(self, env, section_idx: int):
+    def __init__(self, env):
         self.env = env
 
         loc = locals()
@@ -85,7 +108,7 @@ class BasePlayer:
                 self.state = "X"
                 self.net_utility += self.u_death
                 logger.info("DEAD")
-                raise DeathException
+                raise self.DeathException
 
         if self.state == "R":
             self.p_healthy = 1
@@ -104,7 +127,7 @@ class BasePlayer:
             return 0
         base_infection_prob = self.env.infected_today / self.env.s
         extra_risk = base_infection_prob * job_risk[self.section_idx] * player_data['x-work-risk']
-        #TODO p healthy is multiplied twice in w infection risk.
+        # TODO p healthy is multiplied twice in w infection risk.
         risk = self.h_infection_risk + extra_risk
         if self.state == "S":
             return risk

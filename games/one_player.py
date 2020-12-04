@@ -1,7 +1,8 @@
+import argparse
 import logging
 
 from enviornments import BaseEnvironment
-from players import BasePlayer, DeathException
+from players import BasePlayer, Coward, Planner, Simple
 
 logger: logging.Logger
 
@@ -12,15 +13,31 @@ def _init():
     logger = logging.getLogger("Log")
 
 
-class OnePlayerGame:
+player_types = {
+    "c": Coward,
+    "p": Planner,
+    "s": Simple,
+}
+
+
+def _add_args(parser: argparse.ArgumentParser):
+    parser.add_argument("--type", choices=list(player_types.keys()), default="s",
+                        help="Which player archetype to run in case of a one player game")
+
+
+def _parse_args(args: argparse.Namespace, env):
+    return OnePlayer(player_types[args.type](env))
+
+
+class OnePlayer:
     p: BasePlayer
     env: BaseEnvironment
 
-    def __init__(self, player: BasePlayer, env: BaseEnvironment):
+    def __init__(self, player: BasePlayer):
         self.p = player
-        self.env = env
+        self.env = player.env
 
-    def play(self, n_days=None):
+    def simulate(self):
         try:
             for day in self.env:
                 self.p.plan()
@@ -50,10 +67,8 @@ class OnePlayerGame:
                         self.p.h_infection_risk * 100
                     )
                 )
-                if n_days is not None and day == n_days:
-                    break
-        except DeathException:
-            logger.critical("Old doc dead")
+        except BasePlayer.DeathException:
+            logger.critical("Player Dead")
 
         if self.p.t_i is not None:
             print("Went to work {0:d} days before getting infected on the {1:d}th day".format(self.p.n_w, self.p.t_i))

@@ -1,9 +1,10 @@
+import argparse
 import logging
-from typing import List, Dict
+from typing import Dict
 
 import numpy as np
 
-from constants import sections, s_pops, max_utility, job_risk, survival, env_params, player_data, player_types
+from constants import sections, s_pops, max_utility, job_risk, survival, env_params, player_data, player_types, T
 
 logger: logging.Logger
 
@@ -12,6 +13,21 @@ def _init():
     """ all file related initialization code """
     global logger
     logger = logging.getLogger("Log")
+
+
+def _add_args(parser: argparse.ArgumentParser):
+    parser.add_argument("--eta-types", nargs=3, metavar=('nC', 'nP', 'nS'),
+                        help="Ratios of the population types (will be scaled to ensure the sum to 1)"
+                             " in case of a population simulation",
+                        type=float, default=[0.33, 0.33, 0.34])
+    pass
+
+
+def _parse_args(args: argparse.Namespace):
+    type_pops = np.asarray(args.eta_types)
+    type_pops /= np.sum(type_pops)
+    i_ratio = args.i_start / args.n_start
+    return Population(type_pops=type_pops, i_ratio=i_ratio, t_max=args.t_max)
 
 
 class Population:
@@ -39,7 +55,6 @@ class Population:
 
     # utility measures
     net_utility:    np.ndarray
-        # TODO: calibrate the above (consts and formulae) with base_player
 
     # prototype enum
     C:              int = 0     # archetype index for type coward
@@ -49,17 +64,19 @@ class Population:
     eta_iw:         np.ndarray
     eta_ih:         float
 
+    T_max:          int
+
     # @formatter:on
 
     class ForcedExit(Exception):
         pass
 
     @staticmethod
-    def safe_divide(a: np.ndarray, b: np.ndarray):
+    def _safe_divide(a: np.ndarray, b: np.ndarray):
         """ returns a/b if b != 0 else 0 """
         return np.divide(a, b, out=np.zeros_like(a), where=b != 0)
 
-    def __init__(self):
+    def __init__(self, type_pops: np.ndarray, i_ratio: float, t_max: int):
         self.coward_data = player_types["coward"]
         self.player_data = player_data
         self.p_h_delta = self.player_data['p-healthy-fluctuation']
@@ -69,9 +86,9 @@ class Population:
 
         self.people = np.zeros((self.n_sections, self.n_types, self.n_stages))
 
-        section_type_pops = np.expand_dims(np.array(s_pops), axis=1) * np.expand_dims(np.asarray([0.33, 0.33, 0.34]), axis=0)
-        self.people[:, :, 0] = section_type_pops * 0.99
-        self.people[:, :, 1] = section_type_pops - self.people[:, :, 0]
+        s_type_pops = np.expand_dims(np.array(s_pops), axis=1) * np.expand_dims(type_pops, axis=0)
+        self.people[:, :, 1] = s_type_pops * i_ratio
+        self.people[:, :, 0] = s_type_pops - self.people[:, :, 1]
 
         self.eta_w = np.zeros((self.n_sections, 3, self.n_stages))
         self.eta_w[:, :, 0] = 1
@@ -88,7 +105,9 @@ class Population:
 
         self.X[:, 0] = 1 / (1 - h)
 
-    def execute_infection(self):
+        self.T_max = t_max
+
+    def _execute_infection(self):
         """
         Adjusts self.people, self.eta_w and self.X forward by one day wrt the pandemic.
         """
@@ -114,10 +133,10 @@ class Population:
         logger.debug("eta_iw: {0}, eta_ih: {1:.2f}".format(str(self.eta_iw), self.eta_ih))
 
         # 2. find out the ratio of susceptible that are getting infected
-        eta_w = self.eta_w[:, :, 0]  # ratio of people who worked (section x archetype) among S
+        eta_w = self.eta_w[:, :, 0]
         eta_iw = np.expand_dims(self.eta_iw, axis=1)
         eta_i = eta_w * eta_iw + (1 - eta_w) * self.eta_ih
-        # ratio of people who got infected (section x archetype)
+
         assert eta_i.shape == (self.n_sections, self.n_types)
 
         if total_infected == 0:
@@ -139,25 +158,25 @@ class Population:
         logger.debug("Total Deaths: " + str(np.sum(self.deaths, axis=0)))
 
         # 4. execute the eta_w transitions (note: eta_w will be wrt the new population distribution)
-        eta_wi = self.safe_divide(eta_iw * eta_w, eta_i)  # P[W given they get I]
-        eta_ws = self.safe_divide((1 - eta_iw) * eta_w, (1 - eta_i))  # P[W given they remain S]
-        self.eta_w[:, :, -1] = 1 - self.safe_divide(fresh_recovered, self.people[:, :, -1])
+        eta_wi = self._safe_divide(eta_iw * eta_w, eta_i)  # P[W given they get I]
+        eta_ws = self._safe_divide((1 - eta_iw) * eta_w, (1 - eta_i))  # P[W given they remain S]
+        self.eta_w[:, :, -1] = 1 - self._safe_divide(fresh_recovered, self.people[:, :, -1])
         self.eta_w[:, :, 2:-1] = self.eta_w[:, :, 1:-2]
         self.eta_w[:, :, 1] = eta_wi
         self.eta_w[:, :, 0] = eta_ws
 
         # 5. execute X transitions (note: this is only for planner archetype)
-        self.X[:, -1] = self.safe_divide(
+        self.X[:, -1] = self._safe_divide(
             self.X[:, -1] * old_recovered[:, self.P] + self.X[:, -2] * fresh_recovered[:, self.P],
             self.people[:, self.P, -1]
         )
         self.X[:, 2:-1] = self.X[:, 1:-2]
-        pop_infected_today = self.safe_divide(self.eta_w[:, self.P, 1], self.eta_w[:, self.P, 0])
+        pop_infected_today = self._safe_divide(self.eta_w[:, self.P, 1], self.eta_w[:, self.P, 0])
         self.X[:, 1] = pop_infected_today * self.X[:, 0]
         self.X[:, 0] = (1 + pop_infected_today) * self.X[:, 0]
-        self.X = np.clip(self.X, 0, 1/1-self.h)
+        self.X = np.clip(self.X, 0, 1 / 1 - self.h)
 
-    def update_utility(self):
+    def _update_utility(self):
         """ Takes the actions supplied, increments the utility and returns the risks of infection """
         i_loss = np.clip(1 - np.arange(self.n_stages) / env_params['t-infectious'], 0, 1)
         i_loss[-1] = 1
@@ -167,7 +186,7 @@ class Population:
         self.net_utility += s_utility
         logger.debug("Total utility: " + str(self.net_utility))
 
-    def get_action_cowards(self):
+    def _get_action_coward(self):
         """
         Forwards eta_w[all_archetypes, C, all_stages] by one day. That is, using self parameters (in
         particular self.eta_w, the ratio of people in each cell of (section x archetype x i_stage)
@@ -179,27 +198,28 @@ class Population:
         threshold_sh = np.zeros((self.n_sections,))
         job_risk_threshold = self.coward_data['job-risk-threshold']
 
-        threshold_sw = np.where(self.eta_iw < job_risk_threshold, self.coward_data['low-risk-w-threshold'], self.coward_data['w-threshold'])
-        threshold_sh = np.where(self.eta_iw < job_risk_threshold, self.coward_data['low-risk-h-threshold'], self.coward_data['h-threshold'])
+        threshold_sw = np.where(self.eta_iw < job_risk_threshold, self.coward_data['low-risk-w-threshold'],
+                                self.coward_data['w-threshold'])
+        threshold_sh = np.where(self.eta_iw < job_risk_threshold, self.coward_data['low-risk-h-threshold'],
+                                self.coward_data['h-threshold'])
 
         ts = env_params["t-symptoms"]
         last_w = self.eta_w[:, self.C, :]
 
-        ratio_over_threshold_w = 1 - ((np.expand_dims(threshold_sw, axis = 1) - (1 - np.expand_dims(np.arange(ts),axis = 0) / ts - self.p_h_delta / 2)) / self.p_h_delta)
-        ratio_over_threshold_h = 1 - ((np.expand_dims(threshold_sh, axis = 1) - (1 - np.expand_dims(np.arange(ts),axis = 0) / ts - self.p_h_delta / 2)) / self.p_h_delta)
+        ratio_over_threshold_w = 1 - ((np.expand_dims(threshold_sw, axis=1) - (
+                1 - np.expand_dims(np.arange(ts), axis=0) / ts - self.p_h_delta / 2)) / self.p_h_delta)
+        ratio_over_threshold_h = 1 - ((np.expand_dims(threshold_sh, axis=1) - (
+                1 - np.expand_dims(np.arange(ts), axis=0) / ts - self.p_h_delta / 2)) / self.p_h_delta)
         # ratio_over_threshold_h = 1 - ((threshold_sh - (1 - np.arange(ts) / ts - self.p_h_delta / 2)) / self.p_h_delta)
         ratio_over_threshold_w = np.clip(ratio_over_threshold_w, 0, 1)
         ratio_over_threshold_h = np.clip(ratio_over_threshold_h, 0, 1)
         w[:, :ts] = last_w[:, :ts] * ratio_over_threshold_w + (1 - last_w[:, :ts]) * ratio_over_threshold_h
 
         w[:, ts:-1] = last_w[:, ts:-1] * np.maximum((self.p_h_delta / 2 - threshold_sw) / self.p_h_delta, 0) \
-                + (1 - last_w[:, ts:-1]) * np.maximum((self.p_h_delta / 2 - threshold_sh) / self.p_h_delta, 0)
+                      + (1 - last_w[:, ts:-1]) * np.maximum((self.p_h_delta / 2 - threshold_sh) / self.p_h_delta, 0)
         w[:, -1] = 1
 
         self.eta_w[:, self.C, :] = np.asarray(w)
-
-    def get_action_simple(self):
-        self.eta_w[:, self.S, :] = self._get_action_simple()
 
     def _get_action_simple(self):
         u_iw = (self.eta_iw - self.eta_ih) * (1 - survival) * self.player_data["u-death"]
@@ -207,12 +227,12 @@ class Population:
         cutoff = np.expand_dims(np.sqrt(u_iw / max_utility), axis=1)
         eta_w = np.where(cutoff > 1, 0, (np.expand_dims(p_max, axis=0) - cutoff) / self.p_h_delta)
         eta_w[:, -1] = 1
-        return np.clip(eta_w, 0, 1)
+        self.eta_w[:, self.S, :] = np.clip(eta_w, 0, 1)
 
-    def get_action_planner(self):
+    def _get_action_planner(self):
         self.X = self.eta_w[:, self.P, :] + self.h * self.X
 
-        eta_w_s = self._get_action_simple()
+        eta_w_s = self.eta_w[:, self.S, :]
         eta_w_del = np.minimum(1 - eta_w_s, eta_w_s) * 0.4
         eta_w_min = eta_w_s - eta_w_del
         eta_w_max = eta_w_s + eta_w_del
@@ -221,15 +241,21 @@ class Population:
 
     def simulate(self):
         try:
-            for t in range(env_params['t-max']):
-                self.get_action_cowards()
-                self.get_action_simple()
-                self.get_action_planner()
-                self.update_utility()
-                self.execute_infection()
+            for T[0] in range(self.T_max):
                 logger.info("Population sections:\n" + str(self.people))
                 logger.info("Percentage working:\n" + str(self.eta_w))
                 logger.info("Final Utility: {}".format(self.net_utility + self.deaths * player_data['u-death']))
+
+                self._get_action_coward()
+                self._get_action_simple()
+                # simple must be called before planner !
+                self._get_action_planner()
+                self._update_utility()
+                self._execute_infection()
         except self.ForcedExit as e:
             logger.info(e)
             print(e)
+
+        logger.info("Population sections:\n" + str(self.people))
+        logger.info("Percentage working:\n" + str(self.eta_w))
+        logger.info("Final Utility: {}".format(self.net_utility + self.deaths * player_data['u-death']))

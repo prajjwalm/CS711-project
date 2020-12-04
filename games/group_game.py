@@ -1,8 +1,9 @@
+import argparse
 import logging
 from typing import List
 
 from enviornments import BaseEnvironment
-from players import BasePlayer, DeathException
+from players import BasePlayer, Coward, Simple, Planner
 
 logger: logging.Logger
 
@@ -13,78 +14,45 @@ def _init():
     logger = logging.getLogger("Log")
 
 
+def _add_args(parser: argparse.ArgumentParser):
+    parser.add_argument("--n-cowards", type=int, metavar="nC", default=3,
+                        help="Number of cowards in case of a group game")
+    parser.add_argument("--n-planners", type=int, metavar="nP", default=3,
+                        help="Number of planners in case of a group game")
+    parser.add_argument("--n-simple", type=int, metavar="nS", default=3,
+                        help="Number of simple in case of a group game")
+    pass
+
+
+def _parse_args(args: argparse.Namespace, env):
+    players = []
+    for i in range(args.n_cowards):
+        players.append(Coward(env))
+    for i in range(args.n_planners):
+        players.append(Planner(env))
+    for i in range(args.n_simple):
+        players.append(Simple(env))
+    return GroupGame(players)
+
+
 class GroupGame:
     players: List[BasePlayer]
     utilities: List[float]
     risks: List[float]
     actions: List[str]
+    job_risk: float
+    max_utility: float
 
     env: BaseEnvironment
 
-    def __init__(self, players: List[BasePlayer], env: BaseEnvironment):
-        self.env = env
+    def __init__(self, players: List[BasePlayer]):
+        self.env = players[0].env
+        for player in players[1:]:
+            assert player.env == self.env
         self.players = players
         self.utilities = [0] * len(players)
         self.risks = [0] * len(players)
         self.actions = ["W"] * len(players)
-
-    def handle_utilities(self):
-        raise NotImplementedError
-
-    def handle_risk(self):
-        raise NotImplementedError
-
-    def alert(self):
-        raise NotImplementedError
-
-    def play(self, n_days=None):
-        try:
-            for day in self.env:
-                # allow players to plan
-                for player in self.players:
-                    player.plan()
-
-                # get player actions
-                for i in range(len(self.players)):
-                    self.actions[i] = self.players[i].action_plan.pop()
-
-                # handle utilities
-                self.handle_utilities()
-
-                # handle risk
-                self.handle_risk()
-
-                # if someone is symptomatic
-                try:
-                    self.alert()
-                except NotImplementedError:
-                    pass
-
-                # inform players of other's actions
-                for i in range(len(self.players)):
-                    self.players[i].update(self.actions, i)
-
-                # log
-                logger.info(
-                    "\n States:        {3}\n Actions taken: {0}\n Utilities:     {1}\n Risks (%):     {2}".format(
-                        " ".join(["   {:4}".format(x) for x in self.actions]),
-                        " ".join(["{:7.2f}".format(x) for x in self.utilities]),
-                        " ".join(["{:7.3f}".format(x * 100) for x in self.risks]),
-                        " ".join(["   {:4}".format(x.state) for x in self.players])
-                    ))
-
-                if n_days is not None and day == n_days:
-                    break
-        except DeathException:
-            logger.critical("Group member dead")
-
-
-class CoWorkersGame(GroupGame):
-    job_risk: float
-    max_utility: float
-
-    def __init__(self, players: List[BasePlayer], env: BaseEnvironment):
-        super().__init__(players, env)
 
         # all players share the same job
         self.job_risk = players[0].job_risk
@@ -95,7 +63,7 @@ class CoWorkersGame(GroupGame):
         for player in players[1:]:
             assert player.u_economic_max == self.max_utility
 
-    def handle_utilities(self):
+    def _handle_utilities(self):
         n_work = self.actions.count("W")
         if n_work == 0:
             return
@@ -109,7 +77,7 @@ class CoWorkersGame(GroupGame):
             if self.actions[i] == "W":
                 self.utilities[i] += u_per_person
 
-    def handle_risk(self):
+    def _handle_risk(self):
         n_infectious = 0
         infectious_cutoff = self.env.t - self.env.TIMES["infectious"]
         for player in self.players:
@@ -130,7 +98,7 @@ class CoWorkersGame(GroupGame):
             self.players[i].state_change(risk)
             self.risks[i] = risk
 
-    def alert(self):
+    def _alert(self):
         symptoms_cutoff = self.env.t - self.env.TIMES['symptoms']
         alert = False
         for p in self.players:
@@ -142,16 +110,41 @@ class CoWorkersGame(GroupGame):
             for p in self.players:
                 p.on_alert()
 
+    def simulate(self):
+        try:
+            for day in self.env:
+                # allow players to plan
+                for player in self.players:
+                    player.plan()
 
-class NeighboursGame(GroupGame):
-    def __init__(self, players: List[BasePlayer], env: BaseEnvironment):
-        super().__init__(players, env)
+                # get player actions
+                for i in range(len(self.players)):
+                    self.actions[i] = self.players[i].action_plan.pop()
 
-    def handle_utilities(self):
-        pass
+                # handle utilities
+                self._handle_utilities()
 
-    def handle_risk(self):
-        pass
+                # handle risk
+                self._handle_risk()
 
-    def alert(self):
-        pass
+                # if someone is symptomatic
+                try:
+                    self._alert()
+                except NotImplementedError:
+                    pass
+
+                # inform players of other's actions
+                for i in range(len(self.players)):
+                    self.players[i].update(self.actions, i)
+
+                # log
+                logger.info(
+                    "\n States:        {3}\n Actions taken: {0}\n Utilities:     {1}\n Risks (%):     {2}".format(
+                        " ".join(["   {:4}".format(x) for x in self.actions]),
+                        " ".join(["{:7.2f}".format(x) for x in self.utilities]),
+                        " ".join(["{:7.3f}".format(x * 100) for x in self.risks]),
+                        " ".join(["   {:4}".format(x.state) for x in self.players])
+                    ))
+
+        except BasePlayer.DeathException:
+            logger.critical("Group member dead")
