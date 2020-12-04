@@ -77,7 +77,7 @@ class Population:
     eta_w_ot: List[float]  # Population going to work
 
     timeline: np.ndarray  # time scale
-
+    infection_rate: List[float]  # infection rate over time
     archtype_dict: Dict[int, str]  # Contains Labels for n_types
 
     # @formatter:on
@@ -132,8 +132,9 @@ class Population:
         self.eta_w_ot = []
 
         self.timeline = np.arange(self.T_max)
-
+        self.infection_rate = []
         self.archtype_dict = {0: 'Coward', 1: 'Planner', 2: 'Simple'}
+        self.sections_dict = {0: 'Primary', 1: 'Secondary', 2: 'Tertiary', 3: 'Essential', 4: 'Retired'}
 
         # TODO: set linear instead of step
         self.threshold_sw = np.where(job_risk < self.coward_data['job-risk-threshold'],
@@ -158,7 +159,7 @@ class Population:
         assert infected.shape == (self.n_stages,)
         total_infectious = np.sum(infected[env_params['t-infectious']:-1])
         total_infected = np.sum(infected[1:-1])
-
+        self.infection_rate.append(float(total_infectious))
         coeff_i = 0.05
         coeff_wi = 1 * job_risk
 
@@ -301,30 +302,51 @@ class Population:
         logger.info("Final Utility: {}".format(self.net_utility + np.sum(self.deaths, axis=0) * player_data['u-death']))
 
     def total_death_plot(self):
-        self.t_deaths_ot = np.asarray(self.t_deaths_ot)
+        fig, ax1 = plt.subplots()
+        color = 'tab:red'
+        ax1.plot(self.timeline, self.infection_rate, color=color, label="Infection")
+        ax1.set_ylabel("Infected Population")
 
+        ax2 = ax1.twinx()
         for i in range(self.n_types):
-            plt.plot(self.timeline, self.t_deaths_ot[:, i], label=self.archtype_dict[i])
+            ax2.plot(self.timeline, np.asarray(self.t_deaths_ot)[:, i], label=self.archtype_dict[i])
 
-        plt.xlabel("Time")
-        plt.ylabel("Death percentage")
+        ax2.set_xlabel("Time(days)")
+        ax2.set_ylabel("Death percentage")
         plt.grid()
-        plt.legend()
-
+        ax1.legend(loc="center right")
+        ax2.legend()
+        fig.tight_layout()
         plt.savefig("graphs/total_deaths.jpg")
 
     #        plt.show()
 
     def fresh_death_plot(self):
+        fig, ax1 = plt.subplots()
+        color = 'tab:red'
+        ax1.plot(self.timeline, self.infection_rate, color=color, label="Infection")
+        ax1.set_ylabel("Infected Population")
 
+        ax2 = ax1.twinx()
         for i in range(self.n_types):
-            plt.plot(self.timeline, np.asarray(self.f_deaths_ot)[:, i], label=self.archtype_dict[i])
+            ax2.plot(self.timeline, np.asarray(self.f_deaths_ot)[:, i], label=self.archtype_dict[i])
 
-        plt.xlabel("Time")
-        plt.ylabel("Daily Death percentage")
+        ax2.set_xlabel("Time(days)")
+        ax2.set_ylabel("Death percentage")
         plt.grid()
-        plt.legend()
+        ax1.legend(loc="upper left")
+        ax2.legend()
+        fig.tight_layout()
         plt.savefig("graphs/fresh_deaths.jpg")
+
+        # for i in range(self.n_types):
+        #     plt.plot(self.timeline, np.asarray(self.f_deaths_ot)[:, i], label=self.archtype_dict[i])
+        #
+        # plt.xlabel("Time")
+        # plt.ylabel("Daily Death percentage")
+        # plt.grid()
+        # plt.legend()
+        # plt.savefig("graphs/fresh_deaths.jpg")
 
     #        plt.show()
 
@@ -374,6 +396,6 @@ class Population:
     def plot_graphs(self):
         self.total_death_plot()
         self.fresh_death_plot()
-        self.total_utility_plot()
-        self.daily_utility_plot()
-        self.total_death_plot_sections()
+        # self.total_utility_plot()
+        # self.daily_utility_plot()
+        # self.total_death_plot_sections()

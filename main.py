@@ -39,7 +39,6 @@ def main():
 
     logger = logging.getLogger("Log")
 
-
     # setup logging for imported modules
     init_env()
     init_players()
@@ -71,6 +70,7 @@ def main():
     game.simulate()
     if plot:
         game.plot_graphs()
+
 
 if __name__ == '__main__':
     main()
