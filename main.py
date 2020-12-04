@@ -15,12 +15,15 @@ def add_args(parser: argparse.ArgumentParser):
                              "workers in an environment governed by the SIR model, whereas choosing "
                              "population attempts to simulate the virus (again using the SIR model) "
                              "and utilities on the entire population using densities")
+
+    parser.add_argument("--plot", help="Plot graphs", action="store_true")
     add_game_args(parser)
 
 
 def parse_args(args: argparse.Namespace):
     game = parse_game_args(args)
-    return game
+    plot = args.plot
+    return game, plot
 
 
 def main():
@@ -53,12 +56,13 @@ def main():
     # noinspection PyTypeChecker
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     add_args(parser)
-    game = parse_args(parser.parse_args())
+    game, plot = parse_args(parser.parse_args())
 
     np.set_printoptions(precision=2, linewidth=240)
 
     game.simulate()
-    game.plot_graphs()
+    if plot:
+        game.plot_graphs()
 
 if __name__ == '__main__':
     main()

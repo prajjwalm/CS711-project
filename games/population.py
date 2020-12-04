@@ -1,9 +1,9 @@
 import argparse
 import logging
-from typing import Dict
+from typing import List, Dict
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 from constants import sections, s_pops, max_utility, job_risk, survival, env_params, player_data, player_types, T
 
@@ -68,13 +68,13 @@ class Population:
     T_max:          int
 
     # For graphs
-    t_deaths_ot:    []  # total deaths over time
-    f_deaths_ot:    []  # fresh deaths over time
-    t_deaths_ot_s:  []  # total deaths over time for each section
-    t_utility_ot:   []  # total utility over
-    d_utility_ot:   []  # daily utility over
+    t_deaths_ot:    List[float]  # total deaths over time
+    f_deaths_ot:    List[float]  # fresh deaths over time
+    t_deaths_ot_s:  List[float]  # total deaths over time for each section
+    t_utility_ot:   List[float]  # total utility over
+    d_utility_ot:   List[float]  # daily utility over
 
-    eta_w_ot:       []  # Population going to work
+    eta_w_ot:       List[float]  # Population going to work
 
     timeline:       np.ndarray  # time scale
 
@@ -133,7 +133,15 @@ class Population:
 
         self.timeline = np.arange(self.T_max)
 
-        self.archtype_dict = {0 : 'Coward', 1 : 'Planner', 2 : 'Simple'}
+        self.archtype_dict = {0: 'Coward', 1: 'Planner', 2: 'Simple'}
+
+        # TODO: set linear instead of step
+        self.threshold_sw = np.where(job_risk < self.coward_data['job-risk-threshold'],
+                                     self.coward_data['low-risk-w-threshold'],
+                                     self.coward_data['w-threshold'])
+        self.threshold_sh = np.where(job_risk < self.coward_data['job-risk-threshold'],
+                                     self.coward_data['low-risk-h-threshold'],
+                                     self.coward_data['h-threshold'])
 
     def _execute_infection(self):
         """
@@ -218,15 +226,12 @@ class Population:
         self.net_utility += s_utility
         logger.debug("Total utility: " + str(self.net_utility))
 
-#        print(self.net_utility)
         if self.t_utility_ot:
             self.t_utility_ot.append(s_utility+self.t_utility_ot[-1])
         else:
             self.t_utility_ot.append(s_utility)
 
         self.d_utility_ot.append(s_utility)
-
-#        print(self.t_utility_ot)
 
 
     def _get_action_coward(self):
@@ -237,29 +242,22 @@ class Population:
         then)) set self.eta_w to the ratio of people in each cell who will choose to work today.
         """
         w = np.zeros((self.n_sections, self.n_stages,))
-        threshold_sw = np.zeros((self.n_sections,))
-        threshold_sh = np.zeros((self.n_sections,))
-        job_risk_threshold = self.coward_data['job-risk-threshold']
-
-        threshold_sw = np.where(self.eta_iw < job_risk_threshold, self.coward_data['low-risk-w-threshold'],
-                                self.coward_data['w-threshold'])
-        threshold_sh = np.where(self.eta_iw < job_risk_threshold, self.coward_data['low-risk-h-threshold'],
-                                self.coward_data['h-threshold'])
 
         ts = env_params["t-symptoms"]
         last_w = self.eta_w[:, self.C, :]
 
-        ratio_over_threshold_w = 1 - ((np.expand_dims(threshold_sw, axis=1) - (
+        ratio_over_threshold_w = 1 - ((np.expand_dims(self.threshold_sw, axis=1) - (
                 1 - np.expand_dims(np.arange(ts), axis=0) / ts - self.p_h_delta / 2)) / self.p_h_delta)
-        ratio_over_threshold_h = 1 - ((np.expand_dims(threshold_sh, axis=1) - (
+        ratio_over_threshold_h = 1 - ((np.expand_dims(self.threshold_sh, axis=1) - (
                 1 - np.expand_dims(np.arange(ts), axis=0) / ts - self.p_h_delta / 2)) / self.p_h_delta)
         # ratio_over_threshold_h = 1 - ((threshold_sh - (1 - np.arange(ts) / ts - self.p_h_delta / 2)) / self.p_h_delta)
         ratio_over_threshold_w = np.clip(ratio_over_threshold_w, 0, 1)
         ratio_over_threshold_h = np.clip(ratio_over_threshold_h, 0, 1)
         w[:, :ts] = last_w[:, :ts] * ratio_over_threshold_w + (1 - last_w[:, :ts]) * ratio_over_threshold_h
 
-        w[:, ts:-1] = last_w[:, ts:-1] * np.maximum((self.p_h_delta / 2 - threshold_sw) / self.p_h_delta, 0) \
-                      + (1 - last_w[:, ts:-1]) * np.maximum((self.p_h_delta / 2 - threshold_sh) / self.p_h_delta, 0)
+        w[:, ts:-1] = last_w[:, ts:-1] * np.maximum((self.p_h_delta / 2 - self.threshold_sw) / self.p_h_delta, 0) \
+                      + (1 - last_w[:, ts:-1]) * np.maximum((self.p_h_delta / 2 - self.threshold_sh) / self.p_h_delta,
+                                                            0)
         w[:, -1] = 1
 
         self.eta_w[:, self.C, :] = np.asarray(w)

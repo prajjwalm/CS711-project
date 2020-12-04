@@ -1,6 +1,11 @@
 import argparse
 import logging
+from typing import List
 
+import matplotlib.pyplot as plt
+import numpy as np
+
+from constants import player_data
 from enviornments import BaseEnvironment
 from players import BasePlayer, Coward, Planner, Simple
 
@@ -33,9 +38,14 @@ class OnePlayer:
     p: BasePlayer
     env: BaseEnvironment
 
+    t_utility_ot: List[float]  # total utility over time
+    timeline: np.ndarray
+
     def __init__(self, player: BasePlayer):
         self.p = player
         self.env = player.env
+        self.t_utility_ot = []
+        self.timeline = np.arange(self.env.max_t)
 
     def simulate(self):
         try:
@@ -52,7 +62,7 @@ class OnePlayer:
                     risk = self.p.h_infection_risk
 
                 self.p.state_change(risk)
-
+                self.t_utility_ot.append(self.p.net_utility)
                 if action == "W" and self.p.t_i is None:
                     self.p.n_w += 1
 
@@ -69,8 +79,22 @@ class OnePlayer:
                 )
         except BasePlayer.DeathException:
             logger.critical("Player Dead")
+            self.t_utility_ot += [self.p.net_utility - player_data['u-death']] * (
+                        self.env.max_t - len(self.t_utility_ot))
 
         if self.p.t_i is not None:
             print("Went to work {0:d} days before getting infected on the {1:d}th day".format(self.p.n_w, self.p.t_i))
         else:
             print("Went to work {0:d} days, didn't get infected".format(self.p.n_w))
+
+    def plot_graphs(self):
+        def total_utility_plot():
+            self.t_utility_ot = np.asarray(self.t_utility_ot)
+            plt.plot(self.timeline, self.t_utility_ot)
+            plt.xlabel("Time")
+            plt.ylabel("Total Utility")
+            plt.grid()
+            # plt.legend()
+            plt.savefig("graphs/one_player_total_utility.jpg")
+
+        total_utility_plot()

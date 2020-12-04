@@ -52,7 +52,7 @@ class Coward(BasePlayer):
         lower_threshold = 0.9
         upper_threshold = 0.96
 
-        if self.w_infection_risk < job_risk_threshold:
+        if self.job_risk < job_risk_threshold:
             lower_threshold = 0.420
             upper_threshold = 0.69
 
@@ -69,8 +69,8 @@ class Coward(BasePlayer):
 
         self.last_action = self.action_plan[-1]
 
-        logger.debug("Health belief is {0:.2f}, so choosing {1}".format(
-                self.p_healthy, self.action_plan[-1]
+        logger.debug("Health belief is {0:.2f}, with threshold {2:.2f} so choosing {1}".format(
+            self.p_healthy, self.action_plan[-1], threshold
         ))
 
     def update(self, actions: List[str], self_idx: int):

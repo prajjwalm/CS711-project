@@ -2,3 +2,6 @@
 logs
 enviornments/__pycache__
 players/__pycache__
+games/__pycache__
+constants/__pycache__
+graphs
