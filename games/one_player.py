@@ -82,7 +82,7 @@ class OnePlayer:
             logger.critical("Player Dead")
             dead = True
             self.t_utility_ot += [self.p.net_utility - player_data['u-death']] * (
-                        self.env.max_t - len(self.t_utility_ot))
+                    self.env.max_t - len(self.t_utility_ot))
 
         if self.p.t_i is not None:
             print("Went to work {0:d} days before getting infected on the {1:d}th day".format(self.p.n_w, self.p.t_i))
@@ -90,6 +90,8 @@ class OnePlayer:
                 print("Also, he died")
         else:
             print("Went to work {0:d} days, didn't get infected".format(self.p.n_w))
+
+        print("U", self.p.net_utility)
 
     def plot_graphs(self):
         def total_utility_plot():

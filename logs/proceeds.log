@@ -2,731 +2,731 @@ base_player(84): __init__ [INFO] (Day 0): young primary Simple initialized with 
 simple(35): plan [DEBUG] (Day 1): Estimated (self) work payoff: 1.1993568000000001
 one_player(70): simulate [INFO] (Day 1): True state: S, believes himself to be 100% healthy, and has a net utility of 1.20, (percentage infected = 0.01%, work risk = 0.001%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 2): Estimated (self) work payoff: 1.1993060051185362
-one_player(70): simulate [INFO] (Day 2): True state: S, believes himself to be 100% healthy, and has a net utility of 2.40, (percentage infected = 0.01%, work risk = 0.001%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 3): Estimated (self) work payoff: 1.1992511859172739
-one_player(70): simulate [INFO] (Day 3): True state: S, believes himself to be 100% healthy, and has a net utility of 3.60, (percentage infected = 0.01%, work risk = 0.001%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 4): Estimated (self) work payoff: 1.1991920469578665
-one_player(70): simulate [INFO] (Day 4): True state: S, believes himself to be 98% healthy, and has a net utility of 4.80, (percentage infected = 0.01%, work risk = 0.001%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 5): Estimated (self) work payoff: 1.1663963322861943
-one_player(70): simulate [INFO] (Day 5): True state: S, believes himself to be 98% healthy, and has a net utility of 5.97, (percentage infected = 0.01%, work risk = 0.001%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 6): Estimated (self) work payoff: 1.1709660716558075
-one_player(70): simulate [INFO] (Day 6): True state: S, believes himself to be 91% healthy, and has a net utility of 7.14, (percentage infected = 0.01%, work risk = 0.001%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 7): Estimated (self) work payoff: 0.9977879589117932
-one_player(70): simulate [INFO] (Day 7): True state: S, believes himself to be 100% healthy, and has a net utility of 8.14, (percentage infected = 0.01%, work risk = 0.001%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 8): Estimated (self) work payoff: 1.1989049421334022
-one_player(70): simulate [INFO] (Day 8): True state: S, believes himself to be 88% healthy, and has a net utility of 9.34, (percentage infected = 0.02%, work risk = 0.001%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 9): Estimated (self) work payoff: 0.9410784822863082
-one_player(70): simulate [INFO] (Day 9): True state: S, believes himself to be 100% healthy, and has a net utility of 10.28, (percentage infected = 0.02%, work risk = 0.002%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 10): Estimated (self) work payoff: 1.1987251712092266
-one_player(70): simulate [INFO] (Day 10): True state: S, believes himself to be 93% healthy, and has a net utility of 11.48, (percentage infected = 0.02%, work risk = 0.002%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 11): Estimated (self) work payoff: 1.0460909659977558
-one_player(70): simulate [INFO] (Day 11): True state: S, believes himself to be 88% healthy, and has a net utility of 12.53, (percentage infected = 0.02%, work risk = 0.002%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 12): Estimated (self) work payoff: 0.9355346366470244
-one_player(70): simulate [INFO] (Day 12): True state: S, believes himself to be 90% healthy, and has a net utility of 13.46, (percentage infected = 0.02%, work risk = 0.002%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 13): Estimated (self) work payoff: 0.9833378611099757
-one_player(70): simulate [INFO] (Day 13): True state: S, believes himself to be 100% healthy, and has a net utility of 14.45, (percentage infected = 0.02%, work risk = 0.002%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 14): Estimated (self) work payoff: 1.1982722881721515
-one_player(70): simulate [INFO] (Day 14): True state: S, believes himself to be 100% healthy, and has a net utility of 15.65, (percentage infected = 0.03%, work risk = 0.002%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 2): True state: S, believes himself to be 99% healthy, and has a net utility of 2.40, (percentage infected = 0.01%, work risk = 0.001%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 3): Estimated (self) work payoff: 1.1900924233705372
+one_player(70): simulate [INFO] (Day 3): True state: S, believes himself to be 91% healthy, and has a net utility of 3.59, (percentage infected = 0.01%, work risk = 0.001%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 4): Estimated (self) work payoff: 0.9986637774444264
+one_player(70): simulate [INFO] (Day 4): True state: S, believes himself to be 98% healthy, and has a net utility of 4.59, (percentage infected = 0.01%, work risk = 0.001%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 5): Estimated (self) work payoff: 1.1620883614503332
+one_player(70): simulate [INFO] (Day 5): True state: S, believes himself to be 88% healthy, and has a net utility of 5.75, (percentage infected = 0.01%, work risk = 0.001%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 6): Estimated (self) work payoff: 0.9376484461530754
+one_player(70): simulate [INFO] (Day 6): True state: S, believes himself to be 100% healthy, and has a net utility of 6.69, (percentage infected = 0.01%, work risk = 0.001%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 7): Estimated (self) work payoff: 1.1989850917073535
+one_player(70): simulate [INFO] (Day 7): True state: S, believes himself to be 98% healthy, and has a net utility of 7.89, (percentage infected = 0.01%, work risk = 0.001%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 8): Estimated (self) work payoff: 1.1585664021761972
+one_player(70): simulate [INFO] (Day 8): True state: S, believes himself to be 98% healthy, and has a net utility of 9.05, (percentage infected = 0.02%, work risk = 0.001%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 9): Estimated (self) work payoff: 1.1527357214747191
+one_player(70): simulate [INFO] (Day 9): True state: S, believes himself to be 90% healthy, and has a net utility of 10.21, (percentage infected = 0.02%, work risk = 0.002%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 10): Estimated (self) work payoff: 0.9759228585990428
+one_player(70): simulate [INFO] (Day 10): True state: S, believes himself to be 100% healthy, and has a net utility of 11.18, (percentage infected = 0.02%, work risk = 0.002%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 11): Estimated (self) work payoff: 1.198624500533286
+one_player(70): simulate [INFO] (Day 11): True state: S, believes himself to be 100% healthy, and has a net utility of 12.38, (percentage infected = 0.02%, work risk = 0.002%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 12): Estimated (self) work payoff: 1.198515873255203
+one_player(70): simulate [INFO] (Day 12): True state: S, believes himself to be 100% healthy, and has a net utility of 13.58, (percentage infected = 0.02%, work risk = 0.002%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 13): Estimated (self) work payoff: 1.1983987087140673
+one_player(70): simulate [INFO] (Day 13): True state: S, believes himself to be 94% healthy, and has a net utility of 14.78, (percentage infected = 0.02%, work risk = 0.002%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 14): Estimated (self) work payoff: 1.0707682313995992
+one_player(70): simulate [INFO] (Day 14): True state: S, believes himself to be 100% healthy, and has a net utility of 15.86, (percentage infected = 0.03%, work risk = 0.002%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 15): Estimated (self) work payoff: 1.1981358808198022
-one_player(70): simulate [INFO] (Day 15): True state: S, believes himself to be 91% healthy, and has a net utility of 16.85, (percentage infected = 0.03%, work risk = 0.003%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 16): Estimated (self) work payoff: 0.9994193363343581
-one_player(70): simulate [INFO] (Day 16): True state: S, believes himself to be 100% healthy, and has a net utility of 17.85, (percentage infected = 0.03%, work risk = 0.003%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 15): True state: S, believes himself to be 100% healthy, and has a net utility of 17.06, (percentage infected = 0.03%, work risk = 0.003%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 16): Estimated (self) work payoff: 1.1979887184516183
+one_player(70): simulate [INFO] (Day 16): True state: S, believes himself to be 100% healthy, and has a net utility of 18.26, (percentage infected = 0.03%, work risk = 0.003%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 17): Estimated (self) work payoff: 1.1978299555036755
-one_player(70): simulate [INFO] (Day 17): True state: S, believes himself to be 100% healthy, and has a net utility of 19.05, (percentage infected = 0.03%, work risk = 0.003%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 17): True state: S, believes himself to be 100% healthy, and has a net utility of 19.46, (percentage infected = 0.03%, work risk = 0.003%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 18): Estimated (self) work payoff: 1.1976586569039334
-one_player(70): simulate [INFO] (Day 18): True state: S, believes himself to be 92% healthy, and has a net utility of 20.25, (percentage infected = 0.04%, work risk = 0.003%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 19): Estimated (self) work payoff: 1.0351673304500582
-one_player(70): simulate [INFO] (Day 19): True state: S, believes himself to be 100% healthy, and has a net utility of 21.29, (percentage infected = 0.04%, work risk = 0.003%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 18): True state: S, believes himself to be 97% healthy, and has a net utility of 20.66, (percentage infected = 0.04%, work risk = 0.003%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 19): Estimated (self) work payoff: 1.1460043314064459
+one_player(70): simulate [INFO] (Day 19): True state: S, believes himself to be 100% healthy, and has a net utility of 21.80, (percentage infected = 0.04%, work risk = 0.003%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 20): Estimated (self) work payoff: 1.197274503514656
-one_player(70): simulate [INFO] (Day 20): True state: S, believes himself to be 96% healthy, and has a net utility of 22.49, (percentage infected = 0.04%, work risk = 0.004%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 21): Estimated (self) work payoff: 1.1053664217890886
-one_player(70): simulate [INFO] (Day 21): True state: S, believes himself to be 92% healthy, and has a net utility of 23.60, (percentage infected = 0.04%, work risk = 0.004%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 22): Estimated (self) work payoff: 1.0159959149296434
-one_player(70): simulate [INFO] (Day 22): True state: S, believes himself to be 100% healthy, and has a net utility of 24.62, (percentage infected = 0.05%, work risk = 0.004%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 20): True state: S, believes himself to be 100% healthy, and has a net utility of 23.00, (percentage infected = 0.04%, work risk = 0.004%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 21): Estimated (self) work payoff: 1.1970594462662434
+one_player(70): simulate [INFO] (Day 21): True state: S, believes himself to be 100% healthy, and has a net utility of 24.20, (percentage infected = 0.04%, work risk = 0.004%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 22): Estimated (self) work payoff: 1.1968273928405488
+one_player(70): simulate [INFO] (Day 22): True state: S, believes himself to be 100% healthy, and has a net utility of 25.40, (percentage infected = 0.05%, work risk = 0.004%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 23): Estimated (self) work payoff: 1.1965770695050209
-one_player(70): simulate [INFO] (Day 23): True state: S, believes himself to be 89% healthy, and has a net utility of 25.82, (percentage infected = 0.05%, work risk = 0.005%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 24): Estimated (self) work payoff: 0.9610732113516202
-one_player(70): simulate [INFO] (Day 24): True state: S, believes himself to be 89% healthy, and has a net utility of 26.78, (percentage infected = 0.06%, work risk = 0.005%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 25): Estimated (self) work payoff: 0.9561211506759505
-one_player(70): simulate [INFO] (Day 25): True state: S, believes himself to be 87% healthy, and has a net utility of 27.74, (percentage infected = 0.06%, work risk = 0.005%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 26): Estimated (self) work payoff: 0.9144791850617057
-one_player(70): simulate [INFO] (Day 26): True state: S, believes himself to be 96% healthy, and has a net utility of 28.66, (percentage infected = 0.07%, work risk = 0.006%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 27): Estimated (self) work payoff: 1.1176054849009363
-one_player(70): simulate [INFO] (Day 27): True state: S, believes himself to be 100% healthy, and has a net utility of 29.78, (percentage infected = 0.07%, work risk = 0.006%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 23): True state: S, believes himself to be 99% healthy, and has a net utility of 26.60, (percentage infected = 0.05%, work risk = 0.005%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 24): Estimated (self) work payoff: 1.1738250179114589
+one_player(70): simulate [INFO] (Day 24): True state: S, believes himself to be 94% healthy, and has a net utility of 27.78, (percentage infected = 0.06%, work risk = 0.005%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 25): Estimated (self) work payoff: 1.0772650206449297
+one_player(70): simulate [INFO] (Day 25): True state: S, believes himself to be 93% healthy, and has a net utility of 28.86, (percentage infected = 0.06%, work risk = 0.005%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 26): Estimated (self) work payoff: 1.0410366350866318
+one_player(70): simulate [INFO] (Day 26): True state: S, believes himself to be 100% healthy, and has a net utility of 29.91, (percentage infected = 0.07%, work risk = 0.006%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 27): Estimated (self) work payoff: 1.1953625465281892
+one_player(70): simulate [INFO] (Day 27): True state: S, believes himself to be 100% healthy, and has a net utility of 31.11, (percentage infected = 0.07%, work risk = 0.006%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 28): Estimated (self) work payoff: 1.1949969372608165
-one_player(70): simulate [INFO] (Day 28): True state: S, believes himself to be 96% healthy, and has a net utility of 30.98, (percentage infected = 0.08%, work risk = 0.007%, home risk = 0.001%)
-simple(35): plan [DEBUG] (Day 29): Estimated (self) work payoff: 1.1165634104122548
-one_player(70): simulate [INFO] (Day 29): True state: S, believes himself to be 100% healthy, and has a net utility of 32.10, (percentage infected = 0.08%, work risk = 0.007%, home risk = 0.001%)
+one_player(70): simulate [INFO] (Day 28): True state: S, believes himself to be 95% healthy, and has a net utility of 32.31, (percentage infected = 0.08%, work risk = 0.007%, home risk = 0.001%)
+simple(35): plan [DEBUG] (Day 29): Estimated (self) work payoff: 1.0943856685231772
+one_player(70): simulate [INFO] (Day 29): True state: S, believes himself to be 100% healthy, and has a net utility of 33.41, (percentage infected = 0.08%, work risk = 0.007%, home risk = 0.001%)
 simple(35): plan [DEBUG] (Day 30): Estimated (self) work payoff: 1.194177092233795
-one_player(70): simulate [INFO] (Day 30): True state: S, believes himself to be 100% healthy, and has a net utility of 33.30, (percentage infected = 0.09%, work risk = 0.008%, home risk = 0.001%)
-simple(35): plan [DEBUG] (Day 31): Estimated (self) work payoff: 1.1937182340643768
-one_player(70): simulate [INFO] (Day 31): True state: S, believes himself to be 100% healthy, and has a net utility of 34.50, (percentage infected = 0.10%, work risk = 0.009%, home risk = 0.001%)
-simple(35): plan [DEBUG] (Day 32): Estimated (self) work payoff: 1.193223315619766
-one_player(70): simulate [INFO] (Day 32): True state: S, believes himself to be 100% healthy, and has a net utility of 35.70, (percentage infected = 0.10%, work risk = 0.009%, home risk = 0.001%)
+one_player(70): simulate [INFO] (Day 30): True state: S, believes himself to be 94% healthy, and has a net utility of 34.61, (percentage infected = 0.09%, work risk = 0.008%, home risk = 0.001%)
+simple(35): plan [DEBUG] (Day 31): Estimated (self) work payoff: 1.0573604381444668
+one_player(70): simulate [INFO] (Day 31): True state: S, believes himself to be 96% healthy, and has a net utility of 35.67, (percentage infected = 0.10%, work risk = 0.009%, home risk = 0.001%)
+simple(35): plan [DEBUG] (Day 32): Estimated (self) work payoff: 1.1052420274808163
+one_player(70): simulate [INFO] (Day 32): True state: S, believes himself to be 100% healthy, and has a net utility of 36.78, (percentage infected = 0.10%, work risk = 0.009%, home risk = 0.001%)
 simple(35): plan [DEBUG] (Day 33): Estimated (self) work payoff: 1.1926895249524836
-one_player(70): simulate [INFO] (Day 33): True state: S, believes himself to be 100% healthy, and has a net utility of 36.90, (percentage infected = 0.11%, work risk = 0.010%, home risk = 0.001%)
-simple(35): plan [DEBUG] (Day 34): Estimated (self) work payoff: 1.1921138348886944
-one_player(70): simulate [INFO] (Day 34): True state: S, believes himself to be 100% healthy, and has a net utility of 38.10, (percentage infected = 0.12%, work risk = 0.011%, home risk = 0.001%)
+one_player(70): simulate [INFO] (Day 33): True state: S, believes himself to be 99% healthy, and has a net utility of 37.98, (percentage infected = 0.11%, work risk = 0.010%, home risk = 0.001%)
+simple(35): plan [DEBUG] (Day 34): Estimated (self) work payoff: 1.1825816783548193
+one_player(70): simulate [INFO] (Day 34): True state: S, believes himself to be 100% healthy, and has a net utility of 39.17, (percentage infected = 0.12%, work risk = 0.011%, home risk = 0.001%)
 simple(35): plan [DEBUG] (Day 35): Estimated (self) work payoff: 1.191492902001803
-one_player(70): simulate [INFO] (Day 35): True state: S, believes himself to be 93% healthy, and has a net utility of 39.30, (percentage infected = 0.13%, work risk = 0.012%, home risk = 0.001%)
-simple(35): plan [DEBUG] (Day 36): Estimated (self) work payoff: 1.0345665275339435
-one_player(70): simulate [INFO] (Day 36): True state: S, believes himself to be 100% healthy, and has a net utility of 40.35, (percentage infected = 0.14%, work risk = 0.012%, home risk = 0.001%)
+one_player(70): simulate [INFO] (Day 35): True state: S, believes himself to be 98% healthy, and has a net utility of 40.37, (percentage infected = 0.13%, work risk = 0.012%, home risk = 0.001%)
+simple(35): plan [DEBUG] (Day 36): Estimated (self) work payoff: 1.1477494004517288
+one_player(70): simulate [INFO] (Day 36): True state: S, believes himself to be 100% healthy, and has a net utility of 41.53, (percentage infected = 0.14%, work risk = 0.012%, home risk = 0.001%)
 simple(35): plan [DEBUG] (Day 37): Estimated (self) work payoff: 1.1901013312181257
-one_player(70): simulate [INFO] (Day 37): True state: S, believes himself to be 97% healthy, and has a net utility of 41.55, (percentage infected = 0.15%, work risk = 0.013%, home risk = 0.001%)
-simple(35): plan [DEBUG] (Day 38): Estimated (self) work payoff: 1.1336177922231865
-one_player(70): simulate [INFO] (Day 38): True state: S, believes himself to be 93% healthy, and has a net utility of 42.69, (percentage infected = 0.17%, work risk = 0.014%, home risk = 0.001%)
-simple(35): plan [DEBUG] (Day 39): Estimated (self) work payoff: 1.027581403229853
-one_player(70): simulate [INFO] (Day 39): True state: S, believes himself to be 98% healthy, and has a net utility of 43.73, (percentage infected = 0.18%, work risk = 0.016%, home risk = 0.001%)
-simple(35): plan [DEBUG] (Day 40): Estimated (self) work payoff: 1.1581957760051635
-one_player(70): simulate [INFO] (Day 40): True state: S, believes himself to be 100% healthy, and has a net utility of 44.90, (percentage infected = 0.19%, work risk = 0.017%, home risk = 0.001%)
+one_player(70): simulate [INFO] (Day 37): True state: S, believes himself to be 87% healthy, and has a net utility of 42.73, (percentage infected = 0.15%, work risk = 0.013%, home risk = 0.001%)
+simple(35): plan [DEBUG] (Day 38): Estimated (self) work payoff: 0.9140000914330706
+one_player(70): simulate [INFO] (Day 38): True state: S, believes himself to be 100% healthy, and has a net utility of 43.66, (percentage infected = 0.17%, work risk = 0.014%, home risk = 0.001%)
+simple(35): plan [DEBUG] (Day 39): Estimated (self) work payoff: 1.18848310779547
+one_player(70): simulate [INFO] (Day 39): True state: S, believes himself to be 95% healthy, and has a net utility of 44.86, (percentage infected = 0.18%, work risk = 0.016%, home risk = 0.001%)
+simple(35): plan [DEBUG] (Day 40): Estimated (self) work payoff: 1.0892405348679386
+one_player(70): simulate [INFO] (Day 40): True state: S, believes himself to be 100% healthy, and has a net utility of 45.96, (percentage infected = 0.19%, work risk = 0.017%, home risk = 0.001%)
 simple(35): plan [DEBUG] (Day 41): Estimated (self) work payoff: 1.1866018135048124
-one_player(70): simulate [INFO] (Day 41): True state: S, believes himself to be 100% healthy, and has a net utility of 46.10, (percentage infected = 0.21%, work risk = 0.018%, home risk = 0.001%)
+one_player(70): simulate [INFO] (Day 41): True state: S, believes himself to be 100% healthy, and has a net utility of 47.16, (percentage infected = 0.21%, work risk = 0.018%, home risk = 0.001%)
 simple(35): plan [DEBUG] (Day 42): Estimated (self) work payoff: 1.1855497009836489
-one_player(70): simulate [INFO] (Day 42): True state: S, believes himself to be 98% healthy, and has a net utility of 47.30, (percentage infected = 0.22%, work risk = 0.020%, home risk = 0.002%)
-simple(35): plan [DEBUG] (Day 43): Estimated (self) work payoff: 1.146856836929958
-one_player(70): simulate [INFO] (Day 43): True state: S, believes himself to be 100% healthy, and has a net utility of 48.46, (percentage infected = 0.24%, work risk = 0.021%, home risk = 0.002%)
-simple(35): plan [DEBUG] (Day 44): Estimated (self) work payoff: 1.1831925317177296
-one_player(70): simulate [INFO] (Day 44): True state: S, believes himself to be 87% healthy, and has a net utility of 49.66, (percentage infected = 0.26%, work risk = 0.023%, home risk = 0.002%)
-simple(35): plan [DEBUG] (Day 45): Estimated (self) work payoff: 0.9099664736416903
-one_player(70): simulate [INFO] (Day 45): True state: S, believes himself to be 100% healthy, and has a net utility of 50.59, (percentage infected = 0.28%, work risk = 0.025%, home risk = 0.002%)
-simple(35): plan [DEBUG] (Day 46): Estimated (self) work payoff: 1.180454220390175
-one_player(70): simulate [INFO] (Day 46): True state: S, believes himself to be 100% healthy, and has a net utility of 51.79, (percentage infected = 0.30%, work risk = 0.026%, home risk = 0.002%)
-simple(35): plan [DEBUG] (Day 47): Estimated (self) work payoff: 1.1789233417301728
-one_player(70): simulate [INFO] (Day 47): True state: S, believes himself to be 100% healthy, and has a net utility of 52.99, (percentage infected = 0.33%, work risk = 0.029%, home risk = 0.002%)
+one_player(70): simulate [INFO] (Day 42): True state: S, believes himself to be 100% healthy, and has a net utility of 48.36, (percentage infected = 0.22%, work risk = 0.020%, home risk = 0.002%)
+simple(35): plan [DEBUG] (Day 43): Estimated (self) work payoff: 1.184415223069795
+one_player(70): simulate [INFO] (Day 43): True state: S, believes himself to be 90% healthy, and has a net utility of 49.56, (percentage infected = 0.24%, work risk = 0.021%, home risk = 0.002%)
+simple(35): plan [DEBUG] (Day 44): Estimated (self) work payoff: 0.9577820208187042
+one_player(70): simulate [INFO] (Day 44): True state: S, believes himself to be 97% healthy, and has a net utility of 50.53, (percentage infected = 0.26%, work risk = 0.023%, home risk = 0.002%)
+simple(35): plan [DEBUG] (Day 45): Estimated (self) work payoff: 1.1306102859644886
+one_player(70): simulate [INFO] (Day 45): True state: S, believes himself to be 88% healthy, and has a net utility of 51.68, (percentage infected = 0.28%, work risk = 0.025%, home risk = 0.002%)
+simple(35): plan [DEBUG] (Day 46): Estimated (self) work payoff: 0.9292056663936167
+one_player(70): simulate [INFO] (Day 46): True state: S, believes himself to be 93% healthy, and has a net utility of 52.63, (percentage infected = 0.30%, work risk = 0.026%, home risk = 0.002%)
+simple(35): plan [DEBUG] (Day 47): Estimated (self) work payoff: 1.0244690262546785
+one_player(70): simulate [INFO] (Day 47): True state: S, believes himself to be 100% healthy, and has a net utility of 53.67, (percentage infected = 0.33%, work risk = 0.029%, home risk = 0.002%)
 simple(35): plan [DEBUG] (Day 48): Estimated (self) work payoff: 1.1772737400806266
-one_player(70): simulate [INFO] (Day 48): True state: S, believes himself to be 95% healthy, and has a net utility of 54.19, (percentage infected = 0.35%, work risk = 0.031%, home risk = 0.002%)
-simple(35): plan [DEBUG] (Day 49): Estimated (self) work payoff: 1.0714667717757094
-one_player(70): simulate [INFO] (Day 49): True state: S, believes himself to be 89% healthy, and has a net utility of 55.29, (percentage infected = 0.38%, work risk = 0.033%, home risk = 0.003%)
-simple(35): plan [DEBUG] (Day 50): Estimated (self) work payoff: 0.9361655697521994
-one_player(70): simulate [INFO] (Day 50): True state: S, believes himself to be 89% healthy, and has a net utility of 56.25, (percentage infected = 0.41%, work risk = 0.036%, home risk = 0.003%)
-simple(35): plan [DEBUG] (Day 51): Estimated (self) work payoff: 0.9413583213779455
-one_player(70): simulate [INFO] (Day 51): True state: S, believes himself to be 100% healthy, and has a net utility of 57.22, (percentage infected = 0.44%, work risk = 0.039%, home risk = 0.003%)
+one_player(70): simulate [INFO] (Day 48): True state: S, believes himself to be 90% healthy, and has a net utility of 54.87, (percentage infected = 0.35%, work risk = 0.031%, home risk = 0.002%)
+simple(35): plan [DEBUG] (Day 49): Estimated (self) work payoff: 0.9634400059540109
+one_player(70): simulate [INFO] (Day 49): True state: S, believes himself to be 100% healthy, and has a net utility of 55.86, (percentage infected = 0.38%, work risk = 0.033%, home risk = 0.003%)
+simple(35): plan [DEBUG] (Day 50): Estimated (self) work payoff: 1.1735819038019613
+one_player(70): simulate [INFO] (Day 50): True state: S, believes himself to be 88% healthy, and has a net utility of 57.06, (percentage infected = 0.41%, work risk = 0.036%, home risk = 0.003%)
+simple(35): plan [DEBUG] (Day 51): Estimated (self) work payoff: 0.9057444513856262
+one_player(70): simulate [INFO] (Day 51): True state: S, believes himself to be 100% healthy, and has a net utility of 58.00, (percentage infected = 0.44%, work risk = 0.039%, home risk = 0.003%)
 simple(35): plan [DEBUG] (Day 52): Estimated (self) work payoff: 1.1692977075478976
-one_player(70): simulate [INFO] (Day 52): True state: S, believes himself to be 100% healthy, and has a net utility of 58.42, (percentage infected = 0.48%, work risk = 0.042%, home risk = 0.003%)
-simple(35): plan [DEBUG] (Day 53): Estimated (self) work payoff: 1.1669054902778864
-one_player(70): simulate [INFO] (Day 53): True state: S, believes himself to be 100% healthy, and has a net utility of 59.62, (percentage infected = 0.51%, work risk = 0.045%, home risk = 0.003%)
+one_player(70): simulate [INFO] (Day 52): True state: S, believes himself to be 99% healthy, and has a net utility of 59.20, (percentage infected = 0.48%, work risk = 0.042%, home risk = 0.003%)
+simple(35): plan [DEBUG] (Day 53): Estimated (self) work payoff: 1.1436187355230398
+one_player(70): simulate [INFO] (Day 53): True state: S, believes himself to be 100% healthy, and has a net utility of 60.37, (percentage infected = 0.51%, work risk = 0.045%, home risk = 0.003%)
 simple(35): plan [DEBUG] (Day 54): Estimated (self) work payoff: 1.1643292976360806
-one_player(70): simulate [INFO] (Day 54): True state: S, believes himself to be 88% healthy, and has a net utility of 60.82, (percentage infected = 0.55%, work risk = 0.048%, home risk = 0.004%)
-simple(35): plan [DEBUG] (Day 55): Estimated (self) work payoff: 0.897810806586764
-one_player(70): simulate [INFO] (Day 55): True state: S, believes himself to be 100% healthy, and has a net utility of 61.76, (percentage infected = 0.60%, work risk = 0.052%, home risk = 0.004%)
+one_player(70): simulate [INFO] (Day 54): True state: S, believes himself to be 100% healthy, and has a net utility of 61.57, (percentage infected = 0.55%, work risk = 0.048%, home risk = 0.004%)
+simple(35): plan [DEBUG] (Day 55): Estimated (self) work payoff: 1.1615563247327783
+one_player(70): simulate [INFO] (Day 55): True state: S, believes himself to be 100% healthy, and has a net utility of 62.77, (percentage infected = 0.60%, work risk = 0.052%, home risk = 0.004%)
 simple(35): plan [DEBUG] (Day 56): Estimated (self) work payoff: 1.1585710196121894
-one_player(70): simulate [INFO] (Day 56): True state: S, believes himself to be 100% healthy, and has a net utility of 62.96, (percentage infected = 0.64%, work risk = 0.056%, home risk = 0.004%)
+one_player(70): simulate [INFO] (Day 56): True state: S, believes himself to be 100% healthy, and has a net utility of 63.97, (percentage infected = 0.64%, work risk = 0.056%, home risk = 0.004%)
 simple(35): plan [DEBUG] (Day 57): Estimated (self) work payoff: 1.1553587857771042
-one_player(70): simulate [INFO] (Day 57): True state: S, believes himself to be 100% healthy, and has a net utility of 64.16, (percentage infected = 0.69%, work risk = 0.060%, home risk = 0.005%)
+one_player(70): simulate [INFO] (Day 57): True state: S, believes himself to be 100% healthy, and has a net utility of 65.17, (percentage infected = 0.69%, work risk = 0.060%, home risk = 0.005%)
 simple(35): plan [DEBUG] (Day 58): Estimated (self) work payoff: 1.1519023716115613
-one_player(70): simulate [INFO] (Day 58): True state: S, believes himself to be 100% healthy, and has a net utility of 65.36, (percentage infected = 0.75%, work risk = 0.065%, home risk = 0.005%)
-simple(35): plan [DEBUG] (Day 59): Estimated (self) work payoff: 1.1481842756491114
-one_player(70): simulate [INFO] (Day 59): True state: S, believes himself to be 100% healthy, and has a net utility of 66.56, (percentage infected = 0.80%, work risk = 0.070%, home risk = 0.005%)
+one_player(70): simulate [INFO] (Day 58): True state: S, believes himself to be 93% healthy, and has a net utility of 66.37, (percentage infected = 0.75%, work risk = 0.065%, home risk = 0.005%)
+simple(35): plan [DEBUG] (Day 59): Estimated (self) work payoff: 1.0049344368879451
+one_player(70): simulate [INFO] (Day 59): True state: S, believes himself to be 100% healthy, and has a net utility of 67.43, (percentage infected = 0.80%, work risk = 0.070%, home risk = 0.005%)
 simple(35): plan [DEBUG] (Day 60): Estimated (self) work payoff: 1.1441859351593688
-one_player(70): simulate [INFO] (Day 60): True state: S, believes himself to be 95% healthy, and has a net utility of 67.76, (percentage infected = 0.87%, work risk = 0.076%, home risk = 0.006%)
-simple(35): plan [DEBUG] (Day 61): Estimated (self) work payoff: 1.0411853095106676
-one_player(70): simulate [INFO] (Day 61): True state: S, believes himself to be 96% healthy, and has a net utility of 68.86, (percentage infected = 0.93%, work risk = 0.081%, home risk = 0.006%)
-simple(35): plan [DEBUG] (Day 62): Estimated (self) work payoff: 1.0478338173923931
-one_player(70): simulate [INFO] (Day 62): True state: S, believes himself to be 100% healthy, and has a net utility of 69.97, (percentage infected = 1.01%, work risk = 0.088%, home risk = 0.007%)
-simple(35): plan [DEBUG] (Day 63): Estimated (self) work payoff: 1.130300207690917
-one_player(70): simulate [INFO] (Day 63): True state: S, believes himself to be 100% healthy, and has a net utility of 71.17, (percentage infected = 1.08%, work risk = 0.094%, home risk = 0.007%)
-simple(35): plan [DEBUG] (Day 64): Estimated (self) work payoff: 1.1249656692879326
-one_player(70): simulate [INFO] (Day 64): True state: S, believes himself to be 88% healthy, and has a net utility of 72.37, (percentage infected = 1.17%, work risk = 0.102%, home risk = 0.008%)
-simple(35): plan [DEBUG] (Day 65): Estimated (self) work payoff: 0.8599020063548148
-one_player(70): simulate [INFO] (Day 65): True state: S, believes himself to be 100% healthy, and has a net utility of 73.31, (percentage infected = 1.26%, work risk = 0.109%, home risk = 0.008%)
-simple(35): plan [DEBUG] (Day 66): Estimated (self) work payoff: 1.1130886451345772
-one_player(70): simulate [INFO] (Day 66): True state: S, believes himself to be 100% healthy, and has a net utility of 74.51, (percentage infected = 1.35%, work risk = 0.118%, home risk = 0.009%)
-simple(35): plan [DEBUG] (Day 67): Estimated (self) work payoff: 1.1064907693657697
-one_player(70): simulate [INFO] (Day 67): True state: S, believes himself to be 97% healthy, and has a net utility of 75.71, (percentage infected = 1.45%, work risk = 0.127%, home risk = 0.010%)
-simple(35): plan [DEBUG] (Day 68): Estimated (self) work payoff: 1.0331788630123797
-one_player(70): simulate [INFO] (Day 68): True state: S, believes himself to be 100% healthy, and has a net utility of 76.85, (percentage infected = 1.56%, work risk = 0.136%, home risk = 0.010%)
+one_player(70): simulate [INFO] (Day 60): True state: S, believes himself to be 97% healthy, and has a net utility of 68.63, (percentage infected = 0.87%, work risk = 0.076%, home risk = 0.006%)
+simple(35): plan [DEBUG] (Day 61): Estimated (self) work payoff: 1.0762788712659443
+one_player(70): simulate [INFO] (Day 61): True state: S, believes himself to be 100% healthy, and has a net utility of 69.77, (percentage infected = 0.93%, work risk = 0.081%, home risk = 0.006%)
+simple(35): plan [DEBUG] (Day 62): Estimated (self) work payoff: 1.1352654949592167
+one_player(70): simulate [INFO] (Day 62): True state: S, believes himself to be 91% healthy, and has a net utility of 70.97, (percentage infected = 1.01%, work risk = 0.088%, home risk = 0.007%)
+simple(35): plan [DEBUG] (Day 63): Estimated (self) work payoff: 0.9294275723670862
+one_player(70): simulate [INFO] (Day 63): True state: S, believes himself to be 90% healthy, and has a net utility of 71.97, (percentage infected = 1.08%, work risk = 0.094%, home risk = 0.007%)
+simple(35): plan [DEBUG] (Day 64): Estimated (self) work payoff: 0.9060613033950276
+one_player(70): simulate [INFO] (Day 64): True state: S, believes himself to be 96% healthy, and has a net utility of 72.95, (percentage infected = 1.17%, work risk = 0.102%, home risk = 0.008%)
+simple(35): plan [DEBUG] (Day 65): Estimated (self) work payoff: 1.0327196361652062
+one_player(70): simulate [INFO] (Day 65): True state: S, believes himself to be 87% healthy, and has a net utility of 74.06, (percentage infected = 1.26%, work risk = 0.109%, home risk = 0.008%)
+simple(35): plan [DEBUG] (Day 66): Estimated (self) work payoff: 0.8417358252669116
+one_player(70): simulate [INFO] (Day 66): True state: S, believes himself to be 99% healthy, and has a net utility of 74.99, (percentage infected = 1.35%, work risk = 0.118%, home risk = 0.009%)
+simple(35): plan [DEBUG] (Day 67): Estimated (self) work payoff: 1.089377673880422
+one_player(70): simulate [INFO] (Day 67): True state: S, believes himself to be 99% healthy, and has a net utility of 76.17, (percentage infected = 1.45%, work risk = 0.127%, home risk = 0.010%)
+simple(35): plan [DEBUG] (Day 68): Estimated (self) work payoff: 1.0964118847670294
+one_player(70): simulate [INFO] (Day 68): True state: S, believes himself to be 100% healthy, and has a net utility of 77.37, (percentage infected = 1.56%, work risk = 0.136%, home risk = 0.010%)
 simple(35): plan [DEBUG] (Day 69): Estimated (self) work payoff: 1.0918278222705204
-one_player(70): simulate [INFO] (Day 69): True state: S, believes himself to be 99% healthy, and has a net utility of 78.05, (percentage infected = 1.68%, work risk = 0.146%, home risk = 0.011%)
-simple(35): plan [DEBUG] (Day 70): Estimated (self) work payoff: 1.0653737017117966
-one_player(70): simulate [INFO] (Day 70): True state: S, believes himself to be 100% healthy, and has a net utility of 79.23, (percentage infected = 1.81%, work risk = 0.157%, home risk = 0.012%)
-simple(35): plan [DEBUG] (Day 71): Estimated (self) work payoff: 1.074992592048014
-one_player(70): simulate [INFO] (Day 71): True state: S, believes himself to be 88% healthy, and has a net utility of 80.43, (percentage infected = 1.94%, work risk = 0.169%, home risk = 0.013%)
-simple(35): plan [DEBUG] (Day 72): Estimated (self) work payoff: 0.8110187432701288
-one_player(70): simulate [INFO] (Day 72): True state: S, believes himself to be 97% healthy, and has a net utility of 81.37, (percentage infected = 2.09%, work risk = 0.182%, home risk = 0.014%)
-simple(35): plan [DEBUG] (Day 73): Estimated (self) work payoff: 0.9938137300707502
-one_player(70): simulate [INFO] (Day 73): True state: S, believes himself to be 100% healthy, and has a net utility of 82.51, (percentage infected = 2.24%, work risk = 0.195%, home risk = 0.015%)
-simple(35): plan [DEBUG] (Day 74): Estimated (self) work payoff: 1.0450514872355914
-one_player(70): simulate [INFO] (Day 74): True state: S, believes himself to be 92% healthy, and has a net utility of 83.71, (percentage infected = 2.41%, work risk = 0.210%, home risk = 0.016%)
-simple(35): plan [DEBUG] (Day 75): Estimated (self) work payoff: 0.8646945007756046
-one_player(70): simulate [INFO] (Day 75): True state: S, believes himself to be 94% healthy, and has a net utility of 84.74, (percentage infected = 2.58%, work risk = 0.225%, home risk = 0.017%)
-simple(35): plan [DEBUG] (Day 76): Estimated (self) work payoff: 0.8917489791848944
-one_player(70): simulate [INFO] (Day 76): True state: S, believes himself to be 95% healthy, and has a net utility of 85.81, (percentage infected = 2.77%, work risk = 0.242%, home risk = 0.019%)
-simple(35): plan [DEBUG] (Day 77): Estimated (self) work payoff: 0.8960230205666674
-one_player(70): simulate [INFO] (Day 77): True state: S, believes himself to be 100% healthy, and has a net utility of 86.90, (percentage infected = 2.98%, work risk = 0.259%, home risk = 0.020%)
+one_player(70): simulate [INFO] (Day 69): True state: S, believes himself to be 100% healthy, and has a net utility of 78.57, (percentage infected = 1.68%, work risk = 0.146%, home risk = 0.011%)
+simple(35): plan [DEBUG] (Day 70): Estimated (self) work payoff: 1.0836986584386947
+one_player(70): simulate [INFO] (Day 70): True state: S, believes himself to be 92% healthy, and has a net utility of 79.77, (percentage infected = 1.81%, work risk = 0.157%, home risk = 0.012%)
+simple(35): plan [DEBUG] (Day 71): Estimated (self) work payoff: 0.8941917770165868
+one_player(70): simulate [INFO] (Day 71): True state: S, believes himself to be 93% healthy, and has a net utility of 80.79, (percentage infected = 1.94%, work risk = 0.169%, home risk = 0.013%)
+simple(35): plan [DEBUG] (Day 72): Estimated (self) work payoff: 0.9243659510987651
+one_player(70): simulate [INFO] (Day 72): True state: S, believes himself to be 90% healthy, and has a net utility of 81.85, (percentage infected = 2.09%, work risk = 0.182%, home risk = 0.014%)
+simple(35): plan [DEBUG] (Day 73): Estimated (self) work payoff: 0.8408835825474259
+one_player(70): simulate [INFO] (Day 73): True state: S, believes himself to be 90% healthy, and has a net utility of 82.83, (percentage infected = 2.24%, work risk = 0.195%, home risk = 0.015%)
+simple(35): plan [DEBUG] (Day 74): Estimated (self) work payoff: 0.8205323469140372
+one_player(70): simulate [INFO] (Day 74): True state: S, believes himself to be 96% healthy, and has a net utility of 83.81, (percentage infected = 2.41%, work risk = 0.210%, home risk = 0.016%)
+simple(35): plan [DEBUG] (Day 75): Estimated (self) work payoff: 0.9553329901304246
+one_player(70): simulate [INFO] (Day 75): True state: S, believes himself to be 99% healthy, and has a net utility of 84.93, (percentage infected = 2.58%, work risk = 0.225%, home risk = 0.017%)
+simple(35): plan [DEBUG] (Day 76): Estimated (self) work payoff: 1.003293863070819
+one_player(70): simulate [INFO] (Day 76): True state: S, believes himself to be 100% healthy, and has a net utility of 86.11, (percentage infected = 2.77%, work risk = 0.242%, home risk = 0.019%)
+simple(35): plan [DEBUG] (Day 77): Estimated (self) work payoff: 1.0085653328639705
+one_player(70): simulate [INFO] (Day 77): True state: S, believes himself to be 100% healthy, and has a net utility of 87.31, (percentage infected = 2.98%, work risk = 0.259%, home risk = 0.020%)
 simple(35): plan [DEBUG] (Day 78): Estimated (self) work payoff: 0.9947594648847362
-one_player(70): simulate [INFO] (Day 78): True state: S, believes himself to be 90% healthy, and has a net utility of 88.10, (percentage infected = 3.19%, work risk = 0.278%, home risk = 0.021%)
-simple(35): plan [DEBUG] (Day 79): Estimated (self) work payoff: 0.7642047887227523
-one_player(70): simulate [INFO] (Day 79): True state: S, believes himself to be 91% healthy, and has a net utility of 89.08, (percentage infected = 3.42%, work risk = 0.298%, home risk = 0.023%)
-simple(35): plan [DEBUG] (Day 80): Estimated (self) work payoff: 0.7604199440352402
-one_player(70): simulate [INFO] (Day 80): True state: S, believes himself to be 90% healthy, and has a net utility of 90.08, (percentage infected = 3.66%, work risk = 0.319%, home risk = 0.025%)
-simple(35): plan [DEBUG] (Day 81): Estimated (self) work payoff: 0.7246616402496595
-one_player(70): simulate [INFO] (Day 81): True state: S, believes himself to be 100% healthy, and has a net utility of 91.06, (percentage infected = 3.92%, work risk = 0.341%, home risk = 0.026%)
+one_player(70): simulate [INFO] (Day 78): True state: S, believes himself to be 95% healthy, and has a net utility of 88.51, (percentage infected = 3.19%, work risk = 0.278%, home risk = 0.021%)
+simple(35): plan [DEBUG] (Day 79): Estimated (self) work payoff: 0.8723954897022796
+one_player(70): simulate [INFO] (Day 79): True state: S, believes himself to be 100% healthy, and has a net utility of 89.60, (percentage infected = 3.42%, work risk = 0.298%, home risk = 0.023%)
+simple(35): plan [DEBUG] (Day 80): Estimated (self) work payoff: 0.9644296865887511
+one_player(70): simulate [INFO] (Day 80): True state: S, believes himself to be 95% healthy, and has a net utility of 90.80, (percentage infected = 3.66%, work risk = 0.319%, home risk = 0.025%)
+simple(35): plan [DEBUG] (Day 81): Estimated (self) work payoff: 0.8520620471745262
+one_player(70): simulate [INFO] (Day 81): True state: S, believes himself to be 100% healthy, and has a net utility of 91.91, (percentage infected = 3.92%, work risk = 0.341%, home risk = 0.026%)
 simple(35): plan [DEBUG] (Day 82): Estimated (self) work payoff: 0.9302015857967219
-one_player(70): simulate [INFO] (Day 82): True state: S, believes himself to be 100% healthy, and has a net utility of 92.26, (percentage infected = 4.19%, work risk = 0.365%, home risk = 0.028%)
+one_player(70): simulate [INFO] (Day 82): True state: S, believes himself to be 100% healthy, and has a net utility of 93.11, (percentage infected = 4.19%, work risk = 0.365%, home risk = 0.028%)
 simple(35): plan [DEBUG] (Day 83): Estimated (self) work payoff: 0.9115222415142881
-one_player(70): simulate [INFO] (Day 83): True state: S, believes himself to be 99% healthy, and has a net utility of 93.46, (percentage infected = 4.49%, work risk = 0.391%, home risk = 0.030%)
-simple(35): plan [DEBUG] (Day 84): Estimated (self) work payoff: 0.891260950463024
-one_player(70): simulate [INFO] (Day 84): True state: S, believes himself to be 97% healthy, and has a net utility of 94.66, (percentage infected = 4.79%, work risk = 0.417%, home risk = 0.032%)
-simple(35): plan [DEBUG] (Day 85): Estimated (self) work payoff: 0.8132948398380513
-one_player(70): simulate [INFO] (Day 85): True state: S, believes himself to be 100% healthy, and has a net utility of 95.80, (percentage infected = 5.12%, work risk = 0.446%, home risk = 0.034%)
+one_player(70): simulate [INFO] (Day 83): True state: S, believes himself to be 93% healthy, and has a net utility of 94.31, (percentage infected = 4.49%, work risk = 0.391%, home risk = 0.030%)
+simple(35): plan [DEBUG] (Day 84): Estimated (self) work payoff: 0.7301000429890236
+one_player(70): simulate [INFO] (Day 84): True state: S, believes himself to be 88% healthy, and has a net utility of 95.35, (percentage infected = 4.79%, work risk = 0.417%, home risk = 0.032%)
+simple(35): plan [DEBUG] (Day 85): Estimated (self) work payoff: 0.609118968661282
+one_player(70): simulate [INFO] (Day 85): True state: S, believes himself to be 100% healthy, and has a net utility of 96.28, (percentage infected = 5.12%, work risk = 0.446%, home risk = 0.034%)
 simple(35): plan [DEBUG] (Day 86): Estimated (self) work payoff: 0.8488085545955126
-one_player(70): simulate [INFO] (Day 86): True state: S, believes himself to be 100% healthy, and has a net utility of 97.00, (percentage infected = 5.46%, work risk = 0.476%, home risk = 0.037%)
-simple(35): plan [DEBUG] (Day 87): Estimated (self) work payoff: 0.8255765917469435
-one_player(70): simulate [INFO] (Day 87): True state: S, believes himself to be 89% healthy, and has a net utility of 98.20, (percentage infected = 5.82%, work risk = 0.507%, home risk = 0.039%)
-simple(35): plan [DEBUG] (Day 88): Estimated (self) work payoff: 0.5628143617135968
-one_player(70): simulate [INFO] (Day 88): True state: S, believes himself to be 100% healthy, and has a net utility of 99.16, (percentage infected = 6.20%, work risk = 0.540%, home risk = 0.042%)
-simple(35): plan [DEBUG] (Day 89): Estimated (self) work payoff: 0.7754778941502167
-one_player(70): simulate [INFO] (Day 89): True state: S, believes himself to be 100% healthy, and has a net utility of 100.36, (percentage infected = 6.60%, work risk = 0.575%, home risk = 0.044%)
+one_player(70): simulate [INFO] (Day 86): True state: S, believes himself to be 98% healthy, and has a net utility of 97.48, (percentage infected = 5.46%, work risk = 0.476%, home risk = 0.037%)
+simple(35): plan [DEBUG] (Day 87): Estimated (self) work payoff: 0.7929022542320996
+one_player(70): simulate [INFO] (Day 87): True state: S, believes himself to be 95% healthy, and has a net utility of 98.65, (percentage infected = 5.82%, work risk = 0.507%, home risk = 0.039%)
+simple(35): plan [DEBUG] (Day 88): Estimated (self) work payoff: 0.7022930572170261
+one_player(70): simulate [INFO] (Day 88): True state: S, believes himself to be 96% healthy, and has a net utility of 99.75, (percentage infected = 6.20%, work risk = 0.540%, home risk = 0.042%)
+simple(35): plan [DEBUG] (Day 89): Estimated (self) work payoff: 0.6926064251567616
+one_player(70): simulate [INFO] (Day 89): True state: S, believes himself to be 100% healthy, and has a net utility of 100.87, (percentage infected = 6.60%, work risk = 0.575%, home risk = 0.044%)
 simple(35): plan [DEBUG] (Day 90): Estimated (self) work payoff: 0.7485883212433597
-one_player(70): simulate [INFO] (Day 90): True state: S, believes himself to be 93% healthy, and has a net utility of 101.56, (percentage infected = 7.02%, work risk = 0.611%, home risk = 0.047%)
-simple(35): plan [DEBUG] (Day 91): Estimated (self) work payoff: 0.5801051889174842
-one_player(70): simulate [INFO] (Day 91): True state: S, believes himself to be 100% healthy, and has a net utility of 102.62, (percentage infected = 7.46%, work risk = 0.649%, home risk = 0.050%)
-simple(35): plan [DEBUG] (Day 92): Estimated (self) work payoff: 0.6911268730467095
-one_player(70): simulate [INFO] (Day 92): True state: S, believes himself to be 100% healthy, and has a net utility of 103.82, (percentage infected = 7.91%, work risk = 0.689%, home risk = 0.053%)
-simple(35): plan [DEBUG] (Day 93): Estimated (self) work payoff: 0.6605728968837755
-one_player(70): simulate [INFO] (Day 93): True state: S, believes himself to be 100% healthy, and has a net utility of 105.02, (percentage infected = 8.39%, work risk = 0.730%, home risk = 0.056%)
-simple(35): plan [DEBUG] (Day 94): Estimated (self) work payoff: 0.6288516786074584
-one_player(70): simulate [INFO] (Day 94): True state: S, believes himself to be 100% healthy, and has a net utility of 106.22, (percentage infected = 8.88%, work risk = 0.773%, home risk = 0.059%)
+one_player(70): simulate [INFO] (Day 90): True state: S, believes himself to be 100% healthy, and has a net utility of 102.07, (percentage infected = 7.02%, work risk = 0.611%, home risk = 0.047%)
+simple(35): plan [DEBUG] (Day 91): Estimated (self) work payoff: 0.720468742762099
+one_player(70): simulate [INFO] (Day 91): True state: S, believes himself to be 90% healthy, and has a net utility of 103.27, (percentage infected = 7.46%, work risk = 0.649%, home risk = 0.050%)
+simple(35): plan [DEBUG] (Day 92): Estimated (self) work payoff: 0.4727862573547428
+one_player(70): simulate [INFO] (Day 92): True state: S, believes himself to be 88% healthy, and has a net utility of 104.25, (percentage infected = 7.91%, work risk = 0.689%, home risk = 0.053%)
+simple(35): plan [DEBUG] (Day 93): Estimated (self) work payoff: 0.4016635036006194
+one_player(70): simulate [INFO] (Day 93): True state: S, believes himself to be 98% healthy, and has a net utility of 105.19, (percentage infected = 8.39%, work risk = 0.730%, home risk = 0.056%)
+simple(35): plan [DEBUG] (Day 94): Estimated (self) work payoff: 0.5862904268998462
+one_player(70): simulate [INFO] (Day 94): True state: S, believes himself to be 100% healthy, and has a net utility of 106.35, (percentage infected = 8.88%, work risk = 0.773%, home risk = 0.059%)
 simple(35): plan [DEBUG] (Day 95): Estimated (self) work payoff: 0.5959940765233841
-one_player(70): simulate [INFO] (Day 95): True state: S, believes himself to be 100% healthy, and has a net utility of 107.42, (percentage infected = 9.39%, work risk = 0.818%, home risk = 0.063%)
+one_player(70): simulate [INFO] (Day 95): True state: S, believes himself to be 100% healthy, and has a net utility of 107.55, (percentage infected = 9.39%, work risk = 0.818%, home risk = 0.063%)
 simple(35): plan [DEBUG] (Day 96): Estimated (self) work payoff: 0.5620466252002833
-one_player(70): simulate [INFO] (Day 96): True state: S, believes himself to be 93% healthy, and has a net utility of 108.62, (percentage infected = 9.92%, work risk = 0.864%, home risk = 0.066%)
-simple(35): plan [DEBUG] (Day 97): Estimated (self) work payoff: 0.3857871313648962
-one_player(70): simulate [INFO] (Day 97): True state: S, believes himself to be 100% healthy, and has a net utility of 109.68, (percentage infected = 10.46%, work risk = 0.911%, home risk = 0.070%)
+one_player(70): simulate [INFO] (Day 96): True state: S, believes himself to be 93% healthy, and has a net utility of 108.75, (percentage infected = 9.92%, work risk = 0.864%, home risk = 0.066%)
+simple(35): plan [DEBUG] (Day 97): Estimated (self) work payoff: 0.3768036827134622
+one_player(70): simulate [INFO] (Day 97): True state: S, believes himself to be 100% healthy, and has a net utility of 109.80, (percentage infected = 10.46%, work risk = 0.911%, home risk = 0.070%)
 simple(35): plan [DEBUG] (Day 98): Estimated (self) work payoff: 0.49120418725618176
-one_player(70): simulate [INFO] (Day 98): True state: S, believes himself to be 87% healthy, and has a net utility of 110.88, (percentage infected = 11.02%, work risk = 0.960%, home risk = 0.074%)
-simple(35): plan [DEBUG] (Day 99): Estimated (self) work payoff: 0.18136377450811825
-one_player(70): simulate [INFO] (Day 99): True state: S, believes himself to be 87% healthy, and has a net utility of 111.80, (percentage infected = 11.59%, work risk = 1.010%, home risk = 0.078%)
-simple(35): plan [DEBUG] (Day 100): Estimated (self) work payoff: 0.13840583302413878
-one_player(70): simulate [INFO] (Day 100): True state: S, believes himself to be 99% healthy, and has a net utility of 112.73, (percentage infected = 12.17%, work risk = 1.060%, home risk = 0.082%)
-simple(35): plan [DEBUG] (Day 101): Estimated (self) work payoff: 0.37066557532764477
-one_player(70): simulate [INFO] (Day 101): True state: S, believes himself to be 100% healthy, and has a net utility of 113.92, (percentage infected = 12.77%, work risk = 1.112%, home risk = 0.086%)
+one_player(70): simulate [INFO] (Day 98): True state: S, believes himself to be 91% healthy, and has a net utility of 111.00, (percentage infected = 11.02%, work risk = 0.960%, home risk = 0.074%)
+simple(35): plan [DEBUG] (Day 99): Estimated (self) work payoff: 0.25174295419350234
+one_player(70): simulate [INFO] (Day 99): True state: S, believes himself to be 90% healthy, and has a net utility of 112.00, (percentage infected = 11.59%, work risk = 1.010%, home risk = 0.078%)
+simple(35): plan [DEBUG] (Day 100): Estimated (self) work payoff: 0.19765374884672204
+one_player(70): simulate [INFO] (Day 100): True state: S, believes himself to be 97% healthy, and has a net utility of 112.98, (percentage infected = 12.17%, work risk = 1.060%, home risk = 0.082%)
+simple(35): plan [DEBUG] (Day 101): Estimated (self) work payoff: 0.31822371949305694
+one_player(70): simulate [INFO] (Day 101): True state: S, believes himself to be 100% healthy, and has a net utility of 114.12, (percentage infected = 12.77%, work risk = 1.112%, home risk = 0.086%)
 simple(35): plan [DEBUG] (Day 102): Estimated (self) work payoff: 0.34044956184416264
-one_player(70): simulate [INFO] (Day 102): True state: S, believes himself to be 100% healthy, and has a net utility of 115.12, (percentage infected = 13.36%, work risk = 1.164%, home risk = 0.090%)
+one_player(70): simulate [INFO] (Day 102): True state: S, believes himself to be 100% healthy, and has a net utility of 115.32, (percentage infected = 13.36%, work risk = 1.164%, home risk = 0.090%)
 simple(35): plan [DEBUG] (Day 103): Estimated (self) work payoff: 0.3016188594217434
-one_player(70): simulate [INFO] (Day 103): True state: S, believes himself to be 97% healthy, and has a net utility of 116.32, (percentage infected = 13.97%, work risk = 1.217%, home risk = 0.094%)
-simple(35): plan [DEBUG] (Day 104): Estimated (self) work payoff: 0.20934377724815156
-one_player(70): simulate [INFO] (Day 104): True state: S, believes himself to be 97% healthy, and has a net utility of 117.46, (percentage infected = 14.57%, work risk = 1.269%, home risk = 0.098%)
-simple(35): plan [DEBUG] (Day 105): Estimated (self) work payoff: 0.16166808365475938
-one_player(70): simulate [INFO] (Day 105): True state: S, believes himself to be 87% healthy, and has a net utility of 118.60, (percentage infected = 15.18%, work risk = 1.322%, home risk = 0.102%)
-simple(35): plan [DEBUG] (Day 106): Estimated (self) work payoff: -0.08621048713315549
-one_player(70): simulate [INFO] (Day 106): True state: S, believes himself to be 92% healthy, and has a net utility of 118.60, (percentage infected = 15.78%, work risk = 1.374%, home risk = 0.106%)
-simple(35): plan [DEBUG] (Day 107): Estimated (self) work payoff: -0.023168187761355652
-one_player(70): simulate [INFO] (Day 107): True state: S, believes himself to be 96% healthy, and has a net utility of 118.60, (percentage infected = 16.38%, work risk = 1.426%, home risk = 0.110%)
-simple(35): plan [DEBUG] (Day 108): Estimated (self) work payoff: 0.03199866581728794
-one_player(70): simulate [INFO] (Day 108): True state: S, believes himself to be 100% healthy, and has a net utility of 119.73, (percentage infected = 16.96%, work risk = 1.477%, home risk = 0.114%)
+one_player(70): simulate [INFO] (Day 103): True state: S, believes himself to be 100% healthy, and has a net utility of 116.52, (percentage infected = 13.97%, work risk = 1.217%, home risk = 0.094%)
+simple(35): plan [DEBUG] (Day 104): Estimated (self) work payoff: 0.26265076054415937
+one_player(70): simulate [INFO] (Day 104): True state: S, believes himself to be 100% healthy, and has a net utility of 117.72, (percentage infected = 14.57%, work risk = 1.269%, home risk = 0.098%)
+simple(35): plan [DEBUG] (Day 105): Estimated (self) work payoff: 0.22371520758421404
+one_player(70): simulate [INFO] (Day 105): True state: S, believes himself to be 87% healthy, and has a net utility of 118.92, (percentage infected = 15.18%, work risk = 1.322%, home risk = 0.102%)
+simple(35): plan [DEBUG] (Day 106): Estimated (self) work payoff: -0.08636350403740578
+one_player(70): simulate [INFO] (Day 106): True state: S, believes himself to be 97% healthy, and has a net utility of 118.92, (percentage infected = 15.78%, work risk = 1.374%, home risk = 0.106%)
+simple(35): plan [DEBUG] (Day 107): Estimated (self) work payoff: 0.08964804115177438
+one_player(70): simulate [INFO] (Day 107): True state: S, believes himself to be 87% healthy, and has a net utility of 120.06, (percentage infected = 16.38%, work risk = 1.426%, home risk = 0.110%)
+simple(35): plan [DEBUG] (Day 108): Estimated (self) work payoff: -0.16879060258989909
+one_player(70): simulate [INFO] (Day 108): True state: S, believes himself to be 100% healthy, and has a net utility of 120.06, (percentage infected = 16.96%, work risk = 1.477%, home risk = 0.114%)
 simple(35): plan [DEBUG] (Day 109): Estimated (self) work payoff: 0.07219905075138677
-one_player(70): simulate [INFO] (Day 109): True state: S, believes himself to be 95% healthy, and has a net utility of 120.93, (percentage infected = 17.53%, work risk = 1.527%, home risk = 0.117%)
-simple(35): plan [DEBUG] (Day 110): Estimated (self) work payoff: -0.0758596795858899
-one_player(70): simulate [INFO] (Day 110): True state: S, believes himself to be 100% healthy, and has a net utility of 120.93, (percentage infected = 18.09%, work risk = 1.576%, home risk = 0.121%)
-simple(35): plan [DEBUG] (Day 111): Estimated (self) work payoff: 0.0018231476740839803
-one_player(70): simulate [INFO] (Day 111): True state: S, believes himself to be 100% healthy, and has a net utility of 122.13, (percentage infected = 18.63%, work risk = 1.623%, home risk = 0.125%)
+one_player(70): simulate [INFO] (Day 109): True state: S, believes himself to be 93% healthy, and has a net utility of 121.26, (percentage infected = 17.53%, work risk = 1.527%, home risk = 0.117%)
+simple(35): plan [DEBUG] (Day 110): Estimated (self) work payoff: -0.10346490304930578
+one_player(70): simulate [INFO] (Day 110): True state: S, believes himself to be 91% healthy, and has a net utility of 121.26, (percentage infected = 18.09%, work risk = 1.576%, home risk = 0.121%)
+simple(35): plan [DEBUG] (Day 111): Estimated (self) work payoff: -0.19580738839675105
+one_player(70): simulate [INFO] (Day 111): True state: S, believes himself to be 100% healthy, and has a net utility of 121.26, (percentage infected = 18.63%, work risk = 1.623%, home risk = 0.125%)
 simple(35): plan [DEBUG] (Day 112): Estimated (self) work payoff: -0.031343545251069305
-one_player(70): simulate [INFO] (Day 112): True state: S, believes himself to be 89% healthy, and has a net utility of 122.13, (percentage infected = 19.14%, work risk = 1.667%, home risk = 0.128%)
-simple(35): plan [DEBUG] (Day 113): Estimated (self) work payoff: -0.2983577850159407
-one_player(70): simulate [INFO] (Day 113): True state: S, believes himself to be 100% healthy, and has a net utility of 122.13, (percentage infected = 19.63%, work risk = 1.710%, home risk = 0.132%)
+one_player(70): simulate [INFO] (Day 112): True state: S, believes himself to be 97% healthy, and has a net utility of 121.26, (percentage infected = 19.14%, work risk = 1.667%, home risk = 0.128%)
+simple(35): plan [DEBUG] (Day 113): Estimated (self) work payoff: -0.12417515181444272
+one_player(70): simulate [INFO] (Day 113): True state: S, believes himself to be 100% healthy, and has a net utility of 121.26, (percentage infected = 19.63%, work risk = 1.710%, home risk = 0.132%)
 simple(35): plan [DEBUG] (Day 114): Estimated (self) work payoff: -0.09258414676044269
-one_player(70): simulate [INFO] (Day 114): True state: S, believes himself to be 95% healthy, and has a net utility of 122.13, (percentage infected = 20.10%, work risk = 1.750%, home risk = 0.135%)
-simple(35): plan [DEBUG] (Day 115): Estimated (self) work payoff: -0.23454045656022737
-one_player(70): simulate [INFO] (Day 115): True state: S, believes himself to be 90% healthy, and has a net utility of 122.13, (percentage infected = 20.53%, work risk = 1.788%, home risk = 0.138%)
-simple(35): plan [DEBUG] (Day 116): Estimated (self) work payoff: -0.3630748828965331
-one_player(70): simulate [INFO] (Day 116): True state: S, believes himself to be 88% healthy, and has a net utility of 122.13, (percentage infected = 20.93%, work risk = 1.823%, home risk = 0.140%)
-simple(35): plan [DEBUG] (Day 117): Estimated (self) work payoff: -0.4190256420308178
-one_player(70): simulate [INFO] (Day 117): True state: S, believes himself to be 100% healthy, and has a net utility of 122.13, (percentage infected = 21.29%, work risk = 1.854%, home risk = 0.143%)
-simple(35): plan [DEBUG] (Day 118): Estimated (self) work payoff: -0.1902944265958202
-one_player(70): simulate [INFO] (Day 118): True state: S, believes himself to be 95% healthy, and has a net utility of 122.13, (percentage infected = 21.62%, work risk = 1.883%, home risk = 0.145%)
-simple(35): plan [DEBUG] (Day 119): Estimated (self) work payoff: -0.3056978796978933
-one_player(70): simulate [INFO] (Day 119): True state: S, believes himself to be 99% healthy, and has a net utility of 122.13, (percentage infected = 21.90%, work risk = 1.908%, home risk = 0.147%)
-simple(35): plan [DEBUG] (Day 120): Estimated (self) work payoff: -0.24798820991855552
-one_player(70): simulate [INFO] (Day 120): True state: S, believes himself to be 100% healthy, and has a net utility of 122.13, (percentage infected = 22.15%, work risk = 1.929%, home risk = 0.148%)
-simple(35): plan [DEBUG] (Day 121): Estimated (self) work payoff: -0.23820029494988892
-one_player(70): simulate [INFO] (Day 121): True state: S, believes himself to be 89% healthy, and has a net utility of 122.13, (percentage infected = 22.36%, work risk = 1.948%, home risk = 0.150%)
-simple(35): plan [DEBUG] (Day 122): Estimated (self) work payoff: -0.48781367027747646
-one_player(70): simulate [INFO] (Day 122): True state: S, believes himself to be 100% healthy, and has a net utility of 122.13, (percentage infected = 22.53%, work risk = 1.962%, home risk = 0.151%)
-simple(35): plan [DEBUG] (Day 123): Estimated (self) work payoff: -0.2571087545360755
-one_player(70): simulate [INFO] (Day 123): True state: S, believes himself to be 100% healthy, and has a net utility of 122.13, (percentage infected = 22.65%, work risk = 1.973%, home risk = 0.152%)
+one_player(70): simulate [INFO] (Day 114): True state: S, believes himself to be 98% healthy, and has a net utility of 121.26, (percentage infected = 20.10%, work risk = 1.750%, home risk = 0.135%)
+simple(35): plan [DEBUG] (Day 115): Estimated (self) work payoff: -0.1496210771350759
+one_player(70): simulate [INFO] (Day 115): True state: S, believes himself to be 96% healthy, and has a net utility of 121.26, (percentage infected = 20.53%, work risk = 1.788%, home risk = 0.138%)
+simple(35): plan [DEBUG] (Day 116): Estimated (self) work payoff: -0.2375895221419324
+one_player(70): simulate [INFO] (Day 116): True state: S, believes himself to be 100% healthy, and has a net utility of 121.26, (percentage infected = 20.93%, work risk = 1.823%, home risk = 0.140%)
+simple(35): plan [DEBUG] (Day 117): Estimated (self) work payoff: -0.16931061236471723
+one_player(70): simulate [INFO] (Day 117): True state: S, believes himself to be 93% healthy, and has a net utility of 121.26, (percentage infected = 21.29%, work risk = 1.854%, home risk = 0.143%)
+simple(35): plan [DEBUG] (Day 118): Estimated (self) work payoff: -0.34518560858787173
+one_player(70): simulate [INFO] (Day 118): True state: S, believes himself to be 100% healthy, and has a net utility of 121.26, (percentage infected = 21.62%, work risk = 1.883%, home risk = 0.145%)
+simple(35): plan [DEBUG] (Day 119): Estimated (self) work payoff: -0.20882157747612617
+one_player(70): simulate [INFO] (Day 119): True state: S, believes himself to be 100% healthy, and has a net utility of 121.26, (percentage infected = 21.90%, work risk = 1.908%, home risk = 0.147%)
+simple(35): plan [DEBUG] (Day 120): Estimated (self) work payoff: -0.2248274720586747
+one_player(70): simulate [INFO] (Day 120): True state: S, believes himself to be 88% healthy, and has a net utility of 121.26, (percentage infected = 22.15%, work risk = 1.929%, home risk = 0.148%)
+simple(35): plan [DEBUG] (Day 121): Estimated (self) work payoff: -0.50229035534614
+one_player(70): simulate [INFO] (Day 121): True state: S, believes himself to be 100% healthy, and has a net utility of 121.26, (percentage infected = 22.36%, work risk = 1.948%, home risk = 0.150%)
+simple(35): plan [DEBUG] (Day 122): Estimated (self) work payoff: -0.24895905255026363
+one_player(70): simulate [INFO] (Day 122): True state: S, believes himself to be 99% healthy, and has a net utility of 121.26, (percentage infected = 22.53%, work risk = 1.962%, home risk = 0.151%)
+simple(35): plan [DEBUG] (Day 123): Estimated (self) work payoff: -0.2588550587371181
+one_player(70): simulate [INFO] (Day 123): True state: S, believes himself to be 100% healthy, and has a net utility of 121.26, (percentage infected = 22.65%, work risk = 1.973%, home risk = 0.152%)
 simple(35): plan [DEBUG] (Day 124): Estimated (self) work payoff: -0.26263165392113375
-one_player(70): simulate [INFO] (Day 124): True state: S, believes himself to be 95% healthy, and has a net utility of 122.13, (percentage infected = 22.74%, work risk = 1.981%, home risk = 0.152%)
-simple(35): plan [DEBUG] (Day 125): Estimated (self) work payoff: -0.3694350081266884
-one_player(70): simulate [INFO] (Day 125): True state: S, believes himself to be 100% healthy, and has a net utility of 122.13, (percentage infected = 22.79%, work risk = 1.985%, home risk = 0.153%)
-simple(35): plan [DEBUG] (Day 126): Estimated (self) work payoff: -0.2659267570503303
-one_player(70): simulate [INFO] (Day 126): True state: S, believes himself to be 100% healthy, and has a net utility of 122.13, (percentage infected = 22.79%, work risk = 1.985%, home risk = 0.153%)
+one_player(70): simulate [INFO] (Day 124): True state: S, believes himself to be 100% healthy, and has a net utility of 121.26, (percentage infected = 22.74%, work risk = 1.981%, home risk = 0.152%)
+simple(35): plan [DEBUG] (Day 125): Estimated (self) work payoff: -0.2655495712729137
+one_player(70): simulate [INFO] (Day 125): True state: S, believes himself to be 91% healthy, and has a net utility of 121.26, (percentage infected = 22.79%, work risk = 1.985%, home risk = 0.153%)
+simple(35): plan [DEBUG] (Day 126): Estimated (self) work payoff: -0.46644815576779475
+one_player(70): simulate [INFO] (Day 126): True state: S, believes himself to be 100% healthy, and has a net utility of 121.26, (percentage infected = 22.79%, work risk = 1.985%, home risk = 0.153%)
 simple(35): plan [DEBUG] (Day 127): Estimated (self) work payoff: -0.2638347706374069
-one_player(70): simulate [INFO] (Day 127): True state: S, believes himself to be 100% healthy, and has a net utility of 122.13, (percentage infected = 22.76%, work risk = 1.982%, home risk = 0.152%)
-simple(35): plan [DEBUG] (Day 128): Estimated (self) work payoff: -0.259349510129687
-one_player(70): simulate [INFO] (Day 128): True state: S, believes himself to be 87% healthy, and has a net utility of 122.13, (percentage infected = 22.69%, work risk = 1.976%, home risk = 0.152%)
-simple(35): plan [DEBUG] (Day 129): Estimated (self) work payoff: -0.5307062138158098
-one_player(70): simulate [INFO] (Day 129): True state: S, believes himself to be 100% healthy, and has a net utility of 122.13, (percentage infected = 22.58%, work risk = 1.967%, home risk = 0.151%)
-simple(35): plan [DEBUG] (Day 130): Estimated (self) work payoff: -0.24358995597284516
-one_player(70): simulate [INFO] (Day 130): True state: S, believes himself to be 93% healthy, and has a net utility of 122.13, (percentage infected = 22.44%, work risk = 1.955%, home risk = 0.150%)
-simple(35): plan [DEBUG] (Day 131): Estimated (self) work payoff: -0.3939713481365972
-one_player(70): simulate [INFO] (Day 131): True state: S, believes himself to be 89% healthy, and has a net utility of 122.13, (percentage infected = 22.27%, work risk = 1.940%, home risk = 0.149%)
-simple(35): plan [DEBUG] (Day 132): Estimated (self) work payoff: -0.45654868919168257
-one_player(70): simulate [INFO] (Day 132): True state: S, believes himself to be 98% healthy, and has a net utility of 122.13, (percentage infected = 22.07%, work risk = 1.922%, home risk = 0.148%)
-simple(35): plan [DEBUG] (Day 133): Estimated (self) work payoff: -0.23368753632794403
-one_player(70): simulate [INFO] (Day 133): True state: S, believes himself to be 100% healthy, and has a net utility of 122.13, (percentage infected = 21.84%, work risk = 1.902%, home risk = 0.146%)
-simple(35): plan [DEBUG] (Day 134): Estimated (self) work payoff: -0.18821455304207868
-one_player(70): simulate [INFO] (Day 134): True state: I, believes himself to be 100% healthy, and has a net utility of 122.13, (percentage infected = 21.58%, work risk = 1.880%, home risk = 0.145%)
-simple(35): plan [DEBUG] (Day 135): Estimated (self) work payoff: -0.17013204110745317
-one_player(70): simulate [INFO] (Day 135): True state: I, believes himself to be 83% healthy, and has a net utility of 122.13, (percentage infected = 21.30%, work risk = 1.524%, home risk = 0.119%)
-simple(35): plan [DEBUG] (Day 136): Estimated (self) work payoff: -0.277237839349324
-one_player(70): simulate [INFO] (Day 136): True state: I, believes himself to be 64% healthy, and has a net utility of 122.13, (percentage infected = 21.00%, work risk = 1.155%, home risk = 0.091%)
-simple(35): plan [DEBUG] (Day 137): Estimated (self) work payoff: -0.3323702126424706
-one_player(70): simulate [INFO] (Day 137): True state: I, believes himself to be 58% healthy, and has a net utility of 122.13, (percentage infected = 20.67%, work risk = 1.021%, home risk = 0.081%)
-simple(35): plan [DEBUG] (Day 138): Estimated (self) work payoff: -0.3278723340147448
-one_player(70): simulate [INFO] (Day 138): True state: I, believes himself to be 28% healthy, and has a net utility of 122.13, (percentage infected = 20.33%, work risk = 0.480%, home risk = 0.039%)
-simple(35): plan [DEBUG] (Day 139): Estimated (self) work payoff: -0.2479724349908687
-one_player(70): simulate [INFO] (Day 139): True state: I, believes himself to be 13% healthy, and has a net utility of 122.13, (percentage infected = 19.98%, work risk = 0.227%, home risk = 0.019%)
-simple(35): plan [DEBUG] (Day 140): Estimated (self) work payoff: -0.14028104869459626
-one_player(70): simulate [INFO] (Day 140): True state: I, believes himself to be 0% healthy, and has a net utility of 122.13, (percentage infected = 19.60%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 141): Estimated (self) work payoff: 0.0
-one_player(70): simulate [INFO] (Day 141): True state: I, believes himself to be 0% healthy, and has a net utility of 122.13, (percentage infected = 19.22%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 142): Estimated (self) work payoff: 0.0
-one_player(70): simulate [INFO] (Day 142): True state: I, believes himself to be 0% healthy, and has a net utility of 122.13, (percentage infected = 18.83%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 143): Estimated (self) work payoff: 0.0
-one_player(70): simulate [INFO] (Day 143): True state: I, believes himself to be 0% healthy, and has a net utility of 122.13, (percentage infected = 18.42%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 144): Estimated (self) work payoff: 0.0
-one_player(70): simulate [INFO] (Day 144): True state: I, believes himself to be 0% healthy, and has a net utility of 122.13, (percentage infected = 18.01%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 145): Estimated (self) work payoff: 0.0
-one_player(70): simulate [INFO] (Day 145): True state: I, believes himself to be 0% healthy, and has a net utility of 122.13, (percentage infected = 17.60%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 146): Estimated (self) work payoff: 0.0
-one_player(70): simulate [INFO] (Day 146): True state: I, believes himself to be 0% healthy, and has a net utility of 122.13, (percentage infected = 17.18%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 147): Estimated (self) work payoff: 0.0
-one_player(70): simulate [INFO] (Day 147): True state: I, believes himself to be 0% healthy, and has a net utility of 122.13, (percentage infected = 16.76%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 148): Estimated (self) work payoff: 0.0
-one_player(70): simulate [INFO] (Day 148): True state: I, believes himself to be 0% healthy, and has a net utility of 122.13, (percentage infected = 16.33%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 149): Estimated (self) work payoff: 0.0
-one_player(70): simulate [INFO] (Day 149): True state: I, believes himself to be 0% healthy, and has a net utility of 122.13, (percentage infected = 15.91%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 150): Estimated (self) work payoff: 0.0
-one_player(70): simulate [INFO] (Day 150): True state: I, believes himself to be 0% healthy, and has a net utility of 122.13, (percentage infected = 15.49%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 151): Estimated (self) work payoff: 0.0
-one_player(70): simulate [INFO] (Day 151): True state: I, believes himself to be 0% healthy, and has a net utility of 122.13, (percentage infected = 15.07%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 152): Estimated (self) work payoff: 0.0
-one_player(70): simulate [INFO] (Day 152): True state: I, believes himself to be 0% healthy, and has a net utility of 122.13, (percentage infected = 14.65%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 153): Estimated (self) work payoff: 0.0
-one_player(70): simulate [INFO] (Day 153): True state: I, believes himself to be 0% healthy, and has a net utility of 122.13, (percentage infected = 14.23%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 154): Estimated (self) work payoff: 0.0
-one_player(70): simulate [INFO] (Day 154): True state: I, believes himself to be 0% healthy, and has a net utility of 122.13, (percentage infected = 13.82%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 155): Estimated (self) work payoff: 0.0
-base_player(104): state_change [DEBUG] (Day 155): P[death]: 0.004000, dice: 0.256570
-one_player(70): simulate [INFO] (Day 155): True state: R, believes himself to be 100% healthy, and has a net utility of 122.13, (percentage infected = 13.42%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 156): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 156): True state: R, believes himself to be 100% healthy, and has a net utility of 123.33, (percentage infected = 13.02%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 157): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 157): True state: R, believes himself to be 100% healthy, and has a net utility of 124.53, (percentage infected = 12.62%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 158): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 158): True state: R, believes himself to be 100% healthy, and has a net utility of 125.73, (percentage infected = 12.24%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 159): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 159): True state: R, believes himself to be 100% healthy, and has a net utility of 126.93, (percentage infected = 11.86%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 160): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 160): True state: R, believes himself to be 100% healthy, and has a net utility of 128.13, (percentage infected = 11.48%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 161): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 161): True state: R, believes himself to be 100% healthy, and has a net utility of 129.33, (percentage infected = 11.12%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 162): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 162): True state: R, believes himself to be 100% healthy, and has a net utility of 130.53, (percentage infected = 10.76%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 163): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 163): True state: R, believes himself to be 100% healthy, and has a net utility of 131.73, (percentage infected = 10.41%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 164): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 164): True state: R, believes himself to be 100% healthy, and has a net utility of 132.93, (percentage infected = 10.07%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 165): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 165): True state: R, believes himself to be 100% healthy, and has a net utility of 134.13, (percentage infected = 9.73%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 166): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 166): True state: R, believes himself to be 100% healthy, and has a net utility of 135.33, (percentage infected = 9.41%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 167): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 167): True state: R, believes himself to be 100% healthy, and has a net utility of 136.53, (percentage infected = 9.09%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 168): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 168): True state: R, believes himself to be 100% healthy, and has a net utility of 137.73, (percentage infected = 8.78%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 169): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 169): True state: R, believes himself to be 100% healthy, and has a net utility of 138.93, (percentage infected = 8.48%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 170): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 170): True state: R, believes himself to be 100% healthy, and has a net utility of 140.13, (percentage infected = 8.19%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 171): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 171): True state: R, believes himself to be 100% healthy, and has a net utility of 141.33, (percentage infected = 7.90%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 172): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 172): True state: R, believes himself to be 100% healthy, and has a net utility of 142.53, (percentage infected = 7.62%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 173): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 173): True state: R, believes himself to be 100% healthy, and has a net utility of 143.73, (percentage infected = 7.36%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 174): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 174): True state: R, believes himself to be 100% healthy, and has a net utility of 144.93, (percentage infected = 7.10%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 175): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 175): True state: R, believes himself to be 100% healthy, and has a net utility of 146.13, (percentage infected = 6.84%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 176): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 176): True state: R, believes himself to be 100% healthy, and has a net utility of 147.33, (percentage infected = 6.60%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 177): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 177): True state: R, believes himself to be 100% healthy, and has a net utility of 148.53, (percentage infected = 6.36%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 178): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 178): True state: R, believes himself to be 100% healthy, and has a net utility of 149.73, (percentage infected = 6.13%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 179): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 179): True state: R, believes himself to be 100% healthy, and has a net utility of 150.93, (percentage infected = 5.91%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 180): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 180): True state: R, believes himself to be 100% healthy, and has a net utility of 152.13, (percentage infected = 5.69%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 181): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 181): True state: R, believes himself to be 100% healthy, and has a net utility of 153.33, (percentage infected = 5.49%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 182): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 182): True state: R, believes himself to be 100% healthy, and has a net utility of 154.53, (percentage infected = 5.28%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 183): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 183): True state: R, believes himself to be 100% healthy, and has a net utility of 155.73, (percentage infected = 5.09%, work risk = 0.000%, home risk = 0.000%)
-simple(35): plan [DEBUG] (Day 184): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 184): True state: R, believes himself to be 100% healthy, and has a net utility of 156.93, (percentage infected = 4.90%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 127): True state: S, believes himself to be 93% healthy, and has a net utility of 121.26, (percentage infected = 22.76%, work risk = 1.982%, home risk = 0.152%)
+simple(35): plan [DEBUG] (Day 128): Estimated (self) work payoff: -0.4180314002614687
+one_player(70): simulate [INFO] (Day 128): True state: S, believes himself to be 89% healthy, and has a net utility of 121.26, (percentage infected = 22.69%, work risk = 1.976%, home risk = 0.152%)
+simple(35): plan [DEBUG] (Day 129): Estimated (self) work payoff: -0.48367003926894225
+one_player(70): simulate [INFO] (Day 129): True state: S, believes himself to be 89% healthy, and has a net utility of 121.26, (percentage infected = 22.58%, work risk = 1.967%, home risk = 0.151%)
+simple(35): plan [DEBUG] (Day 130): Estimated (self) work payoff: -0.47516254709924
+one_player(70): simulate [INFO] (Day 130): True state: S, believes himself to be 88% healthy, and has a net utility of 121.26, (percentage infected = 22.44%, work risk = 1.955%, home risk = 0.150%)
+simple(35): plan [DEBUG] (Day 131): Estimated (self) work payoff: -0.4941179610184999
+one_player(70): simulate [INFO] (Day 131): True state: S, believes himself to be 91% healthy, and has a net utility of 121.26, (percentage infected = 22.27%, work risk = 1.940%, home risk = 0.149%)
+simple(35): plan [DEBUG] (Day 132): Estimated (self) work payoff: -0.4168146084653026
+one_player(70): simulate [INFO] (Day 132): True state: S, believes himself to be 100% healthy, and has a net utility of 121.26, (percentage infected = 22.07%, work risk = 1.922%, home risk = 0.148%)
+simple(35): plan [DEBUG] (Day 133): Estimated (self) work payoff: -0.20475347590160076
+one_player(70): simulate [INFO] (Day 133): True state: S, believes himself to be 97% healthy, and has a net utility of 121.26, (percentage infected = 21.84%, work risk = 1.902%, home risk = 0.146%)
+simple(35): plan [DEBUG] (Day 134): Estimated (self) work payoff: -0.2536109439806664
+one_player(70): simulate [INFO] (Day 134): True state: S, believes himself to be 97% healthy, and has a net utility of 121.26, (percentage infected = 21.58%, work risk = 1.880%, home risk = 0.145%)
+simple(35): plan [DEBUG] (Day 135): Estimated (self) work payoff: -0.22148724764073457
+one_player(70): simulate [INFO] (Day 135): True state: S, believes himself to be 98% healthy, and has a net utility of 121.26, (percentage infected = 21.30%, work risk = 1.855%, home risk = 0.143%)
+simple(35): plan [DEBUG] (Day 136): Estimated (self) work payoff: -0.1780090930753624
+one_player(70): simulate [INFO] (Day 136): True state: S, believes himself to be 100% healthy, and has a net utility of 121.26, (percentage infected = 21.00%, work risk = 1.829%, home risk = 0.141%)
+simple(35): plan [DEBUG] (Day 137): Estimated (self) work payoff: -0.1297787328899609
+one_player(70): simulate [INFO] (Day 137): True state: S, believes himself to be 89% healthy, and has a net utility of 121.26, (percentage infected = 20.67%, work risk = 1.801%, home risk = 0.139%)
+simple(35): plan [DEBUG] (Day 138): Estimated (self) work payoff: -0.3489918409416417
+one_player(70): simulate [INFO] (Day 138): True state: S, believes himself to be 100% healthy, and has a net utility of 121.26, (percentage infected = 20.33%, work risk = 1.771%, home risk = 0.136%)
+simple(35): plan [DEBUG] (Day 139): Estimated (self) work payoff: -0.08479244820080156
+one_player(70): simulate [INFO] (Day 139): True state: S, believes himself to be 93% healthy, and has a net utility of 121.26, (percentage infected = 19.98%, work risk = 1.740%, home risk = 0.134%)
+simple(35): plan [DEBUG] (Day 140): Estimated (self) work payoff: -0.21613559712820996
+one_player(70): simulate [INFO] (Day 140): True state: S, believes himself to be 97% healthy, and has a net utility of 121.26, (percentage infected = 19.60%, work risk = 1.707%, home risk = 0.131%)
+simple(35): plan [DEBUG] (Day 141): Estimated (self) work payoff: -0.10242876705007764
+one_player(70): simulate [INFO] (Day 141): True state: S, believes himself to be 98% healthy, and has a net utility of 121.26, (percentage infected = 19.22%, work risk = 1.674%, home risk = 0.129%)
+simple(35): plan [DEBUG] (Day 142): Estimated (self) work payoff: -0.0524837161532028
+one_player(70): simulate [INFO] (Day 142): True state: S, believes himself to be 87% healthy, and has a net utility of 121.26, (percentage infected = 18.83%, work risk = 1.640%, home risk = 0.126%)
+simple(35): plan [DEBUG] (Day 143): Estimated (self) work payoff: -0.2655273647926816
+one_player(70): simulate [INFO] (Day 143): True state: S, believes himself to be 94% healthy, and has a net utility of 121.26, (percentage infected = 18.42%, work risk = 1.605%, home risk = 0.123%)
+simple(35): plan [DEBUG] (Day 144): Estimated (self) work payoff: -0.08521719445301246
+one_player(70): simulate [INFO] (Day 144): True state: S, believes himself to be 91% healthy, and has a net utility of 121.26, (percentage infected = 18.01%, work risk = 1.569%, home risk = 0.121%)
+simple(35): plan [DEBUG] (Day 145): Estimated (self) work payoff: -0.11733922724421397
+one_player(70): simulate [INFO] (Day 145): True state: S, believes himself to be 100% healthy, and has a net utility of 121.26, (percentage infected = 17.60%, work risk = 1.533%, home risk = 0.118%)
+simple(35): plan [DEBUG] (Day 146): Estimated (self) work payoff: 0.09513161048353935
+one_player(70): simulate [INFO] (Day 146): True state: S, believes himself to be 90% healthy, and has a net utility of 122.46, (percentage infected = 17.18%, work risk = 1.496%, home risk = 0.115%)
+simple(35): plan [DEBUG] (Day 147): Estimated (self) work payoff: -0.10240428753195707
+one_player(70): simulate [INFO] (Day 147): True state: S, believes himself to be 88% healthy, and has a net utility of 122.46, (percentage infected = 16.76%, work risk = 1.459%, home risk = 0.112%)
+simple(35): plan [DEBUG] (Day 148): Estimated (self) work payoff: -0.11460804172118921
+one_player(70): simulate [INFO] (Day 148): True state: S, believes himself to be 100% healthy, and has a net utility of 122.46, (percentage infected = 16.33%, work risk = 1.423%, home risk = 0.109%)
+simple(35): plan [DEBUG] (Day 149): Estimated (self) work payoff: 0.17673956316387307
+one_player(70): simulate [INFO] (Day 149): True state: S, believes himself to be 100% healthy, and has a net utility of 123.66, (percentage infected = 15.91%, work risk = 1.386%, home risk = 0.107%)
+simple(35): plan [DEBUG] (Day 150): Estimated (self) work payoff: 0.2038953435303319
+one_player(70): simulate [INFO] (Day 150): True state: S, believes himself to be 99% healthy, and has a net utility of 124.86, (percentage infected = 15.49%, work risk = 1.349%, home risk = 0.104%)
+simple(35): plan [DEBUG] (Day 151): Estimated (self) work payoff: 0.21230334288079944
+one_player(70): simulate [INFO] (Day 151): True state: S, believes himself to be 96% healthy, and has a net utility of 126.04, (percentage infected = 15.07%, work risk = 1.312%, home risk = 0.101%)
+simple(35): plan [DEBUG] (Day 152): Estimated (self) work payoff: 0.17640635119317327
+one_player(70): simulate [INFO] (Day 152): True state: S, believes himself to be 97% healthy, and has a net utility of 127.16, (percentage infected = 14.65%, work risk = 1.276%, home risk = 0.098%)
+simple(35): plan [DEBUG] (Day 153): Estimated (self) work payoff: 0.2342406728965516
+one_player(70): simulate [INFO] (Day 153): True state: S, believes himself to be 98% healthy, and has a net utility of 128.31, (percentage infected = 14.23%, work risk = 1.240%, home risk = 0.095%)
+simple(35): plan [DEBUG] (Day 154): Estimated (self) work payoff: 0.27604937238677796
+one_player(70): simulate [INFO] (Day 154): True state: S, believes himself to be 88% healthy, and has a net utility of 129.47, (percentage infected = 13.82%, work risk = 1.204%, home risk = 0.093%)
+simple(35): plan [DEBUG] (Day 155): Estimated (self) work payoff: 0.0789994014824964
+one_player(70): simulate [INFO] (Day 155): True state: S, believes himself to be 100% healthy, and has a net utility of 130.42, (percentage infected = 13.42%, work risk = 1.169%, home risk = 0.090%)
+simple(35): plan [DEBUG] (Day 156): Estimated (self) work payoff: 0.36270987707883007
+one_player(70): simulate [INFO] (Day 156): True state: S, believes himself to be 92% healthy, and has a net utility of 131.62, (percentage infected = 13.02%, work risk = 1.134%, home risk = 0.087%)
+simple(35): plan [DEBUG] (Day 157): Estimated (self) work payoff: 0.22486234060693577
+one_player(70): simulate [INFO] (Day 157): True state: S, believes himself to be 100% healthy, and has a net utility of 132.65, (percentage infected = 12.62%, work risk = 1.100%, home risk = 0.085%)
+simple(35): plan [DEBUG] (Day 158): Estimated (self) work payoff: 0.4129619343598169
+one_player(70): simulate [INFO] (Day 158): True state: S, believes himself to be 95% healthy, and has a net utility of 133.85, (percentage infected = 12.24%, work risk = 1.066%, home risk = 0.082%)
+simple(35): plan [DEBUG] (Day 159): Estimated (self) work payoff: 0.3332729830524216
+one_player(70): simulate [INFO] (Day 159): True state: S, believes himself to be 93% healthy, and has a net utility of 134.95, (percentage infected = 11.86%, work risk = 1.033%, home risk = 0.079%)
+simple(35): plan [DEBUG] (Day 160): Estimated (self) work payoff: 0.31777764325086766
+one_player(70): simulate [INFO] (Day 160): True state: S, believes himself to be 100% healthy, and has a net utility of 136.01, (percentage infected = 11.48%, work risk = 1.000%, home risk = 0.077%)
+simple(35): plan [DEBUG] (Day 161): Estimated (self) work payoff: 0.4849799109721059
+one_player(70): simulate [INFO] (Day 161): True state: S, believes himself to be 98% healthy, and has a net utility of 137.21, (percentage infected = 11.12%, work risk = 0.968%, home risk = 0.074%)
+simple(35): plan [DEBUG] (Day 162): Estimated (self) work payoff: 0.47053889769454205
+one_player(70): simulate [INFO] (Day 162): True state: S, believes himself to be 100% healthy, and has a net utility of 138.37, (percentage infected = 10.76%, work risk = 0.937%, home risk = 0.072%)
+simple(35): plan [DEBUG] (Day 163): Estimated (self) work payoff: 0.5305763236444759
+one_player(70): simulate [INFO] (Day 163): True state: I, believes himself to be 97% healthy, and has a net utility of 139.57, (percentage infected = 10.41%, work risk = 0.877%, home risk = 0.068%)
+simple(35): plan [DEBUG] (Day 164): Estimated (self) work payoff: 0.5027723763005509
+one_player(70): simulate [INFO] (Day 164): True state: I, believes himself to be 88% healthy, and has a net utility of 140.70, (percentage infected = 10.07%, work risk = 0.766%, home risk = 0.059%)
+simple(35): plan [DEBUG] (Day 165): Estimated (self) work payoff: 0.3859955182722645
+one_player(70): simulate [INFO] (Day 165): True state: I, believes himself to be 66% healthy, and has a net utility of 141.63, (percentage infected = 9.73%, work risk = 0.548%, home risk = 0.043%)
+simple(35): plan [DEBUG] (Day 166): Estimated (self) work payoff: 0.13811127526259215
+one_player(70): simulate [INFO] (Day 166): True state: I, believes himself to be 47% healthy, and has a net utility of 142.16, (percentage infected = 9.41%, work risk = 0.372%, home risk = 0.030%)
+simple(35): plan [DEBUG] (Day 167): Estimated (self) work payoff: 0.004095638887963271
+one_player(70): simulate [INFO] (Day 167): True state: I, believes himself to be 37% healthy, and has a net utility of 142.43, (percentage infected = 9.09%, work risk = 0.281%, home risk = 0.023%)
+simple(35): plan [DEBUG] (Day 168): Estimated (self) work payoff: -0.03253373047715505
+one_player(70): simulate [INFO] (Day 168): True state: I, believes himself to be 12% healthy, and has a net utility of 142.43, (percentage infected = 8.78%, work risk = 0.091%, home risk = 0.008%)
+simple(35): plan [DEBUG] (Day 169): Estimated (self) work payoff: -0.04502147940499661
+one_player(70): simulate [INFO] (Day 169): True state: I, believes himself to be 0% healthy, and has a net utility of 142.43, (percentage infected = 8.48%, work risk = 0.000%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 170): Estimated (self) work payoff: 0.0
+one_player(70): simulate [INFO] (Day 170): True state: I, believes himself to be 0% healthy, and has a net utility of 142.43, (percentage infected = 8.19%, work risk = 0.000%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 171): Estimated (self) work payoff: 0.0
+one_player(70): simulate [INFO] (Day 171): True state: I, believes himself to be 0% healthy, and has a net utility of 142.43, (percentage infected = 7.90%, work risk = 0.000%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 172): Estimated (self) work payoff: 0.0
+one_player(70): simulate [INFO] (Day 172): True state: I, believes himself to be 0% healthy, and has a net utility of 142.43, (percentage infected = 7.62%, work risk = 0.000%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 173): Estimated (self) work payoff: 0.0
+one_player(70): simulate [INFO] (Day 173): True state: I, believes himself to be 0% healthy, and has a net utility of 142.43, (percentage infected = 7.36%, work risk = 0.000%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 174): Estimated (self) work payoff: 0.0
+one_player(70): simulate [INFO] (Day 174): True state: I, believes himself to be 0% healthy, and has a net utility of 142.43, (percentage infected = 7.10%, work risk = 0.000%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 175): Estimated (self) work payoff: 0.0
+one_player(70): simulate [INFO] (Day 175): True state: I, believes himself to be 0% healthy, and has a net utility of 142.43, (percentage infected = 6.84%, work risk = 0.000%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 176): Estimated (self) work payoff: 0.0
+one_player(70): simulate [INFO] (Day 176): True state: I, believes himself to be 0% healthy, and has a net utility of 142.43, (percentage infected = 6.60%, work risk = 0.000%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 177): Estimated (self) work payoff: 0.0
+one_player(70): simulate [INFO] (Day 177): True state: I, believes himself to be 0% healthy, and has a net utility of 142.43, (percentage infected = 6.36%, work risk = 0.000%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 178): Estimated (self) work payoff: 0.0
+one_player(70): simulate [INFO] (Day 178): True state: I, believes himself to be 0% healthy, and has a net utility of 142.43, (percentage infected = 6.13%, work risk = 0.000%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 179): Estimated (self) work payoff: 0.0
+one_player(70): simulate [INFO] (Day 179): True state: I, believes himself to be 0% healthy, and has a net utility of 142.43, (percentage infected = 5.91%, work risk = 0.000%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 180): Estimated (self) work payoff: 0.0
+one_player(70): simulate [INFO] (Day 180): True state: I, believes himself to be 0% healthy, and has a net utility of 142.43, (percentage infected = 5.69%, work risk = 0.000%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 181): Estimated (self) work payoff: 0.0
+one_player(70): simulate [INFO] (Day 181): True state: I, believes himself to be 0% healthy, and has a net utility of 142.43, (percentage infected = 5.49%, work risk = 0.000%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 182): Estimated (self) work payoff: 0.0
+one_player(70): simulate [INFO] (Day 182): True state: I, believes himself to be 0% healthy, and has a net utility of 142.43, (percentage infected = 5.28%, work risk = 0.000%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 183): Estimated (self) work payoff: 0.0
+one_player(70): simulate [INFO] (Day 183): True state: I, believes himself to be 0% healthy, and has a net utility of 142.43, (percentage infected = 5.09%, work risk = 0.000%, home risk = 0.000%)
+simple(35): plan [DEBUG] (Day 184): Estimated (self) work payoff: 0.0
+base_player(104): state_change [DEBUG] (Day 184): P[death]: 0.004000, dice: 0.238478
+one_player(70): simulate [INFO] (Day 184): True state: R, believes himself to be 100% healthy, and has a net utility of 142.43, (percentage infected = 4.90%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 185): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 185): True state: R, believes himself to be 100% healthy, and has a net utility of 158.13, (percentage infected = 4.72%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 185): True state: R, believes himself to be 100% healthy, and has a net utility of 143.63, (percentage infected = 4.72%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 186): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 186): True state: R, believes himself to be 100% healthy, and has a net utility of 159.33, (percentage infected = 4.54%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 186): True state: R, believes himself to be 100% healthy, and has a net utility of 144.83, (percentage infected = 4.54%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 187): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 187): True state: R, believes himself to be 100% healthy, and has a net utility of 160.53, (percentage infected = 4.37%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 187): True state: R, believes himself to be 100% healthy, and has a net utility of 146.03, (percentage infected = 4.37%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 188): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 188): True state: R, believes himself to be 100% healthy, and has a net utility of 161.73, (percentage infected = 4.21%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 188): True state: R, believes himself to be 100% healthy, and has a net utility of 147.23, (percentage infected = 4.21%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 189): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 189): True state: R, believes himself to be 100% healthy, and has a net utility of 162.93, (percentage infected = 4.05%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 189): True state: R, believes himself to be 100% healthy, and has a net utility of 148.43, (percentage infected = 4.05%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 190): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 190): True state: R, believes himself to be 100% healthy, and has a net utility of 164.13, (percentage infected = 3.90%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 190): True state: R, believes himself to be 100% healthy, and has a net utility of 149.63, (percentage infected = 3.90%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 191): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 191): True state: R, believes himself to be 100% healthy, and has a net utility of 165.33, (percentage infected = 3.75%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 191): True state: R, believes himself to be 100% healthy, and has a net utility of 150.83, (percentage infected = 3.75%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 192): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 192): True state: R, believes himself to be 100% healthy, and has a net utility of 166.53, (percentage infected = 3.61%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 192): True state: R, believes himself to be 100% healthy, and has a net utility of 152.03, (percentage infected = 3.61%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 193): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 193): True state: R, believes himself to be 100% healthy, and has a net utility of 167.73, (percentage infected = 3.47%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 193): True state: R, believes himself to be 100% healthy, and has a net utility of 153.23, (percentage infected = 3.47%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 194): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 194): True state: R, believes himself to be 100% healthy, and has a net utility of 168.93, (percentage infected = 3.34%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 194): True state: R, believes himself to be 100% healthy, and has a net utility of 154.43, (percentage infected = 3.34%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 195): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 195): True state: R, believes himself to be 100% healthy, and has a net utility of 170.13, (percentage infected = 3.21%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 195): True state: R, believes himself to be 100% healthy, and has a net utility of 155.63, (percentage infected = 3.21%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 196): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 196): True state: R, believes himself to be 100% healthy, and has a net utility of 171.33, (percentage infected = 3.09%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 196): True state: R, believes himself to be 100% healthy, and has a net utility of 156.83, (percentage infected = 3.09%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 197): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 197): True state: R, believes himself to be 100% healthy, and has a net utility of 172.53, (percentage infected = 2.97%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 197): True state: R, believes himself to be 100% healthy, and has a net utility of 158.03, (percentage infected = 2.97%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 198): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 198): True state: R, believes himself to be 100% healthy, and has a net utility of 173.73, (percentage infected = 2.86%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 198): True state: R, believes himself to be 100% healthy, and has a net utility of 159.23, (percentage infected = 2.86%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 199): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 199): True state: R, believes himself to be 100% healthy, and has a net utility of 174.93, (percentage infected = 2.75%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 199): True state: R, believes himself to be 100% healthy, and has a net utility of 160.43, (percentage infected = 2.75%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 200): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 200): True state: R, believes himself to be 100% healthy, and has a net utility of 176.13, (percentage infected = 2.64%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 200): True state: R, believes himself to be 100% healthy, and has a net utility of 161.63, (percentage infected = 2.64%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 201): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 201): True state: R, believes himself to be 100% healthy, and has a net utility of 177.33, (percentage infected = 2.54%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 201): True state: R, believes himself to be 100% healthy, and has a net utility of 162.83, (percentage infected = 2.54%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 202): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 202): True state: R, believes himself to be 100% healthy, and has a net utility of 178.53, (percentage infected = 2.44%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 202): True state: R, believes himself to be 100% healthy, and has a net utility of 164.03, (percentage infected = 2.44%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 203): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 203): True state: R, believes himself to be 100% healthy, and has a net utility of 179.73, (percentage infected = 2.35%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 203): True state: R, believes himself to be 100% healthy, and has a net utility of 165.23, (percentage infected = 2.35%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 204): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 204): True state: R, believes himself to be 100% healthy, and has a net utility of 180.93, (percentage infected = 2.26%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 204): True state: R, believes himself to be 100% healthy, and has a net utility of 166.43, (percentage infected = 2.26%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 205): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 205): True state: R, believes himself to be 100% healthy, and has a net utility of 182.13, (percentage infected = 2.17%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 205): True state: R, believes himself to be 100% healthy, and has a net utility of 167.63, (percentage infected = 2.17%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 206): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 206): True state: R, believes himself to be 100% healthy, and has a net utility of 183.33, (percentage infected = 2.09%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 206): True state: R, believes himself to be 100% healthy, and has a net utility of 168.83, (percentage infected = 2.09%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 207): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 207): True state: R, believes himself to be 100% healthy, and has a net utility of 184.53, (percentage infected = 2.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 207): True state: R, believes himself to be 100% healthy, and has a net utility of 170.03, (percentage infected = 2.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 208): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 208): True state: R, believes himself to be 100% healthy, and has a net utility of 185.73, (percentage infected = 1.93%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 208): True state: R, believes himself to be 100% healthy, and has a net utility of 171.23, (percentage infected = 1.93%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 209): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 209): True state: R, believes himself to be 100% healthy, and has a net utility of 186.93, (percentage infected = 1.85%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 209): True state: R, believes himself to be 100% healthy, and has a net utility of 172.43, (percentage infected = 1.85%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 210): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 210): True state: R, believes himself to be 100% healthy, and has a net utility of 188.13, (percentage infected = 1.78%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 210): True state: R, believes himself to be 100% healthy, and has a net utility of 173.63, (percentage infected = 1.78%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 211): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 211): True state: R, believes himself to be 100% healthy, and has a net utility of 189.33, (percentage infected = 1.71%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 211): True state: R, believes himself to be 100% healthy, and has a net utility of 174.83, (percentage infected = 1.71%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 212): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 212): True state: R, believes himself to be 100% healthy, and has a net utility of 190.53, (percentage infected = 1.65%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 212): True state: R, believes himself to be 100% healthy, and has a net utility of 176.03, (percentage infected = 1.65%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 213): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 213): True state: R, believes himself to be 100% healthy, and has a net utility of 191.73, (percentage infected = 1.58%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 213): True state: R, believes himself to be 100% healthy, and has a net utility of 177.23, (percentage infected = 1.58%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 214): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 214): True state: R, believes himself to be 100% healthy, and has a net utility of 192.93, (percentage infected = 1.52%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 214): True state: R, believes himself to be 100% healthy, and has a net utility of 178.43, (percentage infected = 1.52%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 215): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 215): True state: R, believes himself to be 100% healthy, and has a net utility of 194.13, (percentage infected = 1.46%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 215): True state: R, believes himself to be 100% healthy, and has a net utility of 179.63, (percentage infected = 1.46%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 216): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 216): True state: R, believes himself to be 100% healthy, and has a net utility of 195.33, (percentage infected = 1.40%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 216): True state: R, believes himself to be 100% healthy, and has a net utility of 180.83, (percentage infected = 1.40%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 217): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 217): True state: R, believes himself to be 100% healthy, and has a net utility of 196.53, (percentage infected = 1.35%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 217): True state: R, believes himself to be 100% healthy, and has a net utility of 182.03, (percentage infected = 1.35%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 218): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 218): True state: R, believes himself to be 100% healthy, and has a net utility of 197.73, (percentage infected = 1.29%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 218): True state: R, believes himself to be 100% healthy, and has a net utility of 183.23, (percentage infected = 1.29%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 219): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 219): True state: R, believes himself to be 100% healthy, and has a net utility of 198.93, (percentage infected = 1.24%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 219): True state: R, believes himself to be 100% healthy, and has a net utility of 184.43, (percentage infected = 1.24%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 220): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 220): True state: R, believes himself to be 100% healthy, and has a net utility of 200.13, (percentage infected = 1.20%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 220): True state: R, believes himself to be 100% healthy, and has a net utility of 185.63, (percentage infected = 1.20%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 221): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 221): True state: R, believes himself to be 100% healthy, and has a net utility of 201.33, (percentage infected = 1.15%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 221): True state: R, believes himself to be 100% healthy, and has a net utility of 186.83, (percentage infected = 1.15%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 222): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 222): True state: R, believes himself to be 100% healthy, and has a net utility of 202.53, (percentage infected = 1.10%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 222): True state: R, believes himself to be 100% healthy, and has a net utility of 188.03, (percentage infected = 1.10%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 223): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 223): True state: R, believes himself to be 100% healthy, and has a net utility of 203.73, (percentage infected = 1.06%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 223): True state: R, believes himself to be 100% healthy, and has a net utility of 189.23, (percentage infected = 1.06%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 224): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 224): True state: R, believes himself to be 100% healthy, and has a net utility of 204.93, (percentage infected = 1.02%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 224): True state: R, believes himself to be 100% healthy, and has a net utility of 190.43, (percentage infected = 1.02%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 225): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 225): True state: R, believes himself to be 100% healthy, and has a net utility of 206.13, (percentage infected = 0.98%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 225): True state: R, believes himself to be 100% healthy, and has a net utility of 191.63, (percentage infected = 0.98%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 226): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 226): True state: R, believes himself to be 100% healthy, and has a net utility of 207.33, (percentage infected = 0.94%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 226): True state: R, believes himself to be 100% healthy, and has a net utility of 192.83, (percentage infected = 0.94%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 227): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 227): True state: R, believes himself to be 100% healthy, and has a net utility of 208.53, (percentage infected = 0.90%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 227): True state: R, believes himself to be 100% healthy, and has a net utility of 194.03, (percentage infected = 0.90%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 228): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 228): True state: R, believes himself to be 100% healthy, and has a net utility of 209.73, (percentage infected = 0.87%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 228): True state: R, believes himself to be 100% healthy, and has a net utility of 195.23, (percentage infected = 0.87%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 229): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 229): True state: R, believes himself to be 100% healthy, and has a net utility of 210.93, (percentage infected = 0.83%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 229): True state: R, believes himself to be 100% healthy, and has a net utility of 196.43, (percentage infected = 0.83%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 230): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 230): True state: R, believes himself to be 100% healthy, and has a net utility of 212.13, (percentage infected = 0.80%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 230): True state: R, believes himself to be 100% healthy, and has a net utility of 197.63, (percentage infected = 0.80%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 231): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 231): True state: R, believes himself to be 100% healthy, and has a net utility of 213.33, (percentage infected = 0.77%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 231): True state: R, believes himself to be 100% healthy, and has a net utility of 198.83, (percentage infected = 0.77%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 232): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 232): True state: R, believes himself to be 100% healthy, and has a net utility of 214.53, (percentage infected = 0.74%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 232): True state: R, believes himself to be 100% healthy, and has a net utility of 200.03, (percentage infected = 0.74%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 233): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 233): True state: R, believes himself to be 100% healthy, and has a net utility of 215.73, (percentage infected = 0.71%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 233): True state: R, believes himself to be 100% healthy, and has a net utility of 201.23, (percentage infected = 0.71%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 234): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 234): True state: R, believes himself to be 100% healthy, and has a net utility of 216.93, (percentage infected = 0.68%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 234): True state: R, believes himself to be 100% healthy, and has a net utility of 202.43, (percentage infected = 0.68%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 235): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 235): True state: R, believes himself to be 100% healthy, and has a net utility of 218.13, (percentage infected = 0.65%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 235): True state: R, believes himself to be 100% healthy, and has a net utility of 203.63, (percentage infected = 0.65%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 236): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 236): True state: R, believes himself to be 100% healthy, and has a net utility of 219.33, (percentage infected = 0.63%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 236): True state: R, believes himself to be 100% healthy, and has a net utility of 204.83, (percentage infected = 0.63%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 237): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 237): True state: R, believes himself to be 100% healthy, and has a net utility of 220.53, (percentage infected = 0.60%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 237): True state: R, believes himself to be 100% healthy, and has a net utility of 206.03, (percentage infected = 0.60%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 238): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 238): True state: R, believes himself to be 100% healthy, and has a net utility of 221.73, (percentage infected = 0.58%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 238): True state: R, believes himself to be 100% healthy, and has a net utility of 207.23, (percentage infected = 0.58%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 239): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 239): True state: R, believes himself to be 100% healthy, and has a net utility of 222.93, (percentage infected = 0.56%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 239): True state: R, believes himself to be 100% healthy, and has a net utility of 208.43, (percentage infected = 0.56%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 240): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 240): True state: R, believes himself to be 100% healthy, and has a net utility of 224.13, (percentage infected = 0.53%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 240): True state: R, believes himself to be 100% healthy, and has a net utility of 209.63, (percentage infected = 0.53%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 241): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 241): True state: R, believes himself to be 100% healthy, and has a net utility of 225.33, (percentage infected = 0.51%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 241): True state: R, believes himself to be 100% healthy, and has a net utility of 210.83, (percentage infected = 0.51%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 242): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 242): True state: R, believes himself to be 100% healthy, and has a net utility of 226.53, (percentage infected = 0.49%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 242): True state: R, believes himself to be 100% healthy, and has a net utility of 212.03, (percentage infected = 0.49%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 243): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 243): True state: R, believes himself to be 100% healthy, and has a net utility of 227.73, (percentage infected = 0.47%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 243): True state: R, believes himself to be 100% healthy, and has a net utility of 213.23, (percentage infected = 0.47%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 244): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 244): True state: R, believes himself to be 100% healthy, and has a net utility of 228.93, (percentage infected = 0.45%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 244): True state: R, believes himself to be 100% healthy, and has a net utility of 214.43, (percentage infected = 0.45%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 245): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 245): True state: R, believes himself to be 100% healthy, and has a net utility of 230.13, (percentage infected = 0.44%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 245): True state: R, believes himself to be 100% healthy, and has a net utility of 215.63, (percentage infected = 0.44%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 246): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 246): True state: R, believes himself to be 100% healthy, and has a net utility of 231.33, (percentage infected = 0.42%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 246): True state: R, believes himself to be 100% healthy, and has a net utility of 216.83, (percentage infected = 0.42%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 247): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 247): True state: R, believes himself to be 100% healthy, and has a net utility of 232.53, (percentage infected = 0.40%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 247): True state: R, believes himself to be 100% healthy, and has a net utility of 218.03, (percentage infected = 0.40%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 248): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 248): True state: R, believes himself to be 100% healthy, and has a net utility of 233.73, (percentage infected = 0.39%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 248): True state: R, believes himself to be 100% healthy, and has a net utility of 219.23, (percentage infected = 0.39%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 249): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 249): True state: R, believes himself to be 100% healthy, and has a net utility of 234.93, (percentage infected = 0.37%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 249): True state: R, believes himself to be 100% healthy, and has a net utility of 220.43, (percentage infected = 0.37%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 250): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 250): True state: R, believes himself to be 100% healthy, and has a net utility of 236.13, (percentage infected = 0.36%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 250): True state: R, believes himself to be 100% healthy, and has a net utility of 221.63, (percentage infected = 0.36%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 251): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 251): True state: R, believes himself to be 100% healthy, and has a net utility of 237.33, (percentage infected = 0.34%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 251): True state: R, believes himself to be 100% healthy, and has a net utility of 222.83, (percentage infected = 0.34%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 252): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 252): True state: R, believes himself to be 100% healthy, and has a net utility of 238.53, (percentage infected = 0.33%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 252): True state: R, believes himself to be 100% healthy, and has a net utility of 224.03, (percentage infected = 0.33%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 253): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 253): True state: R, believes himself to be 100% healthy, and has a net utility of 239.73, (percentage infected = 0.32%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 253): True state: R, believes himself to be 100% healthy, and has a net utility of 225.23, (percentage infected = 0.32%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 254): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 254): True state: R, believes himself to be 100% healthy, and has a net utility of 240.93, (percentage infected = 0.30%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 254): True state: R, believes himself to be 100% healthy, and has a net utility of 226.43, (percentage infected = 0.30%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 255): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 255): True state: R, believes himself to be 100% healthy, and has a net utility of 242.13, (percentage infected = 0.29%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 255): True state: R, believes himself to be 100% healthy, and has a net utility of 227.63, (percentage infected = 0.29%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 256): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 256): True state: R, believes himself to be 100% healthy, and has a net utility of 243.33, (percentage infected = 0.28%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 256): True state: R, believes himself to be 100% healthy, and has a net utility of 228.83, (percentage infected = 0.28%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 257): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 257): True state: R, believes himself to be 100% healthy, and has a net utility of 244.53, (percentage infected = 0.27%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 257): True state: R, believes himself to be 100% healthy, and has a net utility of 230.03, (percentage infected = 0.27%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 258): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 258): True state: R, believes himself to be 100% healthy, and has a net utility of 245.73, (percentage infected = 0.26%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 258): True state: R, believes himself to be 100% healthy, and has a net utility of 231.23, (percentage infected = 0.26%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 259): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 259): True state: R, believes himself to be 100% healthy, and has a net utility of 246.93, (percentage infected = 0.25%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 259): True state: R, believes himself to be 100% healthy, and has a net utility of 232.43, (percentage infected = 0.25%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 260): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 260): True state: R, believes himself to be 100% healthy, and has a net utility of 248.13, (percentage infected = 0.24%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 260): True state: R, believes himself to be 100% healthy, and has a net utility of 233.63, (percentage infected = 0.24%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 261): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 261): True state: R, believes himself to be 100% healthy, and has a net utility of 249.33, (percentage infected = 0.23%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 261): True state: R, believes himself to be 100% healthy, and has a net utility of 234.83, (percentage infected = 0.23%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 262): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 262): True state: R, believes himself to be 100% healthy, and has a net utility of 250.53, (percentage infected = 0.22%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 262): True state: R, believes himself to be 100% healthy, and has a net utility of 236.03, (percentage infected = 0.22%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 263): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 263): True state: R, believes himself to be 100% healthy, and has a net utility of 251.73, (percentage infected = 0.21%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 263): True state: R, believes himself to be 100% healthy, and has a net utility of 237.23, (percentage infected = 0.21%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 264): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 264): True state: R, believes himself to be 100% healthy, and has a net utility of 252.93, (percentage infected = 0.20%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 264): True state: R, believes himself to be 100% healthy, and has a net utility of 238.43, (percentage infected = 0.20%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 265): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 265): True state: R, believes himself to be 100% healthy, and has a net utility of 254.13, (percentage infected = 0.19%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 265): True state: R, believes himself to be 100% healthy, and has a net utility of 239.63, (percentage infected = 0.19%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 266): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 266): True state: R, believes himself to be 100% healthy, and has a net utility of 255.33, (percentage infected = 0.19%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 266): True state: R, believes himself to be 100% healthy, and has a net utility of 240.83, (percentage infected = 0.19%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 267): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 267): True state: R, believes himself to be 100% healthy, and has a net utility of 256.53, (percentage infected = 0.18%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 267): True state: R, believes himself to be 100% healthy, and has a net utility of 242.03, (percentage infected = 0.18%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 268): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 268): True state: R, believes himself to be 100% healthy, and has a net utility of 257.73, (percentage infected = 0.17%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 268): True state: R, believes himself to be 100% healthy, and has a net utility of 243.23, (percentage infected = 0.17%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 269): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 269): True state: R, believes himself to be 100% healthy, and has a net utility of 258.93, (percentage infected = 0.16%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 269): True state: R, believes himself to be 100% healthy, and has a net utility of 244.43, (percentage infected = 0.16%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 270): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 270): True state: R, believes himself to be 100% healthy, and has a net utility of 260.13, (percentage infected = 0.16%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 270): True state: R, believes himself to be 100% healthy, and has a net utility of 245.63, (percentage infected = 0.16%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 271): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 271): True state: R, believes himself to be 100% healthy, and has a net utility of 261.33, (percentage infected = 0.15%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 271): True state: R, believes himself to be 100% healthy, and has a net utility of 246.83, (percentage infected = 0.15%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 272): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 272): True state: R, believes himself to be 100% healthy, and has a net utility of 262.53, (percentage infected = 0.14%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 272): True state: R, believes himself to be 100% healthy, and has a net utility of 248.03, (percentage infected = 0.14%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 273): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 273): True state: R, believes himself to be 100% healthy, and has a net utility of 263.73, (percentage infected = 0.14%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 273): True state: R, believes himself to be 100% healthy, and has a net utility of 249.23, (percentage infected = 0.14%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 274): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 274): True state: R, believes himself to be 100% healthy, and has a net utility of 264.93, (percentage infected = 0.13%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 274): True state: R, believes himself to be 100% healthy, and has a net utility of 250.43, (percentage infected = 0.13%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 275): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 275): True state: R, believes himself to be 100% healthy, and has a net utility of 266.13, (percentage infected = 0.13%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 275): True state: R, believes himself to be 100% healthy, and has a net utility of 251.63, (percentage infected = 0.13%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 276): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 276): True state: R, believes himself to be 100% healthy, and has a net utility of 267.33, (percentage infected = 0.12%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 276): True state: R, believes himself to be 100% healthy, and has a net utility of 252.83, (percentage infected = 0.12%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 277): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 277): True state: R, believes himself to be 100% healthy, and has a net utility of 268.53, (percentage infected = 0.12%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 277): True state: R, believes himself to be 100% healthy, and has a net utility of 254.03, (percentage infected = 0.12%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 278): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 278): True state: R, believes himself to be 100% healthy, and has a net utility of 269.73, (percentage infected = 0.11%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 278): True state: R, believes himself to be 100% healthy, and has a net utility of 255.23, (percentage infected = 0.11%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 279): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 279): True state: R, believes himself to be 100% healthy, and has a net utility of 270.93, (percentage infected = 0.11%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 279): True state: R, believes himself to be 100% healthy, and has a net utility of 256.43, (percentage infected = 0.11%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 280): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 280): True state: R, believes himself to be 100% healthy, and has a net utility of 272.13, (percentage infected = 0.10%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 280): True state: R, believes himself to be 100% healthy, and has a net utility of 257.63, (percentage infected = 0.10%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 281): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 281): True state: R, believes himself to be 100% healthy, and has a net utility of 273.33, (percentage infected = 0.10%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 281): True state: R, believes himself to be 100% healthy, and has a net utility of 258.83, (percentage infected = 0.10%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 282): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 282): True state: R, believes himself to be 100% healthy, and has a net utility of 274.53, (percentage infected = 0.10%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 282): True state: R, believes himself to be 100% healthy, and has a net utility of 260.03, (percentage infected = 0.10%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 283): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 283): True state: R, believes himself to be 100% healthy, and has a net utility of 275.73, (percentage infected = 0.09%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 283): True state: R, believes himself to be 100% healthy, and has a net utility of 261.23, (percentage infected = 0.09%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 284): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 284): True state: R, believes himself to be 100% healthy, and has a net utility of 276.93, (percentage infected = 0.09%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 284): True state: R, believes himself to be 100% healthy, and has a net utility of 262.43, (percentage infected = 0.09%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 285): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 285): True state: R, believes himself to be 100% healthy, and has a net utility of 278.13, (percentage infected = 0.08%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 285): True state: R, believes himself to be 100% healthy, and has a net utility of 263.63, (percentage infected = 0.08%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 286): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 286): True state: R, believes himself to be 100% healthy, and has a net utility of 279.33, (percentage infected = 0.08%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 286): True state: R, believes himself to be 100% healthy, and has a net utility of 264.83, (percentage infected = 0.08%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 287): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 287): True state: R, believes himself to be 100% healthy, and has a net utility of 280.53, (percentage infected = 0.08%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 287): True state: R, believes himself to be 100% healthy, and has a net utility of 266.03, (percentage infected = 0.08%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 288): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 288): True state: R, believes himself to be 100% healthy, and has a net utility of 281.73, (percentage infected = 0.08%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 288): True state: R, believes himself to be 100% healthy, and has a net utility of 267.23, (percentage infected = 0.08%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 289): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 289): True state: R, believes himself to be 100% healthy, and has a net utility of 282.93, (percentage infected = 0.07%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 289): True state: R, believes himself to be 100% healthy, and has a net utility of 268.43, (percentage infected = 0.07%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 290): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 290): True state: R, believes himself to be 100% healthy, and has a net utility of 284.13, (percentage infected = 0.07%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 290): True state: R, believes himself to be 100% healthy, and has a net utility of 269.63, (percentage infected = 0.07%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 291): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 291): True state: R, believes himself to be 100% healthy, and has a net utility of 285.33, (percentage infected = 0.07%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 291): True state: R, believes himself to be 100% healthy, and has a net utility of 270.83, (percentage infected = 0.07%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 292): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 292): True state: R, believes himself to be 100% healthy, and has a net utility of 286.53, (percentage infected = 0.06%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 292): True state: R, believes himself to be 100% healthy, and has a net utility of 272.03, (percentage infected = 0.06%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 293): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 293): True state: R, believes himself to be 100% healthy, and has a net utility of 287.73, (percentage infected = 0.06%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 293): True state: R, believes himself to be 100% healthy, and has a net utility of 273.23, (percentage infected = 0.06%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 294): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 294): True state: R, believes himself to be 100% healthy, and has a net utility of 288.93, (percentage infected = 0.06%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 294): True state: R, believes himself to be 100% healthy, and has a net utility of 274.43, (percentage infected = 0.06%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 295): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 295): True state: R, believes himself to be 100% healthy, and has a net utility of 290.13, (percentage infected = 0.06%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 295): True state: R, believes himself to be 100% healthy, and has a net utility of 275.63, (percentage infected = 0.06%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 296): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 296): True state: R, believes himself to be 100% healthy, and has a net utility of 291.33, (percentage infected = 0.05%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 296): True state: R, believes himself to be 100% healthy, and has a net utility of 276.83, (percentage infected = 0.05%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 297): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 297): True state: R, believes himself to be 100% healthy, and has a net utility of 292.53, (percentage infected = 0.05%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 297): True state: R, believes himself to be 100% healthy, and has a net utility of 278.03, (percentage infected = 0.05%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 298): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 298): True state: R, believes himself to be 100% healthy, and has a net utility of 293.73, (percentage infected = 0.05%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 298): True state: R, believes himself to be 100% healthy, and has a net utility of 279.23, (percentage infected = 0.05%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 299): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 299): True state: R, believes himself to be 100% healthy, and has a net utility of 294.93, (percentage infected = 0.05%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 299): True state: R, believes himself to be 100% healthy, and has a net utility of 280.43, (percentage infected = 0.05%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 300): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 300): True state: R, believes himself to be 100% healthy, and has a net utility of 296.13, (percentage infected = 0.05%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 300): True state: R, believes himself to be 100% healthy, and has a net utility of 281.63, (percentage infected = 0.05%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 301): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 301): True state: R, believes himself to be 100% healthy, and has a net utility of 297.33, (percentage infected = 0.04%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 301): True state: R, believes himself to be 100% healthy, and has a net utility of 282.83, (percentage infected = 0.04%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 302): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 302): True state: R, believes himself to be 100% healthy, and has a net utility of 298.53, (percentage infected = 0.04%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 302): True state: R, believes himself to be 100% healthy, and has a net utility of 284.03, (percentage infected = 0.04%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 303): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 303): True state: R, believes himself to be 100% healthy, and has a net utility of 299.73, (percentage infected = 0.04%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 303): True state: R, believes himself to be 100% healthy, and has a net utility of 285.23, (percentage infected = 0.04%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 304): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 304): True state: R, believes himself to be 100% healthy, and has a net utility of 300.93, (percentage infected = 0.04%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 304): True state: R, believes himself to be 100% healthy, and has a net utility of 286.43, (percentage infected = 0.04%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 305): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 305): True state: R, believes himself to be 100% healthy, and has a net utility of 302.13, (percentage infected = 0.04%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 305): True state: R, believes himself to be 100% healthy, and has a net utility of 287.63, (percentage infected = 0.04%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 306): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 306): True state: R, believes himself to be 100% healthy, and has a net utility of 303.33, (percentage infected = 0.04%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 306): True state: R, believes himself to be 100% healthy, and has a net utility of 288.83, (percentage infected = 0.04%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 307): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 307): True state: R, believes himself to be 100% healthy, and has a net utility of 304.53, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 307): True state: R, believes himself to be 100% healthy, and has a net utility of 290.03, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 308): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 308): True state: R, believes himself to be 100% healthy, and has a net utility of 305.73, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 308): True state: R, believes himself to be 100% healthy, and has a net utility of 291.23, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 309): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 309): True state: R, believes himself to be 100% healthy, and has a net utility of 306.93, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 309): True state: R, believes himself to be 100% healthy, and has a net utility of 292.43, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 310): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 310): True state: R, believes himself to be 100% healthy, and has a net utility of 308.13, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 310): True state: R, believes himself to be 100% healthy, and has a net utility of 293.63, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 311): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 311): True state: R, believes himself to be 100% healthy, and has a net utility of 309.33, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 311): True state: R, believes himself to be 100% healthy, and has a net utility of 294.83, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 312): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 312): True state: R, believes himself to be 100% healthy, and has a net utility of 310.53, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 312): True state: R, believes himself to be 100% healthy, and has a net utility of 296.03, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 313): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 313): True state: R, believes himself to be 100% healthy, and has a net utility of 311.73, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 313): True state: R, believes himself to be 100% healthy, and has a net utility of 297.23, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 314): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 314): True state: R, believes himself to be 100% healthy, and has a net utility of 312.93, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 314): True state: R, believes himself to be 100% healthy, and has a net utility of 298.43, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 315): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 315): True state: R, believes himself to be 100% healthy, and has a net utility of 314.13, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 315): True state: R, believes himself to be 100% healthy, and has a net utility of 299.63, (percentage infected = 0.03%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 316): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 316): True state: R, believes himself to be 100% healthy, and has a net utility of 315.33, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 316): True state: R, believes himself to be 100% healthy, and has a net utility of 300.83, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 317): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 317): True state: R, believes himself to be 100% healthy, and has a net utility of 316.53, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 317): True state: R, believes himself to be 100% healthy, and has a net utility of 302.03, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 318): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 318): True state: R, believes himself to be 100% healthy, and has a net utility of 317.73, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 318): True state: R, believes himself to be 100% healthy, and has a net utility of 303.23, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 319): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 319): True state: R, believes himself to be 100% healthy, and has a net utility of 318.93, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 319): True state: R, believes himself to be 100% healthy, and has a net utility of 304.43, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 320): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 320): True state: R, believes himself to be 100% healthy, and has a net utility of 320.13, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 320): True state: R, believes himself to be 100% healthy, and has a net utility of 305.63, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 321): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 321): True state: R, believes himself to be 100% healthy, and has a net utility of 321.33, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 321): True state: R, believes himself to be 100% healthy, and has a net utility of 306.83, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 322): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 322): True state: R, believes himself to be 100% healthy, and has a net utility of 322.53, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 322): True state: R, believes himself to be 100% healthy, and has a net utility of 308.03, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 323): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 323): True state: R, believes himself to be 100% healthy, and has a net utility of 323.73, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 323): True state: R, believes himself to be 100% healthy, and has a net utility of 309.23, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 324): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 324): True state: R, believes himself to be 100% healthy, and has a net utility of 324.93, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 324): True state: R, believes himself to be 100% healthy, and has a net utility of 310.43, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 325): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 325): True state: R, believes himself to be 100% healthy, and has a net utility of 326.13, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 325): True state: R, believes himself to be 100% healthy, and has a net utility of 311.63, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 326): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 326): True state: R, believes himself to be 100% healthy, and has a net utility of 327.33, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 326): True state: R, believes himself to be 100% healthy, and has a net utility of 312.83, (percentage infected = 0.02%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 327): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 327): True state: R, believes himself to be 100% healthy, and has a net utility of 328.53, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 327): True state: R, believes himself to be 100% healthy, and has a net utility of 314.03, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 328): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 328): True state: R, believes himself to be 100% healthy, and has a net utility of 329.73, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 328): True state: R, believes himself to be 100% healthy, and has a net utility of 315.23, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 329): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 329): True state: R, believes himself to be 100% healthy, and has a net utility of 330.93, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 329): True state: R, believes himself to be 100% healthy, and has a net utility of 316.43, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 330): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 330): True state: R, believes himself to be 100% healthy, and has a net utility of 332.13, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 330): True state: R, believes himself to be 100% healthy, and has a net utility of 317.63, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 331): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 331): True state: R, believes himself to be 100% healthy, and has a net utility of 333.33, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 331): True state: R, believes himself to be 100% healthy, and has a net utility of 318.83, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 332): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 332): True state: R, believes himself to be 100% healthy, and has a net utility of 334.53, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 332): True state: R, believes himself to be 100% healthy, and has a net utility of 320.03, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 333): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 333): True state: R, believes himself to be 100% healthy, and has a net utility of 335.73, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 333): True state: R, believes himself to be 100% healthy, and has a net utility of 321.23, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 334): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 334): True state: R, believes himself to be 100% healthy, and has a net utility of 336.93, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 334): True state: R, believes himself to be 100% healthy, and has a net utility of 322.43, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 335): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 335): True state: R, believes himself to be 100% healthy, and has a net utility of 338.13, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 335): True state: R, believes himself to be 100% healthy, and has a net utility of 323.63, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 336): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 336): True state: R, believes himself to be 100% healthy, and has a net utility of 339.33, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 336): True state: R, believes himself to be 100% healthy, and has a net utility of 324.83, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 337): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 337): True state: R, believes himself to be 100% healthy, and has a net utility of 340.53, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 337): True state: R, believes himself to be 100% healthy, and has a net utility of 326.03, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 338): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 338): True state: R, believes himself to be 100% healthy, and has a net utility of 341.73, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 338): True state: R, believes himself to be 100% healthy, and has a net utility of 327.23, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 339): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 339): True state: R, believes himself to be 100% healthy, and has a net utility of 342.93, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 339): True state: R, believes himself to be 100% healthy, and has a net utility of 328.43, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 340): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 340): True state: R, believes himself to be 100% healthy, and has a net utility of 344.13, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 340): True state: R, believes himself to be 100% healthy, and has a net utility of 329.63, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 341): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 341): True state: R, believes himself to be 100% healthy, and has a net utility of 345.33, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 341): True state: R, believes himself to be 100% healthy, and has a net utility of 330.83, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 342): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 342): True state: R, believes himself to be 100% healthy, and has a net utility of 346.53, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 342): True state: R, believes himself to be 100% healthy, and has a net utility of 332.03, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 343): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 343): True state: R, believes himself to be 100% healthy, and has a net utility of 347.73, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 343): True state: R, believes himself to be 100% healthy, and has a net utility of 333.23, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 344): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 344): True state: R, believes himself to be 100% healthy, and has a net utility of 348.93, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 344): True state: R, believes himself to be 100% healthy, and has a net utility of 334.43, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 345): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 345): True state: R, believes himself to be 100% healthy, and has a net utility of 350.13, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 345): True state: R, believes himself to be 100% healthy, and has a net utility of 335.63, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 346): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 346): True state: R, believes himself to be 100% healthy, and has a net utility of 351.33, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 346): True state: R, believes himself to be 100% healthy, and has a net utility of 336.83, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 347): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 347): True state: R, believes himself to be 100% healthy, and has a net utility of 352.53, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 347): True state: R, believes himself to be 100% healthy, and has a net utility of 338.03, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 348): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 348): True state: R, believes himself to be 100% healthy, and has a net utility of 353.73, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 348): True state: R, believes himself to be 100% healthy, and has a net utility of 339.23, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 349): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 349): True state: R, believes himself to be 100% healthy, and has a net utility of 354.93, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 349): True state: R, believes himself to be 100% healthy, and has a net utility of 340.43, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 350): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 350): True state: R, believes himself to be 100% healthy, and has a net utility of 356.13, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 350): True state: R, believes himself to be 100% healthy, and has a net utility of 341.63, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 351): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 351): True state: R, believes himself to be 100% healthy, and has a net utility of 357.33, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 351): True state: R, believes himself to be 100% healthy, and has a net utility of 342.83, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 352): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 352): True state: R, believes himself to be 100% healthy, and has a net utility of 358.53, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 352): True state: R, believes himself to be 100% healthy, and has a net utility of 344.03, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 353): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 353): True state: R, believes himself to be 100% healthy, and has a net utility of 359.73, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 353): True state: R, believes himself to be 100% healthy, and has a net utility of 345.23, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 354): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 354): True state: R, believes himself to be 100% healthy, and has a net utility of 360.93, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 354): True state: R, believes himself to be 100% healthy, and has a net utility of 346.43, (percentage infected = 0.01%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 355): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 355): True state: R, believes himself to be 100% healthy, and has a net utility of 362.13, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 355): True state: R, believes himself to be 100% healthy, and has a net utility of 347.63, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 356): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 356): True state: R, believes himself to be 100% healthy, and has a net utility of 363.33, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 356): True state: R, believes himself to be 100% healthy, and has a net utility of 348.83, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 357): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 357): True state: R, believes himself to be 100% healthy, and has a net utility of 364.53, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 357): True state: R, believes himself to be 100% healthy, and has a net utility of 350.03, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 358): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 358): True state: R, believes himself to be 100% healthy, and has a net utility of 365.73, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 358): True state: R, believes himself to be 100% healthy, and has a net utility of 351.23, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 359): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 359): True state: R, believes himself to be 100% healthy, and has a net utility of 366.93, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 359): True state: R, believes himself to be 100% healthy, and has a net utility of 352.43, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 360): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 360): True state: R, believes himself to be 100% healthy, and has a net utility of 368.13, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 360): True state: R, believes himself to be 100% healthy, and has a net utility of 353.63, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 361): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 361): True state: R, believes himself to be 100% healthy, and has a net utility of 369.33, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 361): True state: R, believes himself to be 100% healthy, and has a net utility of 354.83, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 362): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 362): True state: R, believes himself to be 100% healthy, and has a net utility of 370.53, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 362): True state: R, believes himself to be 100% healthy, and has a net utility of 356.03, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 363): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 363): True state: R, believes himself to be 100% healthy, and has a net utility of 371.73, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 363): True state: R, believes himself to be 100% healthy, and has a net utility of 357.23, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 364): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 364): True state: R, believes himself to be 100% healthy, and has a net utility of 372.93, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 364): True state: R, believes himself to be 100% healthy, and has a net utility of 358.43, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
 simple(35): plan [DEBUG] (Day 365): Estimated (self) work payoff: 1.2000000000000002
-one_player(70): simulate [INFO] (Day 365): True state: R, believes himself to be 100% healthy, and has a net utility of 374.13, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
+one_player(70): simulate [INFO] (Day 365): True state: R, believes himself to be 100% healthy, and has a net utility of 359.63, (percentage infected = 0.00%, work risk = 0.000%, home risk = 0.000%)
