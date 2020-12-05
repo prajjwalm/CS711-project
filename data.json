@@ -61,7 +61,7 @@
     "u-death": 20000,
     "x-job-importance": 1,
     "x-economic-status": 1,
-    "p-healthy-fluctuation": 0.5
+    "p-healthy-fluctuation": 0.32
   },
   "player-types": {
     "coward": {

@@ -78,8 +78,15 @@ class Coward(BasePlayer):
         total_people = len(actions)
         attendance = work_people / total_people
 
-        safe_attendance_limit = 0.5
-        if attendance > safe_attendance_limit:
-            self.caution_multiplier = 1000000
+        safe_attendance_limit_1 = 0.5
+        safe_attendance_limit_2 = 0.9
+
+        if attendance > safe_attendance_limit_2:
+            self.caution_multiplier = 1.2
+        elif attendance > safe_attendance_limit_1:
+            self.caution_multiplier = 1.05
         else:
             self.caution_multiplier = 1
+
+    def on_alert(self):
+        self.caution_multiplier = 10

@@ -148,3 +148,5 @@ class GroupGame:
 
         except BasePlayer.DeathException:
             logger.critical("Group member dead")
+
+        print(self.utilities)

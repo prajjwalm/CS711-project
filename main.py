@@ -22,10 +22,9 @@ def add_args(parser: argparse.ArgumentParser):
 
 
 def parse_args(args: argparse.Namespace):
-    game = parse_game_args(args)
     plot = args.plot
     debug = args.debug
-    return game, plot, debug
+    return plot, debug
 
 
 def main():
@@ -47,8 +46,9 @@ def main():
     # noinspection PyTypeChecker
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     add_args(parser)
-    game, plot, debug = parse_args(parser.parse_args())
-    
+    args = parser.parse_args()
+    plot, debug = parse_args(args)
+
     # change log level here; note: all modules use the same logger
     logger.setLevel(logging.DEBUG if debug else logging.INFO)
 
@@ -62,6 +62,7 @@ def main():
 
     np.set_printoptions(precision=3, linewidth=300)
 
+    game = parse_game_args(args)
     game.simulate()
     if plot:
         game.plot_graphs()
