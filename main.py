@@ -50,12 +50,7 @@ def main():
     game, plot, debug = parse_args(parser.parse_args())
     
     # change log level here; note: all modules use the same logger
-    if debug:
-        # print("Running in debug")
-        logger.setLevel(logging.DEBUG)
-    else:        
-        # print("Running in info")
-        logger.setLevel(logging.INFO)
+    logger.setLevel(logging.DEBUG if debug else logging.INFO)
 
     fh = logging.FileHandler("logs/proceeds.log", mode='w')
     fh.setFormatter(logging.Formatter(
@@ -65,7 +60,7 @@ def main():
     logger.addHandler(fh)
     logger.addFilter(ContextFilter())
 
-    np.set_printoptions(precision=2, linewidth=240)
+    np.set_printoptions(precision=3, linewidth=300)
 
     game.simulate()
     if plot:

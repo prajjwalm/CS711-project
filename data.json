@@ -56,12 +56,12 @@
     }
   },
   "base-player": {
-    "x-work-risk": 1,
-    "x-home-risk": 0.03,
+    "x-work-risk": 3,
+    "x-home-risk": 0.05,
     "u-death": 20000,
     "x-job-importance": 1,
     "x-economic-status": 1,
-    "p-healthy-fluctuation": 0.25
+    "p-healthy-fluctuation": 0.5
   },
   "player-types": {
     "coward": {
@@ -73,7 +73,7 @@
     },
     "planner": {
       "h": 0.5,
-      "cap": 0.2
+      "cap": 0.4
     }
   }
 }

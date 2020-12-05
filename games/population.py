@@ -170,8 +170,8 @@ class Population:
         self.eta_ih = total_infectious * coeff_i
         self.eta_iw = np.clip(1 - (1 - total_infectious * coeff_i) * (1 - working_infectious * coeff_wi), self.eta_ih,
                               1)
-        logger.debug("total-infectious: {0}, working-infectious : {1}".format(total_infectious, working_infectious))
-        logger.debug("eta_iw: {0}, eta_ih: {1:.2f}".format(str(self.eta_iw), self.eta_ih))
+        logger.info("total-infectious: {0}, working-infectious : {1}".format(total_infectious, working_infectious))
+        logger.info("eta_iw: {0}, eta_ih: {1:.2f}".format(str(self.eta_iw), self.eta_ih))
 
         # 2. find out the ratio of susceptible that are getting infected
         eta_w = self.eta_w[:, :, 0]
@@ -209,8 +209,8 @@ class Population:
         self.t_deaths_ot.append(np.sum(self.deaths, axis=0))
         self.f_deaths_ot.append(np.sum(fresh_deaths, axis=0))
 
-        logger.debug("Fresh Deaths: " + str(np.sum(fresh_deaths, axis=0)))
-        logger.debug("Total Deaths: " + str(np.sum(self.deaths, axis=0)))
+        logger.info("Fresh Deaths: " + str(np.sum(fresh_deaths, axis=0)))
+        logger.info("Total Deaths: " + str(np.sum(self.deaths, axis=0)))
 
         # 4. execute the eta_w transitions (note: eta_w will be wrt the new population distribution)
         eta_wi = self._safe_divide(eta_iw * eta_w, eta_i)  # P[W given they get I]
@@ -237,9 +237,9 @@ class Population:
         i_loss[-1] = 1
         i_loss = i_loss ** 2
         s_utility = np.einsum("ijk,ijk,i,k -> j", self.people, self.eta_w, max_utility, i_loss)
-        logger.debug("Fresh utility: " + str(s_utility))
+        logger.info("Fresh utility: " + str(s_utility))
         self.net_utility += s_utility
-        logger.debug("Total utility: " + str(self.net_utility))
+        logger.info("Total utility: " + str(self.net_utility))
 
         if self.t_utility_ot:
             self.t_utility_ot.append(s_utility + self.t_utility_ot[-1])
@@ -288,7 +288,7 @@ class Population:
         self.X = self.eta_w[:, self.P, :] + self.h * self.X
 
         eta_w_s = self.eta_w[:, self.S, :]
-        eta_w_del = np.minimum(1 - eta_w_s, eta_w_s)*0.4
+        eta_w_del = np.minimum(1 - eta_w_s, eta_w_s) * 0.4
         eta_w_min = eta_w_s - eta_w_del
         eta_w_max = eta_w_s + eta_w_del
 
@@ -297,9 +297,9 @@ class Population:
     def simulate(self):
         try:
             for T[0] in range(self.T_max):
-                logger.info("Population sections:\n" + str(self.people))
-                logger.info("Percentage working:\n" + str(self.eta_w))
-                logger.info(
+                logger.debug("Population sections:\n" + str(self.people))
+                logger.debug("Percentage working:\n" + str(self.eta_w))
+                logger.debug(
                     "Final Utility: {}".format(self.net_utility + np.sum(self.deaths, axis=0) * player_data['u-death']))
 
                 self._get_action_coward()
@@ -396,8 +396,6 @@ class Population:
 
     def total_death_plot_sections_simple(self):
         fig, ax1 = plt.subplots()
-        # print(self.t_deaths_ot_s[-2])
-        # print(sections)
         for j in range(self.n_sections):
             ax1.plot(self.timeline, np.asarray(self.t_deaths_ot_s)[:, j], label=sections[j])
         plt.tight_layout()
@@ -408,11 +406,9 @@ class Population:
         plt.title("Death Percentage for all Sections for Archetype Simple")
         plt.savefig("graphs/total_deaths_per_section.jpg", bbox_inches='tight')
 
-    #        plt.show()
+
     def total_death_plot_age_group_simple(self):
         fig, ax1 = plt.subplots()
-        # print(self.t_deaths_ot_s[-2])
-
         for j in range(self.n_age_groups):
             ax1.plot(self.timeline, np.asarray(self.t_deaths_ot_a)[:, j], label=self.age_group_dict[j])
 
@@ -424,7 +420,7 @@ class Population:
         plt.title("Death Percentage for all Sections for Archetype Simple")
         plt.savefig("graphs/total_deaths_per_age_group.jpg", bbox_inches='tight')
 
-    def susceptible_etaw(self):
+    def susceptible_eta_w(self):
         fig, ax1 = plt.subplots()
         color = 'tab:red'
         ax1.plot(self.timeline, self.infection_rate, color=color, label="Infection")
@@ -452,4 +448,4 @@ class Population:
         self.daily_utility_plot()
         self.total_death_plot_sections_simple()
         self.total_death_plot_age_group_simple()
-        self.susceptible_etaw()
+        self.susceptible_eta_w()

@@ -38,7 +38,7 @@ class Simple(BasePlayer):
         work_people = actions.count("W")
         total_people = len(actions)
         attendance = work_people / total_people
-        extra_caution = 10 if self.alert else 1
+        extra_caution = 100 if self.alert else 1
         if attendance > 0.75:
             self.caution_multiplier = 2 * attendance * attendance * extra_caution
         else:

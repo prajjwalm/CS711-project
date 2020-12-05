@@ -100,11 +100,12 @@ class BasePlayer:
             self.t_i = self.env.t
         elif self.state == "I" \
                 and self.env.t - self.t_i >= self.env.TIMES['removal']:
-            if np.random.rand() > self.death_risk:
+            dice = np.random.rand()
+            logger.debug("P[death]: {0:f}, dice: {1:f}".format(self.death_risk, dice))
+            if dice > self.death_risk:
                 self.state = "R"
                 self.t_r = self.env.t
             else:
-                # TODO: handle game-over here
                 self.state = "X"
                 self.net_utility += self.u_death
                 logger.info("DEAD")
