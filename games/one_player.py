@@ -7,7 +7,7 @@ import numpy as np
 
 from constants import player_data
 from enviornments import BaseEnvironment
-from players import BasePlayer, Coward, Planner, Simple
+from players import BasePlayer, Gullible, Planner, Simple
 
 logger: logging.Logger
 
@@ -19,7 +19,7 @@ def _init():
 
 
 player_types = {
-    "c": Coward,
+    "c": Gullible,
     "p": Planner,
     "s": Simple,
 }

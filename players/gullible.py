@@ -12,7 +12,7 @@ def _init():
     logger = logging.getLogger("Log")
 
 
-class Coward(BasePlayer):
+class Gullible(BasePlayer):
     last_action: str  # Logs last action
     caution_multiplier: float
 

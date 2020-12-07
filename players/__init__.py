@@ -2,7 +2,7 @@ import argparse
 
 from constants import run_once
 from .base_player import BasePlayer, _init as _init_base, _add_args, _parse_args
-from .coward import Coward, _init as _init_coward
+from .gullible import Gullible, _init as _init_coward
 from .planner import Planner, _init as _init_planner
 from .simple import Simple, _init as _init_simple
 

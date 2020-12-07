@@ -137,9 +137,9 @@ class Population:
 
         self.timeline = np.arange(self.T_max)
         self.infection_rate = []
-        self.archetype_dict = {0: 'Coward', 1: 'Planner', 2: 'Simple'}
+        self.archetype_dict = {0: 'Gullible', 1: 'Planner', 2: 'Simple'}
         self.sections_dict = {0: 'Primary', 1: 'Secondary', 2: 'Tertiary', 3: 'Essential', 4: 'Retired'}
-        self.age_group_dict = {0: 'Young', 1: 'Middle', 2: 'Old'}
+        self.age_group_dict = {0: 'Young(<45 years)', 1: 'Middle(45-60 years)', 2: 'Old(>60 years)'}
         # TODO: set linear instead of step
         self.threshold_sw = np.where(job_risk < self.coward_data['job-risk-threshold'],
                                      self.coward_data['low-risk-w-threshold'],

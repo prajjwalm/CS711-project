@@ -3,7 +3,7 @@ import logging
 from typing import List
 
 from enviornments import BaseEnvironment
-from players import BasePlayer, Coward, Simple, Planner
+from players import BasePlayer, Gullible, Simple, Planner
 
 logger: logging.Logger
 
@@ -27,7 +27,7 @@ def _add_args(parser: argparse.ArgumentParser):
 def _parse_args(args: argparse.Namespace, env):
     players = []
     for i in range(args.n_cowards):
-        players.append(Coward(env))
+        players.append(Gullible(env))
     for i in range(args.n_planners):
         players.append(Planner(env))
     for i in range(args.n_simple):
