@@ -39,12 +39,16 @@ class OnePlayer:
     env: BaseEnvironment
 
     t_utility_ot: List[float]  # total utility over time
+    d_utility_ot: List[float]
+    infection_rate: List[float]
     timeline: np.ndarray
 
     def __init__(self, player: BasePlayer):
         self.p = player
         self.env = player.env
         self.t_utility_ot = []
+        self.d_utility_ot = []
+        self.infection_rate = []
         self.timeline = np.arange(self.env.max_t)
 
     def simulate(self):
@@ -64,8 +68,13 @@ class OnePlayer:
 
                 self.p.state_change(risk)
                 self.t_utility_ot.append(self.p.net_utility)
+                if len(self.d_utility_ot) == 0:
+                    self.d_utility_ot.append(self.p.net_utility)
+                else:
+                    self.d_utility_ot.append(self.t_utility_ot[-1] - self.t_utility_ot[-2])
                 if action == "W" and self.p.t_i is None:
                     self.p.n_w += 1
+                self.infection_rate.append(self.env.i / self.env.n)
 
                 logger.info(
                     "True state: {0}, believes himself to be {1:d}% healthy, and has a net utility of {2:.2f}, "
@@ -95,12 +104,21 @@ class OnePlayer:
 
     def plot_graphs(self):
         def total_utility_plot():
-            self.t_utility_ot = np.asarray(self.t_utility_ot)
-            plt.plot(self.timeline, self.t_utility_ot)
-            plt.xlabel("Time")
-            plt.ylabel("Total Utility")
-            plt.grid()
-            # plt.legend()
-            plt.savefig("graphs/one_player_total_utility.jpg")
+            self.d_utility_ot = np.asarray(self.d_utility_ot)
+
+            fig, ax1 = plt.subplots()
+            color = 'tab:red'
+            ax1.plot(self.timeline, self.infection_rate, color=color, label="Infection")
+            ax1.set_ylabel("Infected Population")
+
+            ax2 = ax1.twinx()
+            ax2.plot(self.timeline, self.d_utility_ot)
+            ax2.set_ylim(0, 2)
+            ax2.set_xlabel("Time(days)")
+            ax2.set_ylabel("Daily Utility")
+            ax2.grid()
+            ax1.legend(loc="lower right")
+            fig.tight_layout()
+            plt.savefig("graphs/one_player_daily_utility.jpg")
 
         total_utility_plot()
