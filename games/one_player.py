@@ -5,8 +5,8 @@ from typing import List
 import matplotlib.pyplot as plt
 import numpy as np
 
-from constants import player_data
-from enviornments import BaseEnvironment
+from constants import player_data, T
+from enviornments import BaseEnvironment, EnvSir
 from players import BasePlayer, Gullible, Planner, Simple
 
 logger: logging.Logger
@@ -34,6 +34,10 @@ def _parse_args(args: argparse.Namespace, env):
     return OnePlayer(player_types[args.type](env))
 
 
+def moving_average(x, w):
+    return np.convolve(x, np.ones(w), 'valid') / w
+
+
 class OnePlayer:
     p: BasePlayer
     env: BaseEnvironment
@@ -41,6 +45,7 @@ class OnePlayer:
     t_utility_ot: List[float]  # total utility over time
     d_utility_ot: List[float]
     infection_rate: List[float]
+    actions: List[float]
     timeline: np.ndarray
 
     def __init__(self, player: BasePlayer):
@@ -50,6 +55,7 @@ class OnePlayer:
         self.d_utility_ot = []
         self.infection_rate = []
         self.timeline = np.arange(self.env.max_t)
+        self.actions = []
 
     def simulate(self):
         dead = False
@@ -60,6 +66,7 @@ class OnePlayer:
                 action = self.p.action_plan.pop()
 
                 # handle utilities and risk
+                self.actions.append(self.p.pW)
                 if action == "W":
                     self.p.net_utility += self.p.u_economic_w
                     risk = self.p.w_infection_risk
@@ -101,6 +108,7 @@ class OnePlayer:
             print("Went to work {0:d} days, didn't get infected".format(self.p.n_w))
 
         print("U", self.p.net_utility)
+        return self
 
     def plot_graphs(self):
         def total_utility_plot():
@@ -122,3 +130,38 @@ class OnePlayer:
             plt.savefig("graphs/one_player_daily_utility.jpg")
 
         total_utility_plot()
+
+
+def main():
+    t = 200
+    smooth = 7
+    g1 = OnePlayer(Simple(EnvSir(10000, 10, t))).simulate()
+    u_s = np.zeros(t)
+    g1a = np.asarray(g1.actions)
+    u_s[:smooth - 1] = g1a[:smooth - 1]
+    u_s[smooth - 1:] = moving_average(g1a, smooth)
+    T[0] = 0
+    g2 = OnePlayer(Planner(EnvSir(10000, 10, t))).simulate()
+    u_p = np.zeros(t)
+    g2a = np.asarray(g2.actions)
+    u_p[:smooth - 1] = g2a[:smooth - 1]
+    u_p[smooth - 1:] = moving_average(g2a, smooth)
+    i_r = g2.infection_rate
+    timeline = np.arange(len(i_r))
+
+    fig, ax1 = plt.subplots()
+    ax1.plot(timeline, i_r, color='tab:red', label="Infection")
+    ax1.set_ylabel("Infected Population")
+
+    ax2 = ax1.twinx()
+    ax2.plot(timeline, u_s, color='tab:blue', label="P[W; Simple]")
+    ax2.plot(timeline, u_p, color='tab:green', label="P[W; Planner]")
+    ax2.set_ylim(0, 1.5)
+    ax2.set_xlabel("Time(days)")
+    ax2.set_ylabel("Probability of choosing Work")
+    ax2.grid()
+    ax1.legend(loc="upper left")
+    ax2.legend(loc="upper right")
+    fig.tight_layout()
+    plt.show()
+    # plt.savefig("graphs/one_player_daily_utility.jpg")

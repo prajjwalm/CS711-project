@@ -118,7 +118,7 @@ class BasePlayer:
             self.p_healthy = 1
         elif self.state == "I":
             self.p_healthy = 1 - (self.env.t - self.t_i) / self.env.TIMES['symptoms']
-        fluctuation = 0.25
+        fluctuation = player_data['p-healthy-fluctuation']
         self.p_healthy += (np.random.rand() - 0.5) * fluctuation
         self.p_healthy = min(1.0, max(0.0, self.p_healthy))
 
@@ -171,3 +171,7 @@ class BasePlayer:
     @property
     def job_risk(self) -> float:
         return job_risk[self.section_idx]
+
+    @property
+    def pW(self) -> float:
+        raise NotImplementedError

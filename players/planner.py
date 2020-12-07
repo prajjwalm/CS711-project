@@ -28,6 +28,7 @@ class Planner(BasePlayer):
         super().__init__(env)
         self.X = 1 / (1 - self.h)
         self.alert = False
+        self._pW = 1
 
     def plan(self):
         assert len(self.action_plan) == 0
@@ -37,10 +38,17 @@ class Planner(BasePlayer):
         p_h_mean = 1 if self.t_i is None else 1 - (self.env.t - self.t_i) / self.env.TIMES['symptoms']
         p_h_delta = player_data['p-healthy-fluctuation']
 
+        if self.state == "R":
+            logger.info("Working as recovered")
+            self.action_plan.append("W")
+            self._pW = 1
+            return
+
         logger.debug("Simple Sus Cutoff: {0:.2f}".format(cutoff_ss))
         if cutoff_ss > 1:
             action = "H"
             self.X = 0 + self.X * self.h
+            self._pW = 0
         else:
             p_w_mean = (p_h_mean + p_h_delta / 2 - cutoff_ss) / p_h_delta
             p_w_mean = min(1, max(0, p_w_mean))
@@ -52,13 +60,14 @@ class Planner(BasePlayer):
             logger.debug("P[H] in [{0:.2f}, {1:.2f}]".format(p_h_mean - p_h_delta / 2, p_h_mean + p_h_delta / 2))
             logger.debug("SS p[w] = {0:.2f}, p_max[w] = {1:.2f}, p_min[w] = {2:.2f}, X = {3:.2f}, p[w] = {4:.2f}"
                          "".format(p_w_mean, p_w_max, p_w_min, self.X, p_w))
+            self._pW = p_w
             if np.random.rand() < p_w:
                 action = 'W'
                 self.X = 1 + self.X * self.h
             else:
                 action = "H"
                 self.X = 0 + self.X * self.h
-        logger.debug("Action: {0}, X: {1:.2f}".format(action, self.X))
+        logger.info("Action: {0}, X: {1:.2f}".format(action, self.X))
 
         self.action_plan.append(action)
 
@@ -67,3 +76,7 @@ class Planner(BasePlayer):
 
     def on_alert(self):
         self.alert = True
+
+    @property
+    def pW(self) -> float:
+        return self._pW

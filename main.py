@@ -51,6 +51,7 @@ def main():
 
     # change log level here; note: all modules use the same logger
     logger.setLevel(logging.DEBUG if debug else logging.INFO)
+    # logger.setLevel(logging.DEBUG)
 
     fh = logging.FileHandler("logs/proceeds.log", mode='w')
     fh.setFormatter(logging.Formatter(
@@ -70,3 +71,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    # one_player_main()

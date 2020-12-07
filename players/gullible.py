@@ -90,3 +90,7 @@ class Gullible(BasePlayer):
 
     def on_alert(self):
         self.caution_multiplier = 10
+
+    def pW(self) -> float:
+        logger.warning("Not implemented")
+        return self.p_healthy

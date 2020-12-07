@@ -72,8 +72,8 @@
       "low-risk-h-threshold" : 0.69
     },
     "planner": {
-      "h": 0.5,
-      "cap": 0.4
+      "h": 0.80,
+      "cap": 0.84
     }
   }
 }
