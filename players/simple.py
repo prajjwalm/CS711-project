@@ -42,7 +42,7 @@ class Simple(BasePlayer):
         p = (p_h_mean + p_h_delta / 2 - cutoff) / p_h_delta
         p = min(1, max(0, p))
         self._pW = p
-        logger.info("cutoff: {1:.2f} S prob: {0:.2f}".format(p, cutoff))
+        logger.debug("cutoff: {1:.2f} S prob: {0:.2f}".format(p, cutoff))
         self.action_plan.append("W" if work > 0 else "H")
 
         logger.debug("Estimated (self) work payoff: {0}".format(work))

@@ -39,7 +39,7 @@ class Planner(BasePlayer):
         p_h_delta = player_data['p-healthy-fluctuation']
 
         if self.state == "R":
-            logger.info("Working as recovered")
+            logger.debug("Working as recovered")
             self.action_plan.append("W")
             self._pW = 1
             return
@@ -67,7 +67,7 @@ class Planner(BasePlayer):
             else:
                 action = "H"
                 self.X = 0 + self.X * self.h
-        logger.info("Action: {0}, X: {1:.2f}".format(action, self.X))
+        logger.debug("Action: {0}, X: {1:.2f}".format(action, self.X))
 
         self.action_plan.append(action)
 
