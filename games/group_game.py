@@ -80,8 +80,8 @@ class GroupGame:
     def _handle_risk(self):
         n_infectious = 0
         infectious_cutoff = self.env.t - self.env.TIMES["infectious"]
-        for player in self.players:
-            if player.state == "I" and player.t_i < infectious_cutoff:
+        for player, i in zip(self.players, range(len(self.players))):
+            if player.state == "I" and player.t_i < infectious_cutoff and self.actions[i] == "W":
                 n_infectious += 1
 
         for i in range(len(self.players)):
@@ -91,7 +91,7 @@ class GroupGame:
                 risk = self.players[i].w_infection_risk
             else:
                 # probability of infection when one is sick
-                pr = self.env.R0 / (self.env.TIMES["removal"] - self.env.TIMES['infectious'])
+                pr = 3 * self.env.R0 / (self.env.TIMES["removal"] - self.env.TIMES['infectious'])
 
                 # total probability of infection
                 risk = (1 - (1 - pr) ** n_infectious) * self.job_risk + self.players[i].w_infection_risk

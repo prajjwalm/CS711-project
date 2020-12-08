@@ -26,29 +26,10 @@ class Gullible(BasePlayer):
         Strategy:
         Doesn't care about utilities. Doesn't plan into the future. Works if
         feeling healthy today, else stays at home.
-        [TODO: affect threshold with current number of cases?]
-        """
-
-        """
-        New additions Coward_2.0
-        Job risk pe dependency add karni hai
-        Infection risk bohot kam hai to work karna chahiye
         """
 
         assert len(self.action_plan) == 0
-
-        """
-        Variables available:
-        u_economic_w -> (u_economic_max)
-        infection_risk :::->:
-        self.w_infection_risk
-        self.h_infection_risk
-        """
-        # Srajit blink twice if you are being held captive
-
-        # Lodu, agar high hua risk to 1 hojayega threshold
-        # 0 risk pe bhi threshold 1
-        job_risk_threshold = 0.01       # value pm se cross check karni hai
+        job_risk_threshold = 0.01
         lower_threshold = 0.9
         upper_threshold = 0.96
 

@@ -7,1462 +7,963 @@ base_player(84): __init__ [INFO] (Day 0): young primary Planner initialized with
 base_player(84): __init__ [INFO] (Day 0): young primary Simple initialized with params
 base_player(84): __init__ [INFO] (Day 0): young primary Simple initialized with params
 base_player(84): __init__ [INFO] (Day 0): young primary Simple initialized with params
-simple(45): plan [INFO] (Day 1): cutoff: 0.02 S prob: 1.00
-simple(45): plan [INFO] (Day 1): cutoff: 0.02 S prob: 1.00
-simple(45): plan [INFO] (Day 1): cutoff: 0.02 S prob: 1.00
 group_game(141): simulate [INFO] (Day 1): 
  States:           S       S       S       S       S       S       S       S       S   
  Actions taken:    W       W       W       W       W       W       W       W       W   
  Utilities:        1.20    1.20    1.20    1.20    1.20    1.20    1.20    1.20    1.20
  Risks (%):       0.001   0.001   0.001   0.001   0.001   0.001   0.001   0.001   0.001
-simple(45): plan [INFO] (Day 2): cutoff: 0.03 S prob: 1.00
-simple(45): plan [INFO] (Day 2): cutoff: 0.03 S prob: 1.00
-simple(45): plan [INFO] (Day 2): cutoff: 0.03 S prob: 1.00
 group_game(141): simulate [INFO] (Day 2): 
  States:           S       S       S       S       S       S       S       S       S   
  Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:        1.20    1.20    1.20    1.83    1.83    1.83    1.83    1.83    1.83
+ Utilities:        1.20    1.20    1.20    1.80    1.80    1.80    1.80    1.80    1.80
  Risks (%):       0.000   0.000   0.000   0.001   0.001   0.001   0.001   0.001   0.001
-simple(45): plan [INFO] (Day 3): cutoff: 0.02 S prob: 1.00
-simple(45): plan [INFO] (Day 3): cutoff: 0.02 S prob: 1.00
-simple(45): plan [INFO] (Day 3): cutoff: 0.02 S prob: 1.00
 group_game(141): simulate [INFO] (Day 3): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:        1.89    1.20    1.20    2.52    2.52    2.52    2.52    2.52    2.52
- Risks (%):       0.001   0.000   0.000   0.001   0.001   0.001   0.001   0.001   0.001
-simple(45): plan [INFO] (Day 4): cutoff: 0.03 S prob: 1.00
-simple(45): plan [INFO] (Day 4): cutoff: 0.03 S prob: 1.00
-simple(45): plan [INFO] (Day 4): cutoff: 0.03 S prob: 1.00
+ Actions taken:    W       W       W       W       W       W       W       W       W   
+ Utilities:        2.29    2.29    2.29    2.89    2.89    2.89    2.89    2.89    2.89
+ Risks (%):       0.001   0.001   0.001   0.001   0.001   0.001   0.001   0.001   0.001
 group_game(141): simulate [INFO] (Day 4): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       W       W       W       W       W       W       W   
- Utilities:        1.89    1.20    2.01    3.33    3.33    3.33    3.33    3.33    3.33
- Risks (%):       0.000   0.000   0.001   0.001   0.001   0.001   0.001   0.001   0.001
-simple(45): plan [INFO] (Day 5): cutoff: 0.03 S prob: 1.00
-simple(45): plan [INFO] (Day 5): cutoff: 0.03 S prob: 1.00
-simple(45): plan [INFO] (Day 5): cutoff: 0.03 S prob: 1.00
+ Actions taken:    H       H       H       W       W       W       W       W       W   
+ Utilities:        2.29    2.29    2.29    3.59    3.59    3.59    3.59    3.59    3.59
+ Risks (%):       0.000   0.000   0.000   0.001   0.001   0.001   0.001   0.001   0.001
 group_game(141): simulate [INFO] (Day 5): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       H       W       W       W       W       W       W   
- Utilities:        1.89    1.88    2.01    4.01    4.01    4.01    4.01    4.01    4.01
- Risks (%):       0.000   0.001   0.000   0.001   0.001   0.001   0.001   0.001   0.001
-simple(45): plan [INFO] (Day 6): cutoff: 0.03 S prob: 1.00
-simple(45): plan [INFO] (Day 6): cutoff: 0.03 S prob: 1.00
-simple(45): plan [INFO] (Day 6): cutoff: 0.03 S prob: 1.00
+ Actions taken:    H       W       W       W       W       W       W       W       W   
+ Utilities:        2.29    3.26    3.26    4.56    4.56    4.56    4.56    4.56    4.56
+ Risks (%):       0.000   0.001   0.001   0.001   0.001   0.001   0.001   0.001   0.001
 group_game(141): simulate [INFO] (Day 6): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       W       W       W       W       W       W       W   
- Utilities:        2.70    1.88    2.82    4.82    4.82    4.82    4.82    4.82    4.82
- Risks (%):       0.001   0.000   0.001   0.001   0.001   0.001   0.001   0.001   0.001
-simple(45): plan [INFO] (Day 7): cutoff: 0.04 S prob: 1.00
-simple(45): plan [INFO] (Day 7): cutoff: 0.04 S prob: 1.00
-simple(45): plan [INFO] (Day 7): cutoff: 0.04 S prob: 1.00
+ Actions taken:    H       H       H       W       W       W       W       W       W   
+ Utilities:        2.29    3.26    3.26    5.26    5.26    5.26    5.26    5.26    5.26
+ Risks (%):       0.000   0.000   0.000   0.001   0.001   0.001   0.001   0.001   0.001
 group_game(141): simulate [INFO] (Day 7): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       H       W       W       W       W       W       W   
- Utilities:        2.70    2.74    2.82    5.67    5.67    5.67    5.67    5.67    5.67
- Risks (%):       0.000   0.001   0.000   0.001   0.001   0.001   0.001   0.001   0.001
-simple(45): plan [INFO] (Day 8): cutoff: 0.03 S prob: 1.00
-simple(45): plan [INFO] (Day 8): cutoff: 0.03 S prob: 1.00
-simple(45): plan [INFO] (Day 8): cutoff: 0.03 S prob: 1.00
+ Actions taken:    H       W       W       W       W       W       W       W       W   
+ Utilities:        2.29    4.19    4.19    6.19    6.19    6.19    6.19    6.19    6.19
+ Risks (%):       0.000   0.001   0.001   0.001   0.001   0.001   0.001   0.001   0.001
 group_game(141): simulate [INFO] (Day 8): 
  States:           S       S       S       S       S       S       S       S       S   
  Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:        2.70    2.74    2.82    6.34    6.34    6.34    6.34    6.34    6.34
+ Utilities:        2.29    4.19    4.19    6.94    6.94    6.94    6.94    6.94    6.94
  Risks (%):       0.000   0.000   0.000   0.001   0.001   0.001   0.001   0.001   0.001
-simple(45): plan [INFO] (Day 9): cutoff: 0.03 S prob: 1.00
-simple(45): plan [INFO] (Day 9): cutoff: 0.03 S prob: 1.00
-simple(45): plan [INFO] (Day 9): cutoff: 0.03 S prob: 1.00
 group_game(141): simulate [INFO] (Day 9): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       W       W       W       W       W       W       W   
- Utilities:        2.70    3.63    3.71    7.23    7.23    7.23    7.23    7.23    7.23
- Risks (%):       0.000   0.002   0.002   0.002   0.002   0.002   0.002   0.002   0.002
-simple(45): plan [INFO] (Day 10): cutoff: 0.04 S prob: 1.00
-simple(45): plan [INFO] (Day 10): cutoff: 0.04 S prob: 1.00
-simple(45): plan [INFO] (Day 10): cutoff: 0.04 S prob: 1.00
+ Actions taken:    W       W       W       W       W       W       W       W       W   
+ Utilities:        3.37    5.27    5.27    8.03    8.03    8.03    8.03    8.03    8.03
+ Risks (%):       0.002   0.002   0.002   0.002   0.002   0.002   0.002   0.002   0.002
 group_game(141): simulate [INFO] (Day 10): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:        3.54    3.63    3.71    8.06    8.06    8.06    8.06    8.06    8.06
- Risks (%):       0.002   0.000   0.000   0.002   0.002   0.002   0.002   0.002   0.002
-simple(45): plan [INFO] (Day 11): cutoff: 0.04 S prob: 1.00
-simple(45): plan [INFO] (Day 11): cutoff: 0.04 S prob: 1.00
-simple(45): plan [INFO] (Day 11): cutoff: 0.04 S prob: 1.00
+ Actions taken:    H       H       H       W       W       W       W       W       W   
+ Utilities:        3.37    5.27    5.27    8.65    8.65    8.65    8.65    8.65    8.65
+ Risks (%):       0.000   0.000   0.000   0.002   0.002   0.002   0.002   0.002   0.002
 group_game(141): simulate [INFO] (Day 11): 
  States:           S       S       S       S       S       S       S       S       S   
  Actions taken:    H       W       W       W       W       W       W       W       W   
- Utilities:        3.54    4.58    4.66    9.02    9.02    9.02    9.02    9.02    9.02
+ Utilities:        3.37    6.24    6.24    9.62    9.62    9.62    9.62    9.62    9.62
  Risks (%):       0.000   0.002   0.002   0.002   0.002   0.002   0.002   0.002   0.002
-simple(45): plan [INFO] (Day 12): cutoff: 0.04 S prob: 1.00
-simple(45): plan [INFO] (Day 12): cutoff: 0.04 S prob: 1.00
-simple(45): plan [INFO] (Day 12): cutoff: 0.04 S prob: 1.00
 group_game(141): simulate [INFO] (Day 12): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:        3.54    4.58    4.66    9.76    9.76    9.76    9.76    9.76    9.76
- Risks (%):       0.000   0.000   0.000   0.002   0.002   0.002   0.002   0.002   0.002
-simple(45): plan [INFO] (Day 13): cutoff: 0.04 S prob: 1.00
-simple(45): plan [INFO] (Day 13): cutoff: 0.04 S prob: 1.00
-simple(45): plan [INFO] (Day 13): cutoff: 0.04 S prob: 1.00
+ Actions taken:    W       H       H       W       W       W       W       W       W   
+ Utilities:        4.30    6.24    6.24   10.55   10.55   10.55   10.55   10.55   10.55
+ Risks (%):       0.002   0.000   0.000   0.002   0.002   0.002   0.002   0.002   0.002
 group_game(141): simulate [INFO] (Day 13): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       W       W       W       W       W       W   
- Utilities:        4.66    5.70    5.79   10.89   10.89   10.89   10.89   10.89   10.89
- Risks (%):       0.002   0.002   0.002   0.002   0.002   0.002   0.002   0.002   0.002
-simple(45): plan [INFO] (Day 14): cutoff: 0.05 S prob: 1.00
-simple(45): plan [INFO] (Day 14): cutoff: 0.05 S prob: 1.00
-simple(45): plan [INFO] (Day 14): cutoff: 0.05 S prob: 1.00
+ Actions taken:    H       W       W       W       W       W       W       W       W   
+ Utilities:        4.30    7.23    7.23   11.54   11.54   11.54   11.54   11.54   11.54
+ Risks (%):       0.000   0.002   0.002   0.002   0.002   0.002   0.002   0.002   0.002
 group_game(141): simulate [INFO] (Day 14): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:        4.66    5.70    5.79   11.60   11.60   11.60   11.60   11.60   11.60
- Risks (%):       0.000   0.000   0.000   0.002   0.002   0.002   0.002   0.002   0.002
-simple(45): plan [INFO] (Day 15): cutoff: 0.04 S prob: 1.00
-simple(45): plan [INFO] (Day 15): cutoff: 0.04 S prob: 1.00
-simple(45): plan [INFO] (Day 15): cutoff: 0.04 S prob: 1.00
+ Actions taken:    W       H       H       W       W       W       W       W       W   
+ Utilities:        5.15    7.23    7.23   12.38   12.38   12.38   12.38   12.38   12.38
+ Risks (%):       0.002   0.000   0.000   0.002   0.002   0.002   0.002   0.002   0.002
 group_game(141): simulate [INFO] (Day 15): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       H       W       W       W       W       W       W   
- Utilities:        4.66    6.40    5.79   12.29   12.29   12.29   12.29   12.29   12.29
- Risks (%):       0.000   0.003   0.000   0.003   0.003   0.003   0.003   0.003   0.003
-simple(45): plan [INFO] (Day 16): cutoff: 0.05 S prob: 1.00
-simple(45): plan [INFO] (Day 16): cutoff: 0.05 S prob: 1.00
-simple(45): plan [INFO] (Day 16): cutoff: 0.05 S prob: 1.00
+ Actions taken:    H       H       W       W       W       W       W       W       W   
+ Utilities:        5.15    7.23    8.04   13.19   13.19   13.19   13.19   13.19   13.19
+ Risks (%):       0.000   0.000   0.003   0.003   0.003   0.003   0.003   0.003   0.003
 group_game(141): simulate [INFO] (Day 16): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       W       W       W       W       W       W       W   
- Utilities:        5.63    6.40    6.75   13.25   13.25   13.25   13.25   13.25   13.25
- Risks (%):       0.003   0.000   0.003   0.003   0.003   0.003   0.003   0.003   0.003
-simple(45): plan [INFO] (Day 17): cutoff: 0.05 S prob: 1.00
-simple(45): plan [INFO] (Day 17): cutoff: 0.05 S prob: 1.00
-simple(45): plan [INFO] (Day 17): cutoff: 0.05 S prob: 1.00
+ Actions taken:    W       W       H       W       W       W       W       W       W   
+ Utilities:        6.07    8.14    8.04   14.11   14.11   14.11   14.11   14.11   14.11
+ Risks (%):       0.003   0.003   0.000   0.003   0.003   0.003   0.003   0.003   0.003
 group_game(141): simulate [INFO] (Day 17): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       H       W       W       W       W       W       W   
- Utilities:        5.63    7.19    6.75   14.05   14.05   14.05   14.05   14.05   14.05
- Risks (%):       0.000   0.003   0.000   0.003   0.003   0.003   0.003   0.003   0.003
-simple(45): plan [INFO] (Day 18): cutoff: 0.05 S prob: 1.00
-simple(45): plan [INFO] (Day 18): cutoff: 0.05 S prob: 1.00
-simple(45): plan [INFO] (Day 18): cutoff: 0.05 S prob: 1.00
+ Actions taken:    H       H       H       W       W       W       W       W       W   
+ Utilities:        6.07    8.14    8.04   14.86   14.86   14.86   14.86   14.86   14.86
+ Risks (%):       0.000   0.000   0.000   0.003   0.003   0.003   0.003   0.003   0.003
 group_game(141): simulate [INFO] (Day 18): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:        5.63    7.19    6.75   14.69   14.69   14.69   14.69   14.69   14.69
- Risks (%):       0.000   0.000   0.000   0.003   0.003   0.003   0.003   0.003   0.003
-simple(45): plan [INFO] (Day 19): cutoff: 0.05 S prob: 1.00
-simple(45): plan [INFO] (Day 19): cutoff: 0.05 S prob: 1.00
-simple(45): plan [INFO] (Day 19): cutoff: 0.05 S prob: 1.00
+ Actions taken:    H       W       W       W       W       W       W       W       W   
+ Utilities:        6.07    9.13    9.02   15.85   15.85   15.85   15.85   15.85   15.85
+ Risks (%):       0.000   0.003   0.003   0.003   0.003   0.003   0.003   0.003   0.003
 group_game(141): simulate [INFO] (Day 19): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:        6.54    7.19    6.75   15.60   15.60   15.60   15.60   15.60   15.60
- Risks (%):       0.003   0.000   0.000   0.003   0.003   0.003   0.003   0.003   0.003
-simple(45): plan [INFO] (Day 20): cutoff: 0.05 S prob: 1.00
-simple(45): plan [INFO] (Day 20): cutoff: 0.05 S prob: 1.00
-simple(45): plan [INFO] (Day 20): cutoff: 0.05 S prob: 1.00
+ Actions taken:    H       H       H       W       W       W       W       W       W   
+ Utilities:        6.07    9.13    9.02   16.53   16.53   16.53   16.53   16.53   16.53
+ Risks (%):       0.000   0.000   0.000   0.003   0.003   0.003   0.003   0.003   0.003
 group_game(141): simulate [INFO] (Day 20): 
  States:           S       S       S       S       S       S       S       S       S   
  Actions taken:    H       W       H       W       W       W       W       W       W   
- Utilities:        6.54    8.02    6.75   16.42   16.42   16.42   16.42   16.42   16.42
+ Utilities:        6.07    9.95    9.02   17.35   17.35   17.35   17.35   17.35   17.35
  Risks (%):       0.000   0.004   0.000   0.004   0.004   0.004   0.004   0.004   0.004
-simple(45): plan [INFO] (Day 21): cutoff: 0.05 S prob: 1.00
-simple(45): plan [INFO] (Day 21): cutoff: 0.05 S prob: 1.00
-simple(45): plan [INFO] (Day 21): cutoff: 0.05 S prob: 1.00
 group_game(141): simulate [INFO] (Day 21): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:        7.39    8.02    6.75   17.27   17.27   17.27   17.27   17.27   17.27
- Risks (%):       0.004   0.000   0.000   0.004   0.004   0.004   0.004   0.004   0.004
-simple(45): plan [INFO] (Day 22): cutoff: 0.06 S prob: 1.00
-simple(45): plan [INFO] (Day 22): cutoff: 0.06 S prob: 1.00
-simple(45): plan [INFO] (Day 22): cutoff: 0.06 S prob: 1.00
+ Actions taken:    H       H       W       W       W       W       W       W       W   
+ Utilities:        6.07    9.95    9.85   18.18   18.18   18.18   18.18   18.18   18.18
+ Risks (%):       0.000   0.000   0.004   0.004   0.004   0.004   0.004   0.004   0.004
 group_game(141): simulate [INFO] (Day 22): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       W       W       W       W       W       W       W   
- Utilities:        7.39    8.96    7.68   18.21   18.21   18.21   18.21   18.21   18.21
- Risks (%):       0.000   0.004   0.004   0.004   0.004   0.004   0.004   0.004   0.004
-simple(45): plan [INFO] (Day 23): cutoff: 0.07 S prob: 1.00
-simple(45): plan [INFO] (Day 23): cutoff: 0.07 S prob: 1.00
-simple(45): plan [INFO] (Day 23): cutoff: 0.07 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:        6.07   10.74    9.85   18.97   18.97   18.97   18.97   18.97   18.97
+ Risks (%):       0.000   0.004   0.000   0.004   0.004   0.004   0.004   0.004   0.004
 group_game(141): simulate [INFO] (Day 23): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:        8.27    8.96    7.68   19.09   19.09   19.09   19.09   19.09   19.09
- Risks (%):       0.005   0.000   0.000   0.005   0.005   0.005   0.005   0.005   0.005
-simple(45): plan [INFO] (Day 24): cutoff: 0.06 S prob: 1.00
-simple(45): plan [INFO] (Day 24): cutoff: 0.06 S prob: 1.00
-simple(45): plan [INFO] (Day 24): cutoff: 0.06 S prob: 1.00
+ Actions taken:    W       H       W       W       W       W       W       W       W   
+ Utilities:        7.06   10.74   10.84   19.96   19.96   19.96   19.96   19.96   19.96
+ Risks (%):       0.005   0.000   0.005   0.005   0.005   0.005   0.005   0.005   0.005
 group_game(141): simulate [INFO] (Day 24): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:        8.27    8.96    7.68   19.74   19.74   19.74   19.74   19.74   19.74
- Risks (%):       0.000   0.000   0.000   0.005   0.005   0.005   0.005   0.005   0.005
-simple(45): plan [INFO] (Day 25): cutoff: 0.06 S prob: 1.00
-simple(45): plan [INFO] (Day 25): cutoff: 0.06 S prob: 1.00
-simple(45): plan [INFO] (Day 25): cutoff: 0.06 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:        7.06   11.66   10.84   20.88   20.88   20.88   20.88   20.88   20.88
+ Risks (%):       0.000   0.005   0.000   0.005   0.005   0.005   0.005   0.005   0.005
 group_game(141): simulate [INFO] (Day 25): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       W       W       W       W       W       W   
- Utilities:        9.31   10.00    8.72   20.78   20.78   20.78   20.78   20.78   20.78
- Risks (%):       0.005   0.005   0.005   0.005   0.005   0.005   0.005   0.005   0.005
-simple(45): plan [INFO] (Day 26): cutoff: 0.09 S prob: 1.00
-simple(45): plan [INFO] (Day 26): cutoff: 0.09 S prob: 1.00
-simple(45): plan [INFO] (Day 26): cutoff: 0.09 S prob: 1.00
+ Actions taken:    H       H       W       W       W       W       W       W       W   
+ Utilities:        7.06   11.66   11.71   21.74   21.74   21.74   21.74   21.74   21.74
+ Risks (%):       0.000   0.000   0.005   0.005   0.005   0.005   0.005   0.005   0.005
 group_game(141): simulate [INFO] (Day 26): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:        9.31   10.00    8.72   21.43   21.43   21.43   21.43   21.43   21.43
- Risks (%):       0.000   0.000   0.000   0.006   0.006   0.006   0.006   0.006   0.006
-simple(45): plan [INFO] (Day 27): cutoff: 0.06 S prob: 1.00
-simple(45): plan [INFO] (Day 27): cutoff: 0.06 S prob: 1.00
-simple(45): plan [INFO] (Day 27): cutoff: 0.06 S prob: 1.00
+ Actions taken:    W       W       H       W       W       W       W       W       W   
+ Utilities:        7.97   12.56   11.71   22.65   22.65   22.65   22.65   22.65   22.65
+ Risks (%):       0.006   0.006   0.000   0.006   0.006   0.006   0.006   0.006   0.006
 group_game(141): simulate [INFO] (Day 27): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       H       W       W       W       W       W       W   
- Utilities:       10.33   11.02    8.72   22.45   22.45   22.45   22.45   22.45   22.45
- Risks (%):       0.006   0.006   0.000   0.006   0.006   0.006   0.006   0.006   0.006
-simple(45): plan [INFO] (Day 28): cutoff: 0.08 S prob: 1.00
-simple(45): plan [INFO] (Day 28): cutoff: 0.08 S prob: 1.00
-simple(45): plan [INFO] (Day 28): cutoff: 0.08 S prob: 1.00
+ Actions taken:    H       H       W       W       W       W       W       W       W   
+ Utilities:        7.97   12.56   12.56   23.50   23.50   23.50   23.50   23.50   23.50
+ Risks (%):       0.000   0.000   0.006   0.006   0.006   0.006   0.006   0.006   0.006
 group_game(141): simulate [INFO] (Day 28): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:       10.33   11.02    8.72   23.07   23.07   23.07   23.07   23.07   23.07
- Risks (%):       0.001   0.001   0.001   0.007   0.007   0.007   0.007   0.007   0.007
-simple(45): plan [INFO] (Day 29): cutoff: 0.07 S prob: 1.00
-simple(45): plan [INFO] (Day 29): cutoff: 0.07 S prob: 1.00
-simple(45): plan [INFO] (Day 29): cutoff: 0.07 S prob: 1.00
+ Actions taken:    W       H       H       W       W       W       W       W       W   
+ Utilities:        8.69   12.56   12.56   24.23   24.23   24.23   24.23   24.23   24.23
+ Risks (%):       0.007   0.001   0.001   0.007   0.007   0.007   0.007   0.007   0.007
 group_game(141): simulate [INFO] (Day 29): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       W       W       W       W       W       W   
- Utilities:       11.43   12.12    9.82   24.17   24.17   24.17   24.17   24.17   24.17
- Risks (%):       0.007   0.007   0.007   0.007   0.007   0.007   0.007   0.007   0.007
-simple(45): plan [INFO] (Day 30): cutoff: 0.10 S prob: 1.00
-simple(45): plan [INFO] (Day 30): cutoff: 0.10 S prob: 1.00
-simple(45): plan [INFO] (Day 30): cutoff: 0.10 S prob: 1.00
+ Actions taken:    H       H       H       W       W       W       W       W       W   
+ Utilities:        8.69   12.56   12.56   24.83   24.83   24.83   24.83   24.83   24.83
+ Risks (%):       0.001   0.001   0.001   0.007   0.007   0.007   0.007   0.007   0.007
 group_game(141): simulate [INFO] (Day 30): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:       11.43   12.12    9.82   24.86   24.86   24.86   24.86   24.86   24.86
- Risks (%):       0.001   0.001   0.001   0.008   0.008   0.008   0.008   0.008   0.008
-simple(45): plan [INFO] (Day 31): cutoff: 0.07 S prob: 1.00
-simple(45): plan [INFO] (Day 31): cutoff: 0.07 S prob: 1.00
-simple(45): plan [INFO] (Day 31): cutoff: 0.07 S prob: 1.00
+ Actions taken:    W       W       W       W       W       W       W       W       W   
+ Utilities:        9.80   13.68   13.67   25.94   25.94   25.94   25.94   25.94   25.94
+ Risks (%):       0.008   0.008   0.008   0.008   0.008   0.008   0.008   0.008   0.008
 group_game(141): simulate [INFO] (Day 31): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       H       W       W       W       W       W       W   
- Utilities:       12.40   13.09    9.82   25.84   25.84   25.84   25.84   25.84   25.84
- Risks (%):       0.009   0.009   0.001   0.009   0.009   0.009   0.009   0.009   0.009
-simple(45): plan [INFO] (Day 32): cutoff: 0.10 S prob: 1.00
-simple(45): plan [INFO] (Day 32): cutoff: 0.10 S prob: 1.00
-simple(45): plan [INFO] (Day 32): cutoff: 0.10 S prob: 1.00
+ Actions taken:    H       H       H       W       W       W       W       W       W   
+ Utilities:        9.80   13.68   13.67   26.64   26.64   26.64   26.64   26.64   26.64
+ Risks (%):       0.001   0.001   0.001   0.009   0.009   0.009   0.009   0.009   0.009
 group_game(141): simulate [INFO] (Day 32): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       W       W       W       W       W       W       W   
- Utilities:       12.40   13.09   10.59   26.60   26.60   26.60   26.60   26.60   26.60
- Risks (%):       0.001   0.001   0.009   0.009   0.009   0.009   0.009   0.009   0.009
-simple(45): plan [INFO] (Day 33): cutoff: 0.09 S prob: 1.00
-simple(45): plan [INFO] (Day 33): cutoff: 0.09 S prob: 1.00
-simple(45): plan [INFO] (Day 33): cutoff: 0.09 S prob: 1.00
+ Actions taken:    W       W       H       W       W       W       W       W       W   
+ Utilities:       10.75   14.62   13.67   27.58   27.58   27.58   27.58   27.58   27.58
+ Risks (%):       0.009   0.009   0.001   0.009   0.009   0.009   0.009   0.009   0.009
 group_game(141): simulate [INFO] (Day 33): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       13.23   13.09   10.59   27.42   27.42   27.42   27.42   27.42   27.42
- Risks (%):       0.010   0.001   0.001   0.010   0.010   0.010   0.010   0.010   0.010
-simple(45): plan [INFO] (Day 34): cutoff: 0.09 S prob: 1.00
-simple(45): plan [INFO] (Day 34): cutoff: 0.09 S prob: 1.00
-simple(45): plan [INFO] (Day 34): cutoff: 0.09 S prob: 1.00
+ Actions taken:    H       H       W       W       W       W       W       W       W   
+ Utilities:       10.75   14.62   14.49   28.40   28.40   28.40   28.40   28.40   28.40
+ Risks (%):       0.001   0.001   0.010   0.010   0.010   0.010   0.010   0.010   0.010
 group_game(141): simulate [INFO] (Day 34): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       W       W       W       W       W       W       W   
- Utilities:       13.23   14.01   11.51   28.34   28.34   28.34   28.34   28.34   28.34
- Risks (%):       0.001   0.011   0.011   0.011   0.011   0.011   0.011   0.011   0.011
-simple(45): plan [INFO] (Day 35): cutoff: 0.11 S prob: 1.00
-simple(45): plan [INFO] (Day 35): cutoff: 0.11 S prob: 1.00
-simple(45): plan [INFO] (Day 35): cutoff: 0.11 S prob: 1.00
+ Actions taken:    W       W       H       W       W       W       W       W       W   
+ Utilities:       11.67   15.54   14.49   29.32   29.32   29.32   29.32   29.32   29.32
+ Risks (%):       0.011   0.011   0.001   0.011   0.011   0.011   0.011   0.011   0.011
 group_game(141): simulate [INFO] (Day 35): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       13.99   14.01   11.51   29.11   29.11   29.11   29.11   29.11   29.11
- Risks (%):       0.012   0.001   0.001   0.012   0.012   0.012   0.012   0.012   0.012
-simple(45): plan [INFO] (Day 36): cutoff: 0.10 S prob: 1.00
-simple(45): plan [INFO] (Day 36): cutoff: 0.10 S prob: 1.00
-simple(45): plan [INFO] (Day 36): cutoff: 0.10 S prob: 1.00
+ Actions taken:    H       H       W       W       W       W       W       W       W   
+ Utilities:       11.67   15.54   15.41   30.25   30.25   30.25   30.25   30.25   30.25
+ Risks (%):       0.001   0.001   0.012   0.012   0.012   0.012   0.012   0.012   0.012
 group_game(141): simulate [INFO] (Day 36): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       W       W       W       W       W       W       W   
- Utilities:       13.99   14.91   12.41   30.01   30.01   30.01   30.01   30.01   30.01
- Risks (%):       0.001   0.012   0.012   0.012   0.012   0.012   0.012   0.012   0.012
-simple(45): plan [INFO] (Day 37): cutoff: 0.12 S prob: 1.00
-simple(45): plan [INFO] (Day 37): cutoff: 0.12 S prob: 1.00
-simple(45): plan [INFO] (Day 37): cutoff: 0.12 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:       11.67   16.39   15.41   31.09   31.09   31.09   31.09   31.09   31.09
+ Risks (%):       0.001   0.012   0.001   0.012   0.012   0.012   0.012   0.012   0.012
 group_game(141): simulate [INFO] (Day 37): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       14.83   14.91   12.41   30.85   30.85   30.85   30.85   30.85   30.85
- Risks (%):       0.013   0.001   0.001   0.013   0.013   0.013   0.013   0.013   0.013
-simple(45): plan [INFO] (Day 38): cutoff: 0.10 S prob: 1.00
-simple(45): plan [INFO] (Day 38): cutoff: 0.10 S prob: 1.00
-simple(45): plan [INFO] (Day 38): cutoff: 0.10 S prob: 1.00
+ Actions taken:    W       H       W       W       W       W       W       W       W   
+ Utilities:       12.63   16.39   16.38   32.06   32.06   32.06   32.06   32.06   32.06
+ Risks (%):       0.013   0.001   0.013   0.013   0.013   0.013   0.013   0.013   0.013
 group_game(141): simulate [INFO] (Day 38): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       W       W       W       W       W       W       W   
- Utilities:       14.83   15.90   13.40   31.84   31.84   31.84   31.84   31.84   31.84
- Risks (%):       0.001   0.014   0.014   0.014   0.014   0.014   0.014   0.014   0.014
-simple(45): plan [INFO] (Day 39): cutoff: 0.13 S prob: 1.00
-simple(45): plan [INFO] (Day 39): cutoff: 0.13 S prob: 1.00
-simple(45): plan [INFO] (Day 39): cutoff: 0.13 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:       12.63   17.20   16.38   32.87   32.87   32.87   32.87   32.87   32.87
+ Risks (%):       0.001   0.014   0.001   0.014   0.014   0.014   0.014   0.014   0.014
 group_game(141): simulate [INFO] (Day 39): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       15.68   15.90   13.40   32.69   32.69   32.69   32.69   32.69   32.69
- Risks (%):       0.016   0.001   0.001   0.016   0.016   0.016   0.016   0.016   0.016
-simple(45): plan [INFO] (Day 40): cutoff: 0.11 S prob: 1.00
-simple(45): plan [INFO] (Day 40): cutoff: 0.11 S prob: 1.00
-simple(45): plan [INFO] (Day 40): cutoff: 0.11 S prob: 1.00
+ Actions taken:    H       H       W       W       W       W       W       W       W   
+ Utilities:       12.63   17.20   17.22   33.72   33.72   33.72   33.72   33.72   33.72
+ Risks (%):       0.001   0.001   0.016   0.016   0.016   0.016   0.016   0.016   0.016
 group_game(141): simulate [INFO] (Day 40): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       W       W       W       W       W       W       W   
- Utilities:       15.68   16.85   14.34   33.64   33.64   33.64   33.64   33.64   33.64
- Risks (%):       0.001   0.017   0.017   0.017   0.017   0.017   0.017   0.017   0.017
-simple(45): plan [INFO] (Day 41): cutoff: 0.13 S prob: 1.00
-simple(45): plan [INFO] (Day 41): cutoff: 0.13 S prob: 1.00
-simple(45): plan [INFO] (Day 41): cutoff: 0.13 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:       12.63   17.98   17.22   34.50   34.50   34.50   34.50   34.50   34.50
+ Risks (%):       0.001   0.017   0.001   0.017   0.017   0.017   0.017   0.017   0.017
 group_game(141): simulate [INFO] (Day 41): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       16.43   16.85   14.34   34.38   34.38   34.38   34.38   34.38   34.38
- Risks (%):       0.018   0.001   0.001   0.018   0.018   0.018   0.018   0.018   0.018
-simple(45): plan [INFO] (Day 42): cutoff: 0.12 S prob: 1.00
-simple(45): plan [INFO] (Day 42): cutoff: 0.12 S prob: 1.00
-simple(45): plan [INFO] (Day 42): cutoff: 0.12 S prob: 1.00
+ Actions taken:    W       H       W       W       W       W       W       W       W   
+ Utilities:       13.62   17.98   18.21   35.48   35.48   35.48   35.48   35.48   35.48
+ Risks (%):       0.018   0.001   0.018   0.018   0.018   0.018   0.018   0.018   0.018
 group_game(141): simulate [INFO] (Day 42): 
  States:           S       S       S       S       S       S       S       S       S   
  Actions taken:    H       W       H       W       W       W       W       W       W   
- Utilities:       16.43   17.71   14.34   35.24   35.24   35.24   35.24   35.24   35.24
+ Utilities:       13.62   18.86   18.21   36.36   36.36   36.36   36.36   36.36   36.36
  Risks (%):       0.002   0.020   0.002   0.020   0.020   0.020   0.020   0.020   0.020
-simple(45): plan [INFO] (Day 43): cutoff: 0.13 S prob: 1.00
-simple(45): plan [INFO] (Day 43): cutoff: 0.13 S prob: 1.00
-simple(45): plan [INFO] (Day 43): cutoff: 0.13 S prob: 1.00
 group_game(141): simulate [INFO] (Day 43): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       17.27   17.71   14.34   36.09   36.09   36.09   36.09   36.09   36.09
- Risks (%):       0.021   0.002   0.002   0.021   0.021   0.021   0.021   0.021   0.021
-simple(45): plan [INFO] (Day 44): cutoff: 0.13 S prob: 1.00
-simple(45): plan [INFO] (Day 44): cutoff: 0.13 S prob: 1.00
-simple(45): plan [INFO] (Day 44): cutoff: 0.13 S prob: 1.00
+ Actions taken:    W       H       W       W       W       W       W       W       W   
+ Utilities:       14.60   18.86   19.19   37.34   37.34   37.34   37.34   37.34   37.34
+ Risks (%):       0.021   0.002   0.021   0.021   0.021   0.021   0.021   0.021   0.021
 group_game(141): simulate [INFO] (Day 44): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       W       W       W       W       W       W       W   
- Utilities:       17.27   18.65   15.28   37.02   37.02   37.02   37.02   37.02   37.02
- Risks (%):       0.002   0.023   0.023   0.023   0.023   0.023   0.023   0.023   0.023
-simple(45): plan [INFO] (Day 45): cutoff: 0.16 S prob: 1.00
-simple(45): plan [INFO] (Day 45): cutoff: 0.16 S prob: 1.00
-simple(45): plan [INFO] (Day 45): cutoff: 0.16 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:       14.60   19.77   19.19   38.25   38.25   38.25   38.25   38.25   38.25
+ Risks (%):       0.002   0.023   0.002   0.023   0.023   0.023   0.023   0.023   0.023
 group_game(141): simulate [INFO] (Day 45): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:       17.27   18.65   15.28   37.67   37.67   37.67   37.67   37.67   37.67
- Risks (%):       0.002   0.002   0.002   0.025   0.025   0.025   0.025   0.025   0.025
-simple(45): plan [INFO] (Day 46): cutoff: 0.13 S prob: 1.00
-simple(45): plan [INFO] (Day 46): cutoff: 0.13 S prob: 1.00
-simple(45): plan [INFO] (Day 46): cutoff: 0.13 S prob: 1.00
+ Actions taken:    H       H       W       W       W       W       W       W       W   
+ Utilities:       14.60   19.77   19.94   39.00   39.00   39.00   39.00   39.00   39.00
+ Risks (%):       0.002   0.002   0.025   0.025   0.025   0.025   0.025   0.025   0.025
 group_game(141): simulate [INFO] (Day 46): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       H       W       W       W       W       W       W   
- Utilities:       18.20   19.58   15.28   38.60   38.60   38.60   38.60   38.60   38.60
- Risks (%):       0.026   0.026   0.002   0.026   0.026   0.026   0.026   0.026   0.026
-simple(45): plan [INFO] (Day 47): cutoff: 0.17 S prob: 1.00
-simple(45): plan [INFO] (Day 47): cutoff: 0.17 S prob: 1.00
-simple(45): plan [INFO] (Day 47): cutoff: 0.17 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:       14.60   20.58   19.94   39.81   39.81   39.81   39.81   39.81   39.81
+ Risks (%):       0.002   0.026   0.002   0.026   0.026   0.026   0.026   0.026   0.026
 group_game(141): simulate [INFO] (Day 47): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:       18.20   19.58   15.28   39.27   39.27   39.27   39.27   39.27   39.27
- Risks (%):       0.002   0.002   0.002   0.029   0.029   0.029   0.029   0.029   0.029
-simple(45): plan [INFO] (Day 48): cutoff: 0.14 S prob: 1.00
-simple(45): plan [INFO] (Day 48): cutoff: 0.14 S prob: 1.00
-simple(45): plan [INFO] (Day 48): cutoff: 0.14 S prob: 1.00
+ Actions taken:    W       H       W       W       W       W       W       W       W   
+ Utilities:       15.56   20.58   20.91   40.78   40.78   40.78   40.78   40.78   40.78
+ Risks (%):       0.029   0.002   0.029   0.029   0.029   0.029   0.029   0.029   0.029
 group_game(141): simulate [INFO] (Day 48): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       18.98   19.58   15.28   40.04   40.04   40.04   40.04   40.04   40.04
- Risks (%):       0.031   0.002   0.002   0.031   0.031   0.031   0.031   0.031   0.031
-simple(45): plan [INFO] (Day 49): cutoff: 0.16 S prob: 1.00
-simple(45): plan [INFO] (Day 49): cutoff: 0.16 S prob: 1.00
-simple(45): plan [INFO] (Day 49): cutoff: 0.16 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:       15.56   21.43   20.91   41.62   41.62   41.62   41.62   41.62   41.62
+ Risks (%):       0.002   0.031   0.002   0.031   0.031   0.031   0.031   0.031   0.031
 group_game(141): simulate [INFO] (Day 49): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       H       W       W       W       W       W       W   
- Utilities:       18.98   20.35   15.28   40.81   40.81   40.81   40.81   40.81   40.81
- Risks (%):       0.003   0.033   0.003   0.033   0.033   0.033   0.033   0.033   0.033
-simple(45): plan [INFO] (Day 50): cutoff: 0.16 S prob: 1.00
-simple(45): plan [INFO] (Day 50): cutoff: 0.16 S prob: 1.00
-simple(45): plan [INFO] (Day 50): cutoff: 0.16 S prob: 1.00
+ Actions taken:    H       H       H       W       W       W       W       W       W   
+ Utilities:       15.56   21.43   20.91   42.30   42.30   42.30   42.30   42.30   42.30
+ Risks (%):       0.003   0.003   0.003   0.033   0.033   0.033   0.033   0.033   0.033
 group_game(141): simulate [INFO] (Day 50): 
  States:           S       S       S       S       S       S       S       S       S   
  Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       19.73   20.35   15.28   41.56   41.56   41.56   41.56   41.56   41.56
+ Utilities:       16.44   21.43   20.91   43.18   43.18   43.18   43.18   43.18   43.18
  Risks (%):       0.036   0.003   0.003   0.036   0.036   0.036   0.036   0.036   0.036
-simple(45): plan [INFO] (Day 51): cutoff: 0.17 S prob: 1.00
-simple(45): plan [INFO] (Day 51): cutoff: 0.17 S prob: 1.00
-simple(45): plan [INFO] (Day 51): cutoff: 0.17 S prob: 1.00
 group_game(141): simulate [INFO] (Day 51): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       H       W       W       W       W       W       W   
- Utilities:       19.73   21.17   15.28   42.39   42.39   42.39   42.39   42.39   42.39
- Risks (%):       0.003   0.039   0.003   0.039   0.039   0.039   0.039   0.039   0.039
-simple(45): plan [INFO] (Day 52): cutoff: 0.18 S prob: 1.00
-simple(45): plan [INFO] (Day 52): cutoff: 0.18 S prob: 1.00
-simple(45): plan [INFO] (Day 52): cutoff: 0.18 S prob: 1.00
+ Actions taken:    H       H       H       W       W       W       W       W       W   
+ Utilities:       16.44   21.43   20.91   43.70   43.70   43.70   43.70   43.70   43.70
+ Risks (%):       0.003   0.003   0.003   0.039   0.039   0.039   0.039   0.039   0.039
 group_game(141): simulate [INFO] (Day 52): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       W       W       W       W       W       W       W   
- Utilities:       20.72   21.17   16.27   43.37   43.37   43.37   43.37   43.37   43.37
- Risks (%):       0.042   0.003   0.042   0.042   0.042   0.042   0.042   0.042   0.042
-simple(45): plan [INFO] (Day 53): cutoff: 0.21 S prob: 1.00
-simple(45): plan [INFO] (Day 53): cutoff: 0.21 S prob: 1.00
-simple(45): plan [INFO] (Day 53): cutoff: 0.21 S prob: 1.00
+ Actions taken:    W       W       H       W       W       W       W       W       W   
+ Utilities:       17.43   22.41   20.91   44.69   44.69   44.69   44.69   44.69   44.69
+ Risks (%):       0.042   0.042   0.003   0.042   0.042   0.042   0.042   0.042   0.042
 group_game(141): simulate [INFO] (Day 53): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       H       W       W       W       W       W       W   
- Utilities:       20.72   21.85   16.27   44.06   44.06   44.06   44.06   44.06   44.06
- Risks (%):       0.003   0.045   0.003   0.045   0.045   0.045   0.045   0.045   0.045
-simple(45): plan [INFO] (Day 54): cutoff: 0.19 S prob: 1.00
-simple(45): plan [INFO] (Day 54): cutoff: 0.19 S prob: 1.00
-simple(45): plan [INFO] (Day 54): cutoff: 0.19 S prob: 1.00
+ Actions taken:    H       H       H       W       W       W       W       W       W   
+ Utilities:       17.43   22.41   20.91   45.31   45.31   45.31   45.31   45.31   45.31
+ Risks (%):       0.003   0.003   0.003   0.045   0.045   0.045   0.045   0.045   0.045
 group_game(141): simulate [INFO] (Day 54): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       W       W       W       W       W       W       W   
- Utilities:       20.72   21.85   17.02   44.81   44.81   44.81   44.81   44.81   44.81
- Risks (%):       0.004   0.004   0.048   0.048   0.048   0.048   0.048   0.048   0.048
-simple(45): plan [INFO] (Day 55): cutoff: 0.20 S prob: 1.00
-simple(45): plan [INFO] (Day 55): cutoff: 0.20 S prob: 1.00
-simple(45): plan [INFO] (Day 55): cutoff: 0.20 S prob: 1.00
+ Actions taken:    W       H       W       W       W       W       W       W       W   
+ Utilities:       18.34   22.41   21.81   46.22   46.22   46.22   46.22   46.22   46.22
+ Risks (%):       0.048   0.004   0.048   0.048   0.048   0.048   0.048   0.048   0.048
 group_game(141): simulate [INFO] (Day 55): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       H       W       W       W       W       W       W   
- Utilities:       21.65   22.78   17.02   45.74   45.74   45.74   45.74   45.74   45.74
- Risks (%):       0.052   0.052   0.004   0.052   0.052   0.052   0.052   0.052   0.052
-simple(45): plan [INFO] (Day 56): cutoff: 0.24 S prob: 1.00
-simple(45): plan [INFO] (Day 56): cutoff: 0.24 S prob: 1.00
-simple(45): plan [INFO] (Day 56): cutoff: 0.24 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:       18.34   23.23   21.81   47.03   47.03   47.03   47.03   47.03   47.03
+ Risks (%):       0.004   0.052   0.004   0.052   0.052   0.052   0.052   0.052   0.052
 group_game(141): simulate [INFO] (Day 56): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:       21.65   22.78   17.02   46.44   46.44   46.44   46.44   46.44   46.44
- Risks (%):       0.004   0.004   0.004   0.056   0.056   0.056   0.056   0.056   0.056
-simple(45): plan [INFO] (Day 57): cutoff: 0.19 S prob: 1.00
-simple(45): plan [INFO] (Day 57): cutoff: 0.19 S prob: 1.00
-simple(45): plan [INFO] (Day 57): cutoff: 0.19 S prob: 1.00
+ Actions taken:    H       H       W       W       W       W       W       W       W   
+ Utilities:       18.34   23.23   22.60   47.82   47.82   47.82   47.82   47.82   47.82
+ Risks (%):       0.004   0.004   0.056   0.056   0.056   0.056   0.056   0.056   0.056
 group_game(141): simulate [INFO] (Day 57): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       W       W       W       W       W       W       W   
- Utilities:       21.65   23.67   17.92   47.34   47.34   47.34   47.34   47.34   47.34
- Risks (%):       0.005   0.060   0.060   0.060   0.060   0.060   0.060   0.060   0.060
-simple(45): plan [INFO] (Day 58): cutoff: 0.26 S prob: 1.00
-simple(45): plan [INFO] (Day 58): cutoff: 0.26 S prob: 1.00
-simple(45): plan [INFO] (Day 58): cutoff: 0.26 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:       18.34   24.04   22.60   48.63   48.63   48.63   48.63   48.63   48.63
+ Risks (%):       0.005   0.060   0.005   0.060   0.060   0.060   0.060   0.060   0.060
 group_game(141): simulate [INFO] (Day 58): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       22.52   23.67   17.92   48.20   48.20   48.20   48.20   48.20   48.20
- Risks (%):       0.065   0.005   0.005   0.065   0.065   0.065   0.065   0.065   0.065
-simple(45): plan [INFO] (Day 59): cutoff: 0.23 S prob: 1.00
-simple(45): plan [INFO] (Day 59): cutoff: 0.23 S prob: 1.00
-simple(45): plan [INFO] (Day 59): cutoff: 0.23 S prob: 1.00
+ Actions taken:    W       H       W       W       W       W       W       W       W   
+ Utilities:       19.35   24.04   23.61   49.64   49.64   49.64   49.64   49.64   49.64
+ Risks (%):       0.065   0.005   0.065   0.065   0.065   0.065   0.065   0.065   0.065
 group_game(141): simulate [INFO] (Day 59): 
  States:           S       S       S       S       S       S       S       S       S   
  Actions taken:    H       W       H       W       W       W       W       W       W   
- Utilities:       22.52   24.51   17.92   49.04   49.04   49.04   49.04   49.04   49.04
+ Utilities:       19.35   24.82   23.61   50.42   50.42   50.42   50.42   50.42   50.42
  Risks (%):       0.005   0.070   0.005   0.070   0.070   0.070   0.070   0.070   0.070
-simple(45): plan [INFO] (Day 60): cutoff: 0.24 S prob: 1.00
-simple(45): plan [INFO] (Day 60): cutoff: 0.24 S prob: 1.00
-simple(45): plan [INFO] (Day 60): cutoff: 0.24 S prob: 1.00
 group_game(141): simulate [INFO] (Day 60): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:       22.52   24.51   17.92   49.74   49.74   49.74   49.74   49.74   49.74
- Risks (%):       0.006   0.006   0.006   0.076   0.076   0.076   0.076   0.076   0.076
-simple(45): plan [INFO] (Day 61): cutoff: 0.22 S prob: 1.00
-simple(45): plan [INFO] (Day 61): cutoff: 0.22 S prob: 1.00
-simple(45): plan [INFO] (Day 61): cutoff: 0.22 S prob: 1.00
+ Actions taken:    W       H       W       W       W       W       W       W       W   
+ Utilities:       20.34   24.82   24.60   51.41   51.41   51.41   51.41   51.41   51.41
+ Risks (%):       0.076   0.006   0.076   0.076   0.076   0.076   0.076   0.076   0.076
 group_game(141): simulate [INFO] (Day 61): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       W       W       W       W       W       W   
- Utilities:       23.50   25.49   18.90   50.72   50.72   50.72   50.72   50.72   50.72
- Risks (%):       0.081   0.081   0.081   0.081   0.081   0.081   0.081   0.081   0.081
-simple(45): plan [INFO] (Day 62): cutoff: 0.34 S prob: 1.00
-simple(45): plan [INFO] (Day 62): cutoff: 0.34 S prob: 1.00
-simple(45): plan [INFO] (Day 62): cutoff: 0.34 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:       20.34   25.62   24.60   52.21   52.21   52.21   52.21   52.21   52.21
+ Risks (%):       0.006   0.081   0.006   0.081   0.081   0.081   0.081   0.081   0.081
 group_game(141): simulate [INFO] (Day 62): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:       23.50   25.49   18.90   51.35   51.35   51.35   51.35   51.35   51.35
- Risks (%):       0.007   0.007   0.007   0.088   0.088   0.088   0.088   0.088   0.088
-simple(45): plan [INFO] (Day 63): cutoff: 0.24 S prob: 1.00
-simple(45): plan [INFO] (Day 63): cutoff: 0.24 S prob: 1.00
-simple(45): plan [INFO] (Day 63): cutoff: 0.24 S prob: 1.00
+ Actions taken:    W       H       W       W       W       W       W       W       W   
+ Utilities:       21.25   25.62   25.51   53.13   53.13   53.13   53.13   53.13   53.13
+ Risks (%):       0.088   0.007   0.088   0.088   0.088   0.088   0.088   0.088   0.088
 group_game(141): simulate [INFO] (Day 63): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       24.35   25.49   18.90   52.21   52.21   52.21   52.21   52.21   52.21
- Risks (%):       0.094   0.007   0.007   0.094   0.094   0.094   0.094   0.094   0.094
-simple(45): plan [INFO] (Day 64): cutoff: 0.28 S prob: 1.00
-simple(45): plan [INFO] (Day 64): cutoff: 0.28 S prob: 1.00
-simple(45): plan [INFO] (Day 64): cutoff: 0.28 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:       21.25   26.42   25.51   53.93   53.93   53.93   53.93   53.93   53.93
+ Risks (%):       0.007   0.094   0.007   0.094   0.094   0.094   0.094   0.094   0.094
 group_game(141): simulate [INFO] (Day 64): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       W       W       W       W       W       W       W   
- Utilities:       24.35   25.49   19.76   53.07   53.07   53.07   53.07   53.07   53.07
- Risks (%):       0.008   0.008   0.102   0.102   0.102   0.102   0.102   0.102   0.102
-simple(45): plan [INFO] (Day 65): cutoff: 0.29 S prob: 1.00
-simple(45): plan [INFO] (Day 65): cutoff: 0.29 S prob: 1.00
-simple(45): plan [INFO] (Day 65): cutoff: 0.29 S prob: 1.00
+ Actions taken:    W       H       W       W       W       W       W       W       W   
+ Utilities:       22.15   26.42   26.42   54.83   54.83   54.83   54.83   54.83   54.83
+ Risks (%):       0.102   0.008   0.102   0.102   0.102   0.102   0.102   0.102   0.102
 group_game(141): simulate [INFO] (Day 65): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       H       W       W       W       W       W       W   
- Utilities:       25.33   26.47   19.76   54.04   54.04   54.04   54.04   54.04   54.04
- Risks (%):       0.109   0.109   0.008   0.109   0.109   0.109   0.109   0.109   0.109
-simple(45): plan [INFO] (Day 66): cutoff: 0.34 S prob: 1.00
-simple(45): plan [INFO] (Day 66): cutoff: 0.34 S prob: 1.00
-simple(45): plan [INFO] (Day 66): cutoff: 0.34 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:       22.15   27.29   26.42   55.70   55.70   55.70   55.70   55.70   55.70
+ Risks (%):       0.008   0.109   0.008   0.109   0.109   0.109   0.109   0.109   0.109
 group_game(141): simulate [INFO] (Day 66): 
  States:           S       S       S       S       S       S       S       S       S   
  Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:       25.33   26.47   19.76   54.65   54.65   54.65   54.65   54.65   54.65
+ Utilities:       22.15   27.29   26.42   56.39   56.39   56.39   56.39   56.39   56.39
  Risks (%):       0.009   0.009   0.009   0.118   0.118   0.118   0.118   0.118   0.118
-simple(45): plan [INFO] (Day 67): cutoff: 0.28 S prob: 1.00
-simple(45): plan [INFO] (Day 67): cutoff: 0.28 S prob: 1.00
-simple(45): plan [INFO] (Day 67): cutoff: 0.28 S prob: 1.00
 group_game(141): simulate [INFO] (Day 67): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       W       W       W       W       W       W   
- Utilities:       26.45   27.59   20.88   55.78   55.78   55.78   55.78   55.78   55.78
- Risks (%):       0.127   0.127   0.127   0.127   0.127   0.127   0.127   0.127   0.127
-simple(45): plan [INFO] (Day 68): cutoff: 0.42 S prob: 1.00
-simple(45): plan [INFO] (Day 68): cutoff: 0.42 S prob: 1.00
-simple(45): plan [INFO] (Day 68): cutoff: 0.42 S prob: 1.00
+ Actions taken:    W       H       H       W       W       W       W       W       W   
+ Utilities:       22.96   27.29   26.42   57.20   57.20   57.20   57.20   57.20   57.20
+ Risks (%):       0.127   0.010   0.010   0.127   0.127   0.127   0.127   0.127   0.127
 group_game(141): simulate [INFO] (Day 68): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:       26.45   27.59   20.88   56.48   56.48   56.48   56.48   56.48   56.48
- Risks (%):       0.010   0.010   0.010   0.136   0.136   0.136   0.136   0.136   0.136
-simple(45): plan [INFO] (Day 69): cutoff: 0.30 S prob: 1.00
-simple(45): plan [INFO] (Day 69): cutoff: 0.30 S prob: 1.00
-simple(45): plan [INFO] (Day 69): cutoff: 0.30 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:       22.96   28.12   26.42   58.03   58.03   58.03   58.03   58.03   58.03
+ Risks (%):       0.010   0.136   0.010   0.136   0.136   0.136   0.136   0.136   0.136
 group_game(141): simulate [INFO] (Day 69): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       27.23   27.59   20.88   57.26   57.26   57.26   57.26   57.26   57.26
- Risks (%):       0.146   0.011   0.011   0.146   0.146   0.146   0.146   0.146   0.146
-simple(45): plan [INFO] (Day 70): cutoff: 0.34 S prob: 1.00
-simple(45): plan [INFO] (Day 70): cutoff: 0.34 S prob: 1.00
-simple(45): plan [INFO] (Day 70): cutoff: 0.34 S prob: 1.00
+ Actions taken:    W       H       W       W       W       W       W       W       W   
+ Utilities:       23.91   28.12   27.37   58.97   58.97   58.97   58.97   58.97   58.97
+ Risks (%):       0.146   0.011   0.146   0.146   0.146   0.146   0.146   0.146   0.146
 group_game(141): simulate [INFO] (Day 70): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       W       W       W       W       W       W       W   
- Utilities:       27.23   27.59   21.71   58.08   58.08   58.08   58.08   58.08   58.08
- Risks (%):       0.012   0.012   0.157   0.157   0.157   0.157   0.157   0.157   0.157
-simple(45): plan [INFO] (Day 71): cutoff: 0.36 S prob: 1.00
-simple(45): plan [INFO] (Day 71): cutoff: 0.36 S prob: 1.00
-simple(45): plan [INFO] (Day 71): cutoff: 0.36 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:       23.91   28.96   27.37   59.81   59.81   59.81   59.81   59.81   59.81
+ Risks (%):       0.012   0.157   0.012   0.157   0.157   0.157   0.157   0.157   0.157
 group_game(141): simulate [INFO] (Day 71): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       H       W       W       W       W       W       W   
- Utilities:       27.23   28.39   21.71   58.88   58.88   58.88   58.88   58.88   58.88
- Risks (%):       0.013   0.169   0.013   0.169   0.169   0.169   0.169   0.169   0.169
-simple(45): plan [INFO] (Day 72): cutoff: 0.37 S prob: 1.00
-simple(45): plan [INFO] (Day 72): cutoff: 0.37 S prob: 1.00
-simple(45): plan [INFO] (Day 72): cutoff: 0.37 S prob: 1.00
+ Actions taken:    W       H       H       W       W       W       W       W       W   
+ Utilities:       24.60   28.96   27.37   60.50   60.50   60.50   60.50   60.50   60.50
+ Risks (%):       0.169   0.013   0.013   0.169   0.169   0.169   0.169   0.169   0.169
 group_game(141): simulate [INFO] (Day 72): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       28.03   28.39   21.71   59.68   59.68   59.68   59.68   59.68   59.68
- Risks (%):       0.182   0.014   0.014   0.182   0.182   0.182   0.182   0.182   0.182
-simple(45): plan [INFO] (Day 73): cutoff: 0.38 S prob: 1.00
-simple(45): plan [INFO] (Day 73): cutoff: 0.38 S prob: 1.00
-simple(45): plan [INFO] (Day 73): cutoff: 0.38 S prob: 1.00
+ Actions taken:    H       H       H       W       W       W       W       W       W   
+ Utilities:       24.60   28.96   27.37   61.10   61.10   61.10   61.10   61.10   61.10
+ Risks (%):       0.014   0.014   0.014   0.182   0.182   0.182   0.182   0.182   0.182
 group_game(141): simulate [INFO] (Day 73): 
  States:           S       S       S       S       S       S       S       S       S   
  Actions taken:    H       H       W       W       W       W       W       W       W   
- Utilities:       28.03   28.39   22.43   60.40   60.40   60.40   60.40   60.40   60.40
+ Utilities:       24.60   28.96   28.08   61.82   61.82   61.82   61.82   61.82   61.82
  Risks (%):       0.015   0.015   0.195   0.195   0.195   0.195   0.195   0.195   0.195
-simple(45): plan [INFO] (Day 74): cutoff: 0.40 S prob: 1.00
-simple(45): plan [INFO] (Day 74): cutoff: 0.40 S prob: 1.00
-simple(45): plan [INFO] (Day 74): cutoff: 0.40 S prob: 1.00
 group_game(141): simulate [INFO] (Day 74): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       H       W       W       W       W       W       W   
- Utilities:       28.88   29.24   22.43   61.25   61.25   61.25   61.25   61.25   61.25
- Risks (%):       0.210   0.210   0.016   0.210   0.210   0.210   0.210   0.210   0.210
-simple(45): plan [INFO] (Day 75): cutoff: 0.48 S prob: 1.00
-simple(45): plan [INFO] (Day 75): cutoff: 0.48 S prob: 1.00
-simple(45): plan [INFO] (Day 75): cutoff: 0.48 S prob: 1.00
+ Actions taken:    W       H       H       W       W       W       W       W       W   
+ Utilities:       25.48   28.96   28.08   62.70   62.70   62.70   62.70   62.70   62.70
+ Risks (%):       0.210   0.016   0.016   0.210   0.210   0.210   0.210   0.210   0.210
 group_game(141): simulate [INFO] (Day 75): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       W       W       W       W       W       W       W   
- Utilities:       28.88   29.24   23.27   62.09   62.09   62.09   62.09   62.09   62.09
- Risks (%):       0.017   0.017   0.225   0.225   0.225   0.225   0.225   0.225   0.225
-simple(45): plan [INFO] (Day 76): cutoff: 0.43 S prob: 1.00
-simple(45): plan [INFO] (Day 76): cutoff: 0.43 S prob: 1.00
-simple(45): plan [INFO] (Day 76): cutoff: 0.43 S prob: 1.00
+ Actions taken:    H       W       W       W       W       W       W       W       W   
+ Utilities:       25.48   29.95   29.08   63.69   63.69   63.69   63.69   63.69   63.69
+ Risks (%):       0.017   0.225   0.225   0.225   0.225   0.225   0.225   0.225   0.225
 group_game(141): simulate [INFO] (Day 76): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       H       W       W       W       W       W       W   
- Utilities:       29.85   30.22   23.27   63.06   63.06   63.06   63.06   63.06   63.06
- Risks (%):       0.242   0.242   0.019   0.242   0.242   0.242   0.242   0.242   0.242
-simple(45): plan [INFO] (Day 77): cutoff: 0.51 S prob: 1.00
-simple(45): plan [INFO] (Day 77): cutoff: 0.51 S prob: 1.00
-simple(45): plan [INFO] (Day 77): cutoff: 0.51 S prob: 1.00
+ Actions taken:    W       H       H       W       W       W       W       W       W   
+ Utilities:       26.39   29.95   29.08   64.60   64.60   64.60   64.60   64.60   64.60
+ Risks (%):       0.242   0.019   0.019   0.242   0.242   0.242   0.242   0.242   0.242
 group_game(141): simulate [INFO] (Day 77): 
  States:           S       S       S       S       S       S       S       S       S   
  Actions taken:    H       H       W       W       W       W       W       W       W   
- Utilities:       29.85   30.22   24.06   63.85   63.85   63.85   63.85   63.85   63.85
+ Utilities:       26.39   29.95   29.76   65.29   65.29   65.29   65.29   65.29   65.29
  Risks (%):       0.020   0.020   0.259   0.259   0.259   0.259   0.259   0.259   0.259
-simple(45): plan [INFO] (Day 78): cutoff: 0.46 S prob: 1.00
-simple(45): plan [INFO] (Day 78): cutoff: 0.46 S prob: 1.00
-simple(45): plan [INFO] (Day 78): cutoff: 0.46 S prob: 1.00
 group_game(141): simulate [INFO] (Day 78): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       30.63   30.22   24.06   64.63   64.63   64.63   64.63   64.63   64.63
- Risks (%):       0.278   0.021   0.021   0.278   0.278   0.278   0.278   0.278   0.278
-simple(45): plan [INFO] (Day 79): cutoff: 0.47 S prob: 1.00
-simple(45): plan [INFO] (Day 79): cutoff: 0.47 S prob: 1.00
-simple(45): plan [INFO] (Day 79): cutoff: 0.47 S prob: 1.00
+ Actions taken:    W       W       H       W       W       W       W       W       W   
+ Utilities:       27.25   30.80   29.76   66.14   66.14   66.14   66.14   66.14   66.14
+ Risks (%):       0.278   0.278   0.021   0.278   0.278   0.278   0.278   0.278   0.278
 group_game(141): simulate [INFO] (Day 79): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       W       W       W       W       W       W       W   
- Utilities:       30.63   31.21   25.04   65.61   65.61   65.61   65.61   65.61   65.61
- Risks (%):       0.023   0.298   0.298   0.298   0.298   0.298   0.298   0.298   0.298
-simple(45): plan [INFO] (Day 80): cutoff: 0.57 S prob: 1.00
-simple(45): plan [INFO] (Day 80): cutoff: 0.57 S prob: 1.00
-simple(45): plan [INFO] (Day 80): cutoff: 0.57 S prob: 1.00
+ Actions taken:    H       H       H       W       W       W       W       W       W   
+ Utilities:       27.25   30.80   29.76   66.79   66.79   66.79   66.79   66.79   66.79
+ Risks (%):       0.023   0.023   0.023   0.298   0.298   0.298   0.298   0.298   0.298
 group_game(141): simulate [INFO] (Day 80): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:       30.63   31.21   25.04   66.35   66.35   66.35   66.35   66.35   66.35
- Risks (%):       0.025   0.025   0.025   0.319   0.319   0.319   0.319   0.319   0.319
-simple(45): plan [INFO] (Day 81): cutoff: 0.46 S prob: 1.00
-simple(45): plan [INFO] (Day 81): cutoff: 0.46 S prob: 1.00
-simple(45): plan [INFO] (Day 81): cutoff: 0.46 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:       27.25   31.63   29.76   67.63   67.63   67.63   67.63   67.63   67.63
+ Risks (%):       0.025   0.319   0.025   0.319   0.319   0.319   0.319   0.319   0.319
 group_game(141): simulate [INFO] (Day 81): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       W       W       W       W       W       W   
- Utilities:       31.68   32.25   26.09   67.40   67.40   67.40   67.40   67.40   67.40
- Risks (%):       0.341   0.341   0.341   0.341   0.341   0.341   0.341   0.341   0.341
-simple(45): plan [INFO] (Day 82): cutoff: 0.68 S prob: 1.00
-simple(45): plan [INFO] (Day 82): cutoff: 0.68 S prob: 1.00
-simple(45): plan [INFO] (Day 82): cutoff: 0.68 S prob: 1.00
+ Actions taken:    W       H       W       W       W       W       W       W       W   
+ Utilities:       28.25   31.63   30.76   68.63   68.63   68.63   68.63   68.63   68.63
+ Risks (%):       0.341   0.026   0.341   0.341   0.341   0.341   0.341   0.341   0.341
 group_game(141): simulate [INFO] (Day 82): 
  States:           S       S       S       S       S       S       S       S       S   
  Actions taken:    H       H       H       W       W       W       W       W       W   
- Utilities:       31.68   32.25   26.09   68.14   68.14   68.14   68.14   68.14   68.14
+ Utilities:       28.25   31.63   30.76   69.32   69.32   69.32   69.32   69.32   69.32
  Risks (%):       0.028   0.028   0.028   0.365   0.365   0.365   0.365   0.365   0.365
-simple(45): plan [INFO] (Day 83): cutoff: 0.49 S prob: 1.00
-simple(45): plan [INFO] (Day 83): cutoff: 0.49 S prob: 1.00
-simple(45): plan [INFO] (Day 83): cutoff: 0.49 S prob: 1.00
 group_game(141): simulate [INFO] (Day 83): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       H       W       W       W       W       W       W   
- Utilities:       31.68   33.02   26.09   68.90   68.90   68.90   68.90   68.90   68.90
- Risks (%):       0.030   0.391   0.030   0.391   0.391   0.391   0.391   0.391   0.391
-simple(45): plan [INFO] (Day 84): cutoff: 0.56 S prob: 1.00
-simple(45): plan [INFO] (Day 84): cutoff: 0.56 S prob: 1.00
-simple(45): plan [INFO] (Day 84): cutoff: 0.56 S prob: 1.00
+ Actions taken:    W       H       W       W       W       W       W       W       W   
+ Utilities:       29.21   31.63   31.72   70.28   70.28   70.28   70.28   70.28   70.28
+ Risks (%):       0.391   0.030   0.391   0.391   0.391   0.391   0.391   0.391   0.391
 group_game(141): simulate [INFO] (Day 84): 
  States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       W       W       W       W       W       W       W   
- Utilities:       31.68   33.02   26.89   69.70   69.70   69.70   69.70   69.70   69.70
- Risks (%):       0.032   0.032   0.417   0.417   0.417   0.417   0.417   0.417   0.417
-simple(45): plan [INFO] (Day 85): cutoff: 0.58 S prob: 1.00
-simple(45): plan [INFO] (Day 85): cutoff: 0.58 S prob: 1.00
-simple(45): plan [INFO] (Day 85): cutoff: 0.58 S prob: 1.00
+ Actions taken:    H       W       H       W       W       W       W       W       W   
+ Utilities:       29.21   32.45   31.72   71.09   71.09   71.09   71.09   71.09   71.09
+ Risks (%):       0.032   0.417   0.032   0.417   0.417   0.417   0.417   0.417   0.417
 group_game(141): simulate [INFO] (Day 85): 
  States:           S       S       S       S       S       S       S       S       S   
  Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       32.59   33.02   26.89   70.61   70.61   70.61   70.61   70.61   70.61
+ Utilities:       30.00   32.45   31.72   71.88   71.88   71.88   71.88   71.88   71.88
  Risks (%):       0.446   0.034   0.034   0.446   0.446   0.446   0.446   0.446   0.446
-simple(45): plan [INFO] (Day 86): cutoff: 0.60 S prob: 1.00
-simple(45): plan [INFO] (Day 86): cutoff: 0.60 S prob: 1.00
-simple(45): plan [INFO] (Day 86): cutoff: 0.60 S prob: 1.00
 group_game(141): simulate [INFO] (Day 86): 
- States:           S       S       S       S       S       S       S       S       S   
+ States:           S       I       S       S       S       S       S       S       S   
  Actions taken:    H       W       W       W       W       W       W       W       W   
- Utilities:       32.59   33.93   27.79   71.51   71.51   71.51   71.51   71.51   71.51
+ Utilities:       30.00   33.46   32.73   72.90   72.90   72.90   72.90   72.90   72.90
  Risks (%):       0.037   0.476   0.476   0.476   0.476   0.476   0.476   0.476   0.476
-simple(45): plan [INFO] (Day 87): cutoff: 0.71 S prob: 1.00
-simple(45): plan [INFO] (Day 87): cutoff: 0.71 S prob: 1.00
-simple(45): plan [INFO] (Day 87): cutoff: 0.71 S prob: 1.00
 group_game(141): simulate [INFO] (Day 87): 
- States:           S       S       S       S       S       S       S       S       S   
+ States:           S       I       S       S       S       S       S       S       S   
  Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       33.45   33.93   27.79   72.37   72.37   72.37   72.37   72.37   72.37
- Risks (%):       0.507   0.039   0.039   0.507   0.507   0.507   0.507   0.507   0.507
-simple(45): plan [INFO] (Day 88): cutoff: 0.64 S prob: 1.00
-simple(45): plan [INFO] (Day 88): cutoff: 0.64 S prob: 1.00
-simple(45): plan [INFO] (Day 88): cutoff: 0.64 S prob: 1.00
+ Utilities:       30.75   33.46   32.73   73.64   73.64   73.64   73.64   73.64   73.64
+ Risks (%):       0.507   0.036   0.039   0.507   0.507   0.507   0.507   0.507   0.507
 group_game(141): simulate [INFO] (Day 88): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       W       W       W       W       W       W       W   
- Utilities:       33.45   34.87   28.73   73.31   73.31   73.31   73.31   73.31   73.31
- Risks (%):       0.042   0.540   0.540   0.540   0.540   0.540   0.540   0.540   0.540
-simple(45): plan [INFO] (Day 89): cutoff: 0.76 S prob: 1.00
-simple(45): plan [INFO] (Day 89): cutoff: 0.76 S prob: 1.00
-simple(45): plan [INFO] (Day 89): cutoff: 0.76 S prob: 1.00
-group_game(141): simulate [INFO] (Day 89): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       34.25   34.87   28.73   74.12   74.12   74.12   74.12   74.12   74.12
- Risks (%):       0.575   0.044   0.044   0.575   0.575   0.575   0.575   0.575   0.575
-simple(45): plan [INFO] (Day 90): cutoff: 0.68 S prob: 1.00
-simple(45): plan [INFO] (Day 90): cutoff: 0.68 S prob: 1.00
-simple(45): plan [INFO] (Day 90): cutoff: 0.68 S prob: 1.00
-group_game(141): simulate [INFO] (Day 90): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       W       W       W       W       W       W       W   
- Utilities:       34.25   35.80   29.66   75.05   75.05   75.05   75.05   75.05   75.05
- Risks (%):       0.047   0.611   0.611   0.611   0.611   0.611   0.611   0.611   0.611
-simple(45): plan [INFO] (Day 91): cutoff: 0.81 S prob: 1.00
-simple(45): plan [INFO] (Day 91): cutoff: 0.81 S prob: 1.00
-simple(45): plan [INFO] (Day 91): cutoff: 0.81 S prob: 1.00
-group_game(141): simulate [INFO] (Day 91): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       W       W       W       W       W   
- Utilities:       35.03   35.80   29.66   75.83   75.83   75.83   75.83   75.83   75.83
- Risks (%):       0.649   0.050   0.050   0.649   0.649   0.649   0.649   0.649   0.649
-simple(45): plan [INFO] (Day 92): cutoff: 0.72 S prob: 1.00
-simple(45): plan [INFO] (Day 92): cutoff: 0.72 S prob: 1.00
-simple(45): plan [INFO] (Day 92): cutoff: 0.72 S prob: 1.00
-group_game(141): simulate [INFO] (Day 92): 
- States:           S       S       S       S       S       S       S       S       S   
+ States:           S       I       S       S       S       S       S       S       S   
  Actions taken:    H       H       W       W       W       W       W       W       W   
- Utilities:       35.03   35.80   30.43   76.60   76.60   76.60   76.60   76.60   76.60
- Risks (%):       0.053   0.053   0.689   0.689   0.689   0.689   0.689   0.689   0.689
-simple(45): plan [INFO] (Day 93): cutoff: 0.74 S prob: 1.00
-simple(45): plan [INFO] (Day 93): cutoff: 0.74 S prob: 1.00
-simple(45): plan [INFO] (Day 93): cutoff: 0.74 S prob: 1.00
+ Utilities:       30.75   33.46   33.59   74.51   74.51   74.51   74.51   74.51   74.51
+ Risks (%):       0.042   0.032   0.540   0.540   0.540   0.540   0.540   0.540   0.540
+group_game(141): simulate [INFO] (Day 89): 
+ States:           S       I       S       S       S       S       S       S       S   
+ Actions taken:    W       H       H       W       W       W       W       W       W   
+ Utilities:       31.57   33.46   33.59   75.33   75.33   75.33   75.33   75.33   75.33
+ Risks (%):       0.575   0.035   0.044   0.575   0.575   0.575   0.575   0.575   0.575
+group_game(141): simulate [INFO] (Day 90): 
+ States:           S       I       S       S       S       S       S       S       S   
+ Actions taken:    H       H       H       W       W       W       W       W       W   
+ Utilities:       31.57   33.46   33.59   75.95   75.95   75.95   75.95   75.95   75.95
+ Risks (%):       0.047   0.017   0.047   0.611   0.611   0.611   0.611   0.611   0.611
+group_game(141): simulate [INFO] (Day 91): 
+ States:           S       I       S       S       S       S       S       S       S   
+ Actions taken:    H       H       W       W       W       W       W       W       W   
+ Utilities:       31.57   33.46   34.35   76.71   76.71   76.71   76.71   76.71   76.71
+ Risks (%):       0.050   0.023   0.649   0.649   0.649   0.649   0.649   0.649   0.649
+group_game(141): simulate [INFO] (Day 92): 
+ States:           S       I       S       S       S       S       S       S       S   
+ Actions taken:    W       H       H       W       W       W       W       W       W   
+ Utilities:       32.37   33.46   34.35   77.50   77.50   77.50   77.50   77.50   77.50
+ Risks (%):       0.689   0.009   0.053   0.689   0.689   0.689   0.689   0.689   0.689
+group_game(109): _alert [INFO] (Day 93): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 93): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       H       W       W       W       W       W       W   
- Utilities:       35.03   36.57   30.43   77.38   77.38   77.38   77.38   77.38   77.38
- Risks (%):       0.056   0.730   0.056   0.730   0.730   0.730   0.730   0.730   0.730
-simple(45): plan [INFO] (Day 94): cutoff: 0.76 S prob: 1.00
-simple(45): plan [INFO] (Day 94): cutoff: 0.76 S prob: 1.00
-simple(45): plan [INFO] (Day 94): cutoff: 0.76 S prob: 1.00
+ States:           S       I       S       S       S       S       S       S       S   
+ Actions taken:    H       H       W       W       W       W       W       W       W   
+ Utilities:       32.37   33.46   35.17   78.32   78.32   78.32   78.32   78.32   78.32
+ Risks (%):       0.056   0.000   0.730   0.730   0.730   0.730   0.730   0.730   0.730
+group_game(109): _alert [INFO] (Day 94): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 94): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       W       W       W       W       W       W       W   
- Utilities:       36.02   36.57   31.42   78.37   78.37   78.37   78.37   78.37   78.37
- Risks (%):       0.773   0.059   0.773   0.773   0.773   0.773   0.773   0.773   0.773
-simple(45): plan [INFO] (Day 95): cutoff: 0.91 S prob: 0.80
-simple(45): plan [INFO] (Day 95): cutoff: 0.91 S prob: 0.80
-simple(45): plan [INFO] (Day 95): cutoff: 0.91 S prob: 0.80
+ States:           S       I       S       S       S       S       S       S       S   
+ Actions taken:    W       H       H       W       W       W       H       H       H   
+ Utilities:       32.83   33.46   35.17   78.78   78.78   78.78   78.32   78.32   78.32
+ Risks (%):       0.773   0.000   0.059   0.773   0.773   0.773   0.059   0.059   0.059
+group_game(109): _alert [INFO] (Day 95): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 95): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       H       W       W       W       W       W       W   
- Utilities:       36.02   37.38   31.42   79.17   79.17   79.17   79.17   79.17   79.17
- Risks (%):       0.063   0.818   0.063   0.818   0.818   0.818   0.818   0.818   0.818
-simple(45): plan [INFO] (Day 96): cutoff: 0.81 S prob: 1.00
-simple(45): plan [INFO] (Day 96): cutoff: 0.81 S prob: 1.00
-simple(45): plan [INFO] (Day 96): cutoff: 0.81 S prob: 1.00
+ States:           S       I       S       S       S       S       S       S       S   
+ Actions taken:    H       H       W       W       W       W       H       H       H   
+ Utilities:       32.83   33.46   35.70   79.32   79.32   79.32   78.32   78.32   78.32
+ Risks (%):       0.063   0.000   0.818   0.818   0.818   0.818   0.063   0.063   0.063
+group_game(109): _alert [INFO] (Day 96): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 96): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       W       W       W       W       W       W       W   
- Utilities:       36.98   37.38   32.38   80.13   80.13   80.13   80.13   80.13   80.13
- Risks (%):       0.864   0.066   0.864   0.864   0.864   0.864   0.864   0.864   0.864
-simple(45): plan [INFO] (Day 97): cutoff: 0.96 S prob: 0.64
-simple(45): plan [INFO] (Day 97): cutoff: 0.96 S prob: 0.64
-simple(45): plan [INFO] (Day 97): cutoff: 0.96 S prob: 0.64
+ States:           S       I       S       S       S       S       S       S       S   
+ Actions taken:    W       H       W       W       W       W       H       H       H   
+ Utilities:       33.46   33.46   36.33   79.95   79.95   79.95   78.32   78.32   78.32
+ Risks (%):       0.864   0.000   0.864   0.864   0.864   0.864   0.066   0.066   0.066
+group_game(109): _alert [INFO] (Day 97): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 97): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       H       W       W       W       W       W       W   
- Utilities:       36.98   38.21   32.38   80.96   80.96   80.96   80.96   80.96   80.96
- Risks (%):       0.070   0.911   0.070   0.911   0.911   0.911   0.911   0.911   0.911
-simple(45): plan [INFO] (Day 98): cutoff: 0.85 S prob: 0.96
-simple(45): plan [INFO] (Day 98): cutoff: 0.85 S prob: 0.96
-simple(45): plan [INFO] (Day 98): cutoff: 0.85 S prob: 0.96
+ States:           S       I       S       S       S       S       S       S       S   
+ Actions taken:    H       H       H       W       W       W       H       H       H   
+ Utilities:       33.46   33.46   36.33   80.27   80.27   80.27   78.32   78.32   78.32
+ Risks (%):       0.070   0.000   0.070   0.911   0.911   0.911   0.070   0.070   0.070
+group_game(109): _alert [INFO] (Day 98): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 98): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       W       W       W       W       W       W       W   
- Utilities:       37.91   38.21   33.31   81.89   81.89   81.89   81.89   81.89   81.89
- Risks (%):       0.960   0.074   0.960   0.960   0.960   0.960   0.960   0.960   0.960
-simple(45): plan [INFO] (Day 99): cutoff: 1.01 S prob: 0.48
-simple(45): plan [INFO] (Day 99): cutoff: 1.01 S prob: 0.48
-simple(45): plan [INFO] (Day 99): cutoff: 1.01 S prob: 0.48
+ States:           S       I       S       S       S       S       S       S       S   
+ Actions taken:    W       H       W       W       W       W       H       H       H   
+ Utilities:       34.03   33.46   36.90   80.83   80.83   80.83   78.32   78.32   78.32
+ Risks (%):       0.960   0.000   0.960   0.960   0.960   0.960   0.074   0.074   0.074
+group_game(109): _alert [INFO] (Day 99): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 99): 
- States:           S       S       S       S       S       S       S       S       S   
+ States:           S       I       S       S       S       S       S       S       S   
  Actions taken:    H       H       H       W       W       W       H       H       H   
- Utilities:       37.91   38.21   33.31   82.23   82.23   82.23   81.89   81.89   81.89
- Risks (%):       0.078   0.078   0.078   1.010   1.010   1.010   0.078   0.078   0.078
-simple(45): plan [INFO] (Day 100): cutoff: 0.81 S prob: 1.00
-simple(45): plan [INFO] (Day 100): cutoff: 0.81 S prob: 1.00
-simple(45): plan [INFO] (Day 100): cutoff: 0.81 S prob: 1.00
+ Utilities:       34.03   33.46   36.90   81.16   81.16   81.16   78.32   78.32   78.32
+ Risks (%):       0.078   0.000   0.078   1.010   1.010   1.010   0.078   0.078   0.078
+group_game(109): _alert [INFO] (Day 100): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 100): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       H       W       W       W       W       W       W   
- Utilities:       38.95   39.26   33.31   83.28   83.28   83.28   82.94   82.94   82.94
- Risks (%):       1.060   1.060   0.082   1.060   1.060   1.060   1.060   1.060   1.060
-simple(45): plan [INFO] (Day 101): cutoff: 1.06 S prob: 0.33
-simple(45): plan [INFO] (Day 101): cutoff: 1.06 S prob: 0.33
-simple(45): plan [INFO] (Day 101): cutoff: 1.06 S prob: 0.33
+ States:           S       I       S       S       S       S       S       S       S   
+ Actions taken:    H       H       H       W       W       W       H       H       H   
+ Utilities:       34.03   33.46   36.90   81.48   81.48   81.48   78.32   78.32   78.32
+ Risks (%):       0.082   0.000   0.082   1.060   1.060   1.060   0.082   0.082   0.082
+group_game(109): _alert [INFO] (Day 101): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 101): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       H       W       W       W       H       H       H   
- Utilities:       38.95   39.26   33.31   83.57   83.57   83.57   82.94   82.94   82.94
- Risks (%):       0.086   0.086   0.086   1.112   1.112   1.112   0.086   0.086   0.086
-simple(45): plan [INFO] (Day 102): cutoff: 0.85 S prob: 0.98
-simple(45): plan [INFO] (Day 102): cutoff: 0.85 S prob: 0.98
-simple(45): plan [INFO] (Day 102): cutoff: 0.85 S prob: 0.98
+ States:           S       I       S       S       S       S       S       S       S   
+ Actions taken:    W       H       W       W       W       W       H       H       H   
+ Utilities:       34.58   33.46   37.45   82.04   82.04   82.04   78.32   78.32   78.32
+ Risks (%):       1.112   0.000   1.112   1.112   1.112   1.112   0.086   0.086   0.086
+group_game(109): _alert [INFO] (Day 102): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 102): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       W       W       W       W       W       W   
- Utilities:       39.87   40.17   34.22   84.48   84.48   84.48   83.85   83.85   83.85
- Risks (%):       1.164   1.164   1.164   1.164   1.164   1.164   1.164   1.164   1.164
-simple(45): plan [INFO] (Day 103): cutoff: 1.25 S prob: 0.00
-simple(45): plan [INFO] (Day 103): cutoff: 1.25 S prob: 0.00
-simple(45): plan [INFO] (Day 103): cutoff: 1.25 S prob: 0.00
-group_game(141): simulate [INFO] (Day 103): 
- States:           S       S       S       S       S       S       S       S       S   
+ States:           S       I       S       S       S       S       S       S       S   
  Actions taken:    H       H       H       W       W       W       H       H       H   
- Utilities:       39.87   40.17   34.22   84.88   84.88   84.88   83.85   83.85   83.85
- Risks (%):       0.094   0.094   0.094   1.217   1.217   1.217   0.094   0.094   0.094
-simple(45): plan [INFO] (Day 104): cutoff: 0.88 S prob: 0.86
-simple(45): plan [INFO] (Day 104): cutoff: 0.88 S prob: 0.86
-simple(45): plan [INFO] (Day 104): cutoff: 0.88 S prob: 0.86
+ Utilities:       34.58   33.46   37.45   82.35   82.35   82.35   78.32   78.32   78.32
+ Risks (%):       0.090   0.000   0.090   1.164   1.164   1.164   0.090   0.090   0.090
+group_game(109): _alert [INFO] (Day 103): GROUP ALERTED
+group_game(141): simulate [INFO] (Day 103): 
+ States:           S       I       S       S       S       S       S       S       S   
+ Actions taken:    H       H       W       H       W       W       H       H       H   
+ Utilities:       34.58   33.46   37.85   82.35   82.75   82.75   78.32   78.32   78.32
+ Risks (%):       0.094   0.000   1.217   0.094   1.217   1.217   0.094   0.094   0.094
+group_game(109): _alert [INFO] (Day 104): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 104): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       W       W       W       H       H       H       W   
- Utilities:       39.87   40.83   34.88   85.54   85.54   84.88   83.85   83.85   84.51
- Risks (%):       0.098   1.269   1.269   1.269   1.269   0.098   0.098   0.098   1.269
-simple(45): plan [INFO] (Day 105): cutoff: 0.90 S prob: 0.81
-simple(45): plan [INFO] (Day 105): cutoff: 0.90 S prob: 0.81
-simple(45): plan [INFO] (Day 105): cutoff: 0.90 S prob: 0.81
+ States:           S       I       S       S       S       S       S       S       S   
+ Actions taken:    W       H       H       H       H       W       H       H       H   
+ Utilities:       34.79   33.46   37.85   82.35   82.75   82.96   78.32   78.32   78.32
+ Risks (%):       1.269   0.000   0.098   0.098   0.098   1.269   0.098   0.098   0.098
+group_game(109): _alert [INFO] (Day 105): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 105): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       H       W       H       W       W       W   
- Utilities:       40.45   40.83   34.88   85.54   86.12   84.88   84.43   84.43   85.09
- Risks (%):       1.322   0.102   0.102   0.102   1.322   0.102   1.322   1.322   1.322
-simple(45): plan [INFO] (Day 106): cutoff: 0.92 S prob: 0.75
-simple(45): plan [INFO] (Day 106): cutoff: 0.92 S prob: 0.75
-simple(45): plan [INFO] (Day 106): cutoff: 0.92 S prob: 0.75
+ States:           S       I       S       S       S       S       S       S       S   
+ Actions taken:    W       H       W       W       H       W       H       H       H   
+ Utilities:       35.27   33.46   38.33   82.83   82.75   83.44   78.32   78.32   78.32
+ Risks (%):       1.322   0.000   1.322   1.322   0.102   1.322   0.102   0.102   0.102
+group_game(109): _alert [INFO] (Day 106): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 106): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       H       W       H       W       W       W       W   
- Utilities:       40.45   40.83   34.88   86.17   86.12   85.51   85.06   85.06   85.72
- Risks (%):       0.106   0.106   0.106   1.374   0.106   1.374   1.374   1.374   1.374
-simple(45): plan [INFO] (Day 107): cutoff: 0.94 S prob: 0.70
-simple(45): plan [INFO] (Day 107): cutoff: 0.94 S prob: 0.70
-simple(45): plan [INFO] (Day 107): cutoff: 0.94 S prob: 0.70
+ States:           S       I       S       S       S       S       S       S       S   
+ Actions taken:    W       H       W       H       W       H       H       H       H   
+ Utilities:       35.67   33.46   38.72   82.83   83.14   83.44   78.32   78.32   78.32
+ Risks (%):       1.374   0.000   1.374   0.106   1.374   0.106   0.106   0.106   0.106
 group_game(141): simulate [INFO] (Day 107): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       H       W       W       W       W       H       W   
- Utilities:       40.45   41.62   34.88   86.96   86.91   86.30   85.85   85.06   86.51
- Risks (%):       0.110   1.426   0.110   1.426   1.426   1.426   1.426   0.110   1.426
-simple(45): plan [INFO] (Day 108): cutoff: 0.95 S prob: 0.65
-simple(45): plan [INFO] (Day 108): cutoff: 0.95 S prob: 0.65
-simple(45): plan [INFO] (Day 108): cutoff: 0.95 S prob: 0.65
+ States:           S       R       S       S       S       S       S       S       S   
+ Actions taken:    W       H       W       W       W       W       H       H       H   
+ Utilities:       36.32   33.46   39.38   83.49   83.79   84.10   78.32   78.32   78.32
+ Risks (%):       1.426   0.000   1.426   1.426   1.426   1.426   0.110   0.110   0.110
 group_game(141): simulate [INFO] (Day 108): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       W       H       H       H       W       W       W   
- Utilities:       41.10   41.62   35.52   86.96   86.91   86.30   86.50   85.71   87.16
- Risks (%):       1.477   0.114   1.477   0.114   0.114   0.114   1.477   1.477   1.477
-simple(45): plan [INFO] (Day 109): cutoff: 0.97 S prob: 0.60
-simple(45): plan [INFO] (Day 109): cutoff: 0.97 S prob: 0.60
-simple(45): plan [INFO] (Day 109): cutoff: 0.97 S prob: 0.60
+ States:           S       R       S       S       S       S       S       S       S   
+ Actions taken:    H       W       H       H       H       H       W       W       H   
+ Utilities:       36.32   33.86   39.38   83.49   83.79   84.10   78.72   78.72   78.32
+ Risks (%):       0.114   0.000   0.114   0.114   0.114   0.114   1.477   1.477   0.114
 group_game(141): simulate [INFO] (Day 109): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       H       W       W       H       W       W       W   
- Utilities:       41.10   42.37   35.52   87.71   87.67   86.30   87.25   86.46   87.91
- Risks (%):       0.117   1.527   0.117   1.527   1.527   0.117   1.527   1.527   1.527
-simple(45): plan [INFO] (Day 110): cutoff: 0.98 S prob: 0.55
-simple(45): plan [INFO] (Day 110): cutoff: 0.98 S prob: 0.55
-simple(45): plan [INFO] (Day 110): cutoff: 0.98 S prob: 0.55
+ States:           S       R       S       S       S       S       S       S       S   
+ Actions taken:    W       W       W       W       H       W       W       H       H   
+ Utilities:       37.07   34.61   40.12   84.23   83.79   84.84   79.47   78.72   78.32
+ Risks (%):       1.527   0.000   1.527   1.527   0.117   1.527   1.527   0.117   0.117
 group_game(141): simulate [INFO] (Day 110): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       W       H       W       H       H       H   
- Utilities:       41.43   42.37   35.52   88.04   87.67   86.63   87.25   86.46   87.91
- Risks (%):       1.576   0.121   0.121   1.576   0.121   1.576   0.121   0.121   0.121
-simple(45): plan [INFO] (Day 111): cutoff: 1.00 S prob: 0.50
-simple(45): plan [INFO] (Day 111): cutoff: 1.00 S prob: 0.50
-simple(45): plan [INFO] (Day 111): cutoff: 1.00 S prob: 0.50
+ States:           S       R       S       S       S       S       S       S       S   
+ Actions taken:    H       H       H       H       H       W       W       W       W   
+ Utilities:       37.07   34.61   40.12   84.23   83.79   85.37   79.99   79.24   78.84
+ Risks (%):       0.121   0.000   0.121   0.121   0.121   1.576   1.576   1.576   1.576
 group_game(141): simulate [INFO] (Day 111): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       H       H       W       H       W       W       H   
- Utilities:       42.10   43.04   35.52   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.623   1.623   0.125   0.125   1.623   0.125   1.623   1.623   0.125
-simple(45): plan [INFO] (Day 112): cutoff: 1.01 S prob: 0.46
-simple(45): plan [INFO] (Day 112): cutoff: 1.01 S prob: 0.46
-simple(45): plan [INFO] (Day 112): cutoff: 1.01 S prob: 0.46
+ States:           S       R       S       S       S       S       S       S       S   
+ Actions taken:    W       W       W       W       W       W       W       H       W   
+ Utilities:       38.07   35.61   41.12   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.623   0.000   1.623   1.623   1.623   1.623   1.623   0.125   1.623
 group_game(141): simulate [INFO] (Day 112): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       W       H       H       H       H       H       H   
- Utilities:       42.10   43.04   35.66   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       0.128   0.128   1.667   0.128   0.128   0.128   0.128   0.128   0.128
-simple(45): plan [INFO] (Day 113): cutoff: 1.03 S prob: 0.42
-simple(45): plan [INFO] (Day 113): cutoff: 1.03 S prob: 0.42
-simple(45): plan [INFO] (Day 113): cutoff: 1.03 S prob: 0.42
+ States:           S       R       S       S       S       S       S       S       S   
+ Actions taken:    H       H       H       H       H       H       H       H       H   
+ Utilities:       38.07   35.61   41.12   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       0.128   0.000   0.128   0.128   0.128   0.128   0.128   0.128   0.128
 group_game(141): simulate [INFO] (Day 113): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       H       H       H       H       H       H       H   
- Utilities:       42.36   43.30   35.66   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.710   1.710   0.132   0.132   0.132   0.132   0.132   0.132   0.132
-simple(45): plan [INFO] (Day 114): cutoff: 1.04 S prob: 0.38
-simple(45): plan [INFO] (Day 114): cutoff: 1.04 S prob: 0.38
-simple(45): plan [INFO] (Day 114): cutoff: 1.04 S prob: 0.38
+ States:           S       R       S       S       S       S       S       S       S   
+ Actions taken:    W       W       W       H       H       H       H       H       H   
+ Utilities:       38.43   35.97   41.49   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.710   0.000   1.710   0.132   0.132   0.132   0.132   0.132   0.132
 group_game(141): simulate [INFO] (Day 114): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       W       H       H       H       H       H       H   
- Utilities:       42.36   43.57   35.92   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       0.135   1.750   1.750   0.135   0.135   0.135   0.135   0.135   0.135
-simple(45): plan [INFO] (Day 115): cutoff: 1.05 S prob: 0.35
-simple(45): plan [INFO] (Day 115): cutoff: 1.05 S prob: 0.35
-simple(45): plan [INFO] (Day 115): cutoff: 1.05 S prob: 0.35
+ States:           S       R       S       S       S       S       S       S       S   
+ Actions taken:    W       W       W       H       H       H       H       H       H   
+ Utilities:       38.83   36.37   41.89   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.750   0.000   1.750   0.135   0.135   0.135   0.135   0.135   0.135
 group_game(141): simulate [INFO] (Day 115): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       H       H       H       H       H       H   
- Utilities:       42.75   43.96   36.31   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.788   1.788   1.788   0.138   0.138   0.138   0.138   0.138   0.138
-simple(45): plan [INFO] (Day 116): cutoff: 1.06 S prob: 0.32
-simple(45): plan [INFO] (Day 116): cutoff: 1.06 S prob: 0.32
-simple(45): plan [INFO] (Day 116): cutoff: 1.06 S prob: 0.32
+ States:           S       R       S       S       S       I       S       S       S   
+ Actions taken:    H       W       H       H       H       H       H       H       H   
+ Utilities:       38.83   36.51   41.89   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       0.138   0.000   0.138   0.138   0.138   0.138   0.138   0.138   0.138
 group_game(141): simulate [INFO] (Day 116): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       W       H       H       H       H       H       H   
- Utilities:       42.75   44.23   36.58   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       0.140   1.823   1.823   0.140   0.140   0.140   0.140   0.140   0.140
-simple(45): plan [INFO] (Day 117): cutoff: 1.07 S prob: 0.29
-simple(45): plan [INFO] (Day 117): cutoff: 1.07 S prob: 0.29
-simple(45): plan [INFO] (Day 117): cutoff: 1.07 S prob: 0.29
+ States:           S       R       S       S       S       I       S       S       S   
+ Actions taken:    W       W       W       H       H       H       H       H       H   
+ Utilities:       39.23   36.91   42.29   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.823   0.000   1.823   0.140   0.140   0.140   0.140   0.140   0.140
 group_game(141): simulate [INFO] (Day 117): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       W       H       H       H       H       H       H   
- Utilities:       42.75   44.49   36.85   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       0.143   1.854   1.854   0.143   0.143   0.143   0.143   0.143   0.143
-simple(45): plan [INFO] (Day 118): cutoff: 1.08 S prob: 0.26
-simple(45): plan [INFO] (Day 118): cutoff: 1.08 S prob: 0.26
-simple(45): plan [INFO] (Day 118): cutoff: 1.08 S prob: 0.26
+ States:           S       R       S       S       S       I       S       S       S   
+ Actions taken:    H       W       H       H       H       H       H       H       H   
+ Utilities:       39.23   37.04   42.29   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       0.143   0.000   0.143   0.143   0.143   0.119   0.143   0.143   0.143
 group_game(141): simulate [INFO] (Day 118): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       W       H       H       H       H       H       H   
- Utilities:       43.02   44.49   37.11   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.883   0.145   1.883   0.145   0.145   0.145   0.145   0.145   0.145
-simple(45): plan [INFO] (Day 119): cutoff: 1.08 S prob: 0.24
-simple(45): plan [INFO] (Day 119): cutoff: 1.08 S prob: 0.24
-simple(45): plan [INFO] (Day 119): cutoff: 1.08 S prob: 0.24
+ States:           S       R       S       S       S       I       S       S       S   
+ Actions taken:    H       W       H       H       H       H       H       H       H   
+ Utilities:       39.23   37.17   42.29   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       0.145   0.000   0.145   0.145   0.145   0.078   0.145   0.145   0.145
 group_game(141): simulate [INFO] (Day 119): 
- States:           S       S       S       S       S       S       S       S       S   
+ States:           S       R       S       S       S       I       S       S       S   
  Actions taken:    W       W       W       H       H       H       H       H       H   
- Utilities:       43.40   44.88   37.49   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.908   1.908   1.908   0.147   0.147   0.147   0.147   0.147   0.147
-simple(45): plan [INFO] (Day 120): cutoff: 1.09 S prob: 0.22
-simple(45): plan [INFO] (Day 120): cutoff: 1.09 S prob: 0.22
-simple(45): plan [INFO] (Day 120): cutoff: 1.09 S prob: 0.22
+ Utilities:       39.63   37.57   42.69   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.908   0.000   1.908   0.147   0.147   0.092   0.147   0.147   0.147
 group_game(141): simulate [INFO] (Day 120): 
- States:           S       S       S       S       S       S       S       S       S   
+ States:           S       R       S       S       S       I       S       S       S   
  Actions taken:    W       W       W       H       H       H       H       H       H   
- Utilities:       43.80   45.28   37.89   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.929   1.929   1.929   0.148   0.148   0.148   0.148   0.148   0.148
-simple(45): plan [INFO] (Day 121): cutoff: 1.09 S prob: 0.20
-simple(45): plan [INFO] (Day 121): cutoff: 1.09 S prob: 0.20
-simple(45): plan [INFO] (Day 121): cutoff: 1.09 S prob: 0.20
+ Utilities:       40.02   37.97   43.08   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.929   0.000   1.929   0.148   0.148   0.073   0.148   0.148   0.148
 group_game(141): simulate [INFO] (Day 121): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       H       H       H       H       H       H       H   
- Utilities:       44.07   45.54   37.89   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.948   1.948   0.150   0.150   0.150   0.150   0.150   0.150   0.150
-simple(45): plan [INFO] (Day 122): cutoff: 1.10 S prob: 0.19
-simple(45): plan [INFO] (Day 122): cutoff: 1.10 S prob: 0.19
-simple(45): plan [INFO] (Day 122): cutoff: 1.10 S prob: 0.19
-group_game(141): simulate [INFO] (Day 122): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       W       H       H       H       H       H       H       H   
- Utilities:       44.07   45.68   37.89   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       0.151   1.962   0.151   0.151   0.151   0.151   0.151   0.151   0.151
-simple(45): plan [INFO] (Day 123): cutoff: 1.10 S prob: 0.18
-simple(45): plan [INFO] (Day 123): cutoff: 1.10 S prob: 0.18
-simple(45): plan [INFO] (Day 123): cutoff: 1.10 S prob: 0.18
-group_game(141): simulate [INFO] (Day 123): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       H       H       H       H       H       H   
- Utilities:       44.47   46.08   38.29   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.973   1.973   1.973   0.152   0.152   0.152   0.152   0.152   0.152
-simple(45): plan [INFO] (Day 124): cutoff: 1.10 S prob: 0.17
-simple(45): plan [INFO] (Day 124): cutoff: 1.10 S prob: 0.17
-simple(45): plan [INFO] (Day 124): cutoff: 1.10 S prob: 0.17
-group_game(141): simulate [INFO] (Day 124): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       H       H       H       H       H       H   
- Utilities:       44.87   46.48   38.69   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.981   1.981   1.981   0.152   0.152   0.152   0.152   0.152   0.152
-simple(45): plan [INFO] (Day 125): cutoff: 1.11 S prob: 0.17
-simple(45): plan [INFO] (Day 125): cutoff: 1.11 S prob: 0.17
-simple(45): plan [INFO] (Day 125): cutoff: 1.11 S prob: 0.17
-group_game(141): simulate [INFO] (Day 125): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       W       H       H       H       H       H       H   
- Utilities:       44.87   46.48   38.83   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       0.153   0.153   1.985   0.153   0.153   0.153   0.153   0.153   0.153
-simple(45): plan [INFO] (Day 126): cutoff: 1.11 S prob: 0.17
-simple(45): plan [INFO] (Day 126): cutoff: 1.11 S prob: 0.17
-simple(45): plan [INFO] (Day 126): cutoff: 1.11 S prob: 0.17
-group_game(141): simulate [INFO] (Day 126): 
- States:           S       S       S       S       S       S       S       S       S   
+ States:           S       R       S       S       S       I       S       S       S   
  Actions taken:    H       W       W       H       H       H       H       H       H   
- Utilities:       44.87   46.74   39.09   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       0.153   1.985   1.985   0.153   0.153   0.153   0.153   0.153   0.153
-simple(45): plan [INFO] (Day 127): cutoff: 1.10 S prob: 0.17
-simple(45): plan [INFO] (Day 127): cutoff: 1.10 S prob: 0.17
-simple(45): plan [INFO] (Day 127): cutoff: 1.10 S prob: 0.17
-group_game(141): simulate [INFO] (Day 127): 
- States:           S       S       S       S       S       S       S       S       S   
+ Utilities:       40.02   38.23   43.35   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       0.150   0.000   1.948   0.150   0.150   0.019   0.150   0.150   0.150
+group_game(109): _alert [INFO] (Day 122): GROUP ALERTED
+group_game(141): simulate [INFO] (Day 122): 
+ States:           S       R       S       S       S       I       S       S       S   
  Actions taken:    W       W       W       H       H       H       H       H       H   
- Utilities:       45.23   47.10   39.45   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.982   1.982   1.982   0.152   0.152   0.152   0.152   0.152   0.152
-simple(45): plan [INFO] (Day 128): cutoff: 1.10 S prob: 0.18
-simple(45): plan [INFO] (Day 128): cutoff: 1.10 S prob: 0.18
-simple(45): plan [INFO] (Day 128): cutoff: 1.10 S prob: 0.18
-group_game(141): simulate [INFO] (Day 128): 
- States:           S       S       S       S       S       S       S       S       S   
+ Utilities:       40.41   38.61   43.73   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.962   0.000   1.962   0.151   0.151   0.024   0.151   0.151   0.151
+group_game(109): _alert [INFO] (Day 123): GROUP ALERTED
+group_game(141): simulate [INFO] (Day 123): 
+ States:           S       R       S       S       S       I       S       S       S   
  Actions taken:    W       W       H       H       H       H       H       H       H   
- Utilities:       45.49   47.37   39.45   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.976   1.976   0.152   0.152   0.152   0.152   0.152   0.152   0.152
-simple(45): plan [INFO] (Day 129): cutoff: 1.10 S prob: 0.19
-simple(45): plan [INFO] (Day 129): cutoff: 1.10 S prob: 0.19
-simple(45): plan [INFO] (Day 129): cutoff: 1.10 S prob: 0.19
-group_game(141): simulate [INFO] (Day 129): 
- States:           S       S       S       S       S       S       S       S       S   
+ Utilities:       40.67   38.88   43.73   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.973   0.000   0.152   0.152   0.152   0.000   0.152   0.152   0.152
+group_game(109): _alert [INFO] (Day 124): GROUP ALERTED
+group_game(141): simulate [INFO] (Day 124): 
+ States:           S       R       S       S       S       I       S       S       S   
  Actions taken:    W       W       W       H       H       H       H       H       H   
- Utilities:       45.86   47.73   39.82   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.967   1.967   1.967   0.151   0.151   0.151   0.151   0.151   0.151
-simple(45): plan [INFO] (Day 130): cutoff: 1.10 S prob: 0.20
-simple(45): plan [INFO] (Day 130): cutoff: 1.10 S prob: 0.20
-simple(45): plan [INFO] (Day 130): cutoff: 1.10 S prob: 0.20
-group_game(141): simulate [INFO] (Day 130): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       W       H       H       H       H       H       H   
- Utilities:       46.12   47.73   40.08   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.955   0.150   1.955   0.150   0.150   0.150   0.150   0.150   0.150
-simple(45): plan [INFO] (Day 131): cutoff: 1.09 S prob: 0.21
-simple(45): plan [INFO] (Day 131): cutoff: 1.09 S prob: 0.21
-simple(45): plan [INFO] (Day 131): cutoff: 1.09 S prob: 0.21
-group_game(141): simulate [INFO] (Day 131): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       W       H       H       H       H       H       H   
- Utilities:       46.36   47.73   40.32   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.940   0.149   1.940   0.149   0.149   0.149   0.149   0.149   0.149
-simple(45): plan [INFO] (Day 132): cutoff: 1.09 S prob: 0.23
-simple(45): plan [INFO] (Day 132): cutoff: 1.09 S prob: 0.23
-simple(45): plan [INFO] (Day 132): cutoff: 1.09 S prob: 0.23
-group_game(141): simulate [INFO] (Day 132): 
- States:           S       S       S       S       S       S       S       S       S   
+ Utilities:       41.07   39.28   44.13   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.981   0.000   1.981   0.152   0.152   0.000   0.152   0.152   0.152
+group_game(109): _alert [INFO] (Day 125): GROUP ALERTED
+group_game(141): simulate [INFO] (Day 125): 
+ States:           S       R       S       S       S       I       S       S       S   
+ Actions taken:    W       W       W       H       H       H       H       H       H   
+ Utilities:       41.47   39.68   44.53   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.985   0.000   1.985   0.153   0.153   0.000   0.153   0.153   0.153
+group_game(109): _alert [INFO] (Day 126): GROUP ALERTED
+group_game(141): simulate [INFO] (Day 126): 
+ States:           S       R       S       S       S       I       S       S       S   
+ Actions taken:    W       W       W       H       H       H       H       H       H   
+ Utilities:       41.87   40.08   44.93   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.985   0.000   1.985   0.153   0.153   0.000   0.153   0.153   0.153
+group_game(109): _alert [INFO] (Day 127): GROUP ALERTED
+group_game(141): simulate [INFO] (Day 127): 
+ States:           S       R       S       S       S       I       S       S       S   
+ Actions taken:    W       W       W       H       H       H       H       H       H   
+ Utilities:       42.27   40.48   45.33   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.982   0.000   1.982   0.152   0.152   0.000   0.152   0.152   0.152
+group_game(109): _alert [INFO] (Day 128): GROUP ALERTED
+group_game(141): simulate [INFO] (Day 128): 
+ States:           S       R       S       S       S       I       S       S       S   
  Actions taken:    H       W       H       H       H       H       H       H       H   
- Utilities:       46.36   47.87   40.32   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       0.148   1.922   0.148   0.148   0.148   0.148   0.148   0.148   0.148
-simple(45): plan [INFO] (Day 133): cutoff: 1.08 S prob: 0.24
-simple(45): plan [INFO] (Day 133): cutoff: 1.08 S prob: 0.24
-simple(45): plan [INFO] (Day 133): cutoff: 1.08 S prob: 0.24
+ Utilities:       42.27   40.61   45.33   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       0.152   0.000   0.152   0.152   0.152   0.000   0.152   0.152   0.152
+group_game(109): _alert [INFO] (Day 129): GROUP ALERTED
+group_game(141): simulate [INFO] (Day 129): 
+ States:           S       R       S       S       S       I       S       S       S   
+ Actions taken:    H       W       W       H       H       H       H       H       H   
+ Utilities:       42.27   40.88   45.60   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       0.151   0.000   1.967   0.151   0.151   0.000   0.151   0.151   0.151
+group_game(109): _alert [INFO] (Day 130): GROUP ALERTED
+group_game(141): simulate [INFO] (Day 130): 
+ States:           S       R       S       S       S       I       S       S       S   
+ Actions taken:    W       W       H       H       H       H       H       H       H   
+ Utilities:       42.54   41.15   45.60   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.955   0.000   0.150   0.150   0.150   0.000   0.150   0.150   0.150
+group_game(109): _alert [INFO] (Day 131): GROUP ALERTED
+group_game(141): simulate [INFO] (Day 131): 
+ States:           S       R       I       S       S       I       S       S       S   
+ Actions taken:    W       W       W       H       H       H       H       H       H   
+ Utilities:       42.94   41.55   46.00   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.940   0.000   1.940   0.149   0.149   0.000   0.149   0.149   0.149
+group_game(109): _alert [INFO] (Day 132): GROUP ALERTED
+group_game(141): simulate [INFO] (Day 132): 
+ States:           S       R       I       S       S       I       S       S       S   
+ Actions taken:    W       W       W       H       H       H       H       H       H   
+ Utilities:       43.33   41.94   46.39   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.922   0.000   1.885   0.148   0.148   0.000   0.148   0.148   0.148
+group_game(109): _alert [INFO] (Day 133): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 133): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       H       H       H       H       H       H   
- Utilities:       46.72   48.22   40.68   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.902   1.902   1.902   0.146   0.146   0.146   0.146   0.146   0.146
-simple(45): plan [INFO] (Day 134): cutoff: 1.08 S prob: 0.26
-simple(45): plan [INFO] (Day 134): cutoff: 1.08 S prob: 0.26
-simple(45): plan [INFO] (Day 134): cutoff: 1.08 S prob: 0.26
+ States:           S       R       I       S       S       I       S       S       S   
+ Actions taken:    H       W       H       H       H       H       H       H       H   
+ Utilities:       43.33   42.07   46.39   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       0.146   0.000   0.131   0.146   0.146   0.000   0.146   0.146   0.146
+group_game(109): _alert [INFO] (Day 134): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 134): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       H       H       H       H       H       H   
- Utilities:       47.11   48.61   41.07   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.880   1.880   1.880   0.145   0.145   0.145   0.145   0.145   0.145
-simple(45): plan [INFO] (Day 135): cutoff: 1.07 S prob: 0.29
-simple(45): plan [INFO] (Day 135): cutoff: 1.07 S prob: 0.29
-simple(45): plan [INFO] (Day 135): cutoff: 1.07 S prob: 0.29
+ States:           S       R       I       S       S       I       S       S       S   
+ Actions taken:    H       W       H       H       H       H       H       H       H   
+ Utilities:       43.33   42.20   46.39   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       0.145   0.000   0.082   0.145   0.145   0.000   0.145   0.145   0.145
+group_game(109): _alert [INFO] (Day 135): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 135): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       H       H       H       H       H       H       H   
- Utilities:       47.24   48.61   41.07   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.855   0.143   0.143   0.143   0.143   0.143   0.143   0.143   0.143
-simple(45): plan [INFO] (Day 136): cutoff: 1.06 S prob: 0.31
-simple(45): plan [INFO] (Day 136): cutoff: 1.06 S prob: 0.31
-simple(45): plan [INFO] (Day 136): cutoff: 1.06 S prob: 0.31
+ States:           S       R       I       S       S       I       S       S       S   
+ Actions taken:    W       W       H       H       H       H       H       H       H   
+ Utilities:       43.57   42.44   46.39   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.855   0.000   0.051   0.143   0.143   0.000   0.143   0.143   0.143
 group_game(141): simulate [INFO] (Day 136): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       H       H       H       H       H       H   
- Utilities:       47.64   49.01   41.47   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.829   1.829   1.829   0.141   0.141   0.141   0.141   0.141   0.141
-simple(45): plan [INFO] (Day 137): cutoff: 1.05 S prob: 0.34
-simple(45): plan [INFO] (Day 137): cutoff: 1.05 S prob: 0.34
-simple(45): plan [INFO] (Day 137): cutoff: 1.05 S prob: 0.34
+ States:           S       R       I       S       S       R       S       S       S   
+ Actions taken:    W       W       H       H       H       H       H       H       H   
+ Utilities:       43.84   42.71   46.39   85.23   84.79   86.36   80.99   79.24   79.84
+ Risks (%):       1.829   0.000   0.069   0.141   0.141   0.000   0.141   0.141   0.141
 group_game(141): simulate [INFO] (Day 137): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       H       W       H       H       H       H       H       H   
- Utilities:       47.91   49.01   41.73   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.801   0.139   1.801   0.139   0.139   0.139   0.139   0.139   0.139
-simple(45): plan [INFO] (Day 138): cutoff: 1.04 S prob: 0.36
-simple(45): plan [INFO] (Day 138): cutoff: 1.04 S prob: 0.36
-simple(45): plan [INFO] (Day 138): cutoff: 1.04 S prob: 0.36
+ States:           S       R       I       S       S       R       S       S       S   
+ Actions taken:    W       W       H       H       H       W       H       H       H   
+ Utilities:       44.24   43.11   46.39   85.23   84.79   86.76   80.99   79.24   79.84
+ Risks (%):       1.801   0.000   0.008   0.139   0.139   0.000   0.139   0.139   0.139
+group_game(109): _alert [INFO] (Day 138): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 138): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       H       H       H       H       H       H   
- Utilities:       48.31   49.41   42.13   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.771   1.771   1.771   0.136   0.136   0.136   0.136   0.136   0.136
-simple(45): plan [INFO] (Day 139): cutoff: 1.03 S prob: 0.39
-simple(45): plan [INFO] (Day 139): cutoff: 1.03 S prob: 0.39
-simple(45): plan [INFO] (Day 139): cutoff: 1.03 S prob: 0.39
+ States:           S       R       I       S       S       R       S       S       S   
+ Actions taken:    W       W       H       H       H       W       H       H       H   
+ Utilities:       44.64   43.51   46.39   85.23   84.79   87.16   80.99   79.24   79.84
+ Risks (%):       1.771   0.000   0.000   0.136   0.136   0.000   0.136   0.136   0.136
+group_game(109): _alert [INFO] (Day 139): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 139): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       H       H       H       H       H       H   
- Utilities:       48.71   49.81   42.53   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.740   1.740   1.740   0.134   0.134   0.134   0.134   0.134   0.134
-simple(45): plan [INFO] (Day 140): cutoff: 1.03 S prob: 0.42
-simple(45): plan [INFO] (Day 140): cutoff: 1.03 S prob: 0.42
-simple(45): plan [INFO] (Day 140): cutoff: 1.03 S prob: 0.42
+ States:           S       R       I       S       S       R       S       S       S   
+ Actions taken:    H       W       H       H       H       W       H       H       H   
+ Utilities:       44.64   43.78   46.39   85.23   84.79   87.43   80.99   79.24   79.84
+ Risks (%):       0.134   0.000   0.000   0.134   0.134   0.000   0.134   0.134   0.134
+group_game(109): _alert [INFO] (Day 140): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 140): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       H       H       H       H       H       H   
- Utilities:       49.10   50.20   42.93   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.707   1.707   1.707   0.131   0.131   0.131   0.131   0.131   0.131
-simple(45): plan [INFO] (Day 141): cutoff: 1.01 S prob: 0.45
-simple(45): plan [INFO] (Day 141): cutoff: 1.01 S prob: 0.45
-simple(45): plan [INFO] (Day 141): cutoff: 1.01 S prob: 0.45
+ States:           S       R       I       S       S       R       S       S       S   
+ Actions taken:    H       W       H       H       H       W       H       H       H   
+ Utilities:       44.64   44.04   46.39   85.23   84.79   87.70   80.99   79.24   79.84
+ Risks (%):       0.131   0.000   0.000   0.131   0.131   0.000   0.131   0.131   0.131
+group_game(109): _alert [INFO] (Day 141): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 141): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    H       H       W       H       H       H       H       H       H   
- Utilities:       49.10   50.20   43.06   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       0.129   0.129   1.674   0.129   0.129   0.129   0.129   0.129   0.129
-simple(45): plan [INFO] (Day 142): cutoff: 1.00 S prob: 0.49
-simple(45): plan [INFO] (Day 142): cutoff: 1.00 S prob: 0.49
-simple(45): plan [INFO] (Day 142): cutoff: 1.00 S prob: 0.49
+ States:           S       R       I       S       S       R       S       S       S   
+ Actions taken:    W       W       H       H       H       W       H       H       H   
+ Utilities:       45.03   44.43   46.39   85.23   84.79   88.08   80.99   79.24   79.84
+ Risks (%):       1.674   0.000   0.000   0.129   0.129   0.000   0.129   0.129   0.129
+group_game(109): _alert [INFO] (Day 142): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 142): 
- States:           S       S       S       S       S       S       S       S       S   
- Actions taken:    W       W       W       H       H       H       H       H       H   
- Utilities:       49.50   50.60   43.46   88.04   88.33   86.63   87.92   87.13   87.91
- Risks (%):       1.640   1.640   1.640   0.126   0.126   0.126   0.126   0.126   0.126
-simple(45): plan [INFO] (Day 143): cutoff: 0.99 S prob: 0.52
-simple(45): plan [INFO] (Day 143): cutoff: 0.99 S prob: 0.52
-simple(45): plan [INFO] (Day 143): cutoff: 0.99 S prob: 0.52
+ States:           S       R       I       S       S       R       S       S       S   
+ Actions taken:    H       W       H       H       H       W       H       H       H   
+ Utilities:       45.03   44.70   46.39   85.23   84.79   88.35   80.99   79.24   79.84
+ Risks (%):       0.126   0.000   0.000   0.126   0.126   0.000   0.126   0.126   0.126
+group_game(109): _alert [INFO] (Day 143): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 143): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    W       H       H       W       W       W       H       H       W   
- Utilities:       50.15   50.60   43.46   88.69   88.98   87.28   87.92   87.13   88.56
- Risks (%):       1.605   0.123   0.123   1.605   1.605   1.605   0.123   0.123   1.605
-simple(45): plan [INFO] (Day 144): cutoff: 0.98 S prob: 0.55
-simple(45): plan [INFO] (Day 144): cutoff: 0.98 S prob: 0.55
-simple(45): plan [INFO] (Day 144): cutoff: 0.98 S prob: 0.55
+ States:           S       R       I       S       S       R       S       S       S   
+ Actions taken:    W       W       H       W       W       W       H       H       H   
+ Utilities:       45.67   45.34   46.39   85.87   85.43   88.99   80.99   79.24   79.84
+ Risks (%):       1.605   0.000   0.000   1.605   1.605   0.000   0.123   0.123   0.123
+group_game(109): _alert [INFO] (Day 144): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 144): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    H       W       H       W       W       H       W       H       H   
- Utilities:       50.15   51.14   43.46   89.22   89.51   87.28   88.45   87.13   88.56
- Risks (%):       0.121   1.569   0.121   1.569   1.569   0.121   1.569   0.121   0.121
-simple(45): plan [INFO] (Day 145): cutoff: 0.97 S prob: 0.59
-simple(45): plan [INFO] (Day 145): cutoff: 0.97 S prob: 0.59
-simple(45): plan [INFO] (Day 145): cutoff: 0.97 S prob: 0.59
+ States:           S       R       I       S       S       R       S       S       S   
+ Actions taken:    H       H       H       W       W       W       H       H       H   
+ Utilities:       45.67   45.34   46.39   86.27   85.83   89.39   80.99   79.24   79.84
+ Risks (%):       0.121   0.000   0.000   1.569   1.569   0.000   0.121   0.121   0.121
+group_game(109): _alert [INFO] (Day 145): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 145): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    W       W       W       H       W       H       W       H       H   
- Utilities:       50.82   51.80   44.13   89.22   90.18   87.28   89.12   87.13   88.56
- Risks (%):       1.533   1.533   1.533   0.118   1.533   0.111   1.533   0.118   0.118
-simple(45): plan [INFO] (Day 146): cutoff: 0.96 S prob: 0.63
-simple(45): plan [INFO] (Day 146): cutoff: 0.96 S prob: 0.63
-simple(45): plan [INFO] (Day 146): cutoff: 0.96 S prob: 0.63
+ States:           S       R       I       S       S       R       S       S       S   
+ Actions taken:    W       W       H       W       W       W       H       H       H   
+ Utilities:       46.27   45.94   46.39   86.87   86.43   89.99   80.99   79.24   79.84
+ Risks (%):       1.533   0.000   0.000   1.533   1.533   0.000   0.118   0.118   0.118
+group_game(109): _alert [INFO] (Day 146): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 146): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    H       H       H       H       W       H       H       W       H   
- Utilities:       50.82   51.80   44.13   89.22   90.39   87.28   89.12   87.34   88.56
- Risks (%):       0.115   0.115   0.115   0.115   4.022   0.078   0.115   4.022   0.115
-simple(45): plan [INFO] (Day 147): cutoff: 0.95 S prob: 0.66
-simple(45): plan [INFO] (Day 147): cutoff: 0.95 S prob: 0.66
-simple(45): plan [INFO] (Day 147): cutoff: 0.95 S prob: 0.66
+ States:           S       R       I       S       S       R       S       S       S   
+ Actions taken:    H       H       H       H       W       W       H       H       H   
+ Utilities:       46.27   45.94   46.39   86.87   86.70   90.26   80.99   79.24   79.84
+ Risks (%):       0.115   0.000   0.000   0.115   1.496   0.000   0.115   0.115   0.115
+group_game(109): _alert [INFO] (Day 147): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 147): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    H       H       H       W       H       H       W       W       H   
- Utilities:       50.82   51.80   44.13   89.62   90.39   87.28   89.51   87.73   88.56
- Risks (%):       0.112   0.112   0.112   3.986   0.112   0.074   3.986   3.986   0.112
-simple(45): plan [INFO] (Day 148): cutoff: 0.94 S prob: 0.70
-simple(45): plan [INFO] (Day 148): cutoff: 0.94 S prob: 0.70
-simple(45): plan [INFO] (Day 148): cutoff: 0.94 S prob: 0.70
+ States:           S       R       I       S       S       R       S       S       S   
+ Actions taken:    W       W       H       W       W       W       H       H       H   
+ Utilities:       46.89   46.56   46.39   87.49   87.32   90.88   80.99   79.24   79.84
+ Risks (%):       1.459   0.000   0.000   1.459   1.459   0.000   0.112   0.112   0.112
+group_game(109): _alert [INFO] (Day 148): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 148): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    W       W       W       W       W       H       W       H       H   
- Utilities:       51.62   52.60   44.93   90.42   91.19   87.28   90.31   87.73   88.56
- Risks (%):       3.949   3.949   3.949   3.949   3.949   0.021   3.949   0.109   0.109
-simple(45): plan [INFO] (Day 149): cutoff: 0.92 S prob: 0.74
-simple(45): plan [INFO] (Day 149): cutoff: 0.92 S prob: 0.74
-simple(45): plan [INFO] (Day 149): cutoff: 0.92 S prob: 0.74
+ States:           S       R       I       S       S       R       S       S       S   
+ Actions taken:    H       H       H       H       W       W       H       H       H   
+ Utilities:       46.89   46.56   46.39   87.49   87.59   91.15   80.99   79.24   79.84
+ Risks (%):       0.109   0.000   0.000   0.109   1.423   0.000   0.109   0.109   0.109
+group_game(109): _alert [INFO] (Day 149): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 149): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    H       H       H       W       W       H       H       W       W   
- Utilities:       51.62   52.60   44.93   90.90   91.67   87.28   90.31   88.21   89.03
- Risks (%):       0.107   0.107   0.107   3.912   3.912   0.016   0.107   3.912   3.912
-simple(45): plan [INFO] (Day 150): cutoff: 0.91 S prob: 0.78
-simple(45): plan [INFO] (Day 150): cutoff: 0.91 S prob: 0.78
-simple(45): plan [INFO] (Day 150): cutoff: 0.91 S prob: 0.78
+ States:           S       R       I       S       S       R       S       S       S   
+ Actions taken:    W       W       H       W       H       W       H       H       H   
+ Utilities:       47.36   47.04   46.39   87.97   87.59   91.62   80.99   79.24   79.84
+ Risks (%):       1.386   0.000   0.000   1.386   0.107   0.000   0.107   0.107   0.107
 group_game(109): _alert [INFO] (Day 150): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 150): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    H       W       W       W       W       H       W       H       W   
- Utilities:       51.62   53.35   45.67   91.64   92.41   87.28   91.06   88.21   89.78
- Risks (%):       0.104   3.875   3.875   3.875   3.875   0.007   3.875   0.104   3.875
-simple(45): plan [INFO] (Day 151): cutoff: 9.35 S prob: 0.00
-simple(45): plan [INFO] (Day 151): cutoff: 9.35 S prob: 0.00
-simple(45): plan [INFO] (Day 151): cutoff: 9.35 S prob: 0.00
+ States:           S       R       I       S       S       R       S       S       S   
+ Actions taken:    W       W       H       W       W       W       H       H       H   
+ Utilities:       48.01   47.69   46.39   88.62   88.24   92.27   80.99   79.24   79.84
+ Risks (%):       1.349   0.000   0.000   1.349   1.349   0.000   0.104   0.104   0.104
 group_game(109): _alert [INFO] (Day 151): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 151): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    W       H       H       W       W       H       H       H       H   
- Utilities:       52.02   53.35   45.67   92.04   92.81   87.28   91.06   88.21   89.78
- Risks (%):       3.839   0.101   0.101   3.839   3.839   0.000   0.101   0.101   0.101
-simple(45): plan [INFO] (Day 152): cutoff: 9.22 S prob: 0.00
-simple(45): plan [INFO] (Day 152): cutoff: 9.22 S prob: 0.00
-simple(45): plan [INFO] (Day 152): cutoff: 9.22 S prob: 0.00
-group_game(109): _alert [INFO] (Day 152): GROUP ALERTED
+ States:           S       R       I       S       S       R       S       S       S   
+ Actions taken:    H       H       H       W       H       W       H       H       H   
+ Utilities:       48.01   47.69   46.39   88.89   88.24   92.54   80.99   79.24   79.84
+ Risks (%):       0.101   0.000   0.000   1.312   0.101   0.000   0.101   0.101   0.101
 group_game(141): simulate [INFO] (Day 152): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    W       W       W       W       W       H       H       H       H   
- Utilities:       52.65   53.98   46.30   92.67   93.44   87.28   91.06   88.21   89.78
- Risks (%):       3.802   3.802   3.802   3.802   3.802   0.000   0.098   0.098   0.098
-simple(45): plan [INFO] (Day 153): cutoff: 9.09 S prob: 0.00
-simple(45): plan [INFO] (Day 153): cutoff: 9.09 S prob: 0.00
-simple(45): plan [INFO] (Day 153): cutoff: 9.09 S prob: 0.00
-group_game(109): _alert [INFO] (Day 153): GROUP ALERTED
+ States:           S       R       R       S       S       R       S       S       S   
+ Actions taken:    H       W       H       W       H       W       H       H       H   
+ Utilities:       48.01   48.03   46.39   89.23   88.24   92.88   80.99   79.24   79.84
+ Risks (%):       0.098   0.000   0.000   1.276   0.098   0.000   0.098   0.098   0.098
 group_game(141): simulate [INFO] (Day 153): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    H       H       H       H       W       H       H       H       H   
- Utilities:       52.65   53.98   46.30   92.67   93.56   87.28   91.06   88.21   89.78
- Risks (%):       0.095   0.095   0.095   0.095   3.766   0.000   0.095   0.095   0.095
-simple(45): plan [INFO] (Day 154): cutoff: 8.96 S prob: 0.00
-simple(45): plan [INFO] (Day 154): cutoff: 8.96 S prob: 0.00
-simple(45): plan [INFO] (Day 154): cutoff: 8.96 S prob: 0.00
-group_game(109): _alert [INFO] (Day 154): GROUP ALERTED
+ States:           S       R       R       S       S       R       S       S       S   
+ Actions taken:    W       W       W       W       W       W       W       W       W   
+ Utilities:       49.04   49.05   47.41   90.25   89.26   93.90   82.01   80.26   80.86
+ Risks (%):       1.240   0.000   0.000   1.240   1.240   0.000   1.240   1.240   1.240
 group_game(141): simulate [INFO] (Day 154): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    W       W       W       W       W       H       H       H       H   
- Utilities:       53.31   54.64   46.96   93.33   94.22   87.28   91.06   88.21   89.78
- Risks (%):       3.730   3.730   3.730   3.730   3.730   0.000   0.093   0.093   0.093
-simple(45): plan [INFO] (Day 155): cutoff: 8.82 S prob: 0.00
-simple(45): plan [INFO] (Day 155): cutoff: 8.82 S prob: 0.00
-simple(45): plan [INFO] (Day 155): cutoff: 8.82 S prob: 0.00
-group_game(109): _alert [INFO] (Day 155): GROUP ALERTED
+ States:           S       R       R       I       S       R       S       S       S   
+ Actions taken:    H       H       H       W       W       W       H       H       H   
+ Utilities:       49.04   49.05   47.41   90.60   89.61   94.25   82.01   80.26   80.86
+ Risks (%):       0.093   0.000   0.000   1.204   1.204   0.000   0.093   0.093   0.093
 group_game(141): simulate [INFO] (Day 155): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    H       H       H       W       W       H       H       H       H   
- Utilities:       53.31   54.64   46.96   93.56   94.45   87.28   91.06   88.21   89.78
- Risks (%):       0.090   0.090   0.090   3.695   3.695   0.000   0.090   0.090   0.090
-simple(45): plan [INFO] (Day 156): cutoff: 8.69 S prob: 0.00
-simple(45): plan [INFO] (Day 156): cutoff: 8.69 S prob: 0.00
-simple(45): plan [INFO] (Day 156): cutoff: 8.69 S prob: 0.00
-group_game(109): _alert [INFO] (Day 156): GROUP ALERTED
+ States:           S       R       R       I       S       R       S       S       I   
+ Actions taken:    W       W       W       H       W       W       W       W       W   
+ Utilities:       49.98   49.99   48.35   90.60   90.55   95.20   82.95   81.20   81.80
+ Risks (%):       1.169   0.000   0.000   0.090   1.169   0.000   1.169   1.169   1.169
 group_game(141): simulate [INFO] (Day 156): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    W       H       W       W       W       H       H       H       H   
- Utilities:       53.67   54.64   47.33   93.93   94.82   87.28   91.06   88.21   89.78
- Risks (%):       3.660   0.087   3.660   3.660   3.660   0.000   0.087   0.087   0.087
-simple(45): plan [INFO] (Day 157): cutoff: 8.56 S prob: 0.00
-simple(45): plan [INFO] (Day 157): cutoff: 8.56 S prob: 0.00
-simple(45): plan [INFO] (Day 157): cutoff: 8.56 S prob: 0.00
-group_game(109): _alert [INFO] (Day 157): GROUP ALERTED
+ States:           S       R       R       I       S       R       S       S       I   
+ Actions taken:    H       H       H       H       W       W       H       H       H   
+ Utilities:       49.98   49.99   48.35   90.60   90.82   95.46   82.95   81.20   81.80
+ Risks (%):       0.087   0.000   0.000   0.073   1.134   0.000   0.087   0.087   0.082
 group_game(141): simulate [INFO] (Day 157): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    W       W       W       W       W       H       H       H       H   
- Utilities:       54.26   55.22   47.91   94.51   95.40   87.28   91.06   88.21   89.78
- Risks (%):       3.626   3.626   3.626   3.626   3.626   0.000   0.085   0.085   0.085
-simple(45): plan [INFO] (Day 158): cutoff: 8.43 S prob: 0.00
-simple(45): plan [INFO] (Day 158): cutoff: 8.43 S prob: 0.00
-simple(45): plan [INFO] (Day 158): cutoff: 8.43 S prob: 0.00
-group_game(109): _alert [INFO] (Day 158): GROUP ALERTED
+ States:           S       R       R       I       S       R       S       S       I   
+ Actions taken:    W       W       W       H       W       W       W       W       W   
+ Utilities:       50.95   50.97   49.33   90.60   91.80   96.44   83.93   82.18   82.78
+ Risks (%):       1.100   0.000   0.000   0.048   1.100   0.000   1.100   1.100   1.026
 group_game(141): simulate [INFO] (Day 158): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    H       H       H       W       W       H       H       H       H   
- Utilities:       54.26   55.22   47.91   94.71   95.60   87.28   91.06   88.21   89.78
- Risks (%):       0.082   0.082   0.082   3.592   3.592   0.000   0.082   0.082   0.082
-simple(45): plan [INFO] (Day 159): cutoff: 8.29 S prob: 0.00
-simple(45): plan [INFO] (Day 159): cutoff: 8.29 S prob: 0.00
-simple(45): plan [INFO] (Day 159): cutoff: 8.29 S prob: 0.00
-group_game(109): _alert [INFO] (Day 159): GROUP ALERTED
+ States:           S       R       R       I       S       R       S       S       I   
+ Actions taken:    H       H       H       H       W       W       H       H       H   
+ Utilities:       50.95   50.97   49.33   90.60   92.06   96.71   83.93   82.18   82.78
+ Risks (%):       0.082   0.000   0.000   0.037   1.066   0.000   0.082   0.082   0.050
 group_game(141): simulate [INFO] (Day 159): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    W       W       W       W       W       H       H       H       H   
- Utilities:       54.80   55.76   48.45   95.25   96.14   87.28   91.06   88.21   89.78
- Risks (%):       3.559   3.559   3.559   3.559   3.559   0.000   0.079   0.079   0.079
-simple(45): plan [INFO] (Day 160): cutoff: 8.16 S prob: 0.00
-simple(45): plan [INFO] (Day 160): cutoff: 8.16 S prob: 0.00
-simple(45): plan [INFO] (Day 160): cutoff: 8.16 S prob: 0.00
-group_game(109): _alert [INFO] (Day 160): GROUP ALERTED
+ States:           S       R       R       I       S       R       S       S       I   
+ Actions taken:    W       W       W       H       W       W       W       W       H   
+ Utilities:       51.81   51.83   50.18   90.60   92.92   97.56   84.78   83.04   82.78
+ Risks (%):       1.033   0.000   0.000   0.037   1.033   0.000   1.033   1.033   0.045
 group_game(141): simulate [INFO] (Day 160): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    H       H       H       W       W       H       H       H       H   
- Utilities:       54.80   55.76   48.45   95.47   96.36   87.28   91.06   88.21   89.78
- Risks (%):       0.077   0.077   0.077   3.526   3.526   0.000   0.077   0.077   0.077
-simple(45): plan [INFO] (Day 161): cutoff: 8.03 S prob: 0.00
-simple(45): plan [INFO] (Day 161): cutoff: 8.03 S prob: 0.00
-simple(45): plan [INFO] (Day 161): cutoff: 8.03 S prob: 0.00
+ States:           S       R       R       I       S       R       S       S       I   
+ Actions taken:    H       H       H       H       W       W       W       W       H   
+ Utilities:       51.81   51.83   50.18   90.60   93.41   98.05   85.27   83.53   82.78
+ Risks (%):       0.077   0.000   0.000   0.001   1.000   0.000   1.000   1.000   0.015
 group_game(109): _alert [INFO] (Day 161): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 161): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    H       W       W       W       W       H       H       H       H   
- Utilities:       54.80   56.15   48.85   95.86   96.76   87.28   91.06   88.21   89.78
- Risks (%):       0.074   3.495   3.495   3.495   3.495   0.000   0.074   0.074   0.074
-simple(45): plan [INFO] (Day 162): cutoff: 7.90 S prob: 0.00
-simple(45): plan [INFO] (Day 162): cutoff: 7.90 S prob: 0.00
-simple(45): plan [INFO] (Day 162): cutoff: 7.90 S prob: 0.00
+ States:           S       R       R       I       S       R       S       S       I   
+ Actions taken:    W       W       W       H       W       W       W       W       H   
+ Utilities:       52.65   52.66   51.02   90.60   94.25   98.89   86.11   84.36   82.78
+ Risks (%):       0.968   0.000   0.000   0.009   0.968   0.000   0.968   0.968   0.015
 group_game(109): _alert [INFO] (Day 162): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 162): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    W       H       H       W       W       H       H       H       H   
- Utilities:       55.20   56.15   48.85   96.26   97.16   87.28   91.06   88.21   89.78
- Risks (%):       3.463   0.072   0.072   3.463   3.463   0.000   0.072   0.072   0.072
-simple(45): plan [INFO] (Day 163): cutoff: 7.77 S prob: 0.00
-simple(45): plan [INFO] (Day 163): cutoff: 7.77 S prob: 0.00
-simple(45): plan [INFO] (Day 163): cutoff: 7.77 S prob: 0.00
+ States:           S       R       R       I       S       R       S       S       I   
+ Actions taken:    H       H       H       H       W       W       H       H       H   
+ Utilities:       52.65   52.66   51.02   90.60   94.51   99.15   86.11   84.36   82.78
+ Risks (%):       0.072   0.000   0.000   0.000   0.937   0.000   0.072   0.072   0.005
 group_game(109): _alert [INFO] (Day 163): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 163): 
- States:           S       S       S       S       S       I       S       S       S   
- Actions taken:    H       W       H       W       W       H       H       H       H   
- Utilities:       55.20   56.52   48.85   96.63   97.52   87.28   91.06   88.21   89.78
- Risks (%):       0.070   3.433   0.070   3.433   3.433   0.000   0.070   0.070   0.070
-simple(45): plan [INFO] (Day 164): cutoff: 7.64 S prob: 0.00
-simple(45): plan [INFO] (Day 164): cutoff: 7.64 S prob: 0.00
-simple(45): plan [INFO] (Day 164): cutoff: 7.64 S prob: 0.00
+ States:           S       R       R       I       S       R       S       S       I   
+ Actions taken:    W       W       W       H       W       W       H       H       H   
+ Utilities:       53.28   53.30   51.66   90.60   95.15   99.79   86.11   84.36   82.78
+ Risks (%):       0.907   0.000   0.000   0.000   0.907   0.000   0.070   0.070   0.000
+group_game(109): _alert [INFO] (Day 164): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 164): 
- States:           S       S       S       S       S       R       S       S       S   
- Actions taken:    H       H       W       W       W       H       H       H       H   
- Utilities:       55.20   56.52   49.24   97.02   97.91   87.28   91.06   88.21   89.78
- Risks (%):       0.067   0.067   3.403   3.403   3.403   0.000   0.067   0.067   0.067
-simple(45): plan [INFO] (Day 165): cutoff: 0.72 S prob: 1.00
-simple(45): plan [INFO] (Day 165): cutoff: 0.72 S prob: 1.00
-simple(45): plan [INFO] (Day 165): cutoff: 0.72 S prob: 1.00
+ States:           S       R       R       I       S       R       S       S       I   
+ Actions taken:    H       H       H       H       W       W       H       H       H   
+ Utilities:       53.28   53.30   51.66   90.60   95.39  100.03   86.11   84.36   82.78
+ Risks (%):       0.067   0.000   0.000   0.000   0.877   0.000   0.067   0.067   0.000
+group_game(109): _alert [INFO] (Day 165): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 165): 
- States:           S       S       S       S       S       R       S       S       S   
- Actions taken:    W       W       W       W       W       W       W       W       W   
- Utilities:       56.26   57.58   50.31   98.09   98.98   88.35   92.13   89.28   90.84
- Risks (%):       0.848   0.848   0.848   0.848   0.848   0.000   0.848   0.848   0.848
-simple(45): plan [INFO] (Day 166): cutoff: 1.02 S prob: 0.42
-simple(45): plan [INFO] (Day 166): cutoff: 1.02 S prob: 0.42
-simple(45): plan [INFO] (Day 166): cutoff: 1.02 S prob: 0.42
+ States:           S       R       R       I       S       R       S       S       I   
+ Actions taken:    W       W       W       H       W       W       H       H       H   
+ Utilities:       53.95   53.97   52.32   90.60   96.05  100.69   86.11   84.36   82.78
+ Risks (%):       0.848   0.000   0.000   0.000   0.848   0.000   0.065   0.065   0.000
+group_game(109): _alert [INFO] (Day 166): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 166): 
- States:           S       S       S       S       S       R       S       S       S   
- Actions taken:    H       H       H       W       W       W       H       H       H   
- Utilities:       56.26   57.58   50.31   98.49   99.38   88.75   92.13   89.28   90.84
- Risks (%):       0.063   0.063   0.063   0.819   0.819   0.000   0.063   0.063   0.063
-simple(45): plan [INFO] (Day 167): cutoff: 0.70 S prob: 1.00
-simple(45): plan [INFO] (Day 167): cutoff: 0.70 S prob: 1.00
-simple(45): plan [INFO] (Day 167): cutoff: 0.70 S prob: 1.00
+ States:           S       R       R       I       S       R       S       S       I   
+ Actions taken:    H       H       H       H       W       W       H       H       H   
+ Utilities:       53.95   53.97   52.32   90.60   96.32  100.96   86.11   84.36   82.78
+ Risks (%):       0.063   0.000   0.000   0.000   0.819   0.000   0.063   0.063   0.000
+group_game(109): _alert [INFO] (Day 167): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 167): 
- States:           S       S       S       S       S       R       S       S       S   
- Actions taken:    W       W       W       W       W       W       W       W       W   
- Utilities:       57.32   58.63   51.36   99.54  100.43   89.80   93.18   90.33   91.89
- Risks (%):       0.792   0.792   0.792   0.792   0.792   0.000   0.792   0.792   0.792
-simple(45): plan [INFO] (Day 168): cutoff: 0.99 S prob: 0.53
-simple(45): plan [INFO] (Day 168): cutoff: 0.99 S prob: 0.53
-simple(45): plan [INFO] (Day 168): cutoff: 0.99 S prob: 0.53
+ States:           S       R       R       I       S       R       S       S       I   
+ Actions taken:    W       W       W       H       W       W       H       H       H   
+ Utilities:       54.55   54.57   52.93   90.60   96.92  101.56   86.11   84.36   82.78
+ Risks (%):       0.792   0.000   0.000   0.000   0.792   0.000   0.061   0.061   0.000
+group_game(109): _alert [INFO] (Day 168): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 168): 
- States:           S       S       S       S       S       R       S       S       S   
- Actions taken:    H       H       H       W       W       W       W       H       H   
- Utilities:       57.32   58.63   51.36   99.96  100.85   90.22   93.59   90.33   91.89
- Risks (%):       0.059   0.059   0.059   0.765   0.765   0.000   0.765   0.059   0.059
-simple(45): plan [INFO] (Day 169): cutoff: 0.67 S prob: 1.00
-simple(45): plan [INFO] (Day 169): cutoff: 0.67 S prob: 1.00
-simple(45): plan [INFO] (Day 169): cutoff: 0.67 S prob: 1.00
+ States:           S       R       R       I       S       R       S       S       I   
+ Actions taken:    H       H       H       H       W       W       H       H       H   
+ Utilities:       54.55   54.57   52.93   90.60   97.19  101.83   86.11   84.36   82.78
+ Risks (%):       0.059   0.000   0.000   0.000   0.765   0.000   0.059   0.059   0.000
+group_game(109): _alert [INFO] (Day 169): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 169): 
- States:           S       S       S       S       S       R       S       S       I   
- Actions taken:    W       W       W       W       W       W       W       W       W   
- Utilities:       58.41   59.73   52.46  101.05  101.94   91.31   94.69   91.43   92.99
- Risks (%):       0.738   0.738   0.738   0.738   0.738   0.000   0.738   0.738   0.738
-simple(45): plan [INFO] (Day 170): cutoff: 0.96 S prob: 0.64
-simple(45): plan [INFO] (Day 170): cutoff: 0.96 S prob: 0.64
-simple(45): plan [INFO] (Day 170): cutoff: 0.90 S prob: 0.81
+ States:           S       R       R       I       S       R       S       S       I   
+ Actions taken:    W       W       W       H       W       W       H       H       H   
+ Utilities:       55.22   55.23   53.59   90.60   97.85  102.50   86.11   84.36   82.78
+ Risks (%):       0.738   0.000   0.000   0.000   0.738   0.000   0.057   0.057   0.000
+group_game(109): _alert [INFO] (Day 170): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 170): 
- States:           S       S       S       S       S       R       S       S       I   
- Actions taken:    H       H       H       W       W       W       W       H       H   
- Utilities:       58.41   59.73   52.46  101.56  102.45   91.82   95.20   91.43   92.99
- Risks (%):       0.055   0.055   0.055   0.713   0.713   0.000   0.713   0.055   0.049
-simple(45): plan [INFO] (Day 171): cutoff: 0.65 S prob: 1.00
-simple(45): plan [INFO] (Day 171): cutoff: 0.65 S prob: 1.00
-simple(45): plan [INFO] (Day 171): cutoff: 0.53 S prob: 1.00
+ States:           S       R       R       I       S       R       S       S       I   
+ Actions taken:    H       H       H       H       W       W       H       H       H   
+ Utilities:       55.22   55.23   53.59   90.60   98.12  102.76   86.11   84.36   82.78
+ Risks (%):       0.055   0.000   0.000   0.000   0.713   0.000   0.055   0.055   0.000
+group_game(109): _alert [INFO] (Day 171): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 171): 
- States:           S       S       S       S       S       R       S       S       I   
- Actions taken:    W       W       W       W       W       W       W       W       W   
- Utilities:       59.35   60.67   53.40  102.50  103.39   92.76   96.14   92.36   93.93
- Risks (%):       0.688   0.688   0.688   0.688   0.688   0.000   0.688   0.688   0.465
-simple(45): plan [INFO] (Day 172): cutoff: 0.92 S prob: 0.74
-simple(45): plan [INFO] (Day 172): cutoff: 0.92 S prob: 0.74
-simple(45): plan [INFO] (Day 172): cutoff: 0.65 S prob: 1.00
+ States:           I       R       R       I       S       R       S       S       I   
+ Actions taken:    W       W       W       H       W       W       H       H       H   
+ Utilities:       55.83   55.85   54.20   90.60   98.73  103.37   86.11   84.36   82.78
+ Risks (%):       0.688   0.000   0.000   0.000   0.688   0.000   0.053   0.053   0.000
+group_game(109): _alert [INFO] (Day 172): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 172): 
- States:           S       S       S       S       S       R       S       S       I   
- Actions taken:    H       H       H       W       W       W       W       W       H   
- Utilities:       59.35   60.67   53.40  103.15  104.04   93.41   96.79   93.01   93.93
- Risks (%):       0.051   0.051   0.051   3.190   3.190   2.526   3.190   3.190   0.026
-simple(45): plan [INFO] (Day 173): cutoff: 0.63 S prob: 1.00
-simple(45): plan [INFO] (Day 173): cutoff: 0.63 S prob: 1.00
-simple(45): plan [INFO] (Day 173): cutoff: 0.44 S prob: 1.00
+ States:           I       R       R       I       S       R       S       S       I   
+ Actions taken:    H       H       H       H       W       W       H       H       H   
+ Utilities:       55.83   55.85   54.20   90.60   98.99  103.63   86.11   84.36   82.78
+ Risks (%):       0.051   0.000   0.000   0.000   0.664   0.000   0.051   0.051   0.000
+group_game(109): _alert [INFO] (Day 173): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 173): 
- States:           S       S       S       I       S       R       S       S       I   
- Actions taken:    W       W       W       W       W       W       W       W       W   
- Utilities:       60.37   61.68   54.41  104.16  105.05   94.42   97.80   94.03   94.95
- Risks (%):       3.167   3.167   3.167   3.167   3.167   2.526   3.167   3.167   2.849
-simple(45): plan [INFO] (Day 174): cutoff: 0.89 S prob: 0.84
-simple(45): plan [INFO] (Day 174): cutoff: 0.89 S prob: 0.84
-simple(45): plan [INFO] (Day 174): cutoff: 0.52 S prob: 1.00
+ States:           I       R       R       I       S       R       S       S       I   
+ Actions taken:    H       W       W       H       W       W       H       H       H   
+ Utilities:       55.83   56.31   54.67   90.60   99.45  104.09   86.11   84.36   82.78
+ Risks (%):       0.034   0.000   0.000   0.000   0.641   0.000   0.049   0.049   0.000
+group_game(109): _alert [INFO] (Day 174): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 174): 
- States:           S       S       S       I       S       R       S       S       I   
- Actions taken:    H       H       H       W       W       W       W       W       H   
- Utilities:       60.37   61.68   54.41  104.74  105.63   95.00   98.37   94.60   94.95
- Risks (%):       0.048   0.048   0.048   3.050   3.144   2.526   3.144   3.144   0.017
-simple(45): plan [INFO] (Day 175): cutoff: 0.61 S prob: 1.00
-simple(45): plan [INFO] (Day 175): cutoff: 0.61 S prob: 1.00
-simple(45): plan [INFO] (Day 175): cutoff: 0.15 S prob: 1.00
+ States:           I       R       R       I       S       R       S       S       I   
+ Actions taken:    H       W       W       H       W       W       H       H       H   
+ Utilities:       55.83   56.84   55.20   90.60   99.98  104.62   86.11   84.36   82.78
+ Risks (%):       0.033   0.000   0.000   0.000   0.618   0.000   0.048   0.048   0.000
+group_game(109): _alert [INFO] (Day 175): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 175): 
- States:           S       S       S       I       S       R       S       S       I   
- Actions taken:    H       W       H       W       W       W       W       W       H   
- Utilities:       60.37   62.40   54.41  105.45  106.34   95.71   99.09   95.32   94.95
- Risks (%):       0.046   3.122   0.046   3.075   3.122   2.526   3.122   3.122   0.003
-simple(45): plan [INFO] (Day 176): cutoff: 0.59 S prob: 1.00
-simple(45): plan [INFO] (Day 176): cutoff: 0.59 S prob: 1.00
-simple(45): plan [INFO] (Day 176): cutoff: 0.22 S prob: 1.00
-group_game(109): _alert [INFO] (Day 176): GROUP ALERTED
+ States:           I       R       R       R       S       R       S       S       I   
+ Actions taken:    H       W       W       H       W       W       H       H       H   
+ Utilities:       55.83   57.33   55.69   90.60  100.47  105.11   86.11   84.36   82.78
+ Risks (%):       0.018   0.000   0.000   0.000   0.596   0.000   0.046   0.046   0.000
 group_game(141): simulate [INFO] (Day 176): 
- States:           S       S       S       I       S       R       S       S       I   
- Actions taken:    H       H       W       H       W       W       W       W       H   
- Utilities:       60.37   62.40   55.02  105.45  106.95   96.32   99.70   95.93   94.95
- Risks (%):       0.044   0.044   5.308   0.027   5.308   4.734   5.308   5.308   0.006
-simple(45): plan [INFO] (Day 177): cutoff: 6.08 S prob: 0.00
-simple(45): plan [INFO] (Day 177): cutoff: 6.08 S prob: 0.00
-simple(45): plan [INFO] (Day 177): cutoff: 0.00 S prob: 1.00
-group_game(109): _alert [INFO] (Day 177): GROUP ALERTED
+ States:           I       R       R       R       S       R       S       S       R   
+ Actions taken:    H       W       W       W       W       W       H       H       H   
+ Utilities:       55.83   58.00   56.36   91.27  101.14  105.78   86.11   84.36   82.78
+ Risks (%):       0.018   0.000   0.000   0.000   0.575   0.000   0.044   0.044   0.000
 group_game(141): simulate [INFO] (Day 177): 
- States:           S       S       S       I       I       R       S       S       I   
- Actions taken:    W       H       H       H       W       W       H       H       H   
- Utilities:       60.77   62.40   55.02  105.45  107.35   96.72   99.70   95.93   94.95
- Risks (%):       5.288   0.043   0.043   0.026   5.288   4.734   0.043   0.043   0.000
-simple(45): plan [INFO] (Day 178): cutoff: 5.96 S prob: 0.00
-simple(45): plan [INFO] (Day 178): cutoff: 5.96 S prob: 0.00
-simple(45): plan [INFO] (Day 178): cutoff: 0.00 S prob: 1.00
+ States:           I       R       R       R       S       R       S       S       R   
+ Actions taken:    H       H       H       W       W       W       W       W       W   
+ Utilities:       55.83   58.00   56.36   92.02  101.89  106.54   86.87   85.12   83.54
+ Risks (%):       0.010   0.000   0.000   0.000   0.554   0.000   0.554   0.554   0.000
 group_game(109): _alert [INFO] (Day 178): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 178): 
- States:           S       S       S       I       I       R       S       S       I   
- Actions taken:    H       W       W       H       W       W       H       H       H   
- Utilities:       60.77   62.89   55.52  105.45  107.85   97.22   99.70   95.93   94.95
- Risks (%):       0.041   5.268   5.268   0.017   5.223   4.734   0.041   0.041   0.000
-simple(45): plan [INFO] (Day 179): cutoff: 5.86 S prob: 0.00
-simple(45): plan [INFO] (Day 179): cutoff: 5.86 S prob: 0.00
-simple(45): plan [INFO] (Day 179): cutoff: 0.00 S prob: 1.00
+ States:           I       R       R       R       S       R       S       S       R   
+ Actions taken:    H       W       W       W       W       W       W       W       W   
+ Utilities:       55.83   58.95   57.30   92.97  102.84  107.48   87.81   86.07   84.48
+ Risks (%):       0.002   0.000   0.000   0.000   0.534   0.000   0.534   0.534   0.000
 group_game(109): _alert [INFO] (Day 179): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 179): 
- States:           S       S       S       I       I       R       S       S       I   
- Actions taken:    W       W       W       H       W       W       H       H       H   
- Utilities:       61.39   63.51   56.14  105.45  108.47   97.84   99.70   95.93   94.95
- Risks (%):       5.248   5.248   5.248   0.002   5.220   4.734   0.040   0.040   0.000
-simple(45): plan [INFO] (Day 180): cutoff: 5.75 S prob: 0.00
-simple(45): plan [INFO] (Day 180): cutoff: 5.75 S prob: 0.00
-simple(45): plan [INFO] (Day 180): cutoff: 0.00 S prob: 1.00
+ States:           I       R       R       R       S       R       S       S       R   
+ Actions taken:    H       H       H       W       W       W       H       H       W   
+ Utilities:       55.83   58.95   57.30   93.44  103.31  107.95   87.81   86.07   84.95
+ Risks (%):       0.000   0.000   0.000   0.000   0.515   0.000   0.040   0.040   0.000
 group_game(109): _alert [INFO] (Day 180): GROUP ALERTED
 group_game(141): simulate [INFO] (Day 180): 
- States:           S       S       S       I       I       R       S       S       I   
- Actions taken:    H       H       H       H       H       W       H       H       H   
- Utilities:       61.39   63.51   56.14  105.45  108.47   97.97   99.70   95.93   94.95
- Risks (%):       0.038   0.038   0.038   0.001   0.029   6.662   0.038   0.038   0.000
+ States:           I       R       R       R       S       R       S       S       R   
+ Actions taken:    H       W       W       W       W       W       H       H       W   
+ Utilities:       55.83   59.75   58.10   94.24  104.11  108.75   87.81   86.07   85.75
+ Risks (%):       0.000   0.000   0.000   0.000   0.496   0.000   0.038   0.038   0.000
